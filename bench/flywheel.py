@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Unified M3-Max flywheel runner (--mode dual | --mode stress)."""
+"""Unified M3-Max flywheel runner (--mode dual | --mode stress) with strict 1-param Tesseract sweep."""
 
 import os
 os.environ["OMP_THREAD_LIMIT"] = "1"
 
-import argparse, base64, collections, concurrent.futures, hashlib, html, json, random, subprocess, sys, tempfile, time, urllib.request
+import argparse, collections, concurrent.futures, hashlib, html, json, random, subprocess, sys, tempfile, time
 from pathlib import Path
 from PIL import Image
 
@@ -12,80 +12,143 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(BASE_DIR))
 
 from bench import synth                 # noqa: E402
-from ocr import pipeline as ocr_pipeline  # noqa: E402
+from bench.ollama import OllamaClient   # noqa: E402
+from ocr import pipeline as ocr_pipeline, pre  # noqa: E402
 
-OLLAMA_URL = "http://localhost:11434/api/generate"
-VLM_PROMPT = "Transcribe all numbers, letters, and math symbols in this single handwritten line exactly as written. Output only the text, no explanation."
+VLM_PROMPT = "Transcribe all handwritten words, numbers, and math symbols in this single line exactly as written. Output only the text, no explanation."
+
+B1 = {"ink_crop": True, "bold": True, "lang": "deu+eng", "psm": "7"}
 
 VARIANTS = {
-    "V0_baseline": {},
-    "V1a_pre_crop": {"ink_crop": True},
-    "V1b_pre_crop_bold": {"ink_crop": True, "bold": True},
-    "V2a_minusfix": {"fix_minus_bug": True},
-    "V2b_wl_minusfix": {"use_whitelist": True, "fix_minus_bug": True},
-    "V4_crop_bold_minusfix": {"ink_crop": True, "bold": True, "fix_minus_bug": True},
-    "V5_crop_bold_wl_geom": {"ink_crop": True, "bold": True, "fix_minus_bug": True, "use_whitelist": True, "geom_sup_rescue": True},
+    "V0_raw":          ("Base",          {}),
+    "B1_bold_deu_p7":  ("Anchor",        B1),
+    "T1_no_dawg":      ("Eng:-dawg",     {**B1, "tess_cfg": {"load_system_dawg": "0", "load_freq_dawg": "0"}}),
+    "T2_low_dict_pen": ("Eng:pen=0.05",  {**B1, "tess_cfg": {"language_model_penalty_non_dict_word": "0.05", "language_model_penalty_non_freq_dict_word": "0.05"}}),
+    "T3_min_linesize": ("Eng:lsize=1.5", {**B1, "tess_cfg": {"textord_min_linesize": "1.5"}}),
+    "T4_keep_spaces":  ("Eng:spaces=1",  {**B1, "tess_cfg": {"preserve_interword_spaces": "1"}}),
+    "P1_scale_1.5":    ("Pre:scale=1.5", {**B1, "scale": 1.5}),
+    "P2_scale_2.0":    ("Pre:scale=2.0", {**B1, "scale": 2.0}),
+    "P3_no_bold":      ("Pre:bold=off",  {"ink_crop": True, "bold": False, "lang": "deu+eng", "psm": "7"}),
+    "E1_dpi_300":      ("Eng:dpi=300",   {**B1, "dpi": "300"}),
+    "E2_psm_6":        ("Eng:psm=6",     {**B1, "psm": "6"}),
+    "E3_psm_13":       ("Eng:psm=13",    {**B1, "psm": "13"}),
 }
 
 
-def query_vlm(model: str, png_path: Path) -> str:
-    payload = json.dumps({
-        "model": model, "prompt": VLM_PROMPT, "stream": False, "options": {"temperature": 0},
-        "images": [base64.b64encode(png_path.read_bytes()).decode("ascii")],
-    }).encode("utf-8")
-    req = urllib.request.Request(OLLAMA_URL, data=payload, headers={"Content-Type": "application/json"})
-    with urllib.request.urlopen(req, timeout=120) as resp:
-        return (json.loads(resp.read().decode("utf-8")).get("response") or "").strip()
+def _render_real_page(task: tuple[Path, Path]) -> Path | None:
+    rm_path, png_out = task
+    if png_out.is_file():
+        return png_out
+    with tempfile.TemporaryDirectory() as td:
+        svg = Path(td) / "p.svg"
+        try:
+            subprocess.run(["rmc", "-t", "svg", str(rm_path), "-o", str(svg)], check=True, capture_output=True)
+            subprocess.run(["rsvg-convert", "-b", "white", "-z", "2", str(svg), "-o", str(png_out)], check=True, capture_output=True)
+        except subprocess.CalledProcessError:
+            return None
+    return png_out
 
 
-def prepare_real_val(real_dir: Path, vlm_model: str) -> list[tuple[Path, str, str]]:
-    rend_dir, line_dir = real_dir / "rendered", real_dir / "lines"
+def prepare_real_corpus(target_lines: int, max_per_nb: int, seed: int, vlm_model: str, workers: int) -> list[tuple[Path, str, str, str]]:
+    corpus_dir = BASE_DIR / "data" / "real_corpus"
+    manifest = corpus_dir / "manifest.tsv"
+    if not manifest.is_file():
+        print("Hinweis: data/real_corpus/manifest.tsv fehlt — nutze Fallback data/real_val/")
+        manifest_rows = [("01_ocr_p01", "Ocr", str(p)) for p in sorted((BASE_DIR / "data" / "real_val").glob("*.rm"))]
+        work_dir = BASE_DIR / "data" / "real_val"
+    else:
+        lines = manifest.read_text(encoding="utf-8").splitlines()[1:]
+        manifest_rows = [(p[0], p[1], str(corpus_dir / "rm" / p[5])) for line in lines if (p := line.split("\t"))]
+        work_dir = corpus_dir
+
+    rend_dir, line_dir = work_dir / "rendered", work_dir / "lines"
     rend_dir.mkdir(parents=True, exist_ok=True)
     line_dir.mkdir(parents=True, exist_ok=True)
-    cache_path = real_dir / "vlm_cache.json"
+    cache_path = work_dir / "vlm_cache.json"
     cache = json.loads(cache_path.read_text(encoding="utf-8")) if cache_path.is_file() else {}
 
-    for rm in sorted(real_dir.glob("*.rm")):
-        svg, png = rend_dir / f"{rm.stem}.svg", rend_dir / f"{rm.stem}.png"
-        subprocess.run(["rmc", "-t", "svg", str(rm), "-o", str(svg)], check=True, capture_output=True)
-        subprocess.run(["rsvg-convert", "-b", "white", "-z", "2", str(svg), "-o", str(png)], check=True, capture_output=True)
-        for idx, chunk in enumerate(ocr_pipeline.split_lines(Image.open(png).convert("L")), start=1):
-            chunk.save(line_dir / f"{rm.stem}_line{idx:02d}.png")
+    by_nb = collections.defaultdict(list)
+    for pid, nb, rm_p in manifest_rows:
+        by_nb[nb].append((pid, nb, Path(rm_p)))
+    rng = random.Random(seed)
+    nb_keys = list(by_nb.keys())
+    rng.shuffle(nb_keys)
+    for k in nb_keys:
+        rng.shuffle(by_nb[k])
 
-    items = []
-    for lp in sorted(line_dir.glob("*.png")):
-        gt_file = lp.with_suffix(".gt.txt")
-        if gt_file.is_file():
-            target, src = gt_file.read_text(encoding="utf-8").strip(), "human"
-        else:
-            key = f"{hashlib.sha256(lp.read_bytes()).hexdigest()}:{vlm_model}"
-            if key not in cache:
-                cache[key] = query_vlm(vlm_model, lp)
-                cache_path.write_text(json.dumps(cache, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-            target, src = cache[key], vlm_model
-        print(f"Real Val | {lp.name} [{src}] -> {target!r}")
-        items.append((lp, target, src))
+    ordered = []
+    for i in range(max((len(v) for v in by_nb.values()), default=0)):
+        for k in nb_keys:
+            if i < len(by_nb[k]):
+                ordered.append(by_nb[k][i])
+
+    items, seen_lp, per_nb = [], set(), collections.Counter()
+    with OllamaClient() as vlm:
+        for cap in (max_per_nb, max_per_nb + 1, max_per_nb + 3):
+            for i in range(0, len(ordered), max(1, workers)):
+                if len(items) >= target_lines:
+                    break
+                batch = [x for x in ordered[i : i + max(1, workers)] if per_nb[x[1]] < cap]
+                if not batch:
+                    continue
+                with concurrent.futures.ProcessPoolExecutor(max_workers=workers) as pool:
+                    pngs = list(pool.map(_render_real_page, [(rm_p, rend_dir / f"{pid}.png") for pid, _, rm_p in batch]))
+                for (pid, nb, _), page_png in zip(batch, pngs):
+                    if page_png is None or len(items) >= target_lines or per_nb[nb] >= cap:
+                        continue
+                    gray = Image.open(page_png).convert("L")
+                    for lidx, chunk in enumerate(pre.split_lines(gray), start=1):
+                        if len(items) >= target_lines or per_nb[nb] >= cap:
+                            break
+                        if chunk.width < 80 or not (20 <= chunk.height <= 200) or chunk.width >= gray.width:
+                            continue
+                        lp = line_dir / f"{pid}_l{lidx:02d}.png"
+                        if lp in seen_lp:
+                            continue
+                        if not lp.is_file():
+                            chunk.save(lp)
+                        key = f"{hashlib.sha256(lp.read_bytes()).hexdigest()}:{vlm_model}"
+                        if key not in cache:
+                            cache[key] = vlm.query(vlm_model, lp, VLM_PROMPT)
+                            cache_path.write_text(json.dumps(cache, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+                        target = cache[key].strip()
+                        if not target or len(target) > 120 or "```" in target or sum(ch.isalnum() for ch in target) < 3:
+                            continue
+                        seen_lp.add(lp)
+                        per_nb[nb] += 1
+                        items.append((lp, target, vlm_model, nb))
+                        print(f"Real [{len(items):02d}/{target_lines}] {nb[:20]:20s} | {lp.name} -> {target!r}")
     return items
 
 
-def gate_label(d_synth: float, d_real: float, is_base: bool) -> str:
-    if is_base:
-        return "BASELINE"
-    if d_synth > 0 and d_real >= 0:
-        return "KEEP"
-    if d_real > 0 and d_synth >= -1.0:
-        return "REAL_WIN"
-    if d_synth > 0 and d_real < 0:
+def gate_label(vname: str, d_synth: float, d_dev: float, d_hold: float) -> str:
+    if vname == "V0_raw":
+        return "BASE"
+    if vname == "B1_bold_deu_p7":
+        return "ANCHOR"
+    if d_dev > 0.3 and d_hold < -0.3:
         return "OVERFIT"
+    if d_synth > 0.5 and (d_dev + d_hold) / 2 < -0.5:
+        return "OVERFIT"
+    if d_hold > 0.2 and d_dev >= -0.5:
+        return "KEEP"
+    if d_dev > 0.3 and d_hold >= 0.0:
+        return "KEEP"
     return "DISCARD"
 
 
-def _eval_cached(task: tuple[Path, str, int, str, dict]) -> tuple[str, int, bool, list[str]]:
+def _eval_cached(task: tuple[Path, str, int, str, dict]) -> tuple[str, int, bool, bool, list[str]]:
     png_path, cid, level, gt, cfg = task
-    pred = ocr_pipeline.run(png_path, cfg)
-    gn, pn = ocr_pipeline.norm(gt), ocr_pipeline.norm(pred)
-    ok = gn == pn
-    return cid, level, ok, [] if ok else ocr_pipeline.diff_tags(gn, pn)
+    res = ocr_pipeline.run_detailed(png_path, cfg)
+    gn = ocr_pipeline.norm(gt)
+    pr, pf = ocr_pipeline.norm(res["raw"]), ocr_pipeline.norm(res["final"])
+    return cid, level, gn == pr, gn == pf, [] if gn == pf else ocr_pipeline.diff_tags(gn, pf)
+
+
+def _eval_real_line(task: tuple[Path, str, dict]) -> tuple[str, str, float, float]:
+    lp, tgt, cfg = task
+    res = ocr_pipeline.run_detailed(lp, cfg)
+    return res["raw"], res["final"], ocr_pipeline.accuracy(tgt, res["raw"]) * 100.0, ocr_pipeline.accuracy(tgt, res["final"]) * 100.0
 
 
 def _eval_stress(task: tuple[str, int, int, int, int, str, str]) -> dict:
@@ -93,7 +156,7 @@ def _eval_stress(task: tuple[str, int, int, int, int, str, str]) -> dict:
     with tempfile.TemporaryDirectory() as td:
         png = Path(td) / "p.png"
         synth.render_rm_png(draw_txt, png, x0=x0, seed=rm_seed)
-        pred = ocr_pipeline.run(png, VARIANTS[vname])
+        pred = ocr_pipeline.run(png, VARIANTS[vname][1])
         gn, pn = ocr_pipeline.norm(gt), ocr_pipeline.norm(pred)
         ok = gn == pn
         return {
@@ -103,69 +166,72 @@ def _eval_stress(task: tuple[str, int, int, int, int, str, str]) -> dict:
 
 
 def run_dual(args: argparse.Namespace) -> Path:
-    real_items = prepare_real_val(BASE_DIR / "data" / "real_val", args.vlm)
+    real_items = prepare_real_corpus(args.real_lines, args.max_per_nb, args.seed, args.vlm, args.workers)
     bench_dir = BASE_DIR / "data" / f"bench_s{args.seed}_n{args.n}"
     out_dir = BASE_DIR / "data" / "dual"
     out_dir.mkdir(parents=True, exist_ok=True)
     synth_rows = synth.ensure_dataset(bench_dir, args.n, args.seed, args.workers)
-    print()
 
-    results, base_ok, base_synth, base_real = [], {}, None, None
+    seen_nbs = list(dict.fromkeys(x[3] for x in real_items))
+    cut_nb = max(1, int(round(len(seen_nbs) * 0.6)))
+    dev_nbs = set(seen_nbs[:cut_nb])
+    is_dev = [x[3] in dev_nbs for x in real_items]
+    n_dev, n_hold = sum(is_dev), len(is_dev) - sum(is_dev)
+    print(f"\nDual Sweep: Synth n={len(synth_rows)} | Real={len(real_items)} Zeilen across {len(seen_nbs)} Notizbücher (Dev={n_dev} / Holdout={n_hold})\n")
+
+    raw_rows = []
     with concurrent.futures.ProcessPoolExecutor(max_workers=args.workers) as pool:
-        for vname, cfg in VARIANTS.items():
+        for vname, (stage, cfg) in VARIANTS.items():
             t0 = time.perf_counter()
-            tasks = [(bench_dir / f"{cid}.png", cid, lvl, gt, cfg) for cid, lvl, _, gt in synth_rows]
-            ok_map, lvl_ok, lvl_n, errs = {}, {1: 0, 2: 0, 3: 0, 4: 0}, {1: 0, 2: 0, 3: 0, 4: 0}, collections.Counter()
-            for cid, lvl, ok, tags in pool.map(_eval_cached, tasks, chunksize=16):
-                ok_map[cid], lvl_n[lvl] = ok, lvl_n[lvl] + 1
-                if ok:
-                    lvl_ok[lvl] += 1
-                else:
-                    errs.update(tags)
+            s_res = list(pool.map(_eval_cached, [(bench_dir / f"{cid}.png", cid, lvl, gt, cfg) for cid, lvl, _, gt in synth_rows], chunksize=16))
+            r_res = list(pool.map(_eval_real_line, [(lp, tgt, cfg) for lp, tgt, _, _ in real_items]))
             elapsed = time.perf_counter() - t0
-            synth_pct = 100.0 * sum(ok_map.values()) / len(synth_rows)
-            real_preds = [(lp, tgt, src, ocr_pipeline.run(lp, cfg)) for lp, tgt, src in real_items]
-            real_accs = [ocr_pipeline.real_accuracy(tgt, pred) * 100.0 for _, tgt, _, pred in real_preds]
-            real_acc = sum(real_accs) / max(1, len(real_accs))
-            if not base_ok:
-                base_ok, base_synth, base_real = ok_map, synth_pct, real_acc
-            fixed = sum(1 for cid in ok_map if not base_ok[cid] and ok_map[cid])
-            regr = sum(1 for cid in ok_map if base_ok[cid] and not ok_map[cid])
-            d_synth, d_real = synth_pct - base_synth, real_acc - base_real
-            gate = gate_label(d_synth, d_real, vname == "V0_baseline")
-            lp = [100 * lvl_ok[l] / max(1, lvl_n[l]) for l in (1, 2, 3, 4)]
-            top3 = ", ".join(f"{t} ({c}x)" for t, c in errs.most_common(3)) or "none"
-            print(f"{vname:22s} | Synth={synth_pct:5.1f}% ({d_synth:+5.1f}pp +{fixed}/-{regr}) | L1={lp[0]:.1f} L2={lp[1]:.1f} L3={lp[2]:.1f} L4={lp[3]:.1f} | Real={real_acc:5.1f}% ({d_real:+5.1f}pp) | {gate:8s} | {elapsed:.1f}s")
-            results.append({"name": vname, "synth_pct": synth_pct, "d_synth": d_synth, "fixed": fixed, "regr": regr, "lp": lp,
-                            "real_acc": real_acc, "d_real": d_real, "gate": gate, "elapsed": elapsed, "top3": top3, "real_preds": real_preds, "real_accs": real_accs})
+            synth_pct = 100.0 * sum(r[3] for r in s_res) / len(s_res)
+            dev_accs = [r[3] for r, d in zip(r_res, is_dev) if d]
+            hold_accs = [r[3] for r, d in zip(r_res, is_dev) if not d]
+            dev_pct = sum(dev_accs) / max(1, len(dev_accs))
+            hold_pct = sum(hold_accs) / max(1, len(hold_accs))
+            all_pct = sum(r[3] for r in r_res) / max(1, len(r_res))
+            raw_rows.append({"name": vname, "stage": stage, "synth": synth_pct, "dev": dev_pct, "hold": hold_pct, "all": all_pct, "elapsed": elapsed, "r_res": r_res})
+
+    b1 = next(r for r in raw_rows if r["name"] == "B1_bold_deu_p7")
+    results = []
+    for r in raw_rows:
+        d_synth, d_dev, d_hold, d_all = r["synth"] - b1["synth"], r["dev"] - b1["dev"], r["hold"] - b1["hold"], r["all"] - b1["all"]
+        gate = gate_label(r["name"], d_synth, d_dev, d_hold)
+        print(f"{r['name']:16s} [{r['stage']:13s}] | Synth={r['synth']:5.1f}% | Dev={r['dev']:5.1f}% | Hold={r['hold']:5.1f}% | Real={r['all']:5.1f}% ({d_all:+5.1f}pp vs B1) | {gate:7s} | {r['elapsed']:.1f}s")
+        results.append({**r, "d_synth": d_synth, "d_dev": d_dev, "d_hold": d_hold, "d_all": d_all, "gate": gate})
 
     (out_dir / "dual_results.tsv").write_text(
-        "variant\tsynth_pct\td_synth\tfixed\tregressed\tL1\tL2\tL3\tL4\treal_acc\td_real\tgate\tsec\ttop3\n"
-        + "".join(f"{r['name']}\t{r['synth_pct']:.1f}\t{r['d_synth']:+.1f}\t{r['fixed']}\t{r['regr']}\t{r['lp'][0]:.1f}\t{r['lp'][1]:.1f}\t{r['lp'][2]:.1f}\t{r['lp'][3]:.1f}\t{r['real_acc']:.1f}\t{r['d_real']:+.1f}\t{r['gate']}\t{r['elapsed']:.1f}\t{r['top3']}\n" for r in results),
+        "variant\tstage\tsynth_pct\treal_dev\treal_holdout\treal_all\td_vs_b1\tgate\tsec\n"
+        + "".join(f"{r['name']}\t{r['stage']}\t{r['synth']:.1f}\t{r['dev']:.1f}\t{r['hold']:.1f}\t{r['all']:.1f}\t{r['d_all']:+.1f}\t{r['gate']}\t{r['elapsed']:.1f}\n" for r in results),
         encoding="utf-8",
     )
-    best, base = max(results, key=lambda r: (round(r["real_acc"], 6), round(r["synth_pct"], 6))), results[0]
+    best = max(results, key=lambda r: (round(r["hold"], 6), round(r["all"], 6)))
     lb = "".join(
-        f"<tr><td><strong>{html.escape(r['name'])}</strong></td><td>{r['synth_pct']:.1f}%</td><td>{r['d_synth']:+.1f}pp (+{r['fixed']}/-{r['regr']})</td>"
-        f"<td>{r['lp'][0]:.0f}/{r['lp'][1]:.0f}/{r['lp'][2]:.0f}/{r['lp'][3]:.0f}%</td><td><strong>{r['real_acc']:.1f}%</strong></td><td>{r['d_real']:+.1f}pp</td>"
-        f"<td class='{r['gate'].lower()}'>{r['gate']}</td><td>{r['elapsed']:.1f}s</td><td><code>{html.escape(r['top3'])}</code></td></tr>"
+        f"<tr><td><strong>{html.escape(r['name'])}</strong></td><td><code>{html.escape(r['stage'])}</code></td>"
+        f"<td>{r['synth']:.1f}%</td><td>{r['dev']:.1f}%</td><td><strong>{r['hold']:.1f}%</strong></td>"
+        f"<td><strong>{r['all']:.1f}%</strong></td><td>{r['d_all']:+.1f}pp</td>"
+        f"<td class='{r['gate'].lower()}'>{r['gate']}</td><td>{r['elapsed']:.1f}s</td></tr>"
         for r in results
     )
     cards = "".join(
-        f"<tr><td>{html.escape(lp.name)}</td><td><img src='../real_val/lines/{html.escape(lp.name)}'></td><td><code>{html.escape(tgt)}</code></td>"
-        f"<td><code>{html.escape(base['real_preds'][i][3])}</code> <small>({base['real_accs'][i]:.1f}%)</small></td>"
-        f"<td><code>{html.escape(best['real_preds'][i][3])}</code> <small>({best['real_accs'][i]:.1f}%)</small></td></tr>"
-        for i, (lp, tgt, _, _) in enumerate(best["real_preds"])
+        f"<tr><td><strong>{html.escape(nb)}</strong><br><small>{'DEV' if is_dev[i] else 'HOLDOUT'} · {html.escape(lp.name)}</small></td>"
+        f"<td><img src='{html.escape(os.path.relpath(lp, out_dir))}'></td><td><code>{html.escape(tgt)}</code></td>"
+        f"<td><code>{html.escape(raw_rows[0]['r_res'][i][1])}</code> <small>({raw_rows[0]['r_res'][i][3]:.1f}%)</small></td>"
+        f"<td><code>{html.escape(best['r_res'][i][1])}</code> <small>({best['r_res'][i][3]:.1f}%)</small></td></tr>"
+        for i, (lp, tgt, _, nb) in enumerate(real_items[:25])
     )
     html_path = out_dir / "dual_report.html"
     html_path.write_text(
-        "<!doctype html><meta charset='utf-8'><title>Dual CPU+GPU OCR Flywheel</title>"
+        "<!doctype html><meta charset='utf-8'><title>Tesseract Handwriting Ceiling</title>"
         "<style>body{font-family:sans-serif;background:#111;color:#eee;padding:20px}table{border-collapse:collapse;width:100%;margin-bottom:22px}"
         "th,td{border:1px solid #333;padding:7px 10px;text-align:left}img{height:44px;background:#fff;padding:3px}small{color:#94a3b8}"
-        ".keep,.real_win{color:#4ade80;font-weight:700}.overfit{color:#f59e0b;font-weight:700}.discard{color:#f87171}</style>"
-        f"<h1>Dual-Track Flywheel: CPU Synth (n={args.n}) + Real (.rm, VLM={html.escape(args.vlm)})</h1>"
-        f"<table><tr><th>Variante</th><th>Synth</th><th>Δ Synth</th><th>L1/L2/L3/L4</th><th>Real Acc</th><th>Δ Real</th><th>Gate</th><th>Zeit</th><th>Top 3 Fehler</th></tr>{lb}</table>"
-        f"<h2>Echte Handschrift-Zeilen: V0 vs. {html.escape(best['name'])}</h2><table><tr><th>Zeile</th><th>Bild</th><th>VLM Target</th><th>V0</th><th>{html.escape(best['name'])}</th></tr>{cards}</table>",
+        ".keep{color:#4ade80;font-weight:700}.anchor{color:#38bdf8;font-weight:700}.overfit{color:#f59e0b;font-weight:700}.discard{color:#f87171}</style>"
+        f"<h1>Tesseract Ceiling Sweep ({len(real_items)} Zeilen aus {len(seen_nbs)} Notizbüchern | Dev={n_dev} / Holdout={n_hold})</h1>"
+        f"<table><tr><th>Variante</th><th>Parameter</th><th>Synth %</th><th>Real Dev</th><th>Real Holdout</th><th>Real Gesamt</th><th>Δ vs B1</th><th>Gate</th><th>Zeit</th></tr>{lb}</table>"
+        f"<h2>Samples: V0_raw vs. {html.escape(best['name'])}</h2>"
+        f"<table><tr><th>Notizbuch</th><th>Bild</th><th>VLM Target</th><th>V0_raw</th><th>{html.escape(best['name'])}</th></tr>{cards}</table>",
         encoding="utf-8",
     )
     print(f"\nTSV:  {out_dir / 'dual_results.tsv'}\nHTML: {html_path}")
@@ -178,22 +244,6 @@ def run_stress(args: argparse.Namespace) -> Path:
     fail_dir.mkdir(parents=True, exist_ok=True)
     for old in fail_dir.glob("*.png"):
         old.unlink()
-
-    def write_stress_html(total: int, passed: int, lvl_ok: dict, lvl_n: dict, errs: collections.Counter, fails: list[dict], cps: float) -> Path:
-        lvl_cells = "".join(f"<td>L{l}: {lvl_ok[l]}/{lvl_n[l]} ({100*lvl_ok[l]/max(1,lvl_n[l]):.1f}%)</td>" for l in (1, 2, 3, 4))
-        err_rows = "".join(f"<tr><td><code>{html.escape(t)}</code></td><td>{c}</td></tr>" for t, c in errs.most_common(10))
-        fail_rows = "".join(f"<tr><td>#{f['idx']}</td><td>L{f['level']}</td><td><img src='fails/{html.escape(f['img'])}'></td><td><code>{html.escape(f['gt'])}</code></td><td><code>{html.escape(f['pred'])}</code></td></tr>" for f in fails)
-        p = out_dir / "stress.html"
-        p.write_text(
-            "<!doctype html><meta charset='utf-8'><title>Stress OCR</title><style>body{font-family:sans-serif;background:#111;color:#eee;padding:20px}"
-            "table{border-collapse:collapse;width:100%;margin-bottom:20px}th,td{border:1px solid #333;padding:6px 10px;text-align:left}img{height:52px;background:#fff;padding:2px}</style>"
-            f"<h1>Stress Test — <code>{html.escape(args.variant)}</code></h1><p><strong>{passed}/{total} ({100*passed/max(1,total):.1f}%)</strong> | {cps:.1f} cases/s</p>"
-            f"<table><tr>{lvl_cells}</tr></table><table><tr><th>Diff</th><th>Count</th></tr>{err_rows or '<tr><td colspan=2>0 Fehler!</td></tr>'}</table>"
-            f"<table><tr><th>#</th><th>Lvl</th><th>Bild</th><th>GT</th><th>OCR</th></tr>{fail_rows}</table>",
-            encoding="utf-8",
-        )
-        return p
-
     rng, lvl_ok, lvl_n = random.Random(args.seed), {1: 0, 2: 0, 3: 0, 4: 0}, {1: 0, 2: 0, 3: 0, 4: 0}
     errs, fails, total, passed, idx, t0 = collections.Counter(), [], 0, 0, 0, time.perf_counter()
     with concurrent.futures.ProcessPoolExecutor(max_workers=args.workers) as pool:
@@ -214,17 +264,18 @@ def run_stress(args: argparse.Namespace) -> Path:
                             fails.append({**res, "img": name})
                 cps = total / max(0.01, time.perf_counter() - t0)
                 print(f"[{total}] {passed}/{total} ({100*passed/total:5.1f}%) | {cps:4.1f} cases/s | top={errs.most_common(1)}")
-                write_stress_html(total, passed, lvl_ok, lvl_n, errs, fails, cps)
         except KeyboardInterrupt:
-            print("\nGestoppt per Ctrl+C — Zwischenstand gespeichert.")
-    cps = total / max(0.01, time.perf_counter() - t0)
-    html_path = write_stress_html(total, passed, lvl_ok, lvl_n, errs, fails, cps)
-    lp = [100 * lvl_ok[l] / max(1, lvl_n[l]) for l in (1, 2, 3, 4)]
-    tsv = out_dir / "runs_stress.tsv"
-    if not tsv.is_file():
-        tsv.write_text("strategy\tn\tpassed\tpct\tL1\tL2\tL3\tL4\tcps\ttop_error\n", encoding="utf-8")
-    with tsv.open("a", encoding="utf-8") as fh:
-        fh.write(f"{args.variant}\t{total}\t{passed}\t{100*passed/max(1,total):.1f}\t{lp[0]:.1f}\t{lp[1]:.1f}\t{lp[2]:.1f}\t{lp[3]:.1f}\t{cps:.1f}\t{errs.most_common(1)[0][0] if errs else 'none'}\n")
+            print("\nGestoppt per Ctrl+C.")
+    html_path = out_dir / "stress.html"
+    fail_rows = "".join(f"<tr><td>#{f['idx']}</td><td>L{f['level']}</td><td><img src='fails/{html.escape(f['img'])}'></td><td><code>{html.escape(f['gt'])}</code></td><td><code>{html.escape(f['pred'])}</code></td></tr>" for f in fails)
+    err_rows = "".join(f"<tr><td><code>{html.escape(t)}</code></td><td>{c}</td></tr>" for t, c in errs.most_common(10))
+    html_path.write_text(
+        "<!doctype html><meta charset='utf-8'><title>Stress OCR</title><style>body{font-family:sans-serif;background:#111;color:#eee;padding:20px}"
+        "table{border-collapse:collapse;width:100%;margin-bottom:20px}th,td{border:1px solid #333;padding:6px 10px;text-align:left}img{height:52px;background:#fff;padding:2px}</style>"
+        f"<h1>Stress — {html.escape(args.variant)}: {passed}/{total} ({100*passed/max(1,total):.1f}%)</h1>"
+        f"<table><tr><th>Diff</th><th>Count</th></tr>{err_rows}</table><table><tr><th>#</th><th>Lvl</th><th>Bild</th><th>GT</th><th>OCR</th></tr>{fail_rows}</table>",
+        encoding="utf-8",
+    )
     print(f"Fertig: {passed}/{total} ({100*passed/max(1,total):.1f}%) | HTML: {html_path}")
     return html_path
 
@@ -232,11 +283,13 @@ def run_stress(args: argparse.Namespace) -> Path:
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--mode", choices=["dual", "stress"], default="dual")
-    ap.add_argument("--n", type=int, default=100)
+    ap.add_argument("--n", type=int, default=200)
+    ap.add_argument("--real-lines", type=int, default=40)
+    ap.add_argument("--max-per-nb", type=int, default=1)
     ap.add_argument("--seed", type=int, default=1)
     ap.add_argument("--workers", type=int, default=12)
     ap.add_argument("--vlm", default="glm-ocr:q8_0")
-    ap.add_argument("--variant", default="V5_crop_bold_wl_geom", choices=list(VARIANTS))
+    ap.add_argument("--variant", default="B1_bold_deu_p7", choices=list(VARIANTS))
     ap.add_argument("--forever", action="store_true")
     ap.add_argument("--open", action="store_true")
     args = ap.parse_args()
