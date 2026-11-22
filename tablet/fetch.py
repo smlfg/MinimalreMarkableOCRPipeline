@@ -3,13 +3,16 @@
 
 import json
 from pathlib import Path
+import re
 import subprocess
 import sys
 
 PIPELINE_VERSION = "0.1.0"
 SSH_HOST = "remarkable-usb"
 XOCHITL_DIR = "/home/root/.local/share/remarkable/xochitl"
+BASE_DIR = Path(__file__).resolve().parent.parent
 RUNONCE = Path(__file__).resolve().parent / "runonce.sh"
+DATA_DIR = BASE_DIR / "data" / "real_val"
 
 print(f"MinimalreMarkableOCRPipeline v{PIPELINE_VERSION}")
 
@@ -99,14 +102,14 @@ while True:
         )
 
     books.sort(key=lambda b: b["last_modified"], reverse=True)
-    top_books = books[:3]
+    top_books = books[:5]
 
     if not top_books:
         print("\nKeine aktiven Notizbücher auf dem reMarkable gefunden.")
         sys.exit(1)
 
     # 3. Benutzer wählt ein Notizbuch
-    print("\nZuletzt geänderte Notizbücher (Top 3):")
+    print("\nZuletzt geänderte Notizbücher (Top 5):")
     for idx, book in enumerate(top_books, start=1):
         print(f"  {idx}. {book['name']} ({len(book['pages'])} Seiten, UUID {book['uuid'][:8]}...)")
 
@@ -166,17 +169,21 @@ while True:
         )
         continue
 
-    # 6. runonce.sh für USB -> PNG ausführen
-    print(f"\nHole Seite {page_choice} ({page_uuid}) aus '{selected_book['name']}' -> page.png\n")
+    # 6. runonce.sh für USB -> PNG in data/real_val/ ausführen
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    safe_name = re.sub(r"[^a-z0-9]+", "_", selected_book["name"].lower()).strip("_") or "notebook"
+    out_prefix = str(DATA_DIR / f"{safe_name}_p{int(page_choice):02d}")
+
+    print(f"\nHole Seite {page_choice} ({page_uuid}) aus '{selected_book['name']}' -> {out_prefix}.png\n")
     run_proc = subprocess.run(
-        [str(RUNONCE), doc_uuid, page_uuid, "page"],
+        [str(RUNONCE), doc_uuid, page_uuid, out_prefix],
         stdin=subprocess.DEVNULL,
         check=False,
     )
     if run_proc.returncode != 0:
         print(f"\nrunonce.sh fehlgeschlagen (Exit-Code {run_proc.returncode}).")
     else:
-        print("\npage.png ist bereit. Weiter mit: ./ocr.sh page.png")
+        print(f"\n{out_prefix}.png ist bereit. Weiter mit: ./tablet/ocr.sh {out_prefix}.png  oder  python3 bench/flywheel.py --open")
 
     # 7. Weitere Seite holen?
     try:
