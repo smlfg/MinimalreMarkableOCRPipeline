@@ -3,5 +3,7 @@
 *.png
 *.txt
 data/
+.venv_wave2/
+ocr/vision_ocr
 __pycache__/
 .DS_Store
