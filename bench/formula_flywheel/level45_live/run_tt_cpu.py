@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT))
 
 from ocr.coherence import coherent, tt_postprocess  # noqa: E402
-from ocr.formula import TexTeller  # noqa: E402
+from ocr.formula import TexTeller, prepare_tt_input  # noqa: E402
 from ocr.latex import same  # noqa: E402
 import bench.structure_bench as sb  # noqa: E402
 from bench.formula_flywheel import prepare as fw_prepare  # noqa: E402
@@ -82,7 +82,12 @@ def run_suite(
 
     for row in rows:
         png = suite_dir / row["png"]
-        raw, dt_s = tt(str(png))
+        tt_path, tmp = prepare_tt_input(png)
+        try:
+            raw, dt_s = tt(tt_path)
+        finally:
+            if tmp is not None and tmp.is_file():
+                tmp.unlink(missing_ok=True)
         ms = dt_s * 1000.0
         lats.append(ms)
         pipe, repair = _pipe(raw)
