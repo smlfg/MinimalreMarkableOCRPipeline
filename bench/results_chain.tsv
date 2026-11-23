@@ -1,0 +1,3 @@
+zeit	pfad	n	F1_strict	F1_answered	abdeckung	nachfrage	nachfrage_berechtigt	acc_err	acc_ok	notiz
+2026-11-23T20:31	oracle	28	1.000	1.000	1.00	0.00	0	1.000	1.000	erster Orakel-Lauf
+2026-11-23T20:31	oracle	28	1.000	1.000	1.00	0.00	0	1.000	1.000	Orakel nach Tutor-Fix

@@ -1,17 +1,24 @@
 """Eigene Schrift messen: Striche vom Tablet -> Slot je Vorlage -> PNG -> pipeline -> Score gegen bekannte GT.
-Aufruf: python kalib_eval.py probe|uni   (holt Seiten frisch per scp)"""
+Aufruf: python kalib_eval.py probe|uni|ketten   (holt Seiten frisch per scp)"""
 import json, subprocess, sys
 from pathlib import Path
 import rmscene
 from rmscene import scene_items as si
 from PIL import Image, ImageDraw
 HERE = Path(__file__).resolve().parent; FW = HERE
-DOCS = {"probe": "8b8cfaa5-f013-462d-8391-9228906287f5", "uni": "406f242e-4844-4a85-a4d4-4ed2ca5f0db7"}
+DOCS = {"probe": "8b8cfaa5-f013-462d-8391-9228906287f5", "uni": "406f242e-4844-4a85-a4d4-4ed2ca5f0db7",
+        "ketten": None}  # ID eintragen, sobald Kalibrierung-Ketten.pdf auf dem Tablet liegt (ADR-009)
 XO = "/home/root/.local/share/remarkable/xochitl"
 PROJ = Path(__file__).resolve().parent / "kalib"  # versionierte GT der Kalibrierungsblätter
 
 def slots(sheet):
-    """[(nr, seite, y_oben, y_unten, gt)] in Seitenpixeln."""
+    """[(nr, seite, y_oben, y_unten, gt)] in Seitenpixeln; bei ketten ist nr = (kette, schritt)."""
+    if sheet == "ketten":
+        out = []
+        for c in map(json.loads, open(PROJ / "ketten" / "ketten_gt.jsonl")):
+            for sl in c["slots"]:
+                out.append(((c["id"], sl["step"]), sl["page"], sl["slot_y"][0], sl["slot_y"][1], c["steps"][sl["step"]]))
+        return out
     if sheet == "probe":
         gt = [json.loads(l) for l in open(PROJ / "kalib_gt.jsonl")]
         out = []
@@ -24,7 +31,9 @@ def slots(sheet):
     return [(r["nr"], (r["nr"] - 1) // 5, r["slot_y"][0] - 40, r["slot_y"][1] + 5, r["gt_latex"]) for r in gt]
 
 def fetch(sheet):
-    d = DOCS[sheet]; out = HERE / "own" / sheet; out.mkdir(parents=True, exist_ok=True)
+    d = DOCS[sheet]
+    if d is None:
+        sys.exit(f"{sheet}: Dokument-ID fehlt in DOCS (Blatt erst aufs Tablet laden)"); out = HERE / "own" / sheet; out.mkdir(parents=True, exist_ok=True)
     subprocess.run(["scp", "-q", f"remarkable-usb:{XO}/{d}.content", str(out)], check=True)
     subprocess.run(f"scp -q 'remarkable-usb:{XO}/{d}/*.rm' {out}/ 2>/dev/null", shell=True)
     c = json.load(open(out / f"{d}.content"))
@@ -49,9 +58,13 @@ if __name__ == "__main__":
     per_page = {i: strokes(rm) for i, rm in enumerate(rms)}
     rows = []; (HERE / "own" / sheet / "png").mkdir(exist_ok=True)
     for nr, p, ya, yb, gt in S:
-        sel = [s for s in per_page.get(p, []) if ya <= sum(y for _, y in s) / len(s) <= yb and (sheet != "probe" or sum(x for x, _ in s) / len(s) > 560)]
+        sel = [s for s in per_page.get(p, []) if ya <= sum(y for _, y in s) / len(s) <= yb and (sheet != "probe" or sum(x for x, _ in s) / len(s) > 560) and (sheet != "ketten" or sum(x for x, _ in s) / len(s) > 660)]
         if not sel: continue
-        png = HERE / "own" / sheet / "png" / f"{sheet}_{nr:02d}.png"; render(sel).save(png)
-        rows.append({"id": f"{sheet}_{nr:02d}", "src": sheet, "png": str(png.relative_to(FW)), "gt_latex": gt})
+        name = f"{sheet}_{nr[0]}_s{nr[1]}" if sheet == "ketten" else f"{sheet}_{nr:02d}"
+        png = HERE / "own" / sheet / "png" / f"{name}.png"; render(sel).save(png)
+        row = {"id": name, "src": sheet, "png": str(png.relative_to(FW)), "gt_latex": gt}
+        if sheet == "ketten":
+            row.update(chain_id=nr[0], step=nr[1])
+        rows.append(row)
     (FW / "data" / f"own_{sheet}.jsonl").write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows))
     print(sheet, "beschriebene Slots:", len(rows), "von", len(S))

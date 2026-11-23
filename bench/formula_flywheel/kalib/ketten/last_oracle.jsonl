@@ -1,0 +1,28 @@
+{"id": "K01", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "K02", "label": 1, "pred": 1, "status": ["correct", "incorrect", "incorrect"], "speak": "Zeile 2 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "K03", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "K04", "label": 1, "pred": 1, "status": ["correct", "incorrect", "incorrect"], "speak": "Zeile 2 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "K05", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "K06", "label": 2, "pred": 2, "status": ["correct", "correct", "incorrect"], "speak": "Zeile 3 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "K07", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "K08", "label": 3, "pred": 3, "status": ["correct", "correct", "correct", "incorrect"], "speak": "Zeile 4 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "K09", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "K10", "label": 1, "pred": 1, "status": ["correct", "incorrect", "incorrect"], "speak": "Zeile 2 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "K11", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "K12", "label": 1, "pred": 1, "status": ["correct", "incorrect", "incorrect"], "speak": "Zeile 2 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "K13", "label": -1, "pred": -1, "status": ["correct", "correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "K14", "label": 3, "pred": 3, "status": ["correct", "correct", "correct", "incorrect"], "speak": "Zeile 4 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "K15", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "K16", "label": 2, "pred": 2, "status": ["correct", "correct", "incorrect"], "speak": "Zeile 3 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "K17", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "K18", "label": 2, "pred": 2, "status": ["correct", "correct", "incorrect"], "speak": "Zeile 3 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "K19", "label": 1, "pred": 1, "status": ["correct", "incorrect", "incorrect"], "speak": "Zeile 2 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "K20", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "K21", "label": 1, "pred": 1, "status": ["correct", "incorrect", "correct"], "speak": "Zeile 2 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "K22", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "K23", "label": 2, "pred": 2, "status": ["correct", "correct", "incorrect"], "speak": "Zeile 3 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "K24", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "K25", "label": 3, "pred": 3, "status": ["correct", "correct", "correct", "incorrect"], "speak": "Zeile 4 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "K26", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "K27", "label": 1, "pred": 1, "status": ["correct", "incorrect", "correct"], "speak": "Zeile 2 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "K28", "label": 1, "pred": 1, "status": ["correct", "incorrect", "correct"], "speak": "Zeile 2 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
