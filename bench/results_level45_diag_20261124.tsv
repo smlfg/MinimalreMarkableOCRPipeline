@@ -1,0 +1,5 @@
+bucket	n	issue1_ok_rate	closed_truth_ok_rate	variant_agree_rate	corrupt_events
+integral	16	1.0000	1.0000	1.0000	0
+matrix	16	1.0000	1.0000		0
+special	16	1.0000	1.0000	0.6667	0
+trig	16	1.0000	1.0000	1.0000	0
