@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 import random
+from collections import defaultdict
 from pathlib import Path
 
 import matplotlib
@@ -13,47 +14,83 @@ import matplotlib.pyplot as plt
 ROOT = Path(__file__).resolve().parent
 CFG = json.loads((ROOT / "config.json").read_text())
 
+Spec = tuple[str, str, bool, str]  # template_id, gt_latex, math_correct, family
 
-def _build_specs(rng: random.Random) -> list[tuple[str, str, bool]]:
-    """Return (template_id, gt_latex, math_correct) — 60 unique structures."""
-    out: list[tuple[str, str, bool]] = []
+
+def _build_specs(rng: random.Random) -> list[Spec]:
+    """Return 60 unique (template_id, gt_latex, math_correct, family) rows."""
+    out: list[Spec] = []
     n = 0
 
-    def add(latex: str, ok: bool) -> None:
+    def add(latex: str, ok: bool, family: str) -> None:
         nonlocal n
         n += 1
-        out.append((f"T{n:03d}", latex, ok))
+        out.append((f"T{n:03d}", latex, ok, family))
 
     for a in (2, 3, 5):
         b = rng.randint(3, 9)
-        add(rf"\frac{{{a}}}{{{b}}}", True)
+        add(rf"\frac{{{a}}}{{{b}}}", True, "frac")
     for a in (2, 3, 4, 5):
         e = rng.randint(2, 4)
-        add(rf"{a}^{{{e}}}", True)
-        add(rf"{a}^{{{e}}}={a**e}", True)
-        add(rf"{a}^{{{e}}}={a**e + 1}", False)
+        add(rf"{a}^{{{e}}}", True, "power")
+        add(rf"{a}^{{{e}}}={a**e}", True, "power")
+        add(rf"{a}^{{{e}}}={a**e + 1}", False, "power")
     for a, b in ((7, 5), (8, 3), (9, 6), (11, 4)):
-        add(rf"{a}+{b}={a+b}", True)
-        add(rf"{a}+{b}={a+b+1}", False)
+        add(rf"{a}+{b}={a+b}", True, "add")
+        add(rf"{a}+{b}={a+b+1}", False, "add")
     for a in (4, 9, 16, 25):
         r = int(a**0.5)
-        add(rf"\sqrt{{{a}}}={r}", True)
+        add(rf"\sqrt{{{a}}}={r}", True, "sqrt")
     for a, b, c in ((3, 4, 12), (5, 6, 30), (2, 7, 14)):
-        add(rf"{a}\cdot{b}={c}", True)
-    add(r"0.5+0.5=1", True)
-    add(r"0.5\cdot 2=1", True)
-    add(r"3^{2}\cdot3^{3}=3^{5}", True)
-    add(r"3^{2}\cdot3^{3}=35", False)
-    add(r"2^{3}\cdot2^{2}=2^{5}", True)
-    add(r"2^{3}\cdot2^{2}=25", False)
-    add(r"\frac{1}{2}+\frac{1}{3}=\frac{5}{6}", True)
-    add(r"\frac{1}{2}+\frac{1}{3}=\frac{2}{5}", False)
+        add(rf"{a}\cdot{b}={c}", True, "cdot")
+    add(r"0.5+0.5=1", True, "decimal")
+    add(r"0.5\cdot 2=1", True, "decimal")
+    add(r"3^{2}\cdot3^{3}=3^{5}", True, "power_mul")
+    add(r"3^{2}\cdot3^{3}=35", False, "power_mul")
+    add(r"2^{3}\cdot2^{2}=2^{5}", True, "power_mul")
+    add(r"2^{3}\cdot2^{2}=25", False, "power_mul")
+    add(r"\frac{1}{2}+\frac{1}{3}=\frac{5}{6}", True, "frac_eq")
+    add(r"\frac{1}{2}+\frac{1}{3}=\frac{2}{5}", False, "frac_eq")
     for a, b, c in ((2, 3, 5), (4, 1, 3), (6, 2, 4)):
-        add(rf"({a}+{b})\cdot2={c}", (a + b) * 2 == c)
+        add(rf"({a}+{b})\cdot2={c}", (a + b) * 2 == c, "paren")
     while len(out) < 60:
         a, b = rng.randint(2, 11), rng.randint(2, 9)
-        add(rf"{a}-{b}={a-b}", True)
+        add(rf"{a}-{b}={a-b}", True, "sub")
     return out[:60]
+
+
+def _stratified_split(specs: list[Spec], n_train: int, n_dev: int, seed: int) -> dict[str, str]:
+    """Per-family ~2/3 train, 1/3 dev; then reconcile to exact n_train / n_dev."""
+    total = n_train + n_dev
+    by_fam: dict[str, list[Spec]] = defaultdict(list)
+    for spec in specs:
+        by_fam[spec[3]].append(spec)
+    split_rng = random.Random(seed)
+    train: list[Spec] = []
+    dev: list[Spec] = []
+    for fam in sorted(by_fam.keys()):
+        items = list(by_fam[fam])
+        split_rng.shuffle(items)
+        n = len(items)
+        n_dev_f = round(n * n_dev / total)
+        if n >= 2 and n_dev_f == 0:
+            n_dev_f = 1
+        if n_dev_f >= n:
+            n_dev_f = n - 1 if n > 1 else 0
+        train.extend(items[: n - n_dev_f])
+        dev.extend(items[n - n_dev_f :])
+    while len(train) > n_train:
+        dev.append(train.pop())
+    while len(train) < n_train and dev:
+        train.append(dev.pop(split_rng.randrange(len(dev))))
+    assign: dict[str, str] = {}
+    for spec in train:
+        assign[spec[0]] = "train"
+    for spec in dev:
+        assign[spec[0]] = "dev"
+    assert len(train) == n_train and len(dev) == n_dev
+    assert len(assign) == len(specs)
+    return assign
 
 
 def _render(latex: str, path: Path) -> None:
@@ -66,12 +103,14 @@ def _render(latex: str, path: Path) -> None:
 
 
 def main() -> None:
-    rng = random.Random(CFG["seed"])
+    seed = CFG["seed"]
+    rng = random.Random(seed)
     specs = _build_specs(rng)
     n_train, n_dev = CFG["n_train"], CFG["n_dev"]
+    assign = _stratified_split(specs, n_train, n_dev, seed)
     rows = []
-    for i, (tid, latex, mc) in enumerate(specs):
-        split = "train" if i < n_train else "dev"
+    for tid, latex, mc, family in specs:
+        split = assign[tid]
         rid = f"{split}_{tid}"
         rel = f"images/{rid}.png"
         _render(latex, ROOT / rel)
@@ -79,6 +118,7 @@ def main() -> None:
             "id": rid,
             "split": split,
             "template_id": tid,
+            "family": family,
             "gt_latex": latex,
             "math_correct": mc,
             "png": rel,

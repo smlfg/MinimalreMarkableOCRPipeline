@@ -25,8 +25,12 @@ def _load_dev():
 
 
 def _fused_corrupt(latex: str) -> str:
-    """Collapse single-digit powers to fused digits (TexTeller-style artefact)."""
-    return re.sub(r"(\d)\^\{(\d)\}", r"\1\2", latex)
+    """Flatten single-digit exponents on the RHS only (e.g. =3^{5} -> =35), not LHS factors."""
+    parts = latex.split("=")
+    if len(parts) < 2:
+        return latex
+    rhs = re.sub(r"(\d)\^\{(\d)\}", r"\1\2", parts[-1])
+    return "=".join(parts[:-1]) + "=" + rhs
 
 
 def _run(rows, label: str, tt_fn, glm_fn) -> None:

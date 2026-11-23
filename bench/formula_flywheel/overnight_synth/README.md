@@ -9,7 +9,7 @@ cd bench/formula_flywheel/overnight_synth
 PYTHONPATH=/workspace /workspace/.venv_structure/bin/python gen.py
 ```
 
-Reads `config.json` (seed, split sizes). Writes `train.jsonl`, `dev.jsonl`, and PNGs under `images/` (gitignored).
+Reads `config.json` (seed, split sizes). **Splits are stratified by structure family** (~2/3 train, 1/3 dev per family, seed 20261124). Writes `train.jsonl`, `dev.jsonl`, and PNGs under `images/` (gitignored).
 
 ## Fields (jsonl)
 

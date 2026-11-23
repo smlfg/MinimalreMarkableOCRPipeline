@@ -1,20 +1,20 @@
-{"id": "dev_T041", "split": "dev", "template_id": "T041", "gt_latex": "(6+2)\\cdot2=4", "math_correct": false, "png": "images/dev_T041.png"}
-{"id": "dev_T042", "split": "dev", "template_id": "T042", "gt_latex": "4-9=-5", "math_correct": true, "png": "images/dev_T042.png"}
-{"id": "dev_T043", "split": "dev", "template_id": "T043", "gt_latex": "9-4=5", "math_correct": true, "png": "images/dev_T043.png"}
-{"id": "dev_T044", "split": "dev", "template_id": "T044", "gt_latex": "9-8=1", "math_correct": true, "png": "images/dev_T044.png"}
-{"id": "dev_T045", "split": "dev", "template_id": "T045", "gt_latex": "11-5=6", "math_correct": true, "png": "images/dev_T045.png"}
-{"id": "dev_T046", "split": "dev", "template_id": "T046", "gt_latex": "3-2=1", "math_correct": true, "png": "images/dev_T046.png"}
-{"id": "dev_T047", "split": "dev", "template_id": "T047", "gt_latex": "11-2=9", "math_correct": true, "png": "images/dev_T047.png"}
-{"id": "dev_T048", "split": "dev", "template_id": "T048", "gt_latex": "4-9=-5", "math_correct": true, "png": "images/dev_T048.png"}
-{"id": "dev_T049", "split": "dev", "template_id": "T049", "gt_latex": "6-2=4", "math_correct": true, "png": "images/dev_T049.png"}
-{"id": "dev_T050", "split": "dev", "template_id": "T050", "gt_latex": "10-7=3", "math_correct": true, "png": "images/dev_T050.png"}
-{"id": "dev_T051", "split": "dev", "template_id": "T051", "gt_latex": "11-6=5", "math_correct": true, "png": "images/dev_T051.png"}
-{"id": "dev_T052", "split": "dev", "template_id": "T052", "gt_latex": "3-3=0", "math_correct": true, "png": "images/dev_T052.png"}
-{"id": "dev_T053", "split": "dev", "template_id": "T053", "gt_latex": "10-6=4", "math_correct": true, "png": "images/dev_T053.png"}
-{"id": "dev_T054", "split": "dev", "template_id": "T054", "gt_latex": "4-9=-5", "math_correct": true, "png": "images/dev_T054.png"}
-{"id": "dev_T055", "split": "dev", "template_id": "T055", "gt_latex": "10-7=3", "math_correct": true, "png": "images/dev_T055.png"}
-{"id": "dev_T056", "split": "dev", "template_id": "T056", "gt_latex": "5-6=-1", "math_correct": true, "png": "images/dev_T056.png"}
-{"id": "dev_T057", "split": "dev", "template_id": "T057", "gt_latex": "11-6=5", "math_correct": true, "png": "images/dev_T057.png"}
-{"id": "dev_T058", "split": "dev", "template_id": "T058", "gt_latex": "6-7=-1", "math_correct": true, "png": "images/dev_T058.png"}
-{"id": "dev_T059", "split": "dev", "template_id": "T059", "gt_latex": "11-4=7", "math_correct": true, "png": "images/dev_T059.png"}
-{"id": "dev_T060", "split": "dev", "template_id": "T060", "gt_latex": "10-7=3", "math_correct": true, "png": "images/dev_T060.png"}
+{"id": "dev_T002", "split": "dev", "template_id": "T002", "family": "frac", "gt_latex": "\\frac{3}{4}", "math_correct": true, "png": "images/dev_T002.png"}
+{"id": "dev_T004", "split": "dev", "template_id": "T004", "family": "power", "gt_latex": "2^{2}", "math_correct": true, "png": "images/dev_T004.png"}
+{"id": "dev_T006", "split": "dev", "template_id": "T006", "family": "power", "gt_latex": "2^{2}=5", "math_correct": false, "png": "images/dev_T006.png"}
+{"id": "dev_T012", "split": "dev", "template_id": "T012", "family": "power", "gt_latex": "4^{4}=257", "math_correct": false, "png": "images/dev_T012.png"}
+{"id": "dev_T013", "split": "dev", "template_id": "T013", "family": "power", "gt_latex": "5^{4}", "math_correct": true, "png": "images/dev_T013.png"}
+{"id": "dev_T016", "split": "dev", "template_id": "T016", "family": "add", "gt_latex": "7+5=12", "math_correct": true, "png": "images/dev_T016.png"}
+{"id": "dev_T018", "split": "dev", "template_id": "T018", "family": "add", "gt_latex": "8+3=11", "math_correct": true, "png": "images/dev_T018.png"}
+{"id": "dev_T021", "split": "dev", "template_id": "T021", "family": "add", "gt_latex": "9+6=16", "math_correct": false, "png": "images/dev_T021.png"}
+{"id": "dev_T025", "split": "dev", "template_id": "T025", "family": "sqrt", "gt_latex": "\\sqrt{9}=3", "math_correct": true, "png": "images/dev_T025.png"}
+{"id": "dev_T029", "split": "dev", "template_id": "T029", "family": "cdot", "gt_latex": "5\\cdot6=30", "math_correct": true, "png": "images/dev_T029.png"}
+{"id": "dev_T032", "split": "dev", "template_id": "T032", "family": "decimal", "gt_latex": "0.5\\cdot 2=1", "math_correct": true, "png": "images/dev_T032.png"}
+{"id": "dev_T033", "split": "dev", "template_id": "T033", "family": "power_mul", "gt_latex": "3^{2}\\cdot3^{3}=3^{5}", "math_correct": true, "png": "images/dev_T033.png"}
+{"id": "dev_T037", "split": "dev", "template_id": "T037", "family": "frac_eq", "gt_latex": "\\frac{1}{2}+\\frac{1}{3}=\\frac{5}{6}", "math_correct": true, "png": "images/dev_T037.png"}
+{"id": "dev_T041", "split": "dev", "template_id": "T041", "family": "paren", "gt_latex": "(6+2)\\cdot2=4", "math_correct": false, "png": "images/dev_T041.png"}
+{"id": "dev_T047", "split": "dev", "template_id": "T047", "family": "sub", "gt_latex": "11-2=9", "math_correct": true, "png": "images/dev_T047.png"}
+{"id": "dev_T049", "split": "dev", "template_id": "T049", "family": "sub", "gt_latex": "6-2=4", "math_correct": true, "png": "images/dev_T049.png"}
+{"id": "dev_T050", "split": "dev", "template_id": "T050", "family": "sub", "gt_latex": "10-7=3", "math_correct": true, "png": "images/dev_T050.png"}
+{"id": "dev_T054", "split": "dev", "template_id": "T054", "family": "sub", "gt_latex": "4-9=-5", "math_correct": true, "png": "images/dev_T054.png"}
+{"id": "dev_T058", "split": "dev", "template_id": "T058", "family": "sub", "gt_latex": "6-7=-1", "math_correct": true, "png": "images/dev_T058.png"}
+{"id": "dev_T059", "split": "dev", "template_id": "T059", "family": "sub", "gt_latex": "11-4=7", "math_correct": true, "png": "images/dev_T059.png"}
