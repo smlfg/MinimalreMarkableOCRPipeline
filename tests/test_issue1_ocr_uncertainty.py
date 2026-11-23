@@ -42,6 +42,7 @@ def test_both_agree_wrong_equation(tiny_png):
 def test_engines_disagree(tiny_png):
     r = recognize(tiny_png, tt_stub(r"7+5=13"), glm_stub(r"7+5=12"))
     assert r["uncertain"] is True
+    assert r["math_status"] is False
     assert r["latex"] == "7+5=13"
     assert r["alt"] == "7+5=12"
 

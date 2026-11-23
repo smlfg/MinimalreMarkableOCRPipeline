@@ -60,11 +60,11 @@ def _power_digit_cands(latex: str):
 
 
 def coherent(latex: str, second: str | None = None):
-    """-> (latex, repair|None, trusted). trusted: Zweitmeinung stützt die Lesart (ggf. nach
-    Artefakt-Normalisierung) oder korroboriert einen CONFUSE-Tausch. Ein Tausch OHNE Stütze
-    (nur closed_truth) bleibt wie bisher unsicher (ADR-007: nie still raten)."""
+    """-> (latex, repair|None, trusted). trusted ist OCR-Vertrauen, nicht mathematische
+    Korrektheit (Issue #1): ohne Zweitmeinung immer False; bei Übereinstimmung ohne Reparatur
+    True; jede Reparatur (auch GLM-korroboriert) False. closed_truth fließt nicht in trusted."""
     if second is None:
-        return latex, None, closed_truth(latex) is not False
+        return latex, None, False
     if agree(latex, second):
         return latex, None, True
     for pat, rep in CONFUSE:
@@ -74,10 +74,10 @@ def coherent(latex: str, second: str | None = None):
             if closed_truth(cand) is True and closed_truth(latex) is False:
                 return cand, f"{latex} -> {cand}", False
             if agree(cand, second):
-                return cand, f"{latex} -> {cand}", True
+                return cand, f"{latex} -> {cand}", False
     for cand in _power_digit_cands(latex):
         if agree(cand, second):
-            return cand, f"{latex} -> {cand}", True
+            return cand, f"{latex} -> {cand}", False
     return latex, None, False
 
 
