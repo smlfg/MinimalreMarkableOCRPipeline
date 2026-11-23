@@ -98,19 +98,19 @@ Cannot claim ≥99 % on **real handwriting** without kalib / flywheel PNGs in-re
 | torch | {'present': False} |
 | device | cpu (mps=False, ollama=False, texteller=False) |
 
-Suites: `structure_bench --selftest` → **PASS** (0.7126 s);
-`pytest tests/` → **PASS** (0.7757 s).
+Suites: `structure_bench --selftest` → **PASS** (0.6066 s);
+`pytest tests/` → **PASS** (0.7253 s).
 
 Latency columns are **recognize() wall time on CPU with stub engines**, not MPS OCR throughput.
 
 | Split | Scenario | n | struct | char | p50 ms | p95 ms | coverage | prec_certain | student_error_preserved |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|
-| dev | oracle | 20 | 100.0 % | 100.0 % | 3.6 | 20.8 | 100.0 % | 100.0 % | 100.0 % |
-| dev | fused_tt_glm_gt | 20 | 100.0 % | 100.0 % | 2.0 | 2.7 | 95.0 % | 100.0 % | 100.0 % |
+| dev | oracle | 20 | 100.0 % | 100.0 % | 3.7 | 20.3 | 100.0 % | 100.0 % | 100.0 % |
+| dev | fused_tt_glm_gt | 20 | 100.0 % | 100.0 % | 1.7 | 2.6 | 95.0 % | 100.0 % | 100.0 % |
 | dev | both_student_error | 20 | 100.0 % | 100.0 % | 1.7 | 2.6 | 100.0 % | 100.0 % | 100.0 % |
-| train | oracle | 40 | 100.0 % | 100.0 % | 2.1 | 5.4 | 100.0 % | 100.0 % | 100.0 % |
-| train | fused_tt_glm_gt | 40 | 100.0 % | 100.0 % | 1.8 | 3.1 | 97.5 % | 100.0 % | 100.0 % |
-| train | both_student_error | 40 | 100.0 % | 100.0 % | 1.8 | 3.3 | 100.0 % | 100.0 % | 100.0 % |
+| train | oracle | 40 | 100.0 % | 100.0 % | 1.9 | 5.0 | 100.0 % | 100.0 % | 100.0 % |
+| train | fused_tt_glm_gt | 40 | 100.0 % | 100.0 % | 1.7 | 3.1 | 97.5 % | 100.0 % | 100.0 % |
+| train | both_student_error | 40 | 100.0 % | 100.0 % | 1.7 | 3.2 | 100.0 % | 100.0 % | 100.0 % |
 
 Logs: `bench/results_cpu_overnight_20261124.json`, `bench/results_cpu_overnight_20261124.tsv`.
 

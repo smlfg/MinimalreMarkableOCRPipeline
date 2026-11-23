@@ -269,11 +269,8 @@ def append_tsv(hw: dict, suites: list[dict], metrics: list[dict]) -> None:
             f"{m['struct']:.4f}\t{m['char']:.4f}\t{m['p50_latency_ms']:.3f}\t{m['p95_latency_ms']:.3f}\t"
             f"{m['coverage']:.4f}\t{m['prec_certain']:.4f}\t{sep_s}"
         )
-    header_block = not RESULT_TSV.exists()
-    with RESULT_TSV.open("a" if RESULT_TSV.exists() else "w") as f:
-        if header_block and not RESULT_TSV.exists():
-            pass
-        f.write("\n".join(lines) + "\n")
+    # Overwrite (not append): each run is a complete, comparable snapshot for this VM.
+    RESULT_TSV.write_text("\n".join(lines) + "\n")
 
 
 def update_doc(hw: dict, suites: list[dict], metrics: list[dict]) -> None:

@@ -1,11 +1,11 @@
 zeit	host	cpu	nproc	mem_gib	mps	ollama	texteller	suite	ok	wall_s	note
 2026-11-23T23:23	cpu_vm	Intel(R) Xeon(R) Processor	4	15.63	False	False	False	hardware_fingerprint	-	-	device=cpu
-2026-11-23T23:23	cpu_vm	-	-	-	-	-	-	structure_bench --selftest	True	0.7126	returncode=0
-2026-11-23T23:23	cpu_vm	-	-	-	-	-	-	pytest tests/ (Issue #1 + power-digit)	True	0.7757	returncode=0
+2026-11-23T23:23	cpu_vm	-	-	-	-	-	-	structure_bench --selftest	True	0.6066	returncode=0
+2026-11-23T23:23	cpu_vm	-	-	-	-	-	-	pytest tests/ (Issue #1 + power-digit)	True	0.7253	returncode=0
 zeit	host	split	scenario	engine	n	struct	char	p50_ms	p95_ms	coverage	prec_certain	student_error_preserved
-2026-11-23T23:23	cpu_vm	dev	oracle	stub_injected	20	1.0000	1.0000	3.564	20.772	1.0000	1.0000	1.0000
-2026-11-23T23:23	cpu_vm	dev	fused_tt_glm_gt	stub_injected	20	1.0000	1.0000	1.991	2.679	0.9500	1.0000	1.0000
-2026-11-23T23:23	cpu_vm	dev	both_student_error	stub_injected	20	1.0000	1.0000	1.719	2.612	1.0000	1.0000	1.0000
-2026-11-23T23:23	cpu_vm	train	oracle	stub_injected	40	1.0000	1.0000	2.104	5.440	1.0000	1.0000	1.0000
-2026-11-23T23:23	cpu_vm	train	fused_tt_glm_gt	stub_injected	40	1.0000	1.0000	1.840	3.077	0.9750	1.0000	1.0000
-2026-11-23T23:23	cpu_vm	train	both_student_error	stub_injected	40	1.0000	1.0000	1.808	3.253	1.0000	1.0000	1.0000
+2026-11-23T23:23	cpu_vm	dev	oracle	stub_injected	20	1.0000	1.0000	3.739	20.293	1.0000	1.0000	1.0000
+2026-11-23T23:23	cpu_vm	dev	fused_tt_glm_gt	stub_injected	20	1.0000	1.0000	1.737	2.585	0.9500	1.0000	1.0000
+2026-11-23T23:23	cpu_vm	dev	both_student_error	stub_injected	20	1.0000	1.0000	1.682	2.566	1.0000	1.0000	1.0000
+2026-11-23T23:23	cpu_vm	train	oracle	stub_injected	40	1.0000	1.0000	1.931	5.042	1.0000	1.0000	1.0000
+2026-11-23T23:23	cpu_vm	train	fused_tt_glm_gt	stub_injected	40	1.0000	1.0000	1.735	3.092	0.9750	1.0000	1.0000
+2026-11-23T23:23	cpu_vm	train	both_student_error	stub_injected	40	1.0000	1.0000	1.739	3.212	1.0000	1.0000	1.0000
