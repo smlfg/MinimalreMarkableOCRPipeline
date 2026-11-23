@@ -1,0 +1,20 @@
+[
+  {
+    "id": "dev_T041",
+    "bucket": "unknown",
+    "split": "dev",
+    "math_correct": false,
+    "gt_latex": "(6+2)\\cdot2=4",
+    "raw_latex": "\\text{($6$}+2\\text{)}\\cdot 2=4",
+    "pipe_latex": "\\text{($6$}+2\\text{)}\\cdot 2=4",
+    "repair": null,
+    "tt_ms": 613.7,
+    "raw_same": false,
+    "raw_sympy": false,
+    "pipe_same": false,
+    "pipe_sympy": false,
+    "cer_raw": 0.64,
+    "cer_pipe": 0.64,
+    "student_error_preserved": false
+  }
+]
