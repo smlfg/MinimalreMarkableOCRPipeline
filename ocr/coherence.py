@@ -25,18 +25,44 @@ def closed_truth(latex: str):
         return None
 
 
+def variants(second: str) -> list[str]:
+    """Artefakt-Interpretationen einer Zweitmeinung. GLM-Artefakte: Leerzeichen zwischen
+    Ziffern (zerrissene Zahl '2 5' oder verschluckter Operator '3 3') und Punkt/Gedankenstrich
+    statt Malpunkt ('3. 1 0'). Im deutschen Schulkontext ist ein Punkt zwischen Ziffern primaer
+    ein Malpunkt (Dezimalzeichen ist das Komma), deshalb als Variante, nie als Ersatz."""
+    num = re.sub(r"(?<=\d) (?=\d)", "", second)
+    mul = re.sub(r"(?<=\d) (?=\d)", r"\\cdot ", second)
+    dot = re.sub(r"(?<=\d)[.\-] ?(?=\d)", r"\\cdot ", second)
+    both = re.sub(r"(?<=\d) (?=\d)", "", dot)
+    vs = [second]
+    for v in (num, mul, dot, both):
+        if v != second and v not in vs:
+            vs.append(v)
+    return vs
+
+
+def agree(latex: str, second: str) -> bool:
+    """True, wenn die Lesart semantisch mit der Zweitmeinung (inkl. Artefakt-Interpretationen) übereinstimmt."""
+    return any(same(latex, v) for v in variants(second))
+
+
 def coherent(latex: str, second: str | None = None):
-    """-> (latex, repair|None). Tausch nur, wenn die Kette wahr wird oder (Buchstabe) die Zweitmeinung ihn stützt."""
-    if closed_truth(latex) is not False:
-        return latex, None
+    """-> (latex, repair|None, trusted). trusted: Zweitmeinung stützt die Lesart (ggf. nach
+    Artefakt-Normalisierung) oder korroboriert einen CONFUSE-Tausch. Ein Tausch OHNE Stütze
+    (nur closed_truth) bleibt wie bisher unsicher (ADR-007: nie still raten)."""
+    if second is None:
+        return latex, None, closed_truth(latex) is not False
+    if agree(latex, second):
+        return latex, None, True
     for pat, rep in CONFUSE:
         rx = pat if pat.startswith(("(", "\\")) else re.escape(pat)
         for m in re.finditer(rx, latex):
             cand = latex[:m.start()] + m.expand(rep) + latex[m.end():]
-            t = closed_truth(cand)
-            if t is True or (t is None and second is not None and same(cand, second)):
-                return cand, f"{latex} -> {cand}"
-    return latex, None
+            if closed_truth(cand) is True and closed_truth(latex) is False:
+                return cand, f"{latex} -> {cand}", False
+            if agree(cand, second):
+                return cand, f"{latex} -> {cand}", True
+    return latex, None, False
 
 
 def decimal_comma(latex: str) -> str:

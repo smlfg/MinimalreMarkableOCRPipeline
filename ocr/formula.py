@@ -54,9 +54,10 @@ def recognize(path, tt, glm=glm_live) -> dict:
     fg = _POOL.submit(glm, to_height(Image.open(path)))    # daher ist cost_s = max der beiden
     (t, st), (g, sg) = ft.result(), fg.result()
     t = decimal_comma(t)
-    fixed, repair = coherent(t, g)
+    fixed, repair, trusted = coherent(t, g)
     return {"latex": fixed, "repair": repair, "cost_s": max(st, sg),
-            "uncertain": repair is not None or not same(t, g) or closed_truth(fixed) is False}
+            "uncertain": not trusted or closed_truth(fixed) is False,
+            "alt": None if trusted else g}
 
 
 if __name__ == "__main__":

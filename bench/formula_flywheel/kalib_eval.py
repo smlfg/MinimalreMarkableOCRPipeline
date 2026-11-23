@@ -7,7 +7,7 @@ from rmscene import scene_items as si
 from PIL import Image, ImageDraw
 HERE = Path(__file__).resolve().parent; FW = HERE
 DOCS = {"probe": "8b8cfaa5-f013-462d-8391-9228906287f5", "uni": "406f242e-4844-4a85-a4d4-4ed2ca5f0db7",
-        "ketten": "0efa3a28-b060-43e9-a2a8-819abd7797a6"}  # Kalibrierung-Ketten.pdf (ADR-009)
+        "ketten": "8a5fc918-e5db-43e1-973f-4235c3ef3008"}  # Kalibrierung-Ketten.pdf, frisch hochgeladen (ADR-009)
 XO = "/home/root/.local/share/remarkable/xochitl"
 PROJ = Path(__file__).resolve().parent / "kalib"  # versionierte GT der Kalibrierungsblätter
 
@@ -18,7 +18,15 @@ def slots(sheet):
         for c in map(json.loads, open(PROJ / "ketten" / "ketten_gt.jsonl")):
             for sl in c["slots"]:
                 out.append(((c["id"], sl["step"]), sl["page"], sl["slot_y"][0], sl["slot_y"][1], c["steps"][sl["step"]]))
-        return out
+        # Bänder nach oben öffnen: hohe Zeichen (Exponent, Bruchzähler) sitzen in echter
+        # Handschrift über der Bandgrenze (K01/K11) und wurden sonst beim Rendern abgeschnitten.
+        # Öffnung nur bis 4 px unter den Slot davor, Erstslot einer Seite bis y=120.
+        out.sort(key=lambda r: (r[2], r[3]))
+        opened, prev = [], {}
+        for nr, p, ya, yb, gt in out:
+            ya2 = max((prev[p][1] + 4) if p in prev else 120, ya - 90)
+            opened.append((nr, p, ya2, yb, gt)); prev[p] = (ya2, yb)
+        return opened
     if sheet == "probe":
         gt = [json.loads(l) for l in open(PROJ / "kalib_gt.jsonl")]
         out = []

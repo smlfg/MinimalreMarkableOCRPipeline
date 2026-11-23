@@ -1,3 +1,14 @@
 zeit	pfad	n	F1_strict	F1_answered	abdeckung	nachfrage	nachfrage_berechtigt	acc_err	acc_ok	notiz
 2026-11-23T20:31	oracle	28	1.000	1.000	1.00	0.00	0	1.000	1.000	erster Orakel-Lauf
 2026-11-23T20:31	oracle	28	1.000	1.000	1.00	0.00	0	1.000	1.000	Orakel nach Tutor-Fix
+2026-11-23T21:15	real	28	0.143	1.000	0.14	0.86	24	0.133	0.154	seite1 real, K01s1 ueber messfenster
+2026-11-23T21:16	real	28	0.242	0.857	0.29	0.71	19	0.200	0.308	seite1+2 real, K01s1 ueber messfenster
+2026-11-23T21:19	real	28	0.320	0.816	0.39	0.61	15	0.333	0.308	seite1-3 real, K01s1 ueber messfenster
+2026-11-23T21:29	real	28	0.464	1.000	0.46	0.54	14	0.467	0.462	1-3 pipeline v2: bandoeffnung + artefaktnormalisierung + korroborierter repair
+2026-11-23T21:31	real	28	0.500	1.000	0.50	0.50	14	0.467	0.538	1-3 pipeline v3: + kettenkonsistenz-arbitrierung ( bestaetigt, nie ueberschreibt )
+2026-11-23T21:33	real	28	0.822	0.957	0.86	0.14	4	0.800	0.846	validierung seite 4+5 (ungesehen), pipeline v3 eingefroren
+2026-11-23T21:38	real	28	0.857	1.000	0.86	0.14	4	0.800	0.923	seite 5 erneut: K24 handschrift korrigiert
+2026-11-23T21:39	real	28	0.857	1.000	0.86	0.14	4	0.800	0.923	seite 6: komplettes blatt, alle 28 ketten
+2026-11-23T21:42	real	28	0.966	1.000	0.96	0.04	1	0.933	1.000	seite 6 nachgeholt: komplettes blatt, alle 28 ketten
+2026-11-23T21:43	synth_oracle	47	1.000	1.000	1.00	0.00	0	1.000	1.000	
+2026-11-23T21:44	real	28	1.000	1.000	1.00	0.00	0	1.000	1.000	seite 6 komplett: implizite gleichheit + kombinierte glm-artefakte
