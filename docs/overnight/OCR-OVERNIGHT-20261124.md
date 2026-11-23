@@ -291,21 +291,23 @@ Artifacts: `bench/results_pass4_l45_baseline_dev.json`, `bench/results_pass4_ove
 |---:|---|:---:|---:|---:|---:|:---:|
 | 0 | baseline | — | 0.625 | 0.111 | 0.950 | 43/43 |
 | 1 | `tt_render_artifacts` (`\mbox{\Large$\int$}` → `\int`, `\tfrac`) | **KEEP** | 0.694 | 0.111 | 0.950 | 43/43 |
-| 2 | `texttt_artifacts` row breaks (`\backslash \backslash`, `\}\{=`, `@`→`&`) | **KEEP** | **0.750** | **0.333** | 0.950 | 43/43 |
+| 2 | `texttt_artifacts` row breaks (`\backslash \backslash`, `\}\{=`, `@`→`&`) | **KEEP** | 0.750 | 0.333 | 0.950 | 43/43 |
+| 3 | `\text{sin|cos|…}` → `\sin` etc. (`tt_render_artifacts`) | **KEEP** | **0.764** | 0.944 | 0.950 | 44/44 |
+| 4 | single-cell `\begin{array}` unwrap | **KEEP** | **0.778** | 0.333 | 0.950 | 45/45 |
 
 Iter log: `bench/results_pass4_l45_iters.tsv`.
 
-**Deferred / REVERT:** `G`→`&` matrix fusion, `\text{sin}` stripping, larger gen pad (needs full TT re-infer) — insufficient evidence or Issue #1 risk.
+**Deferred / REVERT:** `G`→`&` matrix fusion, `\bigl{(}` / `\text{(}` paren fixes, larger gen pad (needs full TT re-infer), `Re/Im` mbox — insufficient evidence or Issue #1 risk.
 
 ### After Pass 4 (final pipe, dev re-score)
 
 | bucket | pipe_sympy |
 |---|---:|
-| integral | 0.944 |
+| integral | **1.000** |
 | matrix | 0.333 |
-| trig | 0.778 |
+| trig | 0.833 |
 | special | 0.944 |
-| **all** | **0.750** |
+| **all** | **0.778** (56/72) |
 
 ### Holdout (n=36, final pipe re-score — not used for keep/revert)
 
@@ -322,13 +324,14 @@ Iter log: `bench/results_pass4_l45_iters.tsv`.
 1. `feat(bench): scaled Level4-5 live TT suite (dev+holdout)`
 2. `chore(bench): Pass4 live TT CPU baseline on Level4-5 + overnight_synth`
 3. `fix(ocr): tt_render mbox integral + matrix row break artifacts (Pass4)`
+4. `fix(ocr): map TT text{sin,cos,...} to backslash macros (Pass4 E3)`
+5. `fix(ocr): unwrap single-cell TT array wrapper (Pass4 E4)`
 
-### Remaining failures (dev, pipe_sympy)
+### Remaining failures (dev, pipe_sympy — 16 rows)
 
 - **Matrix (12):** fused digits (`162`, `10060…`), `G` vs `&`, garbled env names (`peatrlx`, `bmatrixx`), `\operatorname` mbox spam — no safe postprocess without inventing `&`.
-- **Trig (4):** TT emits `\text{sin}` / `\bigl{(}` / `\left\langle` — needs model or guarded `\text{…}`→`\…` rules.
-- **Integral (1):** TT wraps line in `\begin{array}`.
-- **Special (1):** `Re(z)+Im(z)` mbox italic artifact.
+- **Trig (3):** `\bigl{(}` / `\text{(}` / `\left\langle` mangling beyond `\text{sin}` fix (e.g. L45L_067, L45L_073, L45L_080).
+- **Special (1):** `Re(z)+Im(z)` mbox italic artifact (L45L_085).
 
 Reproduce:
 
