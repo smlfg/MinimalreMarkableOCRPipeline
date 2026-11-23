@@ -15,3 +15,5 @@ bench/formula_flywheel/own/
 bench/formula_flywheel/synth/images/
 bench/formula_flywheel/last_*.jsonl
 bench/formula_flywheel/results.tsv
+.archify/
+graphify-out/
