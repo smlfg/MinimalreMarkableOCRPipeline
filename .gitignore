@@ -17,3 +17,4 @@ bench/formula_flywheel/last_*.jsonl
 bench/formula_flywheel/results.tsv
 .archify/
 graphify-out/
+bench/live_stack/pngs*/

@@ -1,0 +1,11 @@
+{
+ "n": 28,
+ "korrekte_ketten": 13,
+ "fehler_ketten": 15,
+ "getroffen": 7,
+ "verpasst": 6,
+ "falsche_anschuldigung": 9,
+ "acc_err": 0.467,
+ "acc_ok": 0.462,
+ "dauer_s": 208.7
+}
