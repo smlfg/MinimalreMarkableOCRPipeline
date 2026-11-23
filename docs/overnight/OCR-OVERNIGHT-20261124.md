@@ -36,9 +36,16 @@ From `bench/formula_flywheel/results_2026-11-23.tsv` and README:
 **Location:** `bench/formula_flywheel/overnight_synth/`
 
 - `config.json` — seed `20261124`, n_train=40, n_dev=20, matplotlib mathtext
-- `gen.py` — reproducible formulas + PNGs under `images/` (gitignored)
-- `train.jsonl`, `dev.jsonl` — committed
+- `gen.py` — reproducible formulas + PNGs under `images/` (gitignored); stratified by structure family; unique `gt_latex` across splits
+- `train.jsonl`, `dev.jsonl` — committed (train wrong=10, dev wrong=4; both have frac/power/sqrt/cdot/decimal)
 - `eval_stub.py` — oracle 100 % struct on dev; fused-digit TT stub + GLM=gt 100 % struct (repair path)
+
+## Stop conditions (why no further OCR loops)
+
+- Real kalib / flywheel PNGs and live TexTeller+Ollama absent on this CPU VM → cannot remeasure primary `sympy_equal` on independent handwriting.
+- Coherence on foreign `dev` was already saturated (~89.6 % across prior keeps in `results_2026-11-23.tsv`).
+- Further struct gains need live engines + owner ink, not more postprocessing speculation.
+- Target ≥99 % on real handwriting remains **unproven** here; synthetic results are wiring/safety evidence only.
 
 ## Rejected / deferred
 
