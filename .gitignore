@@ -7,3 +7,12 @@ data/
 ocr/vision_ocr
 __pycache__/
 .DS_Store
+.venv_structure/
+.venv_tt/
+bench/formula_flywheel/cache.sqlite
+bench/formula_flywheel/images/
+bench/formula_flywheel/data/
+bench/formula_flywheel/own/
+bench/formula_flywheel/synth/images/
+bench/formula_flywheel/last_*.jsonl
+bench/formula_flywheel/results.tsv

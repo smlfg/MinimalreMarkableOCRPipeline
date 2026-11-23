@@ -1,0 +1,24 @@
+commit	split	struct	char	p95_s	coverage	prec_certain	struct_mw	struct_crohme	description
+0ee3760	dev	0.7270	0.9401	0.21	1.000	0.7270	0.749	0.653	baseline glm h128
+e5f2999	dev	0.8681	0.9430	0.32	1.000	0.8681	0.849	0.933	texteller allein
+e5f2999	dev	0.7270	0.9401	0.21	1.000	0.7270	0.749	0.653	baseline glm h128 (metrik v2)
+e5f2999	dev	0.8957	0.9721	0.32	1.000	0.8957	0.884	0.933	texteller allein (metrik v2)
+16e7573	dev	0.8957	0.9721	0.32	0.730	0.9370	0.884	0.933	tt + glm-einigkeit = sicher
+16e7573	synth	0.7800	0.9682	9.59	0.810	0.9012	0.000	0.000	tt+glm auf synth (Schlange-Generator)
+6b4c235	synth	0.8800	0.9723	9.59	0.730	1.0000	0.000	0.000	kohaerenz-schicht (synth)
+6b4c235	dev	0.8926	0.9720	0.32	0.727	0.9367	0.880	0.933	kohaerenz-schicht (dev)
+2f1d408	synth	0.8600	0.9795	9.59	0.810	0.9012	0.000	0.000	kohaerenz streng (synth)
+2f1d408	dev	0.8957	0.9721	0.32	0.730	0.9370	0.884	0.933	kohaerenz streng (dev)
+e30d8f5	synth	0.8600	0.9795	9.59	0.730	1.0000	0.000	0.000	falsche zahlengl. unsicher (synth)
+e30d8f5	dev	0.8957	0.9721	0.32	0.727	0.9367	0.884	0.933	falsche zahlengl. unsicher (dev)
+e30d8f5	own_probe	0.7000	0.9181	0.23	0.700	0.8571	0.000	0.000	EIGENE SCHRIFT probe s1
+c329e8f	own_probe	0.8000	0.9306	0.23	0.800	0.8750	0.000	0.000	dezimalkomma (own_probe)
+c329e8f	synth	0.8600	0.9795	9.59	0.730	1.0000	0.000	0.000	dezimalkomma (synth)
+c329e8f	dev	0.8957	0.9721	0.32	0.727	0.9367	0.884	0.933	dezimalkomma (dev)
+c329e8f	own_probe	0.8000	0.9306	0.23	0.800	0.8750	0.000	0.000	EIGENE SCHRIFT probe komplett
+c329e8f	own_probe	0.8500	0.9427	0.23	0.900	0.8889	0.000	0.000	EIGENE SCHRIFT probe S1+S2
+c329e8f	own_probe	0.8000	0.9177	0.23	0.833	0.9200	0.000	0.000	EIGENE SCHRIFT probe S1-S3
+a1db534	own_probe	0.8667	0.9257	0.23	0.833	0.9200	0.000	0.000	malpunkt+prime (own_probe)
+a1db534	synth	0.9100	0.9866	9.59	0.730	1.0000	0.000	0.000	malpunkt+prime (synth)
+a1db534	dev	0.8957	0.9721	0.32	0.727	0.9367	0.884	0.933	malpunkt+prime (dev)
+a1db534	own_probe	0.9000	0.9339	0.23	0.850	0.9412	0.000	0.000	EIGENE SCHRIFT probe komplett 40

@@ -120,6 +120,13 @@ Ob das LLM mit dieser Fassung den Wahrheitswert richtig deutet, wird **getrennt*
 - **Struktur wird messbar:** B3 aus `order`, C1 aus `steps.sympy`, C2 aus `checks`. Die HPO kann damit auf Erkennung *und* Struktur optimieren statt nur auf Zeichen-Accuracy.
 - **Der Tutor-Benchmark ist entkoppelt.** Er braucht nur gültige Seiten-JSONs, keine laufende OCR. Er kann deshalb parallel zur Pipeline-Arbeit entstehen.
 
+## Nachtrag 23.11. (aus ADR-006/007/008)
+
+- **Neues Zeilenfeld `repair`:** `null` oder `"<vorher> -> <nachher>"`, wenn die Kohärenz-Schicht ein Verwechslungspaar getauscht hat. Eine reparierte Zeile ist immer `uncertain` (ADR-007).
+- **„Unsicher“ ist jetzt gemessen definiert:** TexTeller und GLM-OCR SymPy-ungleich, oder Reparatur, oder variablenfreie Gleichungskette falsch. Ersetzt den Vorschlag `top3_disagree` (Vision-Top-N spielt für Formeln keine Rolle mehr, ADR-006).
+- **Dezimalkomma:** `latex` enthält `0.5`, auch wenn `0,5` geschrieben wurde; in Mengen/Tupeln bleibt das Komma Trenner.
+- **Teilweise implementiert und gemessen:** Zeilen-`latex`, `uncertain`, `repair` in `bench/formula_flywheel/pipeline.py`. Seitenstruktur (`order`, `steps`, `checks`) weiter offen.
+
 ## Offen
 
 - **Welcher Validator ist kanonisch?** `arithmetic` kennt keine Variablen, `SymPyChecker` hat den Komma-Tupel-Fehler (ADR-004). Vorschlag zur Prüfung: `sympy.solveset` für Rechenketten, wie in `SchlangebeißtinSchwanz/eval_runs/upstream-mathverify/RESULT.md:10-16` (math-verify hat dort 3 von 7 Schrittpaaren falsch beurteilt).
@@ -128,4 +135,4 @@ Ob das LLM mit dieser Fassung den Wahrheitswert richtig deutet, wird **getrennt*
 - **Mehrzeilige Ausdrücke** (Bruch über zwei Zeilen, Nebenrechnung am Rand): `steps.from_lines` erlaubt mehrere Zeilen, aber wie man das zusammenführt, ist nicht entschieden.
 - **`schema_version`:** Erst nach der Analyse des echten Tutors von `0.1` auf `1.0` heben.
 
-**Hinweis:** Das Schema ist ein Vorschlag, kein Lernstand. Noch nichts davon ist implementiert oder gemessen.
+**Hinweis:** Das Seitenschema ist weiter ein Vorschlag. Implementiert und gemessen sind nur die Zeilenfelder aus dem Nachtrag.

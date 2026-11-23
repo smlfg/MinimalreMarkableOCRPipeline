@@ -76,6 +76,37 @@ python3 bench/live_arena.py                          # Live SSE UI auf http://12
 python3 -u bench/live_arena.py --once --synth-n 100  # Speichert data/arena/arena_latest.html + .tsv
 ```
 
+## Formel-OCR (Stand 23.11.2026)
+
+Für Mathe-Zeilen liest **TexTeller** (eigene venv `.venv_tt`), **GLM-OCR** ist Zweitmeinung, dahinter die **Kohärenz-Schicht** (ADR-007). Messen und Verbessern läuft im Flywheel nach karpathy/autoresearch:
+
+```text
+bench/formula_flywheel/
+├── program.md      # Regeln der Schleife (was eingefroren, was mutierbar)
+├── prepare.py      # EINGEFROREN: Splits train/dev/test/synth/own_*, Metriken
+├── models.py       # EINGEFROREN: Modellaufrufe + Cache (LaTeX + echte Sekunden)
+├── pipeline.py     # MUTIERBAR: recognize(png) -> latex, uncertain, repair
+├── run.py          # ein Experiment -> results.tsv
+├── tt_run.py       # TexTeller-Lauf (in .venv_tt) -> Cache
+├── kalib_eval.py   # Kalibrierungsblatt vom Tablet holen, Slots ausschneiden
+└── results_2026-11-23.tsv
+```
+
+| Split | Struktur | Zeichen | p95 |
+|---|---:|---:|---:|
+| eigene Schrift, Probeblatt (40) | 90 % | 93,4 % | 0,23 s |
+| dev, fremde Schulmathe (326) | 89,6 % | 97,2 % | 0,32 s |
+
+```bash
+cd bench/formula_flywheel
+../../.venv_structure/bin/python prepare.py build                 # Splits aus data/external
+python3 kalib_eval.py probe                                       # eigene Schrift holen
+../../.venv_tt/bin/python tt_run.py --files own/probe/png/*.png  # TexTeller -> Cache
+../../.venv_structure/bin/python run.py "beschreibung" own_probe  # messen
+```
+
+Entscheidungen: [ADR-006](docs/adr/ADR-006-ocr-backbone-formeln.md) (Backbone), [ADR-007](docs/adr/ADR-007-kohaerenz-und-unsicherheit.md) (Kohärenz/Unsicherheit), [ADR-008](docs/adr/ADR-008-evaluationsprotokoll-flywheel.md) (Evaluation/Flywheel). Kalibrierungsblätter: Generatoren und GT in `bench/formula_flywheel/kalib/` (Probeblatt `kalib_set.py`, Uni-Blatt `uni/items.py` mit Quellen aus der Klausur SS26); die PDFs liegen in `data/kalib/` (gitignored).
+
 Detaillierte Benchmarks und Architekturentscheidungen liegen kompakt in [docs/BENCHMARKS.md](docs/BENCHMARKS.md) und [docs/ADR.md](docs/ADR.md).
 
 ## Verifizierte Messwerte (2026-11-23, Apple M3 Max, `< 1000 ms/Zeile` Gate)

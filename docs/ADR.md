@@ -1,5 +1,7 @@
 # Architecture Decision Records (ADRs)
 
+> **Hinweis 23.11.2026:** Ausführliche ADRs liegen in [`docs/adr/`](adr/). Die Nummern dort sind eine **eigene Reihe** (ADR-001…008) und nicht identisch mit den Nummern auf dieser Seite. Für Formeln ist ADR-002 unten abgelöst durch [`adr/ADR-006`](adr/ADR-006-ocr-backbone-formeln.md) (TexTeller + GLM-OCR); Apple Vision bleibt für Fließtext.
+
 ## ADR-001: Strikte 3-Stufen-Trennung im OCR-Core
 - **Kontext:** Pre-Processing, OCR-Engine und Post-Processing vermischten Gewinne und Fehler; Effekte einzelner Änderungen waren nicht mehr isolierbar.
 - **Entscheidung:** Strikte Dreiteilung in `ocr/pre.py` (`Image -> Image`), `ocr/engine.py` (`Image -> Raw`) und `ocr/post.py` (`Raw -> Text + Metrik`), gebündelt in `ocr/pipeline.py` (`raw` + `final`).
