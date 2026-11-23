@@ -23,6 +23,30 @@ From `bench/formula_flywheel/results_2026-11-23.tsv` (best coherence-era rows on
 
 `uncertain` is OCR-confidence only (`not trusted` or `repair is not None`); `math_status` = `closed_truth(fixed)`. Any repair ⇒ `trusted=False` (even GLM-corroborated). Without a second opinion, `trusted=False` — `closed_truth` does not drive OCR trust. Student wrong equations with both engines agreeing stay wrong and `uncertain=False`.
 
+## Pass 2 Chunk A — x vs X variable case (measurement)
+
+**Verdict: REVERT** (no `ocr/latex.py` / `ocr/coherence.py` casefold rule).
+
+Cached kalib reads (`bench/formula_flywheel/kalib/ketten/last_real.jsonl`) vs `ketten_gt.jsonl`:
+
+| Metric | kalib (60 OCR steps) | synth (102 OCR steps) |
+|---|---:|---:|
+| Step pairs with x/X-only string diff (raw) | 3 | 0 |
+| x/X-only after `normalize` | 4 | 0 |
+| Those pairs with `ocr.latex.same` = True | 4 | 0 |
+| Those pairs with `ocr_hit` = True | 4 | 0 |
+| `same` fail where case is **only** issue | 0 | 0 |
+
+Affected kalib lines: **K01** (`3X=15`), **K06** (`5X=25` — step 3 `x=125` is intentional student error, never “fix”), **K09** (`(X-1)(X+7)=0`), **K13** (mixed `X`/`x` in one chain). Primary metric already treats x/X as equivalent via SymPy; `ocr_hit` already True.
+
+Reproduce:
+
+```bash
+PYTHONPATH=/workspace /workspace/.venv_structure/bin/python bench/formula_flywheel/analyze_cached_case.py
+```
+
+Artifact: `bench/formula_flywheel/analysis_case_xX_20261124.json`.
+
 ## Experiment 1 — fused exponent digits
 
 **Failure:** TexTeller reads fused exponent digits as flat numbers — `=3^{5}` → `=35` (S41/S43) and `=3^{9}` → `=39` (S34) in `bench/synth/last_synth_real.jsonl`.
