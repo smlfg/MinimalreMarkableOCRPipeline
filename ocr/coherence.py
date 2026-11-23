@@ -50,7 +50,7 @@ _POWER_DIGIT = re.compile(r"(?<![0-9{\\^_])(\d)(\d)(?!\d)")
 
 
 def _power_digit_cands(latex: str):
-    """Fusions-Artefakt: zwei Ziffern ohne Klammern evtl. als b^{e} lesen (nur mit GLM-Korrosion)."""
+    """Fusions-Artefakt: zwei Ziffern ohne Klammern evtl. als b^{e} lesen (nur mit GLM-Korroboration)."""
     seen = set()
     for m in _POWER_DIGIT.finditer(latex):
         cand = latex[:m.start()] + f"{m.group(1)}^{{{m.group(2)}}}" + latex[m.end():]

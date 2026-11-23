@@ -17,15 +17,20 @@ CFG = json.loads((ROOT / "config.json").read_text())
 Spec = tuple[str, str, bool, str]  # template_id, gt_latex, math_correct, family
 
 
-def _build_specs(rng: random.Random) -> list[Spec]:
-    """Return 60 unique (template_id, gt_latex, math_correct, family) rows."""
+def _build_specs(rng: random.Random, target: int) -> list[Spec]:
+    """Return `target` unique (template_id, gt_latex, math_correct, family) rows."""
     out: list[Spec] = []
+    seen_latex: set[str] = set()
     n = 0
 
-    def add(latex: str, ok: bool, family: str) -> None:
+    def add(latex: str, ok: bool, family: str) -> bool:
         nonlocal n
+        if latex in seen_latex:
+            return False
+        seen_latex.add(latex)
         n += 1
         out.append((f"T{n:03d}", latex, ok, family))
+        return True
 
     for a in (2, 3, 5):
         b = rng.randint(3, 9)
@@ -53,10 +58,15 @@ def _build_specs(rng: random.Random) -> list[Spec]:
     add(r"\frac{1}{2}+\frac{1}{3}=\frac{2}{5}", False, "frac_eq")
     for a, b, c in ((2, 3, 5), (4, 1, 3), (6, 2, 4)):
         add(rf"({a}+{b})\cdot2={c}", (a + b) * 2 == c, "paren")
-    while len(out) < 60:
+    attempts = 0
+    while len(out) < target:
+        attempts += 1
+        if attempts > 10000:
+            raise RuntimeError(f"could not build {target} unique specs (got {len(out)})")
         a, b = rng.randint(2, 11), rng.randint(2, 9)
         add(rf"{a}-{b}={a-b}", True, "sub")
-    return out[:60]
+    assert len({s[1] for s in out}) == len(out) == target
+    return out
 
 
 def _stratified_split(specs: list[Spec], n_train: int, n_dev: int, seed: int) -> dict[str, str]:
@@ -83,6 +93,8 @@ def _stratified_split(specs: list[Spec], n_train: int, n_dev: int, seed: int) ->
         dev.append(train.pop())
     while len(train) < n_train and dev:
         train.append(dev.pop(split_rng.randrange(len(dev))))
+    overlap = {s[1] for s in train} & {s[1] for s in dev}
+    assert not overlap, f"train/dev gt_latex overlap: {overlap}"
     assign: dict[str, str] = {}
     for spec in train:
         assign[spec[0]] = "train"
@@ -104,9 +116,9 @@ def _render(latex: str, path: Path) -> None:
 
 def main() -> None:
     seed = CFG["seed"]
-    rng = random.Random(seed)
-    specs = _build_specs(rng)
     n_train, n_dev = CFG["n_train"], CFG["n_dev"]
+    rng = random.Random(seed)
+    specs = _build_specs(rng, n_train + n_dev)
     assign = _stratified_split(specs, n_train, n_dev, seed)
     rows = []
     for tid, latex, mc, family in specs:
