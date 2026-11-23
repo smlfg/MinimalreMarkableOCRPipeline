@@ -47,6 +47,30 @@ PYTHONPATH=/workspace /workspace/.venv_structure/bin/python bench/formula_flywhe
 
 Artifact: `bench/formula_flywheel/analysis_case_xX_20261124.json`.
 
+## Pass 2 Chunk B — leading `=` on continuation lines (measurement)
+
+**Verdict: REVERT** (no OCR/coherence prepend-`=` rule).
+
+`chain_bench` sets `ocr_hit` via `same(read, gt_step)` (`ocr.latex.same` → normalize + SymPy), **not** raw string equality. Bare continuation terms without leading `=` parse as expressions; GT steps with `=` parse as equalities → `same` False even when ink is correct.
+
+Cached reads:
+
+| Metric | kalib (60 OCR steps) | synth (102 OCR steps) |
+|---|---:|---:|
+| `ocr_hit=False` | 3 | 27 |
+| Fail **only** missing/extra leading `=` (`sympy_same` True after align) | 3 | 0 |
+| `sympy` fail with other cause | 0 | 27 |
+
+Kalib: **K25** only — steps 2–4 read `3\cdot10+3\cdot7`, `30+21`, `41` vs GT `=…`; student **41** (not 51) preserved; validator uses implicit continuation (`validator_lines`).
+
+Reproduce:
+
+```bash
+PYTHONPATH=/workspace /workspace/.venv_structure/bin/python bench/formula_flywheel/analyze_cached_leading_eq.py
+```
+
+Artifact: `bench/formula_flywheel/analysis_leading_eq_20261124.json`.
+
 ## Experiment 1 — fused exponent digits
 
 **Failure:** TexTeller reads fused exponent digits as flat numbers — `=3^{5}` → `=35` (S41/S43) and `=3^{9}` → `=39` (S34) in `bench/synth/last_synth_real.jsonl`.
