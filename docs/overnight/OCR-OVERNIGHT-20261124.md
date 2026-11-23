@@ -83,3 +83,39 @@ PYTHONPATH=/workspace /workspace/.venv_structure/bin/python eval_stub.py
 ## Honest limitation
 
 Cannot claim ≥99 % on **real handwriting** without kalib / flywheel PNGs in-repo. Synthetic mathtext proves pipeline wiring only.
+
+## CPU benchmark (2026-11-24, this VM)
+
+**Hardware ≠ Mac MPS.** Live TexTeller/Ollama not used; `engine=stub_injected` on overnight_synth PNGs only.
+
+| Field | Value |
+|---|---|
+| Platform | Linux-6.12.113+-x86_64-with-glibc2.39 |
+| CPU | Intel(R) Xeon(R) Processor |
+| cores (`nproc`) | 4 |
+| RAM | 15.63 GiB |
+| Python | 3.12.3 |
+| torch | {'present': False} |
+| device | cpu (mps=False, ollama=False, texteller=False) |
+
+Suites: `structure_bench --selftest` → **PASS** (0.7126 s);
+`pytest tests/` → **PASS** (0.7757 s).
+
+Latency columns are **recognize() wall time on CPU with stub engines**, not MPS OCR throughput.
+
+| Split | Scenario | n | struct | char | p50 ms | p95 ms | coverage | prec_certain | student_error_preserved |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| dev | oracle | 20 | 100.0 % | 100.0 % | 3.6 | 20.8 | 100.0 % | 100.0 % | 100.0 % |
+| dev | fused_tt_glm_gt | 20 | 100.0 % | 100.0 % | 2.0 | 2.7 | 95.0 % | 100.0 % | 100.0 % |
+| dev | both_student_error | 20 | 100.0 % | 100.0 % | 1.7 | 2.6 | 100.0 % | 100.0 % | 100.0 % |
+| train | oracle | 40 | 100.0 % | 100.0 % | 2.1 | 5.4 | 100.0 % | 100.0 % | 100.0 % |
+| train | fused_tt_glm_gt | 40 | 100.0 % | 100.0 % | 1.8 | 3.1 | 97.5 % | 100.0 % | 100.0 % |
+| train | both_student_error | 40 | 100.0 % | 100.0 % | 1.8 | 3.3 | 100.0 % | 100.0 % | 100.0 % |
+
+Logs: `bench/results_cpu_overnight_20261124.json`, `bench/results_cpu_overnight_20261124.tsv`.
+
+Reproduce:
+
+```bash
+PYTHONPATH=/workspace /workspace/.venv_structure/bin/python bench/cpu_overnight_bench.py
+```
