@@ -8,7 +8,7 @@ from pathlib import Path
 
 from PIL import Image, ImageOps
 
-from ocr.coherence import closed_truth, coherent, decimal_comma
+from ocr.coherence import closed_truth, coherent, decimal_comma, integral_eq_artifact, texttt_artifacts
 from ocr.latex import same
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -55,7 +55,7 @@ def recognize(path, tt, glm=glm_live) -> dict:
     ft = _POOL.submit(tt, str(path))                       # TexTeller und GLM laufen wirklich parallel,
     fg = _POOL.submit(glm, to_height(Image.open(path)))    # daher ist cost_s = max der beiden
     (t, st), (g, sg) = ft.result(), fg.result()
-    t = decimal_comma(t)
+    t = integral_eq_artifact(texttt_artifacts(decimal_comma(t)))
     fixed, repair, trusted = coherent(t, g)
     uncertain = (not trusted) or (repair is not None)
     return {"latex": fixed, "repair": repair, "cost_s": max(st, sg),

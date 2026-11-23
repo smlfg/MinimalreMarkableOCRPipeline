@@ -169,6 +169,66 @@ PYTHONPATH=/workspace /workspace/.venv_structure/bin/python eval_stub.py
 
 Cannot claim ≥99 % on **real handwriting** without kalib / flywheel PNGs in-repo. Synthetic mathtext proves pipeline wiring only.
 
+## Pass 3 — Level 4–5 + TexTeller CPU (2026-11-24)
+
+Suite: `bench/formula_flywheel/level45/` (stratified dev sample, 12 formulas × 4 buckets).
+
+### TexTeller CPU feasibility
+
+**SUCCESS** after pinning `torch==2.10.*+cpu` and `torchvision==0.25.*+cpu` in `.venv_tt` (prior CPU runs lacked torchvision; worker failed to load).
+
+| Metric | Linux CPU (this VM) | Notes |
+|---|---:|---|
+| Worker load (cold) | ~2.8 s | one-time per bench session |
+| TT p50 / p95 (n=12) | ~610 ms / ~1178 ms | per PNG recognize TT leg only |
+| Mac MPS reference | unmeasured | not comparable to this Linux CPU slot |
+
+Live JSONL: `bench/results_level45_texteller_cpu_20261124.jsonl`  
+Summary TSV: `bench/results_level45_texteller_cpu_20261124.tsv`
+
+### Level 45 baseline (raw TT reads, pre-repair)
+
+| bucket | n | `same(gt,pred)` raw | student false preserved |
+|---|---:|---:|---|
+| integral | 3 | 2/3 | n/a |
+| matrix | 3 | **0/3** | n/a (`\backslash\texttt{begin}{pmatrix}` artifact) |
+| trig | 3 | 3/3 | `cos(π)=1` false eq ok |
+| special | 3 | 3/3 | `e^{iπ}=1` false eq ok |
+
+Stub diag (injected engines, no TT): `bench/results_level45_diag_20261124.json` — Issue #1 100 % on false-student rows; variant gap documented: `e` vs `\mathrm{e}` (`same=False`).
+
+### Experiment M1 — texttt/backslash env repair
+
+**Verdict: KEPT.** `ocr/coherence.py` — `texttt_artifacts()`; wired in `ocr/formula.py` before `coherent()`; also in `variants(second)`.
+
+Post-repair `same()` on recorded TT matrix preds: **2/3**
+
+| id | raw same | repaired same |
+|---|---|---|
+| dev_L45_017 (student-false pmatrix) | False | **False** (fused `\texttt{162}` — no `&` invention) |
+| dev_L45_018 (det) | False | **True** |
+| dev_L45_019 (vmatrix) | False | **True** |
+
+Tests: `tests/test_texttt_artifacts.py` + 40/40 pytest green.
+
+### Experiment M2 — `\mathrm{e}` ↔ `e`
+
+**Verdict: KEPT.** `ocr/latex.py` `normalize()` — `re.sub(r'\\mathrm\{e\}', 'e', s)`.
+
+`same('e','\mathrm{e}')` → True; `e^{1}=e` vs `\mathrm{e}^{1}=\mathrm{e}` → True; Issue #1 false equations unchanged.
+
+### Experiment M3 — integral `\,{=` artifact
+
+**Verdict: KEPT.** `ocr/coherence.py` — `integral_eq_artifact()`; `\int_{0}^{2}\!3\,dx\,{=6}` → `same` True vs GT `\int_0^2 3\,dx=6`.
+
+Integral bucket post-repair: **3/3** `same()` on recorded preds.
+
+### Remaining (Pass 3)
+
+- Fused matrix digits (`\texttt{162}`) — partial env repair only; needs real column OCR or model fix, not silent `&` grafting.
+- `closed_truth(e^{i\pi}+1=0)` stays `None` (symbols) — not an OCR equivalence bug.
+- No claim of real-handwriting accuracy or Mac MPS latency from this VM.
+
 ## CPU benchmark (2026-11-24, this VM)
 
 **Hardware ≠ Mac MPS.** Live TexTeller/Ollama not used; `engine=stub_injected` on overnight_synth PNGs only.

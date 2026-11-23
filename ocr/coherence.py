@@ -25,11 +25,35 @@ def closed_truth(latex: str):
         return None
 
 
+def texttt_artifacts(latex: str) -> str:
+    """TexTeller-CPU: \\backslash\\texttt{…} statt \\begin/\\end, \\texttt{token}-Hüllen, \\&."""
+    if not re.search(r"\\backslash\\(?:text|math)tt|\\(?:text|math)tt\{", latex):
+        if "\\&" not in latex and r"\backslash\backslash" not in latex and not re.search(r"\\\{", latex):
+            if not re.search(r"\\,\{=", latex):
+                return latex
+    s = latex
+    s = re.sub(r"\\backslash\s*\\(?:text|math)tt\{begin\}", r"\\begin", s)
+    s = re.sub(r"\\backslash\s*\\(?:text|math)tt\{end\}", r"\\end", s)
+    s = re.sub(r"\\backslash\\(?:text|math)tt\{det\}", r"\\det", s)
+    s = re.sub(r"\\(?:text|math)tt\{([^}]*)\}", r"\1", s)
+    s = re.sub(r"\\\{", "{", s)
+    s = re.sub(r"\\\}", "}", s)
+    s = s.replace(r"\backslash\backslash", r"\\")
+    s = s.replace(r"\&", "&")
+    return s
+
+
+def integral_eq_artifact(latex: str) -> str:
+    """TexTeller: \\,{=6} statt =6 nach Integrand."""
+    return re.sub(r"\\,\{=([^}]*)\}", r"=\1", latex)
+
+
 def variants(second: str) -> list[str]:
     """Artefakt-Interpretationen einer Zweitmeinung. GLM-Artefakte: Leerzeichen zwischen
     Ziffern (zerrissene Zahl '2 5' oder verschluckter Operator '3 3') und Punkt/Gedankenstrich
     statt Malpunkt ('3. 1 0'). Im deutschen Schulkontext ist ein Punkt zwischen Ziffern primaer
     ein Malpunkt (Dezimalzeichen ist das Komma), deshalb als Variante, nie als Ersatz."""
+    second = integral_eq_artifact(texttt_artifacts(second))
     num = re.sub(r"(?<=\d) (?=\d)", "", second)
     mul = re.sub(r"(?<=\d) (?=\d)", r"\\cdot ", second)
     dot = re.sub(r"(?<=\d)[.\-] ?(?=\d)", r"\\cdot ", second)
