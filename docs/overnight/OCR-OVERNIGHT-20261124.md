@@ -374,3 +374,21 @@ PYTHONPATH=/workspace /workspace/.venv_structure/bin/python -m pytest tests/test
 2. `test(ocr): multiline anti-Domino and student-error preservation`
 3. `feat(bench): multiline_live E2E suite`
 4. `docs: Pass5 multiline results`
+
+## Pass 6 — Matrix crop preprocessing (2026-11-24)
+
+**Hypothesis:** Short-wide matrix PNGs (~40–54 px tall) lose columns because TexTeller sees unpadded crops.
+
+**Implementation:** `ocr/formula.prepare_tt_input()` — env-gated `OCR_TT_WHITE_PAD` (white margin) and `OCR_TT_MIN_HEIGHT` (upscale + pad). **Default off** (no behavior change until env set). Bench uses `level45_live/run_tt_cpu.py`.
+
+| Variant | pipe_sympy (dev 72) | matrix | integral | trig | special | p50 ms | Verdict |
+|---|---:|---:|---:|---:|---:|---:|---|
+| baseline | 0.778 | 0.333 | **1.000** | 0.833 | 0.944 | 617 | **KEEP** |
+| P1 white pad | 0.778 | 0.333 | 1.000 | 0.833 | 0.944 | 621 | **REVERT** |
+| P2 min-h 128 + pad | 0.778 | 0.333 | 0.944 | **0.889** | 0.944 | 591 | **REVERT** (integral ↓) |
+
+Gates with default (preprocess off): `overnight_synth` dev 100 %, `multiline_live` 100 % chains, pytest 57/57.
+
+Artifacts: `bench/results_pass6_l45_*_dev.json`, `bench/results_pass6_matrix_preprocess.{json,tsv}`.
+
+Deferred: F1 trig `\bigl{(}` / `\text{(}` fixes, P3 antialias, Re/Im mbox — no safe measured win on matrix bucket.
