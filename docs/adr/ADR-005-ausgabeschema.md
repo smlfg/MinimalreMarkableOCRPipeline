@@ -126,6 +126,7 @@ Ob das LLM mit dieser Fassung den Wahrheitswert richtig deutet, wird **getrennt*
 - **„Unsicher“ ist jetzt gemessen definiert:** TexTeller und GLM-OCR SymPy-ungleich, oder Reparatur, oder variablenfreie Gleichungskette falsch. Ersetzt den Vorschlag `top3_disagree` (Vision-Top-N spielt für Formeln keine Rolle mehr, ADR-006).
 - **Dezimalkomma:** `latex` enthält `0.5`, auch wenn `0,5` geschrieben wurde; in Mengen/Tupeln bleibt das Komma Trenner.
 - **Teilweise implementiert und gemessen:** Zeilen-`latex`, `uncertain`, `repair` in `ocr/formula.py`. Seitenstruktur (`order`, `steps`, `checks`) weiter offen.
+- **Issue #1:** Zeilenfeld **`math_status`** (`true` / `false` / `null`) — Ergebnis von `closed_truth` auf `latex`; getrennt von `uncertain` (nur OCR/Reparatur).
 
 ## Offen
 
