@@ -4,12 +4,14 @@ Branch: `experiment/ocr-overnight-20261124`
 
 ## Baseline (2026-11-23)
 
-From `bench/formula_flywheel/results_2026-11-23.tsv` and README:
+From `bench/formula_flywheel/results_2026-11-23.tsv` (best coherence-era rows on Mac MPS, metrik v2):
 
-| Split | Struktur (`sympy_equal`) | Zeichen |
-|---|---:|---:|
-| own_probe (40 Zeilen, eigene Schrift) | 90 % | 93,4 % |
-| dev (326, Schulmathe) | 89,6 % | 97,2 % |
+| Split | commit | strukt | char | p95 s | coverage | prec_certain |
+|---|---|---:|---:|---:|---:|---:|
+| own_probe (40, eigene Schrift) | a1db534 | 90,0 % | 93,4 % | 0,23 | 85,0 % | 94,1 % |
+| dev (326, Schulmathe) | a1db534 | 89,6 % | 97,2 % | 0,32 | 72,7 % | 93,7 % |
+
+**Issue #1 follow-up:** `coherent()` no longer sets `trusted=True` on repair or via `closed_truth` without GLM. `uncertain` / `coverage` / `prec_certain` semantics changed — **live Mac MPS remeasure** required before updating this table.
 
 ## Data availability gate
 
@@ -17,13 +19,13 @@ From `bench/formula_flywheel/results_2026-11-23.tsv` and README:
 - SchlangebeißtinSchwanz sibling repo is **not** required for the overnight synth pack.
 - **Verdict:** synthetic mathtext dataset only; no claim of real-handwriting accuracy until kalib PNGs are available.
 
-## Issue #1 (DONE — 517b7b3)
+## Issue #1 (Pass 2 — coherent hardening)
 
-`uncertain` is OCR-confidence only (`not trusted` or `repair is not None`); `math_status` = `closed_truth(fixed)`. Student wrong equations with both engines agreeing stay wrong and `uncertain=False`.
+`uncertain` is OCR-confidence only (`not trusted` or `repair is not None`); `math_status` = `closed_truth(fixed)`. Any repair ⇒ `trusted=False` (even GLM-corroborated). Without a second opinion, `trusted=False` — `closed_truth` does not drive OCR trust. Student wrong equations with both engines agreeing stay wrong and `uncertain=False`.
 
 ## Experiment 1 — fused exponent digits
 
-**Failure:** TexTeller reads `3^{2}\cdot3^{3}=35` instead of `=3^{5}` (S41/S43 in `bench/synth/last_synth_real.jsonl`).
+**Failure:** TexTeller reads fused exponent digits as flat numbers — `=3^{5}` → `=35` (S41/S43) and `=3^{9}` → `=39` (S34) in `bench/synth/last_synth_real.jsonl`.
 
 **Hypothesis:** Candidate `b^{e}` from adjacent digit pairs; accept **only** if `agree(cand, glm)` — never via `closed_truth` alone.
 
@@ -53,8 +55,16 @@ From `bench/formula_flywheel/results_2026-11-23.tsv` and README:
 |---|---|
 | Fused exponent via `closed_truth` only | Silently “fixes” agreeing student `=35` |
 | Replace TexTeller | Out of scope; no weight download in VM |
-| UniMERNet download | Large model; defer |
-| Upstream issues #2–#4 | Triage → defer per `docs/research/`; no new framework |
+
+### Upstream #2–#4 — **DEFER** (memo-grounded, no new framework this sprint)
+
+| # | Candidate | Decision | Rationale (`docs/research/UPSTREAM_SEARCH-math-ocr.md`) |
+|---|---|---|---|
+| 2 | **MyScript iink** | DEFER | Commercial SDK; on-device math from strokes needs license negotiation — violates “local/frei” until owner signs off. |
+| 3 | **MathWriting** (Google) | DEFER | Dataset **CC BY-NC-SA** — training/eval reuse restricted; no published stroke→LaTeX weights to bolt on; gain vs. TexTeller+GLM unproven on owner ink. |
+| 4 | **UniMERNet + CDM** | DEFER | Apache-2.0 model but 441 MB–1.3 GB weights + CDM eval needs texlive/ImageMagick/Node ballast; HWE BLEU strong yet Mac MPS latency **unbelegt**; TexTeller already at ~90 % own_probe without framework swap. |
+
+Action: stay on TexTeller+GLM-OCR coherence stack; revisit when kalib PNGs + MPS bench slot available.
 
 ## Hardware / environment (this VM)
 
