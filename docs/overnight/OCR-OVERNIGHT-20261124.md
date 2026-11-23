@@ -264,3 +264,77 @@ Reproduce:
 ```bash
 PYTHONPATH=/workspace /workspace/.venv_structure/bin/python bench/cpu_overnight_bench.py
 ```
+
+## Pass 4 — scaled Level 4–5 live TexTeller CPU (2026-11-24)
+
+**Suite:** `bench/formula_flywheel/level45_live/` — 108 lines (72 dev + 36 holdout), seed `20261124`, synthetic matplotlib mathtext (not handwriting). Regression anchor: `overnight_synth` dev (20).
+
+**Evaluation:** live TT in `.venv_tt` (torch 2.10+cpu); pipe = `tt_postprocess` + `coherent(tt, second=tt)` (no GLM invention). Cached raw preds: `bench/results_pass4_l45_baseline_dev.jsonl`.
+
+### Baseline (pre–Pass 4 product changes, dev n=72)
+
+| bucket | n | raw_sympy | pipe_sympy |
+|---|---:|---:|---:|
+| integral | 18 | 0.611 | 0.667 |
+| matrix | 18 | **0.000** | 0.111 |
+| trig | 18 | 0.778 | 0.778 |
+| special | 18 | 0.778 | 0.944 |
+| **all** | 72 | 0.542 | **0.625** |
+
+**TT latency (Linux CPU only):** p50 **700** ms / p95 **1900** ms (dev batch; cold worker load ~64 s). Mac MPS not measured.
+
+Artifacts: `bench/results_pass4_l45_baseline_dev.json`, `bench/results_pass4_overnight_synth_anchor.json`.
+
+### Experiments (one-factor; re-score from cache)
+
+| iter | factor | keep | pipe_sympy dev | matrix dev | overnight dev | pytest |
+|---:|---|:---:|---:|---:|---:|:---:|
+| 0 | baseline | — | 0.625 | 0.111 | 0.950 | 43/43 |
+| 1 | `tt_render_artifacts` (`\mbox{\Large$\int$}` → `\int`, `\tfrac`) | **KEEP** | 0.694 | 0.111 | 0.950 | 43/43 |
+| 2 | `texttt_artifacts` row breaks (`\backslash \backslash`, `\}\{=`, `@`→`&`) | **KEEP** | **0.750** | **0.333** | 0.950 | 43/43 |
+
+Iter log: `bench/results_pass4_l45_iters.tsv`.
+
+**Deferred / REVERT:** `G`→`&` matrix fusion, `\text{sin}` stripping, larger gen pad (needs full TT re-infer) — insufficient evidence or Issue #1 risk.
+
+### After Pass 4 (final pipe, dev re-score)
+
+| bucket | pipe_sympy |
+|---|---:|
+| integral | 0.944 |
+| matrix | 0.333 |
+| trig | 0.778 |
+| special | 0.944 |
+| **all** | **0.750** |
+
+### Holdout (n=36, final pipe re-score — not used for keep/revert)
+
+| bucket | pipe_sympy |
+|---|---:|
+| integral | 0.889 |
+| matrix | 0.556 |
+| trig | 1.000 |
+| special | 1.000 |
+| **all** | **0.861** |
+
+### Commits (Pass 4)
+
+1. `feat(bench): scaled Level4-5 live TT suite (dev+holdout)`
+2. `chore(bench): Pass4 live TT CPU baseline on Level4-5 + overnight_synth`
+3. `fix(ocr): tt_render mbox integral + matrix row break artifacts (Pass4)`
+
+### Remaining failures (dev, pipe_sympy)
+
+- **Matrix (12):** fused digits (`162`, `10060…`), `G` vs `&`, garbled env names (`peatrlx`, `bmatrixx`), `\operatorname` mbox spam — no safe postprocess without inventing `&`.
+- **Trig (4):** TT emits `\text{sin}` / `\bigl{(}` / `\left\langle` — needs model or guarded `\text{…}`→`\…` rules.
+- **Integral (1):** TT wraps line in `\begin{array}`.
+- **Special (1):** `Re(z)+Im(z)` mbox italic artifact.
+
+Reproduce:
+
+```bash
+cd bench/formula_flywheel/level45_live && PYTHONPATH=/workspace /workspace/.venv_structure/bin/python gen.py
+PYTHONPATH=/workspace /workspace/.venv_structure/bin/python bench/formula_flywheel/level45_live/run_tt_cpu.py --split dev
+PYTHONPATH=/workspace /workspace/.venv_structure/bin/python bench/formula_flywheel/level45_live/rescore_pipe.py bench/results_pass4_l45_baseline_dev.jsonl
+PYTHONPATH=/workspace /workspace/.venv_structure/bin/python -m pytest tests/ -q
+```
