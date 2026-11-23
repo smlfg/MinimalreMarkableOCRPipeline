@@ -1,0 +1,9 @@
+{
+  "seed": 20261124,
+  "n_dev": 72,
+  "n_holdout": 36,
+  "renderer": "matplotlib.mathtext",
+  "buckets": ["integral", "matrix", "trig", "special"],
+  "render_variation": true,
+  "note": "Pass 4 scaled Level 4–5 live TexTeller suite (dev+holdout). Synthetic mathtext only."
+}
