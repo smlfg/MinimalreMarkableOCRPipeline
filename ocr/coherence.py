@@ -28,7 +28,11 @@ def closed_truth(latex: str):
 def tt_render_artifacts(latex: str) -> str:
     """TexTeller-CPU: mathtext render quirks (\\mbox integral glyph, \\tfrac alias)."""
     s = re.sub(r"\\mbox\{\\Large\$\\int\$\}", r"\\int", latex)
-    return s.replace(r"\tfrac", r"\frac")
+    s = s.replace(r"\tfrac", r"\frac")
+    s = re.sub(r"\\text\{(sin|cos|tan|log|ln|det|lim)\}", r"\\\1", s)
+    if "\\mbox{" not in s:
+        s = re.sub(r"\\operatorname\{det\}", r"\\det", s)
+    return s
 
 
 def texttt_artifacts(latex: str) -> str:

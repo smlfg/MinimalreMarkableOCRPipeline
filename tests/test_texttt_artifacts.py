@@ -91,6 +91,12 @@ def test_det_brace_eq_artifact():
     assert same(DET_BRACE_GT, rep)
 
 
+def test_text_sin_to_backslash_sin():
+    raw = r"\text{sin}^{2}\left(x\right)+\text{cos}^{2}\left(x\right)=1"
+    gt = r"\sin^2(x)+\cos^2(x)=1"
+    assert same(gt, _repair(raw))
+
+
 @pytest.mark.parametrize("a,b", [(r"\cos(\pi)=1", r"\cos(\pi)=1"), (r"e^{i\pi}=1", r"e^{i\pi}=1")])
 def test_no_artifact_strings_identity(a, b):
     assert texttt_artifacts(a) == a
