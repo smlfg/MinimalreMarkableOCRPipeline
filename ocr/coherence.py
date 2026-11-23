@@ -46,6 +46,19 @@ def agree(latex: str, second: str) -> bool:
     return any(same(latex, v) for v in variants(second))
 
 
+_POWER_DIGIT = re.compile(r"(?<![0-9{\\^_])(\d)(\d)(?!\d)")
+
+
+def _power_digit_cands(latex: str):
+    """Fusions-Artefakt: zwei Ziffern ohne Klammern evtl. als b^{e} lesen (nur mit GLM-Korrosion)."""
+    seen = set()
+    for m in _POWER_DIGIT.finditer(latex):
+        cand = latex[:m.start()] + f"{m.group(1)}^{{{m.group(2)}}}" + latex[m.end():]
+        if cand != latex and cand not in seen:
+            seen.add(cand)
+            yield cand
+
+
 def coherent(latex: str, second: str | None = None):
     """-> (latex, repair|None, trusted). trusted: Zweitmeinung stützt die Lesart (ggf. nach
     Artefakt-Normalisierung) oder korroboriert einen CONFUSE-Tausch. Ein Tausch OHNE Stütze
@@ -62,6 +75,9 @@ def coherent(latex: str, second: str | None = None):
                 return cand, f"{latex} -> {cand}", False
             if agree(cand, second):
                 return cand, f"{latex} -> {cand}", True
+    for cand in _power_digit_cands(latex):
+        if agree(cand, second):
+            return cand, f"{latex} -> {cand}", True
     return latex, None, False
 
 
