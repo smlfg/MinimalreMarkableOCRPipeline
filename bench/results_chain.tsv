@@ -12,3 +12,4 @@ zeit	pfad	n	F1_strict	F1_answered	abdeckung	nachfrage	nachfrage_berechtigt	acc_e
 2026-11-23T21:42	real	28	0.966	1.000	0.96	0.04	1	0.933	1.000	seite 6 nachgeholt: komplettes blatt, alle 28 ketten
 2026-11-23T21:43	synth_oracle	47	1.000	1.000	1.00	0.00	0	1.000	1.000	
 2026-11-23T21:44	real	28	1.000	1.000	1.00	0.00	0	1.000	1.000	seite 6 komplett: implizite gleichheit + kombinierte glm-artefakte
+2026-11-23T21:47	synth_real	47	0.934	0.948	0.98	0.02	0	0.929	0.939	ouroboros v1: 10 synth-seiten, seed 23
