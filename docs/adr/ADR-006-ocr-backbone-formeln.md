@@ -1,6 +1,6 @@
 # ADR 006: OCR-Backbone für Formeln – TexTeller liest, GLM-OCR prüft
 
-**Status:** angenommen, 23.11.2026 · **Ersetzt für Mathe:** `docs/ADR.md` ADR-002 (Apple Vision als primäre Engine) · **Belege:** `bench/formula_flywheel/results_2026-11-23.tsv`
+**Status:** angenommen, 23.11.2026 · **Ersetzt für Mathe:** `K-kompakt-textocr-001-004.md` K-002 (Apple Vision als primäre Engine) · **Belege:** `bench/formula_flywheel/results_2026-11-23.tsv`
 
 ## Kontext
 

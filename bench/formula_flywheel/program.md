@@ -6,7 +6,7 @@ Am Ende zählt nur die eigene Schrift des Owners (Gold-Set aus reMarkable-Seiten
 ## Dateien
 - `prepare.py`: EINGEFROREN. Splits, Bewertung, Metriken. Nie ändern.
 - `models.py`: EINGEFROREN. Modellaufrufe und Cache (latex + echte Sekunden).
-- `pipeline.py`: MUTIERBAR. Einzige Datei, die die Schleife ändert.
+- `pipeline.py`: dünner Adapter auf `ocr/formula.py` mit gecachten Engines. MUTIERBAR sind `ocr/formula.py` und `ocr/coherence.py` (Produktcode).
 - `results.tsv`: jede Zeile ein Experiment (keep, discard oder crash in der Beschreibung).
 
 ## Splits (Hash der GT, fest)

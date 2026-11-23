@@ -5,8 +5,8 @@ Ablauf (Flywheel): Seite vom Tablet holen (oder PNG hochladen) -> Ground Truth e
 -> alle OCR-Varianten laufen lassen -> Abstand zur GT sehen -> Variante/Schreibweise
 ändern -> erneut. Jeder Lauf landet in data/claudebench/runs.jsonl.
 
-Start:  python3 bench/claudebench.py   ->  http://127.0.0.1:8790
-Nur Glue um ocr/pipeline.py; kein eigener OCR-Code. Tutor/LLM bewusst noch nicht drin.
+Start:  .venv_structure/bin/python bench/claudebench.py   ->  http://127.0.0.1:8790
+Nur Glue um ocr/formula.py (Formel, ADR-006/007) und ocr/pipeline.py (Fließtext, Vision). Tutor/LLM bewusst noch nicht drin.
 """
 
 import hashlib, json, subprocess, sys, tempfile, time
@@ -15,7 +15,8 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(BASE_DIR))
-from ocr import pipeline  # noqa: E402
+from ocr import formula, pipeline  # noqa: E402
+from ocr.latex import normalize, same  # noqa: E402
 
 OUT = BASE_DIR / "data" / "claudebench"
 IMG = OUT / "img"
@@ -24,13 +25,13 @@ PORT = 8790
 SSH_HOST = "remarkable-usb"
 XOCHITL = "/home/root/.local/share/remarkable/xochitl"
 
-# Feste Varianten, damit Läufe vergleichbar bleiben. Neue Variante = neue Zeile hier.
+# Feste Varianten, damit Läufe vergleichbar bleiben. "formel" = Produkt (TexTeller + GLM + Kohärenz),
+# "vision_page" = Fließtext-Engine zum Vergleich.
 VARIANTS = {
-    "vision_page":      {"engine": "apple_vision", "split_lines": False, "vision_correct": False},
-    "vision_page_corr": {"engine": "apple_vision", "split_lines": False, "vision_correct": True},
-    "vision_lines":     {"engine": "apple_vision", "split_lines": True,  "vision_correct": False},
-    "tess_page":        {"engine": "tesseract_word", "split_lines": False, "psm": "6"},
+    "formel":      {"engine": "texteller+glm+kohaerenz"},
+    "vision_page": {"engine": "apple_vision", "split_lines": False, "vision_correct": False},
 }
+_TT = None  # TexTeller-Dauerprozess, beim ersten Lauf gestartet
 
 
 def save_png(data: bytes) -> str:
@@ -59,14 +60,23 @@ def run_all(pid: str, gt: str) -> list[dict]:
     png = IMG / f"{pid}.png"
     rows = []
     for name, cfg in VARIANTS.items():
-        res = pipeline.run_detailed(png, cfg)
-        ocr = res["final"]
-        rows.append({
-            "variant": name, "ocr": ocr, "ms": round(res["ms"], 1),
-            "acc": round(pipeline.accuracy(gt, ocr), 3) if gt.strip() else None,
-            "exact": bool(gt.strip()) and pipeline.norm(gt) == pipeline.norm(ocr),
-            "diff": pipeline.diff_tags(pipeline.norm(gt), pipeline.norm(ocr))[:6] if gt.strip() else [],
-        })
+        if name == "formel":
+            global _TT
+            _TT = _TT or formula.TexTeller()
+            t0 = time.perf_counter(); r = formula.recognize(png, _TT); ms = (time.perf_counter() - t0) * 1000
+            ocr = r["latex"]
+            from rapidfuzz.distance import Levenshtein
+            acc = Levenshtein.normalized_similarity(normalize(gt), normalize(ocr)) if gt.strip() else None
+            exact = bool(gt.strip()) and same(gt, ocr)
+            diff = [x for x in ["UNSICHER" if r["uncertain"] else "", f"repariert: {r['repair']}" if r["repair"] else ""] if x]
+        else:
+            res = pipeline.run_detailed(png, cfg)
+            ocr, ms = res["final"], res["ms"]
+            acc = pipeline.accuracy(gt, ocr) if gt.strip() else None
+            exact = bool(gt.strip()) and pipeline.norm(gt) == pipeline.norm(ocr)
+            diff = pipeline.diff_tags(pipeline.norm(gt), pipeline.norm(ocr))[:6] if gt.strip() else []
+        rows.append({"variant": name, "ocr": ocr, "ms": round(ms, 1),
+                     "acc": round(acc, 3) if acc is not None else None, "exact": exact, "diff": diff})
     rec = {"ts": time.strftime("%Y-%m-%dT%H:%M:%S"), "img": pid, "gt": gt,
            "variants": VARIANTS, "results": rows}
     OUT.mkdir(parents=True, exist_ok=True)

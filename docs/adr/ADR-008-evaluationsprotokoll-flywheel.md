@@ -10,7 +10,7 @@ Vorgänger sind an ungemessenen Baselines, fehlender GT und Optimieren ohne Gate
 
 **Struktur (aus autoresearch, MIT):**
 - `prepare.py` und `models.py` sind eingefroren (Splits, Metriken, Modellaufrufe mit Cache inkl. echter Sekunden).
-- `pipeline.py` ist die einzige veränderbare Datei. Jedes Experiment: Hypothese → Commit → `run.py` → Zeile in `results.tsv` → behalten oder zurückdrehen. Regeln in `program.md`.
+- Veränderbar ist nur der Produktcode `ocr/formula.py` und `ocr/coherence.py`; `bench/formula_flywheel/pipeline.py` ist ein Adapter mit gecachten Engines. Jedes Experiment: Hypothese → Commit → `run.py` → Zeile in `results.tsv` → behalten oder zurückdrehen. Regeln in `program.md`.
 
 **Splits (Hash der GT, fest):** `train` 1823 (Lernen erlaubt), `dev` 326 (Entscheidungen), `test` 485 (Holdout, nur Meilensteine), `synth` (Generator aus SchlangebeißtinSchwanz, saubere GT), `own_*` (Kalibrierungsblätter = Ziel-Messung).
 

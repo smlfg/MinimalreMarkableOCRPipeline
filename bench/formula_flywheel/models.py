@@ -1,7 +1,6 @@
 """Modellaufrufe mit Cache (latex + echte Sekunden). Teil der eingefrorenen Infrastruktur."""
 import base64, hashlib, io, json, re, sqlite3, time, urllib.request
 from pathlib import Path
-from PIL import Image, ImageOps
 HERE = Path(__file__).resolve().parent
 DB = sqlite3.connect(HERE / "cache.sqlite", check_same_thread=False)
 DB.execute("create table if not exists c(k text primary key, latex text, s real)")
@@ -27,11 +26,6 @@ def ask(model, img, prompt=None):
     s = time.perf_counter() - t0; latex = clean(r)
     DB.execute("insert or replace into c values(?,?,?)", (k, latex, s)); DB.commit()
     return latex, s
-
-def to_h(img, h, pad=True):
-    g = img.convert("L"); w0, h0 = g.size
-    g = g.resize((max(1, min(2000, round(w0 * h / h0))), h), Image.LANCZOS)
-    return ImageOps.expand(g, border=h // 8, fill=255) if pad else g
 
 def tt(path):
     """TexTeller-Ergebnis aus dem Cache (befüllt durch tt_run.py in eigener venv)."""

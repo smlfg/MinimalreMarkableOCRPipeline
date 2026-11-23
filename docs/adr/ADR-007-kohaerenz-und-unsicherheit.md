@@ -1,6 +1,6 @@
 # ADR 007: Kohärenz-Schicht und Unsicherheit – nie still korrigieren
 
-**Status:** angenommen, 23.11.2026 · **Baut auf:** ADR-005 (Feld `uncertain`, `checks.cause`) · **Code:** `bench/formula_flywheel/pipeline.py` (`coherent`, `closed_truth`, `decimal_comma`)
+**Status:** angenommen, 23.11.2026 · **Baut auf:** ADR-005 (Feld `uncertain`, `checks.cause`) · **Code:** `ocr/coherence.py` (`coherent`, `closed_truth`, `decimal_comma`)
 
 ## Kontext
 
