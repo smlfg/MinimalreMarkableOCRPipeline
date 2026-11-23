@@ -90,3 +90,22 @@ Stand: Die Datei enthält ca. 100 Zeilen eigenen Glue plus eigene Metrik-Logik. 
 | Gesamt-Hauptmetrik | — | CDM (`opendatalab/UniMERNet/cdm`, Eingabe-JSON mit `gt`/`pred`/`img_id`, [4]): Adapter von manifest/pred.jsonl wäre trivial, aber Laufzeit braucht texlive, ImageMagick 7, Node 16 — nicht installiert, nicht getestet |
 
 Nächster Schritt falls gewünscht: dünner Adapter auf `cdm/evaluation.py` (und/oder `math-verify`) statt Ausbau von `structure_bench.py`; vorher Systemabhängigkeiten von CDM mit dem Owner klären.
+
+## Teil C — End-to-End: Findet der Tutor den richtigen Schritt? (Nachtrag 23.11.2026)
+
+Lücke aus Teil B geschlossen (Recherche-Agent, nur Primärquellen-Lesestand; nichts lokal getestet).
+
+| Benchmark | Metrik | Größe / Niveau | Lizenz | Eval-Skript |
+|---|---|---|---|---|
+| **ProcessBench** (arXiv 2412.06559, QwenLM/ProcessBench) | frühester Fehlerschritt oder „alles korrekt“; **F1 aus Accuracy auf fehlerhaften und korrekten Fällen** (bestraft falschen Alarm) | 3,4k; GSM8K-Split 400 schulnah | Apache-2.0 | ja (`code/`) |
+| MR-GSM8K (arXiv 2312.17080) | MR-Score: MCC + erster Fehlerschritt + Fehlergrund (LLM-Judge) | 3000, Mittelstufe | MIT | ja |
+| Verify-then-Generate (arXiv 2407.09136) | Schritt-Verifikation F1; Feedback „zielgenau, korrekt, umsetzbar“ | 1002 echte Schülerlösungen (MathDial) | Daten CC BY 4.0 (angekündigt) | Repo, ungeprüft |
+| **FERMAT** (arXiv 2501.07244) | Erkennen/Lokalisieren/Korrigieren auf **handschriftlichen** Lösungen | 2244, Klassen 7–12 | Code MIT, Daten unklar | Repo |
+| MathTutorBench, MathCheck, ErrorRadar, Bridge, MathDial | Tutoring-/Prozess-Aufgaben | englisch | teils unklar/widersprüchlich | teils |
+
+Belegte Befunde, die unsere Architektur stützen:
+- **FERMAT:** OCR-dann-LLM lokalisiert Fehler besser als Bild direkt (z. B. Llama-3.2-90B 0,18 → 0,41). Stützt ADR-006/005 (Text-Fassung statt Bild an das LLM).
+- **Yu et al. (arXiv 2603.00895, nur Snippet):** OCR hat **Schülerfehler stillschweigend korrigiert**. Genau das Risiko aus ADR-007 („nie still korrigieren“).
+- **Kein** Benchmark misst systematisch OCR-Unsicherheit gegen Fehlerlokalisierung; **kein** deutscher Datensatz mit Schülerfehlern gefunden.
+
+Folgerung für uns: **Zielmetrik der ganzen Kette = ProcessBench-F1** (frühester Fehlerschritt bzw. „korrekt“, auf fehlerhaften *und* korrekten Ketten), ergänzt um Nachfrage-Rate bei `uncertain`. Datenform (Schrittliste + erster Fehlerschritt) passt 1:1 auf ADR-005 `steps`/`checks`. Die fehlenden Teile (Deutsch, eigene Handschrift, OCR-Unsicherheit) liefert ein eigenes Ketten-Kalibrierungsblatt mit eingebauten Fehlern; das ProcessBench-Format wird dafür übernommen statt erfunden.
