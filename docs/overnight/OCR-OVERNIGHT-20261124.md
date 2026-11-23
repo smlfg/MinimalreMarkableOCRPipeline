@@ -341,3 +341,36 @@ PYTHONPATH=/workspace /workspace/.venv_structure/bin/python bench/formula_flywhe
 PYTHONPATH=/workspace /workspace/.venv_structure/bin/python bench/formula_flywheel/level45_live/rescore_pipe.py bench/results_pass4_l45_baseline_dev.jsonl
 PYTHONPATH=/workspace /workspace/.venv_structure/bin/python -m pytest tests/ -q
 ```
+
+## Pass 5 — Multi-line calculation grouping (2026-11-24)
+
+**Product:** `ocr/multiline.group_calculations()` — chains are `{id, line_ids, has_uncertain_step, uncertain_line_indices}` only; **never mutates** line fields or sets `line.uncertain` (anti-Domino).
+
+**Pipeline:** `ocr/pipeline.assemble_page()` / `finalize_page()` add `page["calculations"]` when math lines exist.
+
+**Suite:** `bench/formula_flywheel/multiline_live/` (12 seeded pages, line crops + GT chains).
+
+| Metric | Result |
+|---|---:|
+| Synth chain boundary (grouping + GT OCR) | **100%** (12/12) |
+| kalib `last_real.jsonl` grouping-only | **100%** (28/28) |
+| Anti-Domino violations | **0** |
+| Student-error preservation (k25-style page) | **100%** |
+| pytest (incl. `test_multiline.py`) | **57/57** |
+
+Artifacts: `bench/results_pass5_multiline_live.{json,tsv}`
+
+Reproduce:
+
+```bash
+PYTHONPATH=/workspace /workspace/.venv_structure/bin/python bench/formula_flywheel/multiline_live/gen.py
+PYTHONPATH=/workspace /workspace/.venv_structure/bin/python bench/formula_flywheel/multiline_live/run_e2e.py --grouping-only
+PYTHONPATH=/workspace /workspace/.venv_structure/bin/python -m pytest tests/test_multiline.py -q
+```
+
+### Commits (Pass 5)
+
+1. `feat(ocr): multi-line calculation grouping (Pass5)`
+2. `test(ocr): multiline anti-Domino and student-error preservation`
+3. `feat(bench): multiline_live E2E suite`
+4. `docs: Pass5 multiline results`
