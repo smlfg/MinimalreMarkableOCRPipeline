@@ -67,9 +67,28 @@ def integral_eq_artifact(latex: str) -> str:
     return re.sub(r"\\,\{=([^}]*)\}", r"=\1", latex)
 
 
+def array_single_cell_artifact(latex: str) -> str:
+    """Unwrap \\begin{array}{c}… single formula …\\end{array} (TT line wrapper only)."""
+    m = re.fullmatch(
+        r"\\begin\{array\}\s*(?:\n\s*)?\{[lcr|]+\}\s*(?:\\vspace\{[^}]*\})?\s*(.+?)\s*\\end\{array\}\s*",
+        latex.strip(),
+        flags=re.DOTALL,
+    )
+    if not m:
+        return latex
+    inner = m.group(1).strip()
+    if "\\\\" in inner or "&" in inner:
+        return latex
+    if re.search(r"\\begin\{", inner):
+        return latex
+    return inner
+
+
 def tt_postprocess(latex: str) -> str:
     """Product pipe before coherent(): decimal + render/texttt/integral artifacts."""
-    return integral_eq_artifact(tt_render_artifacts(texttt_artifacts(decimal_comma(latex))))
+    s = tt_render_artifacts(texttt_artifacts(decimal_comma(latex)))
+    s = array_single_cell_artifact(s)
+    return integral_eq_artifact(s)
 
 
 def variants(second: str) -> list[str]:

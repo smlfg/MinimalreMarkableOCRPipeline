@@ -97,6 +97,16 @@ def test_text_sin_to_backslash_sin():
     assert same(gt, _repair(raw))
 
 
+ARRAY_INT_RAW = (
+    "\\begin{array}\n{c}\\vspace{0.2cm}\\int_{0}^{1}x^{2}\\,dx=\\frac{1}{3}\n\\end{array}"
+)
+ARRAY_INT_GT = r"\int_0^1 x^2\,dx=\frac{1}{3}"
+
+
+def test_single_cell_array_unwrap():
+    assert same(ARRAY_INT_GT, _repair(ARRAY_INT_RAW))
+
+
 @pytest.mark.parametrize("a,b", [(r"\cos(\pi)=1", r"\cos(\pi)=1"), (r"e^{i\pi}=1", r"e^{i\pi}=1")])
 def test_no_artifact_strings_identity(a, b):
     assert texttt_artifacts(a) == a
