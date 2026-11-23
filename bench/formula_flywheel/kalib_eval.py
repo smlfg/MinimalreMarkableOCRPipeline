@@ -7,7 +7,7 @@ from rmscene import scene_items as si
 from PIL import Image, ImageDraw
 HERE = Path(__file__).resolve().parent; FW = HERE
 DOCS = {"probe": "8b8cfaa5-f013-462d-8391-9228906287f5", "uni": "406f242e-4844-4a85-a4d4-4ed2ca5f0db7",
-        "ketten": None}  # ID eintragen, sobald Kalibrierung-Ketten.pdf auf dem Tablet liegt (ADR-009)
+        "ketten": "0efa3a28-b060-43e9-a2a8-819abd7797a6"}  # Kalibrierung-Ketten.pdf (ADR-009)
 XO = "/home/root/.local/share/remarkable/xochitl"
 PROJ = Path(__file__).resolve().parent / "kalib"  # versionierte GT der Kalibrierungsblätter
 
@@ -30,10 +30,18 @@ def slots(sheet):
     gt = [json.loads(l) for l in open(PROJ / "uni" / "kalib_uni_gt.jsonl")]
     return [(r["nr"], (r["nr"] - 1) // 5, r["slot_y"][0] - 40, r["slot_y"][1] + 5, r["gt_latex"]) for r in gt]
 
+def _n_pages(d):
+    r = subprocess.run(["ssh", "remarkable-usb", f"ls {XO}/{d}/ 2>/dev/null | grep -c '\\.rm$'"], capture_output=True, text=True)
+    return int(r.stdout.strip() or 0)
+
+
 def fetch(sheet):
     d = DOCS[sheet]
     if d is None:
-        sys.exit(f"{sheet}: Dokument-ID fehlt in DOCS (Blatt erst aufs Tablet laden)"); out = HERE / "own" / sheet; out.mkdir(parents=True, exist_ok=True)
+        sys.exit(f"{sheet}: Dokument-ID fehlt in DOCS (Blatt erst aufs Tablet laden)")
+    if isinstance(d, list):
+        d = max(d, key=_n_pages)
+    out = HERE / "own" / sheet; out.mkdir(parents=True, exist_ok=True)
     subprocess.run(["scp", "-q", f"remarkable-usb:{XO}/{d}.content", str(out)], check=True)
     subprocess.run(f"scp -q 'remarkable-usb:{XO}/{d}/*.rm' {out}/ 2>/dev/null", shell=True)
     c = json.load(open(out / f"{d}.content"))
