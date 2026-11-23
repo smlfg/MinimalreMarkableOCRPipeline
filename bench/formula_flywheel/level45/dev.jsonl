@@ -1,0 +1,24 @@
+{"id": "dev_L45_001", "split": "dev", "template_id": "L45_001", "bucket": "integral", "gt_latex": "\\int_0^1 x\\,dx=\\frac{1}{2}", "math_correct": true, "png": "images/dev_L45_001.png"}
+{"id": "dev_L45_003", "split": "dev", "template_id": "L45_003", "bucket": "integral", "gt_latex": "\\int_0^2 3\\,dx=6", "math_correct": true, "png": "images/dev_L45_003.png"}
+{"id": "dev_L45_006", "split": "dev", "template_id": "L45_006", "bucket": "integral", "gt_latex": "\\int t\\,dt", "math_correct": true, "png": "images/dev_L45_006.png"}
+{"id": "dev_L45_011", "split": "dev", "template_id": "L45_011", "bucket": "integral", "gt_latex": "\\int_1^2 x\\,dx=1", "math_correct": false, "png": "images/dev_L45_011.png"}
+{"id": "dev_L45_014", "split": "dev", "template_id": "L45_014", "bucket": "integral", "gt_latex": "\\int_0^{\\pi} \\sin x\\,dx=0", "math_correct": false, "png": "images/dev_L45_014.png"}
+{"id": "dev_L45_015", "split": "dev", "template_id": "L45_015", "bucket": "integral", "gt_latex": "\\int_a^b f(x)\\,dx", "math_correct": true, "png": "images/dev_L45_015.png"}
+{"id": "dev_L45_017", "split": "dev", "template_id": "L45_017", "bucket": "matrix", "gt_latex": "\\begin{pmatrix}1&2\\\\3&4\\end{pmatrix}=\\begin{pmatrix}1&2\\\\3&5\\end{pmatrix}", "math_correct": false, "png": "images/dev_L45_017.png"}
+{"id": "dev_L45_018", "split": "dev", "template_id": "L45_018", "bucket": "matrix", "gt_latex": "\\det\\begin{pmatrix}1&2\\\\3&4\\end{pmatrix}=-2", "math_correct": true, "png": "images/dev_L45_018.png"}
+{"id": "dev_L45_019", "split": "dev", "template_id": "L45_019", "bucket": "matrix", "gt_latex": "\\begin{vmatrix}1&2\\\\3&4\\end{vmatrix}", "math_correct": true, "png": "images/dev_L45_019.png"}
+{"id": "dev_L45_021", "split": "dev", "template_id": "L45_021", "bucket": "matrix", "gt_latex": "\\begin{bmatrix}1&2\\\\3&4\\end{bmatrix}", "math_correct": true, "png": "images/dev_L45_021.png"}
+{"id": "dev_L45_024", "split": "dev", "template_id": "L45_024", "bucket": "matrix", "gt_latex": "\\begin{pmatrix}0&1\\\\1&0\\end{pmatrix}^2=\\begin{pmatrix}0&1\\\\1&0\\end{pmatrix}", "math_correct": false, "png": "images/dev_L45_024.png"}
+{"id": "dev_L45_027", "split": "dev", "template_id": "L45_027", "bucket": "matrix", "gt_latex": "\\begin{vmatrix}2&0\\\\0&3\\end{pmatrix}=\\begin{vmatrix}6&0\\\\0&6\\end{vmatrix}", "math_correct": false, "png": "images/dev_L45_027.png"}
+{"id": "dev_L45_033", "split": "dev", "template_id": "L45_033", "bucket": "trig", "gt_latex": "\\sin(x)", "math_correct": true, "png": "images/dev_L45_033.png", "variants": ["\\sin x"]}
+{"id": "dev_L45_034", "split": "dev", "template_id": "L45_034", "bucket": "trig", "gt_latex": "\\cos(\\pi)=1", "math_correct": false, "png": "images/dev_L45_034.png"}
+{"id": "dev_L45_035", "split": "dev", "template_id": "L45_035", "bucket": "trig", "gt_latex": "\\tan x=\\frac{\\sin x}{\\cos x}", "math_correct": true, "png": "images/dev_L45_035.png"}
+{"id": "dev_L45_037", "split": "dev", "template_id": "L45_037", "bucket": "trig", "gt_latex": "\\cos(x)", "math_correct": true, "png": "images/dev_L45_037.png", "variants": ["\\cos x"]}
+{"id": "dev_L45_040", "split": "dev", "template_id": "L45_040", "bucket": "trig", "gt_latex": "\\cos x", "math_correct": true, "png": "images/dev_L45_040.png", "variants": ["\\cos(x)"]}
+{"id": "dev_L45_041", "split": "dev", "template_id": "L45_041", "bucket": "trig", "gt_latex": "\\sin^2(x)=1-\\cos^2(x)", "math_correct": true, "png": "images/dev_L45_041.png"}
+{"id": "dev_L45_052", "split": "dev", "template_id": "L45_052", "bucket": "special", "gt_latex": "2i+3i=5i", "math_correct": true, "png": "images/dev_L45_052.png"}
+{"id": "dev_L45_053", "split": "dev", "template_id": "L45_053", "bucket": "special", "gt_latex": "e^{i\\pi}+1=0", "math_correct": true, "png": "images/dev_L45_053.png"}
+{"id": "dev_L45_054", "split": "dev", "template_id": "L45_054", "bucket": "special", "gt_latex": "e^{i\\pi}=1", "math_correct": false, "png": "images/dev_L45_054.png"}
+{"id": "dev_L45_057", "split": "dev", "template_id": "L45_057", "bucket": "special", "gt_latex": "e^{1}=e", "math_correct": true, "png": "images/dev_L45_057.png", "variants": ["\\mathrm{e}^{1}=\\mathrm{e}"]}
+{"id": "dev_L45_060", "split": "dev", "template_id": "L45_060", "bucket": "special", "gt_latex": "e^{0}=1", "math_correct": true, "png": "images/dev_L45_060.png"}
+{"id": "dev_L45_063", "split": "dev", "template_id": "L45_063", "bucket": "special", "gt_latex": "e^{0}=0", "math_correct": false, "png": "images/dev_L45_063.png"}
