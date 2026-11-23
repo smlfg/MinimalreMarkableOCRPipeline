@@ -71,6 +71,33 @@ PYTHONPATH=/workspace /workspace/.venv_structure/bin/python bench/formula_flywhe
 
 Artifact: `bench/formula_flywheel/analysis_leading_eq_20261124.json`.
 
+## Pass 2 Chunk C — `\frac{a}{b}` vs `a/b` (measurement)
+
+**Verdict: REVERT** (no frac→slash normalization in `ocr/latex.py` / coherence).
+
+Primary probe: `same(r'\frac{20}{6}', '20/6')` is **True** (SymPy rationals). Continuation `same(r'=\frac{20}{6}', '=20/6')` is **False** — `latex2sympy` does not parse slash-form equalities; not a missing frac/slash equivalence rule.
+
+`chain_bench` `ocr_hit` = `same(read, gt_step)` — same code path; **0** cached steps with `ocr_hit=False` and `same()=True` (no stale-metric artifact).
+
+Cached reads:
+
+| Metric | kalib (60 OCR steps) | synth (102 OCR steps) |
+|---|---:|---:|
+| `frac/slash`-only string diff | 20 | 34 |
+| `ocr_hit=False` & frac/slash-only | 0 | 24 |
+| Above with `same(gt,read)` True | 0 | 0 |
+| Above with `same` on bodies after strip `=` True | 0 | 24 |
+
+Synth continuation steps: GT `=\frac{…}{…}`, read `=a/b` — ink correct; `ocr_hit` False because full-string `same()` fails on `=`-equality parse (Chunk B coupling), not because `\frac` ≠ `/`. Kalib keeps `\frac` in reads → hits stay True. Remaining synth `ocr_hit=False` (3): fused exponents S34/S41/S43 — unrelated.
+
+Reproduce:
+
+```bash
+PYTHONPATH=/workspace /workspace/.venv_structure/bin/python bench/formula_flywheel/analyze_cached_frac_slash.py
+```
+
+Artifact: `bench/formula_flywheel/analysis_frac_slash_20261124.json`.
+
 ## Experiment 1 — fused exponent digits
 
 **Failure:** TexTeller reads fused exponent digits as flat numbers — `=3^{5}` → `=35` (S41/S43) and `=3^{9}` → `=39` (S34) in `bench/synth/last_synth_real.jsonl`.
