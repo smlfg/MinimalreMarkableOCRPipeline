@@ -22,7 +22,7 @@ Vorgänger sind an ungemessenen Baselines, fehlender GT und Optimieren ohne Gate
 - GT wird in fremden Datensätzen nie korrigiert, auch bei offensichtlichem Fehler.
 - **Eigene Schrift: GT = was tatsächlich geschrieben wurde.** Abschreib-Abweichungen von der Vorlage werden markiert und vom Owner bestätigt, nicht als Lesefehler gezählt.
 
-**Kalibrierungsblätter** (`data/kalib/`): Vorlage mit bekannter GT, Owner schreibt ab. Slots kommen aus dem Vorlagen-Layout (keine Zeilensegmentierung nötig); `kalib_eval.py` holt Striche per SSH, rendert je Slot ein PNG, misst. Blätter: Probeblatt (40 Zeilen, Verwechsler + Schulmathe), Uni-Blatt (30 Rechenschritte aus Klausur SS26, mit Quellenangabe).
+**Kalibrierungsblätter** (`data/kalib/`): Vorlage mit bekannter GT, Owner schreibt ab. Slots kommen aus dem Vorlagen-Layout (keine Zeilensegmentierung nötig); `kalib_eval.py` holt Striche per SSH, rendert je Slot ein PNG, misst. Blätter: Probeblatt (40 Zeilen, Verwechsler + Schulmathe), Uni-Blatt (30 Rechenschritte aus Klausur SS26, mit Quellenangabe), Ketten-Blatt `own_ketten` (28 Rechenketten mit eingebauten Fehlern, End-to-End-Metrik, siehe ADR-009).
 
 ## Stand 23.11.
 
