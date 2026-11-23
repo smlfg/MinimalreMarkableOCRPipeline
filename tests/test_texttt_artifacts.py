@@ -1,7 +1,7 @@
 """TexTeller CPU texttt/backslash matrix env repair (injected strings, no live model)."""
 import pytest
 
-from ocr.coherence import integral_eq_artifact, texttt_artifacts
+from ocr.coherence import integral_eq_artifact, texttt_artifacts, tt_postprocess, tt_render_artifacts
 from ocr.latex import same
 
 DET_PRED = (
@@ -32,7 +32,15 @@ INTEGRAL_GT = r"\int_0^2 3\,dx=6"
 
 
 def _repair(latex: str) -> str:
-    return integral_eq_artifact(texttt_artifacts(latex))
+    return tt_postprocess(latex)
+
+
+MBOX_INT_PRED = r"\mbox{\Large$\int$}_{0}^{1}1\,dx=1"
+MBOX_INT_GT = r"\int_0^1 1\,dx=1"
+MATRIX_BACKSLASH_PRED = r"\begin{pmatrix}1&2\backslash \backslash 3&4\end{pmatrix}"
+MATRIX_BACKSLASH_GT = r"\begin{pmatrix}1&2\\3&4\end{pmatrix}"
+DET_BRACE_PRED = r"\det\begin{pmatrix}3&1\\2&4\end{pmatrix}{=}10"
+DET_BRACE_GT = r"\det\begin{pmatrix}3&1\\2&4\end{pmatrix}=10"
 
 
 def test_det_pmatrix_tt_garbage_matches_gt():
@@ -67,6 +75,20 @@ def test_fused_texttt_162_still_not_gt():
 def test_integral_thin_space_eq_artifact():
     rep = _repair(INTEGRAL_PRED)
     assert same(INTEGRAL_GT, rep)
+
+
+def test_mbox_large_integral_glyph():
+    assert same(MBOX_INT_GT, tt_render_artifacts(MBOX_INT_PRED)) or same(MBOX_INT_GT, _repair(MBOX_INT_PRED))
+
+
+def test_matrix_backslash_spaced_rows():
+    rep = _repair(MATRIX_BACKSLASH_PRED)
+    assert same(MATRIX_BACKSLASH_GT, rep)
+
+
+def test_det_brace_eq_artifact():
+    rep = _repair(DET_BRACE_PRED)
+    assert same(DET_BRACE_GT, rep)
 
 
 @pytest.mark.parametrize("a,b", [(r"\cos(\pi)=1", r"\cos(\pi)=1"), (r"e^{i\pi}=1", r"e^{i\pi}=1")])

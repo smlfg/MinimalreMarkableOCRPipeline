@@ -25,12 +25,21 @@ def closed_truth(latex: str):
         return None
 
 
+def tt_render_artifacts(latex: str) -> str:
+    """TexTeller-CPU: mathtext render quirks (\\mbox integral glyph, \\tfrac alias)."""
+    s = re.sub(r"\\mbox\{\\Large\$\\int\$\}", r"\\int", latex)
+    return s.replace(r"\tfrac", r"\frac")
+
+
 def texttt_artifacts(latex: str) -> str:
     """TexTeller-CPU: \\backslash\\texttt{…} statt \\begin/\\end, \\texttt{token}-Hüllen, \\&."""
-    if not re.search(r"\\backslash\\(?:text|math)tt|\\(?:text|math)tt\{", latex):
+    if not re.search(
+        r"\\backslash\\(?:text|math)tt|\\(?:text|math)tt\{|\\backslash\s+\\|\\backslash\s+begin|@"
+        r"|\\mbox\{\\Large\$\\int\$\}|\\,\{=|\}\{=",
+        latex,
+    ):
         if "\\&" not in latex and r"\backslash\backslash" not in latex and not re.search(r"\\\{", latex):
-            if not re.search(r"\\,\{=", latex):
-                return latex
+            return latex
     s = latex
     s = re.sub(r"\\backslash\s*\\(?:text|math)tt\{begin\}", r"\\begin", s)
     s = re.sub(r"\\backslash\s*\\(?:text|math)tt\{end\}", r"\\end", s)
@@ -39,6 +48,12 @@ def texttt_artifacts(latex: str) -> str:
     s = re.sub(r"\\\{", "{", s)
     s = re.sub(r"\\\}", "}", s)
     s = s.replace(r"\backslash\backslash", r"\\")
+    s = re.sub(r"\\backslash\s+\\backslash", r"\\\\", s)
+    s = re.sub(r"\\backslash\s+begin\{", r"\\begin{", s)
+    s = re.sub(r"\\backslash\s+end\{", r"\\end{", s)
+    s = re.sub(r"\\\\\s+", r"\\\\", s)
+    s = re.sub(r"\}\{=([^}]*)\}", r"}=\1", s)
+    s = s.replace("@", "&")
     s = s.replace(r"\&", "&")
     return s
 
@@ -48,12 +63,17 @@ def integral_eq_artifact(latex: str) -> str:
     return re.sub(r"\\,\{=([^}]*)\}", r"=\1", latex)
 
 
+def tt_postprocess(latex: str) -> str:
+    """Product pipe before coherent(): decimal + render/texttt/integral artifacts."""
+    return integral_eq_artifact(tt_render_artifacts(texttt_artifacts(decimal_comma(latex))))
+
+
 def variants(second: str) -> list[str]:
     """Artefakt-Interpretationen einer Zweitmeinung. GLM-Artefakte: Leerzeichen zwischen
     Ziffern (zerrissene Zahl '2 5' oder verschluckter Operator '3 3') und Punkt/Gedankenstrich
     statt Malpunkt ('3. 1 0'). Im deutschen Schulkontext ist ein Punkt zwischen Ziffern primaer
     ein Malpunkt (Dezimalzeichen ist das Komma), deshalb als Variante, nie als Ersatz."""
-    second = integral_eq_artifact(texttt_artifacts(second))
+    second = tt_postprocess(second)
     num = re.sub(r"(?<=\d) (?=\d)", "", second)
     mul = re.sub(r"(?<=\d) (?=\d)", r"\\cdot ", second)
     dot = re.sub(r"(?<=\d)[.\-] ?(?=\d)", r"\\cdot ", second)
