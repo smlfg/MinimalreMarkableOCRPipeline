@@ -158,6 +158,31 @@ Großbuchstaben (eigenständige Variablen) zu korrumpieren. Kein Messgewinn → 
 - ADR-005-Nachtrag definiert `uncertain` als reine OCR-Evidenz, `math_status` trägt
   `closed_truth` — Widerspruch zu ADR-007 aufgelöst.
 
+## Pass 3 — Level 4–5 Diagnostik (Baseline gemessen, live TexTeller CPU)
+
+`bench/overnight/level45.py` rendert ein festes Level-4–5-Dataset (Integrale, Matrizen,
+Trig, spezielle Symbole `i`/`\pi`/`e`, je mit absichtlich FALSCHEN Schülergleichungen;
+dev 46 / holdout 16, null Überlappung) — Matrizen über eigene Zell-Komposition (mathtext
+kann `\begin{pmatrix}` nicht). Baseline (Linux CPU, synthetisch gerendert, NICHT Handschrift):
+
+| Bucket | dev struct (sympy_equal) | n |
+|---|---:|---:|
+| integral | 0,917 | 12 |
+| matrix | **0,000** | 10 |
+| trig | 1,000 | 12 |
+| special | 1,000 | 12 |
+| **gesamt** | **0,761** (char 0,877) | 46 |
+
+p50 0,79 s / p95 1,51 s (Linux CPU ≠ Mac MPS).
+
+**Fehlerverteilung:** 10/11 Fehler sind Matrizen; 1 Integral (`\vspace{0.2cm}`-Artefakt).
+TexTeller liest Matrizen als `\begin{array}{cc}`/`\begin{array}{c}`/`\begin{smallmatrix}`
+statt `\begin{pmatrix}`/`\bmatrix`/`\vmatrix`, und **lässt oft die `&`-Spaltentrenner weg**
+(`1\ 2` statt `1&2`). latex2sympy parst `array`/`smallmatrix` gar nicht → sympy_equal=0 für
+alle 10 Matrix-Zeilen. Nächster Schritt (getrennte Experimente): `\vspace`-Normalisierung
+und Matrix-Umgebungs-Normalisierung nur für Fälle mit erhaltenem `&`; das `&`-Droppen ist
+Strukturverlust und ohne Stütze nicht rekonstruierbar.
+
 ## Reproduktion
 
 ```bash
@@ -173,4 +198,7 @@ venv/bin/python bench/overnight/benchmark.py --tag "notiz"
 
 # Latenz-Benchmark (Linux CPU, sauber protokolliert)
 venv/bin/python bench/overnight/latency.py 3
+
+# Level 4-5 Diagnostik (live TexTeller CPU, synthetisch gerendert)
+venv/bin/python bench/overnight/level45.py dev --tag "notiz"
 ```
