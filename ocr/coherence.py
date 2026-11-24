@@ -104,6 +104,58 @@ def integral_eq_artifact(latex: str) -> str:
     return re.sub(r"\\,\{=([^}]*)\}", r"=\1", latex)
 
 
+_THIN_SPACE_CMD = r"(?:\\[,:;!]|\\ )"
+_CONTINUATION_HEAD = (
+    r"=|<=>|=>|\\approx|\\equiv|\\sim|\\Rightarrow|\\Leftrightarrow|"
+    r"\\implies|\\iff|<|>|\\leq|\\geq|\\neq"
+)
+
+
+def tt_mbox_small_dollar(latex: str) -> str:
+    """Unwrap \\mbox{\\small$…$} font-size wrappers (TT CPU noise)."""
+    if r"\mbox{\small$" not in latex:
+        return latex
+    return re.sub(r"\\mbox\{\\small\$([^$]*)\$\}", r"\1", latex)
+
+
+_TEXT_PAREN_DOLLAR = re.compile(r"\\text\{((?:\(\$[^$]+\$\))+)\}")
+
+
+def _unwrap_paren_dollars(inner: str) -> str:
+    return re.sub(r"\(\$([^$]+)\$\)", r"(\1)", inner)
+
+
+def tt_text_paren_dollar(latex: str) -> str:
+    """\\text{($x$)} or \\text{($a$)($b$)} → parenthesized math without text/$ wrappers."""
+
+    def _repl(m: re.Match[str]) -> str:
+        return _unwrap_paren_dollars(m.group(1))
+
+    if r"\text{($" not in latex:
+        return latex
+    return _TEXT_PAREN_DOLLAR.sub(_repl, latex)
+
+
+def tt_lead_eq_space_artifacts(latex: str) -> str:
+    """Strip thin/neg spaces before continuation =/=> at line start; normalize \\,= / \\!= markers."""
+    if not re.search(r"\\[,:;! ]", latex) and r"\," not in latex and r"\!" not in latex:
+        return latex
+    s = latex
+    s = re.sub(
+        rf"^(\s*)(?:{_THIN_SPACE_CMD}|\s)+(?=({_CONTINUATION_HEAD}))",
+        r"\1",
+        s,
+    )
+    s = re.sub(
+        rf"^(\s*)({_CONTINUATION_HEAD})(?:{_THIN_SPACE_CMD}|\s)+",
+        r"\1\2",
+        s,
+    )
+    s = re.sub(r"\\,\s*=", "=", s)
+    s = re.sub(r"\\!\s*=", "=", s)
+    return s
+
+
 def array_single_cell_artifact(latex: str) -> str:
     """Unwrap \\begin{array}{c}… single formula …\\end{array} (TT line wrapper only)."""
     m = re.fullmatch(
@@ -126,8 +178,11 @@ def tt_postprocess(latex: str) -> str:
     s = tt_render_artifacts(texttt_artifacts(decimal_comma(latex)))
     s = tt_delim_artifacts(s)
     s = tt_mbox_reim_artifacts(s)
+    s = tt_mbox_small_dollar(s)
+    s = tt_text_paren_dollar(s)
     s = array_single_cell_artifact(s)
-    return integral_eq_artifact(s)
+    s = integral_eq_artifact(s)
+    return tt_lead_eq_space_artifacts(s)
 
 
 def variants(second: str) -> list[str]:
