@@ -247,6 +247,68 @@ dev 0,943 vs holdout 0,944 → **keine Überanpassung**; beide Splits stimmen ü
 Alle offenen Fehler sind entweder echte OCR-Verwechslungen oder ein Renderer-Defekt — kein
 Produktlogik-Fehler. Sie werden dokumentiert, nicht durch Raten „weggerechnet".
 
+## Pass 5 — Mehrzeilige Rechenketten (Seitenstruktur, live TexTeller CPU)
+
+### Modul & Signale
+
+Neu `ocr/multiline.py` (`group_lines`/`page_structure`) gruppiert vertikal geordnete Zeilen
+**rein strukturell** zu Rechenketten — kein Tutor, keine Schrittrichter, keine Mathe-Prüfung:
+
+- **Fortsetzung** (Zeilen gehören zusammen): führendes `=`/`\approx`/`\equiv`/`\Rightarrow`/
+  `\Leftrightarrow`/`\implies`/`\iff`/`<`/`>`/`\leq`/`\geq`/`\neq`; offener Operator
+  (`+`,`-`,`\cdot`,`\times`,`=`) oder unvollständige Klammer am Zeilenende; **nackter Term**
+  (ohne Relationszeichen) — Schul-Konvention wie `validator_lines` (K25); gleiche
+  Variablenmenge (Gross/Klein gefaltet wegen OCR `x`/`X`).
+- **Trenner** (neue Kette): grosse vertikale Lücke (> 2× Zeilenhöhe, gemessen an Ink-Höhe;
+  Innenabstand der gerenderten Zeilen ~46 px vs. ~156 px zwischen Aufgaben), Aufgabenlabel
+  (`1.`, `a)`, `Aufgabe`), oder andere/leere Variablenmenge ohne Fortsetzungssignal.
+- Eingang: Zeilen mit `bbox=(x0,y0,x1,y1)` + `latex` (+ beliebige Felder). Zusatz-API
+  `ocr/pre.py:split_lines_with_boxes` (Boxen in Seitenkoordinaten; `split_lines` delegiert
+  verhaltensgleich) und `ocr/pipeline.py:recognize_page` (segmentieren → erkennen → gruppieren).
+
+**Issue-#1-Garantien (hart, getestet):** Zeilen werden nie verändert (`latex`/`uncertain`/
+`repair`/`math_status`/`alt` bleiben); **kein Domino** (Ketten tragen nur informative
+`has_uncertain_step`/`uncertain_line_indices`); Schülerfehler bleiben zeilenweise erhalten.
+15 Regressionstests in `tests/test_multiline.py`, 36 Pytest gesamt grün, Selftest OK.
+
+### Echte ketten-Muster (strukturell, ohne Modell)
+
+`bench/overnight/multiline_ketten.py` rekonstruiert die echten `kalib/ketten/last_real.jsonl`-
+Lesarten einspaltig (Muster-Messung, keine Live-OCR):
+
+| Variante | before (nur explizite Signale) | after (+ nackter Term, x/X-Fold) |
+|---|---:|---:|
+| within-chain recall (Ketten ≥2 Zeilen) | 23/28 = 0,821 | **28/28 = 1,000** |
+| packed mit Leerzeile zwischen Aufgaben | – | **28/28 exakt, 0 verschmolzen** |
+
+Die anfänglichen 5 Fehler waren genau die im Auftrag genannten: `x`/`X` (K01/K06/K09/K13) und
+K25 mit **verschlucktem führendem `=`** (`17·3`, `3·10+3·7`, `30+21`, `41` ohne `=`) — beide
+jetzt strukturell gelöst. **Grenze (ehrlich):** ohne jeden Trenner (keine Lücke, kein Label)
+verschmelzen benachbarte Aufgaben gleicher Variable (1 Gruppe) — echte Seiten haben Lücke/Label.
+
+### End-to-End live TexTeller CPU (15 Seiten, 43 Zeilen, 19 Ketten)
+
+`bench/overnight/multiline_bench.py` rendert feste mehrzeilige Seiten (Ableitungen, Brüche,
+Quadrate, Trig, Integral, `e^{iπ}`, absichtlich falsche Schritte, Mehr-Aufgaben-Seiten),
+segmentiert mit `split_lines_with_boxes`, liest jede Zeile live und gruppiert:
+
+| Metrik | Wert |
+|---|---:|
+| line_struct (`same` GT↔read) | 0,889 (40/45) |
+| **chain_recall** | **1,000** (19/19) |
+| **chain_exact_pages** | **1,000** (15/15) |
+| false-merge chains | 0 |
+| **student_error_preserved** | **1,000** (3/3 falsche Zeilen treu falsch) |
+| **anti_domino** | **True** (100 %) |
+| p50 / p95 (Linux CPU ≠ Mac MPS) | 0,475 s / 0,931 s |
+
+**Restfehler (ehrlich):** `seg_mismatch` p04/p07 — der einfache Ink-Band-Segmentierer trennt
+bei hohen Brüchen/Integralen den dünnen Bruchstrich nicht (liegt unter der Ink-Schwelle) und
+erzeugt eine Zusatz-Zeile. Das ist **Segmentierung**, nicht Gruppierung (Gruppierung bleibt
+korrekt, Ketten exakt) — gehört zur Matrix/Crop-Vorverarbeitung (Pass 6). Zweiter Randfall:
+gleiche-Variable-Aufgaben ohne sichtbare Lücke/Label werden verschmolzen (ohne Validator nicht
+auflösbar; bewusst kein Tutor).
+
 ## Reproduktion
 
 ```bash
@@ -265,4 +327,9 @@ venv/bin/python bench/overnight/latency.py 3
 
 # Level 4-5 Diagnostik (live TexTeller CPU, synthetisch gerendert)
 venv/bin/python bench/overnight/level45.py dev --tag "notiz"
+
+# Pass 5: Mehrzeilen-Ketten
+venv/bin/python -m pytest tests/test_multiline.py -q                 # Gruppierungs-Regressionen
+venv/bin/python bench/overnight/multiline_ketten.py --tag "notiz"    # echte ketten-Muster (ohne Modell)
+venv/bin/python bench/overnight/multiline_bench.py --tag "notiz"     # live TexTeller, mehrzeilige Seiten
 ```

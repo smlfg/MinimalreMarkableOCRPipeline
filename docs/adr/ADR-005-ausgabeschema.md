@@ -127,13 +127,14 @@ Ob das LLM mit dieser Fassung den Wahrheitswert richtig deutet, wird **getrennt*
 - **`math_status` (neu, Issue #1):** `closed_truth(fixed)` als getrennte Diagnose (`True`/`False`/`None`). Eine falsche, aber übereinstimmend gelesene Gleichung ist OCR-**sicher** mit `math_status=False` — die Rechenwahrheit beeinflusst `uncertain` nicht.
 - **Dezimalkomma:** `latex` enthält `0.5`, auch wenn `0,5` geschrieben wurde; in Mengen/Tupeln bleibt das Komma Trenner.
 - **Teilweise implementiert und gemessen:** Zeilen-`latex`, `uncertain`, `repair`, `math_status` in `ocr/formula.py`. Seitenstruktur (`order`, `steps`, `checks`) weiter offen.
+- **Multi-line Gruppen (Pass 5, umgesetzt):** `ocr/multiline.py:group_lines`/`page_structure` gruppiert Zeilen strukturell zu Rechenketten (`chain.line_indices`/`chains`, `has_uncertain_step`, `uncertain_line_indices`) — rein additiv, Zeilen unverändert, kein Domino (Issue #1). `ocr/pre.py:split_lines_with_boxes` liefert die nötigen `bbox`en, `ocr/pipeline.py:recognize_page` verdrahtet es. `checks` (Validator/Tutor) bleibt bewusst offen.
 
 ## Offen
 
 - **Welcher Validator ist kanonisch?** `arithmetic` kennt keine Variablen, `SymPyChecker` hat den Komma-Tupel-Fehler (ADR-004). Vorschlag zur Prüfung: `sympy.solveset` für Rechenketten, wie in `SchlangebeißtinSchwanz/eval_runs/upstream-mathverify/RESULT.md:10-16` (math-verify hat dort 3 von 7 Schrittpaaren falsch beurteilt).
 - **Wann ist ein Kandidat „unsicher“?** `top3_disagree` an einer Ziffer ist ein Vorschlag, aber noch ungemessen. Die Schwelle legt das Gold-Set fest, nicht diese ADR.
 - **Ungleichungen:** eigener Pfad (`solveset` kann sie) oder vorerst `unsupported`?
-- **Mehrzeilige Ausdrücke** (Bruch über zwei Zeilen, Nebenrechnung am Rand): `steps.from_lines` erlaubt mehrere Zeilen, aber wie man das zusammenführt, ist nicht entschieden.
+- **Mehrzeilige Ausdrücke** (Bruch über zwei Zeilen, Nebenrechnung am Rand): `steps.from_lines` erlaubt mehrere Zeilen, aber wie man das zusammenführt, ist nicht entschieden. **Teilantwort (Pass 5):** vertikale Ableitungen werden als Ketten gruppiert (Fortsetzungssignale/Nähe/Spalte/Label); echte *zeilenübergreifende Einzelausdrücke* (Bruch über zwei Zeilen) bleiben offen.
 - **`schema_version`:** Erst nach der Analyse des echten Tutors von `0.1` auf `1.0` heben.
 
 **Hinweis:** Das Seitenschema ist weiter ein Vorschlag. Implementiert und gemessen sind nur die Zeilenfelder aus dem Nachtrag.
