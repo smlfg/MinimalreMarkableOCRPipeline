@@ -1,5 +1,8 @@
 """Formel-Erkennung (ADR-006/007): TexTeller liest, GLM-OCR prüft, Kohärenz-Schicht dahinter.
-recognize(png) -> {"latex", "uncertain", "repair", "cost_s"}. Engines sind injizierbar (Flywheel nutzt Cache)."""
+recognize(png) -> {"latex", "uncertain", "repair", "math_status", "cost_s", "alt"}.
+`uncertain` ist reine OCR-Unsicherheit (Einigkeit der Engines + Reparatur), `math_status` ist
+die Rechenwahrheit (closed_truth) als getrennte Diagnose (Issue #1). Engines sind injizierbar
+(Flywheel nutzt Cache)."""
 import base64, io, json, re, subprocess, urllib.request
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
@@ -56,7 +59,10 @@ def recognize(path, tt, glm=glm_live) -> dict:
     t = decimal_comma(t)
     fixed, repair, trusted = coherent(t, g)
     return {"latex": fixed, "repair": repair, "cost_s": max(st, sg),
-            "uncertain": not trusted or closed_truth(fixed) is False,
+            # OCR-Vertrauen ist unabhängig von der Rechenwahrheit (Issue #1): eine falsche,
+            # aber übereinstimmend gelesene Gleichung ist OCR-sicher, math_status=False.
+            "uncertain": not trusted or repair is not None,
+            "math_status": closed_truth(fixed),
             "alt": None if trusted else g}
 
 

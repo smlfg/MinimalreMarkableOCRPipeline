@@ -47,11 +47,13 @@ def agree(latex: str, second: str) -> bool:
 
 
 def coherent(latex: str, second: str | None = None):
-    """-> (latex, repair|None, trusted). trusted: Zweitmeinung stützt die Lesart (ggf. nach
-    Artefakt-Normalisierung) oder korroboriert einen CONFUSE-Tausch. Ein Tausch OHNE Stütze
-    (nur closed_truth) bleibt wie bisher unsicher (ADR-007: nie still raten)."""
+    """-> (latex, repair|None, trusted). trusted: Zweitmeinung stützt die Lesart unverändert
+    (ggf. nach Artefakt-Normalisierung). Jede Reparatur (auch eine von der Zweitmeinung
+    korroborierte) liefert trusted=False (ADR-007: Reparatur ist nie sicher). Ohne Zweitmeinung
+    gibt es keine Bestätigung -> trusted=False. `closed_truth` beeinflusst `trusted` nie
+    (Issue #1: OCR-Vertrauen ist unabhängig von der Rechenwahrheit)."""
     if second is None:
-        return latex, None, closed_truth(latex) is not False
+        return latex, None, False
     if agree(latex, second):
         return latex, None, True
     for pat, rep in CONFUSE:
@@ -61,7 +63,7 @@ def coherent(latex: str, second: str | None = None):
             if closed_truth(cand) is True and closed_truth(latex) is False:
                 return cand, f"{latex} -> {cand}", False
             if agree(cand, second):
-                return cand, f"{latex} -> {cand}", True
+                return cand, f"{latex} -> {cand}", False
     return latex, None, False
 
 
