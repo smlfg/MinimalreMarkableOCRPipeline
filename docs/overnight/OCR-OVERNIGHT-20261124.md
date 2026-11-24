@@ -416,3 +416,56 @@ Artifact: `bench/results_pass6_f1_delim_dev.json` (from `rescore_pipe.py`).
 P1/P2 preprocess: **REVERT** for production (env hooks remain **default off** only).
 
 Deferred: P3 antialias, Re/Im mbox.
+
+## Pass 7 — Re/Im mbox, matrix root-cause, multiline (2026-11-24)
+
+### G2 — `tt_mbox_reim_artifacts` (**KEEP**)
+
+`\mbox{\it Re(}z\mbox{\it)}+\mbox{\it Im(}z\mbox{\it)}=z` → `Re(z)+Im(z)=z` (`dev_L45L_085`).
+
+Re-score cached `results_pass6_l45_baseline_dev.jsonl` (no re-infer):
+
+| Metric | Pass 6 F1 | Pass 7 (+Re/Im) |
+|---|---:|---:|
+| pipe_sympy (dev 72) | 0.819 | **0.833** |
+| special | 0.944 | **1.000** |
+| matrix | 0.333 | 0.333 |
+| integral / trig | 1.000 | 1.000 |
+| holdout pipe_sympy | 0.861 | **0.861** |
+
+Artifacts: `bench/results_pass7_f1_reim_dev.{json,jsonl}`; holdout re-score `bench/results_pass7_holdout_rescore.json`.
+
+### Matrix experiments — **REVERT** (bench only)
+
+| Exp | Hypothesis | dev matrix pipe_sympy | Verdict |
+|---|---|---:|---|
+| H1 | column-projection split wide crops before TT | **0.000** (12 prior fails; 58% split) | **REVERT** — garbled joins, never product |
+| H2 | upscale+tall pad (~128 px) matrix strips | **0.333** (18/18; same as baseline) | **REVERT** — **synthetic strip renderer limit**; fused `&` / `162` failures unchanged |
+
+PNG geometry (baseline): height **40–54 px**, aspect **8–29**. Tall pad does not recover column fusion without re-ink / live handwriting.
+
+Artifacts: `bench/results_pass7_matrix_{h1_dev,h2_tall}.{json,tsv}`; bench driver `level45_live/run_matrix_pass7.py` (not wired to `ocr/formula.py`).
+
+### Multiline hardening (**KEEP**)
+
+`ocr/multiline.py`: lead continuations `\\sim`, `=>`, `<=>`; `| …` / `\\mid …` transform annotation chains; trailing `| …` does not break next `=` step.
+
+| Gate | Result |
+|---|---:|
+| pytest (full) | **75/75** |
+| kalib `last_real` grouping-only | **100%** (28/28) |
+| multiline_live / multiline_l45 grouping-only | **100%** chains |
+| multiline_l45 live TT (Linux CPU) | chain boundary **83.3%** (OCR ink; grouping logic unchanged) |
+| Anti-Domino | **0** violations |
+
+Suite: `bench/formula_flywheel/multiline_l45/` (12 pages, seed 20261124).
+
+### Pass 7 keep / revert
+
+| Change | Verdict |
+|---|---|
+| `tt_mbox_reim_artifacts` | **KEEP** |
+| Multiline continuation rules | **KEEP** |
+| H1 wide-split TT | **REVERT** |
+| H2 tall matrix pad | **REVERT** (document renderer limit) |
+| Product `prepare_tt_input` defaults | unchanged (off) |

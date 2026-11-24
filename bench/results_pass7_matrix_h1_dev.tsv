@@ -1,0 +1,15 @@
+experiment	H1_wide_split
+n	12
+pipe_sympy	0.0000
+dev_L45L_032	False	True	52	\begin{pmatrix}1&2\\3 &4\end{pmat=rix}\!\!=\!\!\setminusbegin{pmatrix} 1&2\\3&5\end{pmatrix}
+dev_L45L_038	False	True	42	\begin{pmatrix}0A1\backslash backslashend{pmat=rix}\hat{\ \ }2=\begin{pmatrix}1&0\\0&1\end{ pmatrix}
+dev_L45L_039	False	False	49	\begin{bmatrixmatrix}2&1\\1&2\end{bmatrixrix}
+dev_L45L_041	False	False	49	\det\begin{pmatrix}2&0 \backslash10&3\end{pmatrix} =5
+dev_L45L_042	False	False	49	\begin{pmatrix}10060\backslash 106260\backslash106063 \end{pmatrix}
+dev_L45L_044	False	True	54	\backslashoperatorname{det}\begin{ pmat=rix}1&2\\3&4\end{pmatrix} =-2
+dev_L45L_045	False	True	42	\begin{pmatrix}1&2\\3&4\end{ pmat=rix}+\begin{pmatrix}06 0\backslash060\end{ pmatrix}=\begin{pmatrix}16 2\backslash364\e
+dev_L45L_046	False	True	49	\begin{pmatrix}2&0\\0&1\end{pmatrix} =\begin{pmatrix}=1&0\\0&1\end{pmatrix}
+dev_L45L_048	False	False	44	\begin{pmatrix}&2&3\\4&5&6\end{pmatrix}
+dev_L45L_050	False	False	54	\begin{bmatrixx1x 1x1x01x 01xnd{bmatrixx}
+dev_L45L_052	False	True	40	\det\begin{vmat=rix}2&0\\0&3\end{vmatrix}=5
+dev_L45L_053	False	True	40	\begin{pmatrix}0&1\\1 &0\end{pmat=rix}\char 942=\begin{pmatrix} 01\backslash1&0\end{ pmatrix}
