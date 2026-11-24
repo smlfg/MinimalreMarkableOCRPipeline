@@ -1,0 +1,5 @@
+commit	n	within_recall	packed_exact	packed_merged	tag
+141ca55	28	0.8214	8	4	baseline
+141ca55	28	1.0000	0	1	bare-term+casefold
+141ca55	28	1.0000	28	0	bare-term+casefold+gap
+141ca55	28	1.0000	28	0	gap2.0

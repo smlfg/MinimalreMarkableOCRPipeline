@@ -1,0 +1,4 @@
+commit	pages	lines	line_struct	chain_recall	chain_exact_pages	merge_fp	sep	anti_domino	p50_s	p95_s	tag
+141ca55	15	45	0.0000	0.3889	0.3333	0	0.0000	1	0.351	11.254	baseline
+141ca55	15	45	0.8889	0.5556	0.5333	0	1.0000	1	0.511	0.806	baseline-clean
+141ca55	15	45	0.8889	1.0000	1.0000	0	1.0000	1	0.475	0.931	gap2.0
