@@ -67,6 +67,7 @@ def test_engines_disagree_uncertain_even_if_alt_true(tmp_path):
     assert out["latex"] == "7+5=13"        # Primaerlesart bleibt erhalten
     assert out["uncertain"] is True
     assert out["alt"] == "7+5=12"          # Zweitmeinung als Alternative dokumentiert
+    assert out["math_status"] is False     # Rechenwahrheit getrennt, beeinflusst uncertain nicht
 
 
 def test_repair_implies_uncertain_even_if_corroborated(tmp_path):
