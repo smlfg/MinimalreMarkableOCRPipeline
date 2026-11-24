@@ -37,6 +37,7 @@ sys.path.insert(0, str(ROOT / "bench"))
 
 from ocr.latex import same  # noqa: E402
 from ocr.multiline import group_lines  # noqa: E402
+from ocr.pre import ensure_min_height  # noqa: E402
 from ocr.pre import split_lines_with_boxes  # noqa: E402
 
 # page = {"id": str, "exercises": [[line, ...], ...]}; "exercise" = eine Kette.
@@ -137,7 +138,7 @@ def run(rows_pages):
     first_chunks = split_lines_with_boxes(Image.open(rows_pages[0][2]).convert("L"))
     if first_chunks:
         wu = HERE / "data" / "multiline" / "_warm.png"
-        first_chunks[0][0].save(wu)
+        ensure_min_height(first_chunks[0][0]).save(wu)
         img2latex(model, tok, [str(wu)], device=dev)
     line_ok, lat = [], []
     chain_hit = chain_total = exact_pages = merge_chains = 0
@@ -153,7 +154,7 @@ def run(rows_pages):
         recs = []
         tmp = HERE / "data" / "multiline" / "_tmp.png"
         for img, bbox in chunks:
-            img.save(tmp)
+            ensure_min_height(img).save(tmp)
             a = time.perf_counter()
             latex = img2latex(model, tok, [str(tmp)], device=dev)[0]
             lat.append(time.perf_counter() - a)

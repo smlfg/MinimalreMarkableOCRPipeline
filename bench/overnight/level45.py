@@ -35,6 +35,7 @@ sys.path.insert(0, str(ROOT / "bench"))
 
 import structure_bench as sb  # noqa: E402
 from ocr.latex import normalize  # noqa: E402
+from ocr.pre import MIN_TEXTELLER_HEIGHT, ensure_min_height  # noqa: E402
 
 # ---------------------------------------------------------------- Renderer
 DELIMS = {"paren": ("(", ")"), "bracket": ("[", "]"), "vbar": ("|", "|")}
@@ -295,7 +296,12 @@ def run_texter(rows: list[dict], split: str) -> list[dict]:
     out = []
     for r, p in zip(rows, paths):
         a = time.perf_counter()
-        latex = img2latex(model, tok, [p], device=dev)[0]
+        im = Image.open(p).convert("L")
+        ip = p
+        if im.height < MIN_TEXTELLER_HEIGHT:
+            ip = str(HERE / "data" / "level45" / "_pre.png")
+            ensure_min_height(im).save(ip)
+        latex = img2latex(model, tok, [ip], device=dev)[0]
         dt = time.perf_counter() - a
         latex = latex.strip().strip("$").strip()
         if latex.startswith("\\[") and latex.endswith("\\]"):

@@ -31,6 +31,9 @@ sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "bench"))
 
 import structure_bench as sb  # noqa: E402
+from PIL import Image  # noqa: E402
+
+from ocr.pre import MIN_TEXTELLER_HEIGHT, ensure_min_height  # noqa: E402
 
 # ---------------------------------------------------------------- Dataset (fest, dokumentiert)
 # Jeder Eintrag: (category, gt_latex, is_false). GT = was geschrieben wurde (nie korrigiert).
@@ -137,7 +140,12 @@ def run_texter(rows: list[dict]) -> None:
     out = []
     for r, p in zip(rows, paths):
         a = time.perf_counter()
-        latex = img2latex(model, tok, [p], device=dev)[0]
+        im = Image.open(p).convert("L")
+        ip = p
+        if im.height < MIN_TEXTELLER_HEIGHT:
+            ip = str(HERE / "data" / "_pre.png")
+            ensure_min_height(im).save(ip)
+        latex = img2latex(model, tok, [ip], device=dev)[0]
         dt = time.perf_counter() - a
         latex = latex.strip().strip("$").strip()
         if latex.startswith("\\[") and latex.endswith("\\]"):

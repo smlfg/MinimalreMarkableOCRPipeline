@@ -47,6 +47,22 @@ def split_lines(gray: Image.Image) -> list[Image.Image]:
     return [img for img, _ in split_lines_with_boxes(gray)]
 
 
+# TexTeller skaliert intern auf 448 px; sehr kleine Crops (z. B. ein einzelnes
+# `i^{2}`) verlieren dabei Zeichendetail (j/i-Verwechslung). Ein reines Hochskalieren
+# kleiner Crops auf diese Mindesthöhe behebt das, ohne bereits große Crops anzufassen.
+MIN_TEXTELLER_HEIGHT = 96
+
+
+def ensure_min_height(img: Image.Image, min_height: int = MIN_TEXTELLER_HEIGHT) -> Image.Image:
+    """Skaliert nur zu kurze Crops auf `min_height` hoch (Seitenverhältnis erhalten).
+    Bereits ausreichend hohe Bilder bleiben unverändert (kein Down-/Upscaling)."""
+    g = img.convert("L")
+    if g.height >= min_height or g.height == 0:
+        return g
+    w = max(1, round(g.width * min_height / g.height))
+    return g.resize((w, min_height), Image.LANCZOS)
+
+
 def preprocess(img: Image.Image, cfg: dict) -> Image.Image:
     gray = img.convert("L")
     if cfg.get("ink_crop"):
