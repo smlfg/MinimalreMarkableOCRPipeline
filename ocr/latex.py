@@ -35,8 +35,11 @@ def normalize(s: str) -> str:
 
 
 def parse(latex: str):
+    # Whitespace entfernen: TexTeller bricht Matrix-Umgebungen ueber Zeilen um und latex2sympy
+    # verlangt z. B. '\begin{array}{cc}' ohne Leerzeichen. '\sinx' wird vom Parser korrekt
+    # als sin(x) gelesen, daher ist volles Entfernen des Whitespace sicher.
     try:
-        return latex2sympy(latex)
+        return latex2sympy(re.sub(r"\s+", "", latex))
     except Exception:
         return None
 
