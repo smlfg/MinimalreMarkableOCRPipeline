@@ -1,7 +1,7 @@
 {
   "platform": "Linux CPU TexTeller — not comparable to Mac MPS",
-  "git_sha": "e88f48a",
-  "timestamp": "2026-11-24T01:46:44Z",
+  "git_sha": "030aee0",
+  "timestamp": "2026-11-24T01:50:36Z",
   "datasets": {
     "overnight_synth": {
       "suite": "overnight_synth",
@@ -60,8 +60,8 @@
       "chain_boundary": 1.0,
       "anti_domino_violations": 0,
       "student_error_preserved": 1.0,
-      "latency_ms_p50": 1.6793,
-      "latency_ms_p95": 2.6858,
+      "latency_ms_p50": 1.5699,
+      "latency_ms_p95": 2.4288000000000003,
       "mode": "live_tt",
       "device": "cpu"
     },
@@ -72,8 +72,8 @@
       "chain_boundary": 1.0,
       "anti_domino_violations": 0,
       "student_error_preserved": 1.0,
-      "latency_ms_p50": 1.7067999999999999,
-      "latency_ms_p95": 2.5951999999999997,
+      "latency_ms_p50": 1.5936,
+      "latency_ms_p95": 2.583,
       "mode": "live_tt",
       "device": "cpu"
     },
@@ -84,8 +84,8 @@
       "chain_boundary": 1.0,
       "anti_domino_violations": 0,
       "student_error_preserved": 1.0,
-      "latency_ms_p50": 1.6227,
-      "latency_ms_p95": 2.1986999999999997,
+      "latency_ms_p50": 1.5997999999999999,
+      "latency_ms_p95": 2.1016,
       "mode": "live_tt",
       "device": "cpu"
     },
