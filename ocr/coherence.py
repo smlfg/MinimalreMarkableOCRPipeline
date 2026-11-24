@@ -88,6 +88,17 @@ def texttt_artifacts(latex: str) -> str:
     return s
 
 
+def tt_mbox_reim_artifacts(latex: str) -> str:
+    """TexTeller: \\mbox{\\it Re(} / \\mbox{\\it Im(} wrappers around complex Re/Im."""
+    if r"\mbox{\it" not in latex:
+        return latex
+    s = latex
+    for fn in ("Re", "Im"):
+        s = s.replace(rf"\mbox{{\it {fn}(}}", rf"{fn}(")
+    s = s.replace(r"\mbox{\it)}", ")")
+    return s
+
+
 def integral_eq_artifact(latex: str) -> str:
     """TexTeller: \\,{=6} statt =6 nach Integrand."""
     return re.sub(r"\\,\{=([^}]*)\}", r"=\1", latex)
@@ -114,6 +125,7 @@ def tt_postprocess(latex: str) -> str:
     """Product pipe before coherent(): decimal + render/texttt/integral artifacts."""
     s = tt_render_artifacts(texttt_artifacts(decimal_comma(latex)))
     s = tt_delim_artifacts(s)
+    s = tt_mbox_reim_artifacts(s)
     s = array_single_cell_artifact(s)
     return integral_eq_artifact(s)
 

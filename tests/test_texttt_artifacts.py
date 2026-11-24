@@ -1,7 +1,13 @@
 """TexTeller CPU texttt/backslash matrix env repair (injected strings, no live model)."""
 import pytest
 
-from ocr.coherence import integral_eq_artifact, texttt_artifacts, tt_postprocess, tt_render_artifacts
+from ocr.coherence import (
+    integral_eq_artifact,
+    texttt_artifacts,
+    tt_mbox_reim_artifacts,
+    tt_postprocess,
+    tt_render_artifacts,
+)
 from ocr.latex import same
 
 DET_PRED = (
@@ -136,3 +142,13 @@ def test_tt_delim_student_paren_text_untouched():
 def test_no_artifact_strings_identity(a, b):
     assert texttt_artifacts(a) == a
     assert same(a, b)
+
+
+REIM_RAW = r"\mbox{\it Re(}z\mbox{\it)}+\mbox{\it Im(}z\mbox{\it)}=z"
+REIM_GT = r"Re(z)+Im(z)=z"
+
+
+def test_mbox_reim_artifacts():
+    rep = _repair(REIM_RAW)
+    assert same(REIM_GT, rep)
+    assert tt_mbox_reim_artifacts(REIM_GT) == REIM_GT
