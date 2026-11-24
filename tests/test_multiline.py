@@ -47,6 +47,17 @@ def test_cube_expansion_chain():
     assert _chain_lengths(chains) == [2]
 
 
+def test_cube_chain_without_bbox_y():
+    lines = [
+        {"id": "l1", "latex": r"(x+y)^3", "uncertain": False},
+        {"id": "l2", "latex": r"=(x+y)(x+y)^2", "uncertain": False},
+        {"id": "l3", "latex": r"=x^3+y^3", "uncertain": False},
+    ]
+    chains = group_calculations(lines)
+    assert len(chains) == 1
+    assert len(chains[0]["line_ids"]) == 3
+
+
 def test_trailing_plus_and_equals_links():
     lines = _lines(
         [

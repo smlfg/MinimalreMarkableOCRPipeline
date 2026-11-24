@@ -131,8 +131,9 @@ def _links(prev: dict, cur: dict, prev_idx: int, med_h: float, med_w: float) -> 
     gap = ct - pb
     if gap > med_h * _GAP_BREAK:
         return False
-    if gap < -med_h * 0.5:
-        return False
+    if gap < 0:
+        # Missing bbox/y (all default 0) or slight overlap: use reading order, not reject.
+        gap = 0.0
     if not _column_ok(px0, cx0, med_w):
         return False
 
