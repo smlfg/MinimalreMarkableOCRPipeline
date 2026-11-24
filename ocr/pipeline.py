@@ -70,6 +70,27 @@ def run(png_path: Path, cfg: dict | None = None) -> str:
     return run_detailed(png_path, cfg)["final"]
 
 
+def recognize_page(png_path: Path, recognize_line, cfg: dict | None = None) -> dict:
+    """Mehrzeilige Seitenstruktur (ADR-005, additiv): Zeilen mit Boxen segmentieren,
+    jede Zeile mit `recognize_line(img) -> dict` lesen und zu Rechenketten gruppieren.
+    `recognize_line` liefert Felder wie ocr/formula.py (latex, uncertain, repair, math_status,
+    alt). Die Zeilen werden unveraendert in `lines` durchgereicht; `chains` halten Referenzen
+    (ocr/multiline.py). Kein bestehender Aufrufer ist betroffen."""
+    from ocr import multiline
+    merged = {**DEFAULT_CFG, **(cfg or {})}
+    gray = Image.open(png_path).convert("L")
+    chunks = pre.split_lines_with_boxes(gray)
+    t0 = time.perf_counter()
+    lines = []
+    for idx, (img, bbox) in enumerate(chunks):
+        rec = dict(recognize_line(img) or {})
+        lines.append({"id": f"l{idx + 1}", "bbox": bbox, **rec})
+    page = multiline.page_structure(lines)
+    page["ms"] = (time.perf_counter() - t0) * 1000.0
+    page["cfg"] = merged.get("engine")
+    return page
+
+
 if __name__ == "__main__":
     if len(sys.argv) < 2 or not Path(sys.argv[1]).is_file():
         print("Verwendung: python3 ocr/pipeline.py <bild.png>", file=sys.stderr)

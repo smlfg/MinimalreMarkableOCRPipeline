@@ -4,11 +4,15 @@
 from PIL import Image, ImageFilter, ImageOps
 
 
-def split_lines(gray: Image.Image) -> list[Image.Image]:
+def split_lines_with_boxes(gray: Image.Image) -> list[tuple[Image.Image, tuple[int, int, int, int]]]:
+    """Wie `split_lines`, gibt aber zusaetzlich die Bounding-Box jeder Zeile in den
+    Originalkoordinaten der Seite zurueck (x0, y0, x1, y1) — fuer die Mehrzeilen-Gruppierung
+    (ocr/multiline.py). Das Bild ist wie bisher auf ein 80-px-Pad erweitert; nur die Box
+    bezieht sich auf die Seite."""
     mask = ImageOps.invert(gray).point(lambda p: 255 if p > 55 else 0)
     bbox = mask.getbbox()
     if not bbox:
-        return [gray]
+        return [(gray, (0, 0, gray.width, gray.height))]
     px, raw_bands, in_b = mask.load(), [], False
     for y in range(bbox[1], bbox[3]):
         has_ink = any(px[x, y] for x in range(bbox[0], bbox[2]))
@@ -24,17 +28,23 @@ def split_lines(gray: Image.Image) -> list[Image.Image]:
         raw_bands.append((y0, bbox[3]))
     bands = [(a, b) for a, b in raw_bands if b - a >= 8]
     if len(bands) <= 1:
-        return [gray]
+        return [(gray, (bbox[0], bbox[1], bbox[2], bbox[3]))]
     lines = []
     for y0, y1 in bands:
         sub_box = (bbox[0], max(0, y0 - 2), bbox[2], min(gray.height, y1 + 2))
         lb = mask.crop(sub_box).getbbox()
         if lb:
-            crop = gray.crop((sub_box[0] + lb[0], sub_box[1] + lb[1], sub_box[0] + lb[2], sub_box[1] + lb[3]))
+            ox0, oy0 = sub_box[0] + lb[0], sub_box[1] + lb[1]
+            ox1, oy1 = sub_box[0] + lb[2], sub_box[1] + lb[3]
+            crop = gray.crop((ox0, oy0, ox1, oy1))
             canvas = Image.new("L", (crop.width + 80, crop.height + 80), 255)
             canvas.paste(crop, (40, 40))
-            lines.append(canvas)
-    return lines or [gray]
+            lines.append((canvas, (ox0, oy0, ox1, oy1)))
+    return lines or [(gray, (bbox[0], bbox[1], bbox[2], bbox[3]))]
+
+
+def split_lines(gray: Image.Image) -> list[Image.Image]:
+    return [img for img, _ in split_lines_with_boxes(gray)]
 
 
 def preprocess(img: Image.Image, cfg: dict) -> Image.Image:
