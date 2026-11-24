@@ -1,0 +1,245 @@
+{
+  "synth": {
+    "suite": "multiline_l45",
+    "n_pages": 12,
+    "line_sympy_rate": 0.8947368421052632,
+    "chain_boundary_accuracy": 1.0,
+    "anti_domino_violations": 0,
+    "student_error_preserved": 1.0,
+    "latency_ms_p50": 1.4139000000000002,
+    "latency_ms_p95": 2.2576,
+    "mode": "live_tt",
+    "details": [
+      {
+        "page": "ML_01",
+        "chain_match": true,
+        "chains_pred": [
+          [
+            "ML_01_l1",
+            "ML_01_l2"
+          ]
+        ],
+        "chains_gt": [
+          [
+            "ML_01_l1",
+            "ML_01_l2"
+          ]
+        ]
+      },
+      {
+        "page": "ML_02",
+        "chain_match": true,
+        "chains_pred": [
+          [
+            "ML_02_l1",
+            "ML_02_l2",
+            "ML_02_l3"
+          ]
+        ],
+        "chains_gt": [
+          [
+            "ML_02_l1",
+            "ML_02_l2",
+            "ML_02_l3"
+          ]
+        ]
+      },
+      {
+        "page": "ML_03",
+        "chain_match": true,
+        "chains_pred": [
+          [
+            "ML_03_l1",
+            "ML_03_l2"
+          ]
+        ],
+        "chains_gt": [
+          [
+            "ML_03_l1",
+            "ML_03_l2"
+          ]
+        ]
+      },
+      {
+        "page": "ML_04",
+        "chain_match": true,
+        "chains_pred": [
+          [
+            "ML_04_l1",
+            "ML_04_l2",
+            "ML_04_l3",
+            "ML_04_l4"
+          ]
+        ],
+        "chains_gt": [
+          [
+            "ML_04_l1",
+            "ML_04_l2",
+            "ML_04_l3",
+            "ML_04_l4"
+          ]
+        ]
+      },
+      {
+        "page": "ML_05",
+        "chain_match": true,
+        "chains_pred": [
+          [
+            "ML_05_l1",
+            "ML_05_l2",
+            "ML_05_l3"
+          ]
+        ],
+        "chains_gt": [
+          [
+            "ML_05_l1",
+            "ML_05_l2",
+            "ML_05_l3"
+          ]
+        ]
+      },
+      {
+        "page": "ML_06",
+        "chain_match": true,
+        "chains_pred": [
+          [
+            "ML_06_l1",
+            "ML_06_l2",
+            "ML_06_l3"
+          ]
+        ],
+        "chains_gt": [
+          [
+            "ML_06_l1",
+            "ML_06_l2",
+            "ML_06_l3"
+          ]
+        ]
+      },
+      {
+        "page": "ML_07",
+        "chain_match": true,
+        "chains_pred": [
+          [
+            "ML_07_l1",
+            "ML_07_l2",
+            "ML_07_l3"
+          ],
+          [
+            "ML_07_l4",
+            "ML_07_l5",
+            "ML_07_l6"
+          ]
+        ],
+        "chains_gt": [
+          [
+            "ML_07_l1",
+            "ML_07_l2",
+            "ML_07_l3"
+          ],
+          [
+            "ML_07_l4",
+            "ML_07_l5",
+            "ML_07_l6"
+          ]
+        ]
+      },
+      {
+        "page": "ML_08",
+        "chain_match": true,
+        "chains_pred": [
+          [
+            "ML_08_l1",
+            "ML_08_l2",
+            "ML_08_l3"
+          ]
+        ],
+        "chains_gt": [
+          [
+            "ML_08_l1",
+            "ML_08_l2",
+            "ML_08_l3"
+          ]
+        ]
+      },
+      {
+        "page": "ML_09",
+        "chain_match": true,
+        "chains_pred": [
+          [
+            "ML_09_l1",
+            "ML_09_l2",
+            "ML_09_l3"
+          ]
+        ],
+        "chains_gt": [
+          [
+            "ML_09_l1",
+            "ML_09_l2",
+            "ML_09_l3"
+          ]
+        ]
+      },
+      {
+        "page": "ML_10",
+        "chain_match": true,
+        "chains_pred": [
+          [
+            "ML_10_l1",
+            "ML_10_l2",
+            "ML_10_l3"
+          ]
+        ],
+        "chains_gt": [
+          [
+            "ML_10_l1",
+            "ML_10_l2",
+            "ML_10_l3"
+          ]
+        ]
+      },
+      {
+        "page": "ML_11",
+        "chain_match": true,
+        "chains_pred": [
+          [
+            "ML_11_l1",
+            "ML_11_l2",
+            "ML_11_l3"
+          ]
+        ],
+        "chains_gt": [
+          [
+            "ML_11_l1",
+            "ML_11_l2",
+            "ML_11_l3"
+          ]
+        ]
+      },
+      {
+        "page": "ML_12",
+        "chain_match": true,
+        "chains_pred": [
+          [
+            "ML_12_l1",
+            "ML_12_l2",
+            "ML_12_l3"
+          ]
+        ],
+        "chains_gt": [
+          [
+            "ML_12_l1",
+            "ML_12_l2",
+            "ML_12_l3"
+          ]
+        ]
+      }
+    ]
+  },
+  "kalib_grouping": {
+    "suite": "kalib_ketten_grouping",
+    "n_chains": 28,
+    "chain_boundary_accuracy": 1.0
+  },
+  "ts": "2026-11-24T00:45:54"
+}
