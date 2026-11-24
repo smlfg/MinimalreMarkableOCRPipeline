@@ -12,10 +12,13 @@ from typing import Any
 # Leading operators that signal continuation of the previous line
 _LEAD_CONT = re.compile(
     r"^\s*("
-    r"=|\\approx|\\equiv|\\Rightarrow|\\Leftrightarrow|"
+    r"=|<=>|=>|\\approx|\\equiv|\\sim|\\Rightarrow|\\Leftrightarrow|"
     r"\\implies|\\iff|<|>|\\leq|\\geq|\\neq"
     r")"
 )
+
+_TRANSFORM_ANNOT = re.compile(r"^\s*(?:\||\\mid)\s")
+_TRAIL_TRANSFORM = re.compile(r"(?:\||\\mid)\s+[^\|=]+$")
 
 _TRAIL_OPEN = re.compile(
     r"(?:"
@@ -69,6 +72,23 @@ def _line_id(line: dict, idx: int) -> str:
 
 def leading_continuation(latex: str) -> bool:
     return bool(_LEAD_CONT.match(latex or ""))
+
+
+def transform_annotation_line(latex: str) -> bool:
+    """Step that is primarily a | … or \\mid … equivalence annotation."""
+    s = (latex or "").strip()
+    if not s:
+        return False
+    if _TRANSFORM_ANNOT.match(s):
+        return True
+    if re.search(r"(?:\||\\mid)\s", s) and "=" not in s:
+        return True
+    return False
+
+
+def trailing_transform_annotation(latex: str) -> bool:
+    s = (latex or "").rstrip()
+    return bool(_TRAIL_TRANSFORM.search(s))
 
 
 def trailing_open(latex: str) -> bool:
@@ -145,6 +165,8 @@ def _links(prev: dict, cur: dict, prev_idx: int, med_h: float, med_w: float) -> 
         gap > med_h * _GAP_FRESH
         and not leading_continuation(cur_tex)
         and not trailing_open(prev_tex)
+        and not trailing_transform_annotation(prev_tex)
+        and not transform_annotation_line(cur_tex)
     ):
         return False
 
@@ -154,7 +176,9 @@ def _links(prev: dict, cur: dict, prev_idx: int, med_h: float, med_w: float) -> 
 
     if leading_continuation(cur_tex):
         return gap <= med_h * _GAP_TIGHT
-    if trailing_open(prev_tex):
+    if trailing_open(prev_tex) or trailing_transform_annotation(prev_tex):
+        return gap <= med_h * _GAP_TIGHT
+    if transform_annotation_line(cur_tex):
         return gap <= med_h * _GAP_TIGHT
     if bare_continuation_body(cur_tex) and prev_idx >= 0:
         return gap <= med_h * _GAP_TIGHT

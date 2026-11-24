@@ -7,7 +7,12 @@ from pathlib import Path
 
 import pytest
 
-from ocr.multiline import group_calculations, lines_from_ketten_row
+from ocr.multiline import (
+    group_calculations,
+    leading_continuation,
+    lines_from_ketten_row,
+    transform_annotation_line,
+)
 from ocr.pipeline import assemble_page
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -154,6 +159,73 @@ def test_kalib_ketten_grouping_lengths(kid: str, expected_len: int):
     chains = group_calculations(lines)
     assert len(chains) == 1
     assert len(chains[0]["line_ids"]) == expected_len
+
+
+@pytest.mark.parametrize(
+    "lead",
+    [
+        r"\Rightarrow 5",
+        r"\implies x=1",
+        r"\iff a=b",
+        r"=> 42",
+        r"<=> 0",
+        r"\approx 3.14",
+        r"\equiv 1",
+        r"\sim N(0,1)",
+    ],
+)
+def test_lead_continuation_operators(lead: str):
+    assert leading_continuation(lead)
+
+
+def test_integral_eval_chain_with_annotations():
+    lines = _lines(
+        [
+            (r"\int_0^1 x\,dx", 100),
+            (r"| :\quad x^2", 190),
+            (r"=\frac{1}{2}", 280),
+        ]
+    )
+    chains = group_calculations(lines)
+    assert _chain_lengths(chains) == [3]
+
+
+def test_transform_annotation_mid_chain():
+    lines = _lines(
+        [
+            (r"5x+10=25", 100),
+            (r"| - 3x", 190),
+            (r"=15", 280),
+            (r"x=3", 370),
+        ]
+    )
+    chains = group_calculations(lines)
+    assert _chain_lengths(chains) == [4]
+
+
+def test_trailing_pipe_does_not_break_next_equals():
+    lines = _lines(
+        [
+            (r"x+2=7 | : 2", 100),
+            (r"=x+2=5", 190),
+        ]
+    )
+    chains = group_calculations(lines)
+    assert _chain_lengths(chains) == [2]
+
+
+def test_mid_transform_annotation_line():
+    assert transform_annotation_line(r"| + 5")
+    assert transform_annotation_line(r"\mid - 3x")
+    lines = _lines(
+        [
+            (r"a=b", 100),
+            (r"\mid + 5", 190),
+            (r"=c", 280),
+        ]
+    )
+    chains = group_calculations(lines)
+    assert _chain_lengths(chains) == [3]
 
 
 def test_all_kalib_chains_single_group_per_row():
