@@ -24,12 +24,12 @@ def test_mbox_text_unwrap_matches_gt(raw: str, gt: str):
     assert same(gt, tt_postprocess(raw))
 
 
-def test_student_paren_text_still_wrong():
-    """Must not turn a mangled student line into correct GT (Pass 6 guard)."""
+def test_dev_t041_broken_paren_unwrap_preserves_student_error():
+    """Pass 9 F1: unwrap split \\text{($…$} fragments without fixing wrong RHS."""
     raw = r"\text{($6$}+2\text{)}\cdot 2=4"
-    gt = r"(6+2)\cdot 2=4"
+    gt = r"(6+2)\cdot2=4"
     rep = tt_postprocess(raw)
-    assert not same(gt, rep)
+    assert same(gt, rep)
 
 
 def test_holdout_integral_rhs_mbox():

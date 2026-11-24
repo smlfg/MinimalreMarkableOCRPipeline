@@ -129,13 +129,13 @@ def test_tt_delim_paren_artifacts(raw: str, gt: str):
     assert same(gt, _repair(raw))
 
 
-def test_tt_delim_student_paren_text_untouched():
-    """\\text{)} fix must not turn a wrong student line into GT."""
+def test_tt_delim_student_paren_text_unwrap_keeps_wrong_rhs():
+    """Unwrap paren fragments but never fix student arithmetic (Issue #1)."""
     raw = r"\text{($6$}+2\text{)}\cdot 2=4"
     gt = r"(6+2)\cdot 2=4"
     rep = _repair(raw)
-    assert rep != gt
-    assert not same(gt, rep)
+    assert same(gt, rep)
+    assert "=4" in rep and "=16" not in rep
 
 
 @pytest.mark.parametrize("a,b", [(r"\cos(\pi)=1", r"\cos(\pi)=1"), (r"e^{i\pi}=1", r"e^{i\pi}=1")])

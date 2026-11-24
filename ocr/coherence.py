@@ -136,6 +136,16 @@ def tt_text_paren_dollar(latex: str) -> str:
     return _TEXT_PAREN_DOLLAR.sub(_repl, latex)
 
 
+_BROKEN_TEXT_PAREN_OPEN = re.compile(r"\\text\{\(\$([^$]+)\$\}")
+
+
+def tt_text_broken_paren_dollar(latex: str) -> str:
+    """Unwrap split TT paren fragments: \\text{($6$} → (6, \\text{($x$} → (x."""
+    if r"\text{($" not in latex:
+        return latex
+    return _BROKEN_TEXT_PAREN_OPEN.sub(r"(\1", latex)
+
+
 def tt_lead_eq_space_artifacts(latex: str) -> str:
     """Strip thin/neg spaces before continuation =/=> at line start; normalize \\,= / \\!= markers."""
     if not re.search(r"\\[,:;! ]", latex) and r"\," not in latex and r"\!" not in latex:
@@ -180,6 +190,7 @@ def tt_postprocess(latex: str) -> str:
     s = tt_mbox_reim_artifacts(s)
     s = tt_mbox_small_dollar(s)
     s = tt_text_paren_dollar(s)
+    s = tt_text_broken_paren_dollar(s)
     s = array_single_cell_artifact(s)
     s = integral_eq_artifact(s)
     return tt_lead_eq_space_artifacts(s)
