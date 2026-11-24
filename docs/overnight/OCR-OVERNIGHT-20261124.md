@@ -517,3 +517,55 @@ Artifacts: `bench/results_pass8_multiline_l45.{json,tsv}`, `bench/results_pass8_
 | F1 lead-eq spacing | **KEEP** |
 | F2 mbox/text dollar | **KEEP** |
 | F3 optional mine | **SKIP** |
+
+## Pass 9 — broken paren unwrap + multiline over-merge fix (2026-11-24)
+
+**Scope:** `ocr/coherence.py` `tt_text_broken_paren_dollar`; `ocr/multiline.py` fresh-equation split after `x=n` + `\d+\)` task markers; new `multiline_multitask_live` bench suite.
+
+### F1 — `tt_text_broken_paren_dollar` (**KEEP**)
+
+Unwrap split TT fragments `\text{($6$}` → `(6` so `dev_T041` matches GT with student error preserved (Issue #1: RHS stays `4`).
+
+| Metric | Pass 8 | Pass 9 F1 |
+|---|---:|---:|
+| overnight_synth pipe_same (anchor rescore) | 19/20 | **20/20 (1.000)** |
+| level45_live dev pipe_sympy (rescore) | 0.833 | **0.833** |
+| holdout pipe_sympy (rescore) | 0.889 | **0.889** |
+| pytest | 86 | **97** |
+
+Artifacts: `bench/results_pass9_overnight_synth_rescore.json`, `bench/results_pass9_f1_l45_{dev,holdout}.json`.
+
+### F2 — multiline fresh-equation split (**KEEP**)
+
+- `_fresh_equation_after_solve`: do not merge tight-gap `=` lines when prior line is bare `x=n` and current is a multi-term new equation.
+- `_LABEL_BREAK`: add `\d+\)\s` numeric task markers.
+
+| Metric | Pass 8 | Pass 9 F2 |
+|---|---:|---:|
+| multiline_l45 chain (grouping GT) | 1.000 | **1.000** |
+| multiline_live chain (grouping GT) | 1.000 | **1.000** |
+| kalib ketten grouping | 1.000 | **1.000** |
+| pytest multiline + pass9 | — | **pass** |
+
+Artifacts: `bench/results_pass9_multiline_{l45,live}.json`.
+
+### F3 — `multiline_multitask_live` suite (**KEEP**)
+
+9 matplotlib pages: tight dual calcs, `a)`/`b)`/`1)`/`2.` markers, large gap, trailing-op wrap, student wrong RHS, stacked quadratics, mixed wrap+marker.
+
+| Metric | Value |
+|---|---:|
+| chain_boundary (live TT) | **1.000** (9/9) |
+| line_sympy (live TT) | 0.844 (27/32) |
+| student_error_preserved | **1.000** |
+| anti_domino_violations | **0** |
+
+Artifacts: `bench/results_pass9_multiline_multitask_live.{json,tsv}`, suite under `bench/formula_flywheel/multiline_multitask_live/`.
+
+### Pass 9 keep / revert
+
+| Factor | Verdict |
+|---|---|
+| F1 broken paren unwrap | **KEEP** |
+| F2 multiline over-merge | **KEEP** |
+| F3 multiline_multitask_live | **KEEP** |
