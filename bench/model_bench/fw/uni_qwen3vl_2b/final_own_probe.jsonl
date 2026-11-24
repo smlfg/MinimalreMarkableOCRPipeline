@@ -1,0 +1,40 @@
+{"id": "probe_01", "src": "probe", "raw": "0 1 2 3 4 5 6 7 8 9", "s": 1.2375400829914724, "error": null}
+{"id": "probe_02", "src": "probe", "raw": "1 7 + 7 1 = 8 8", "s": 0.7850266250025015, "error": null}
+{"id": "probe_03", "src": "probe", "raw": "1 + 7 = 8", "s": 0.5734159580024425, "error": null}
+{"id": "probe_04", "src": "probe", "raw": "z = 2 z - 2", "s": 0.5929522499936866, "error": null}
+{"id": "probe_05", "src": "probe", "raw": "X \\cdot 2 = 2 X", "s": 0.6370934160077013, "error": null}
+{"id": "probe_06", "src": "probe", "raw": "0 , 5 \\cdot 1 0 = 5", "s": 0.8144494580046739, "error": null}
+{"id": "probe_07", "src": "probe", "raw": "o _ { 1 } + o _ { 1 } = o _ { 1 }", "s": 1.1070292919903295, "error": null}
+{"id": "probe_08", "src": "probe", "raw": "q - g = 0", "s": 0.5647630419989582, "error": null}
+{"id": "probe_09", "src": "probe", "raw": "4 S = 5 + 5", "s": 0.5596391669969307, "error": null}
+{"id": "probe_10", "src": "probe", "raw": "b = 6", "s": 0.3974124579981435, "error": null}
+{"id": "probe_11", "src": "probe", "raw": "u + v = w", "s": 0.4775462090037763, "error": null}
+{"id": "probe_12", "src": "probe", "raw": "1 = 1 + 1 - 1", "s": 0.9532029580004746, "error": null}
+{"id": "probe_13", "src": "probe", "raw": "\\frac { 3 } { 4 } + \\frac { 1 } { 4 } = 1", "s": 1.3167650409886846, "error": null}
+{"id": "probe_14", "src": "probe", "raw": "\\frac { x + 1 } { x - 1 }", "s": 0.8133117920078803, "error": null}
+{"id": "probe_15", "src": "probe", "raw": "\\sqrt { 1 6 } = 4", "s": 0.7016387089970522, "error": null}
+{"id": "probe_16", "src": "probe", "raw": "\\sqrt { X ^ { 2 } + Y ^ { 2 } }", "s": 0.9330603340058587, "error": null}
+{"id": "probe_17", "src": "probe", "raw": "x ^ { 2 } - 4 = ( x - 2 ) ( x + 2 )", "s": 1.108514749997994, "error": null}
+{"id": "probe_18", "src": "probe", "raw": "2 ^ { 1 0 } = 1 0 2 4", "s": 0.9296897080057533, "error": null}
+{"id": "probe_19", "src": "probe", "raw": "( a + b ) ^ { 2 } = a ^ { 2 } + 2 a b + b ^ { 2 }", "s": 1.3082240840012673, "error": null}
+{"id": "probe_20", "src": "probe", "raw": "3 x + 5 = 2 0", "s": 0.646978708988172, "error": null}
+{"id": "probe_21", "src": "probe", "raw": "3 X = 1 5 \\Rightarrow", "s": 0.6304035840003053, "error": null}
+{"id": "probe_22", "src": "probe", "raw": "x = 5", "s": 0.30664229099056683, "error": null}
+{"id": "probe_23", "src": "probe", "raw": "x ^ { 2 } + 3 x = 1", "s": 0.6776789170107804, "error": null}
+{"id": "probe_24", "src": "probe", "raw": "( X + \\frac { 3 } { 2 } ) ^ { 2 } = \\frac { 1 3 } { 4 }", "s": 1.18012112499855, "error": null}
+{"id": "probe_25", "src": "probe", "raw": "x = - \\frac { 3 } { 2 } \\pm \\sqrt { \\frac { 1 3 } { 4 } }", "s": 0.9761149160040077, "error": null}
+{"id": "probe_26", "src": "probe", "raw": "1 7 \\cdot 3 = 3 1 0 + 3 \\cdot 7 = 5 1", "s": 0.8115641250042245, "error": null}
+{"id": "probe_27", "src": "probe", "raw": "\\frac { 1 } { 2 } + \\frac { 1 } { 3 } = \\frac { 5 } { 6 }", "s": 0.8840227500040783, "error": null}
+{"id": "probe_28", "src": "probe", "raw": "y = m x + b", "s": 0.3607392499980051, "error": null}
+{"id": "probe_29", "src": "probe", "raw": "f ( x ) = 2 x ^ { 3 } - x", "s": 0.5842066670011263, "error": null}
+{"id": "probe_30", "src": "probe", "raw": "f ^ { \\prime } ( x ) = 6 x ^ { 2 } - 1", "s": 1.2319482089951634, "error": null}
+{"id": "probe_31", "src": "probe", "raw": "\\lim \\limits _ { x \\rightarrow 0 } \\frac { \\sin x } { x } = 1", "s": 1.3206531670002732, "error": null}
+{"id": "probe_32", "src": "probe", "raw": "\\int \\limits _ { 0 } ^ { 1 } x d x = \\frac { 1 } { 2 }", "s": 1.5392537909938255, "error": null}
+{"id": "probe_33", "src": "probe", "raw": "a _ { n } = a _ { 1 } + ( n - 1 ) d", "s": 1.239468832995044, "error": null}
+{"id": "probe_34", "src": "probe", "raw": "\\log _ { 2 } 8 = 3", "s": 0.9023785829922417, "error": null}
+{"id": "probe_35", "src": "probe", "raw": "e ^ { l n z } = z", "s": 0.8254821659938898, "error": null}
+{"id": "probe_36", "src": "probe", "raw": "\\pi r ^ { 2 }", "s": 0.6458165829972131, "error": null}
+{"id": "probe_37", "src": "probe", "raw": "\\alpha + \\beta = 9 0", "s": 0.7991577920038253, "error": null}
+{"id": "probe_38", "src": "probe", "raw": "\\Delta x = x _ { 2 } - x _ { 1 }", "s": 1.078965665990836, "error": null}
+{"id": "probe_39", "src": "probe", "raw": "2 \\leq x \\leq 4", "s": 0.7623508339893306, "error": null}
+{"id": "probe_40", "src": "probe", "raw": "x \\neq 0", "s": 0.5885185000079218, "error": null}

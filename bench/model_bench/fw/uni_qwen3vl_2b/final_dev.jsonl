@@ -1,0 +1,326 @@
+{"id": "mw_00372", "src": "mw", "raw": "w = \\sqrt { K W - U V }", "s": 0.5211334579944378, "error": null}
+{"id": "mw_00395", "src": "mw", "raw": "c r + c s = a ^ { 2 } + b ^ { 2 }", "s": 0.584032541999477, "error": null}
+{"id": "mw_00449", "src": "mw", "raw": "I = K ( C _ { \\theta _ { 1 } } + D )", "s": 0.624045208998723, "error": null}
+{"id": "mw_00457", "src": "mw", "raw": "a ( x - x _ { 0 } ) ^ { 2 } + y _ { 0 }", "s": 0.7166673750034533, "error": null}
+{"id": "mw_00519", "src": "mw", "raw": "\\alpha = ( 1 - \\alpha ) ^ { 1 / n }", "s": 0.5917770419910084, "error": null}
+{"id": "mw_00558", "src": "mw", "raw": "\\frac { f ( 2 , 4 ) } { g ( 7 , 4 ) }", "s": 0.7065632500016363, "error": null}
+{"id": "mw_00582", "src": "mw", "raw": "4 ^ { n } + 2 ^ { n + 1 } - 1", "s": 0.6458429579943186, "error": null}
+{"id": "mw_00602", "src": "mw", "raw": "u _ { 2 n } = \\frac { 2 u _ { n } u _ { n } } { u _ { n } + u _ { n } }", "s": 1.017183499992825, "error": null}
+{"id": "mw_00623", "src": "mw", "raw": "F _ { r } ( t ) + F _ { c r } ( t ) = 0", "s": 0.9161054169962881, "error": null}
+{"id": "mw_00655", "src": "mw", "raw": "3 ^ { 3 ^ { 3 ^ { 3 ^ { 4 6 } } } }", "s": 0.9343614999961574, "error": null}
+{"id": "mw_00662", "src": "mw", "raw": "n ^ { x } + 1 > e", "s": 0.5305272499972489, "error": null}
+{"id": "mw_00716", "src": "mw", "raw": "c l _ { p } ( G _ { j } ) = j", "s": 0.5038821249909233, "error": null}
+{"id": "mw_00722", "src": "mw", "raw": "S = \\frac { c } { 4 \\pi } E \\times B", "s": 0.6814124170050491, "error": null}
+{"id": "mw_00827", "src": "mw", "raw": "( s , t , f ( s , t ) )", "s": 0.5560605830105487, "error": null}
+{"id": "mw_00834", "src": "mw", "raw": "V = \\sqrt { 2 . 6 7 } x", "s": 0.620203375001438, "error": null}
+{"id": "mw_00875", "src": "mw", "raw": "C _ { x } ^ { - 1 } = 0", "s": 0.5322021250030957, "error": null}
+{"id": "mw_00881", "src": "mw", "raw": "S = \\frac { c } { 4 \\pi } E \\times B", "s": 0.6430040410050424, "error": null}
+{"id": "mw_00926", "src": "mw", "raw": "B r ( k ) = Q / Z", "s": 0.3546842500072671, "error": null}
+{"id": "mw_00952", "src": "mw", "raw": "1 0 . 2", "s": 0.3371069999993779, "error": null}
+{"id": "mw_00958", "src": "mw", "raw": "u v = - \\frac { 1 } { 3 } p", "s": 0.6069246249971911, "error": null}
+{"id": "mw_00986", "src": "mw", "raw": "\\frac { x ^ { 2 } } { a ^ { 2 } } - \\frac { y ^ { 2 } } { b ^ { 2 } } = 1 , a > b", "s": 1.4416693749953993, "error": null}
+{"id": "mw_01020", "src": "mw", "raw": "1 ^ { 1 ^ { 1 ^ { 1 ^ { 1 ^ { 1 } } } } } + 3", "s": 0.9114226249948842, "error": null}
+{"id": "mw_01028", "src": "mw", "raw": "c = m c ^ { 2 }", "s": 0.40720541699556634, "error": null}
+{"id": "mw_01062", "src": "mw", "raw": "0 < b ^ { 2 } - c", "s": 0.4344371670013061, "error": null}
+{"id": "mw_01072", "src": "mw", "raw": "L ( L - 1 ) / 2 = 6", "s": 0.5388007919973461, "error": null}
+{"id": "mw_01092", "src": "mw", "raw": "( E ) - ( G ) - ( H )", "s": 0.4814425420045154, "error": null}
+{"id": "mw_01113", "src": "mw", "raw": "B _ { n } + C _ { n } = B _ { n + 1 }", "s": 0.7294293330051005, "error": null}
+{"id": "mw_01143", "src": "mw", "raw": "2 ^ { k } t _ { 0 }", "s": 0.46879108299617656, "error": null}
+{"id": "mw_01157", "src": "mw", "raw": "w = \\sqrt { K W - U V }", "s": 0.40088016699883156, "error": null}
+{"id": "mw_01163", "src": "mw", "raw": "( L ^ { T } L ) ^ { - 1 } L ^ { T } I = k n", "s": 0.7259245000022929, "error": null}
+{"id": "mw_01190", "src": "mw", "raw": "f ^ { m \\times n } x = ( f ^ { n } ) ^ { n } x", "s": 0.691433333005989, "error": null}
+{"id": "mw_01195", "src": "mw", "raw": "B = - V _ { x x } V _ { y y } ^ { + }", "s": 0.6617544589971658, "error": null}
+{"id": "mw_01204", "src": "mw", "raw": "\\frac { z } { z _ { 0 } } - 1", "s": 0.6791072500054725, "error": null}
+{"id": "mw_01233", "src": "mw", "raw": "C _ { s } = \\frac { C _ { 1 } C _ { 2 } } { C _ { 1 } + C _ { 2 } }", "s": 1.0446999160049018, "error": null}
+{"id": "mw_01252", "src": "mw", "raw": "H ^ { i } ( V , Z / l ^ { k } Z )", "s": 0.6044427089946112, "error": null}
+{"id": "mw_01268", "src": "mw", "raw": "B _ { n } + C _ { n } = B _ { n + 1 }", "s": 0.6561857920023613, "error": null}
+{"id": "mw_01297", "src": "mw", "raw": "4 \\sqrt { \\frac { 2 } { 5 } } = \\frac { 4 \\sqrt { 2 } } { \\sqrt { 5 } }", "s": 1.0328355000092415, "error": null}
+{"id": "mw_01310", "src": "mw", "raw": "a = ( 1 - \\alpha ) ^ { \\frac { 1 } { n } }", "s": 0.6497387499985052, "error": null}
+{"id": "mw_01344", "src": "mw", "raw": "\\frac { n L ( P - U ) } { P U } + \\frac { S } { L }", "s": 0.7450977080006851, "error": null}
+{"id": "mw_01357", "src": "mw", "raw": "a = ( 1 - \\alpha ) \\frac { 1 } { n }", "s": 0.5727305839973269, "error": null}
+{"id": "mw_01402", "src": "mw", "raw": "V = \\sqrt { 2 . 6 7 \\times }", "s": 0.5321368330041878, "error": null}
+{"id": "mw_01405", "src": "mw", "raw": "L ( L - 1 ) / 2 = 6", "s": 0.46331745899806265, "error": null}
+{"id": "mw_01463", "src": "mw", "raw": "4 ^ { n } + 2 ^ { n + 1 } - 1", "s": 0.7089286670088768, "error": null}
+{"id": "mw_01470", "src": "mw", "raw": "( \\frac { m } { s } )", "s": 0.6224005000112811, "error": null}
+{"id": "mw_01541", "src": "mw", "raw": "- 2 7 - 2 0 \\sqrt { 2 }", "s": 0.6922711669903947, "error": null}
+{"id": "mw_01686", "src": "mw", "raw": "( - 1 ) ^ { n } \\frac { d ^ { n } } { d t ^ { n } } f ( t ) \\geq 0", "s": 1.0327194169949507, "error": null}
+{"id": "mw_01688", "src": "mw", "raw": "b ^ { 2 } + h ( a ) b", "s": 0.448385416995734, "error": null}
+{"id": "mw_01713", "src": "mw", "raw": "Z _ { i , j } Z _ { k , l } = Z _ { i , l } Z _ { k , j }", "s": 0.9032764169969596, "error": null}
+{"id": "mw_01745", "src": "mw", "raw": "\\{ x ^ { 2 } , x y ^ { 2 } x ^ { - 1 } \\}", "s": 0.7943329580011778, "error": null}
+{"id": "mw_01779", "src": "mw", "raw": "R _ { 0 1 } = \\frac { W _ { C u } } { 3 I _ { s } ^ { 2 } }", "s": 0.9512741670041578, "error": null}
+{"id": "mw_01821", "src": "mw", "raw": "P = \\frac { L i } { 1 - \\frac { 1 } { ( 1 + i ) ^ { n } } }", "s": 0.8949048749927897, "error": null}
+{"id": "mw_01855", "src": "mw", "raw": "g = \\omega / 2 - n + 1", "s": 0.45437012500769924, "error": null}
+{"id": "mw_01859", "src": "mw", "raw": "U ( g , e )", "s": 0.38126174999342766, "error": null}
+{"id": "mw_01866", "src": "mw", "raw": "1 = 1 - 0", "s": 0.367160291003529, "error": null}
+{"id": "mw_01881", "src": "mw", "raw": "L _ { r } , L _ { t } , L _ { c } / 1 0", "s": 0.6938808340055402, "error": null}
+{"id": "mw_01892", "src": "mw", "raw": "d = \\sqrt { e } = 2 R", "s": 0.4311935830046423, "error": null}
+{"id": "mw_01928", "src": "mw", "raw": "Z _ { i , j } Z _ { k , l } = Z _ { i , l } Z _ { k , j }", "s": 0.937046624996583, "error": null}
+{"id": "mw_02047", "src": "mw", "raw": "( s , t , f ( s , t ) )", "s": 0.44716820800385904, "error": null}
+{"id": "mw_02058", "src": "mw", "raw": "( s , t , f ( s , t ) )", "s": 0.5055149580002762, "error": null}
+{"id": "mw_02152", "src": "mw", "raw": "1 - C _ { x y }", "s": 0.390565791996778, "error": null}
+{"id": "mw_02168", "src": "mw", "raw": "3 ^ { ( F _ { n } - 1 ) / 2 }", "s": 0.6397375830129022, "error": null}
+{"id": "mw_02213", "src": "mw", "raw": "2 ^ { 2 } + 2 + 1 - 1", "s": 0.5412478329963051, "error": null}
+{"id": "mw_02218", "src": "mw", "raw": "a ( x - x _ { 0 } ) ^ { 2 } + y _ { 0 }", "s": 0.7576443750003818, "error": null}
+{"id": "mw_02248", "src": "mw", "raw": "\\frac { 2 V } { V + 2 } > 2", "s": 0.629471291002119, "error": null}
+{"id": "mw_02336", "src": "mw", "raw": "Z ( z ) = i \\sqrt { \\Pi } w ( z )", "s": 0.5937675419991137, "error": null}
+{"id": "mw_02352", "src": "mw", "raw": "V _ { n } = a ^ { n } + b ^ { n }", "s": 0.5778695420012809, "error": null}
+{"id": "mw_02381", "src": "mw", "raw": "\\frac { d x } { d t } = ( x ( t - 1 ) ) ^ { 2 }", "s": 0.7847875000006752, "error": null}
+{"id": "mw_02382", "src": "mw", "raw": "\\tfrac { 1 } { 2 } + \\tfrac { 1 } { 1 0 } \\sqrt { 1 5 }", "s": 0.9289002910081763, "error": null}
+{"id": "mw_02394", "src": "mw", "raw": "2 \\times 2 = 2 + 2", "s": 0.47656900000583846, "error": null}
+{"id": "mw_02417", "src": "mw", "raw": "w = \\sqrt { k w - u v }", "s": 0.4588010419975035, "error": null}
+{"id": "mw_02436", "src": "mw", "raw": "\\frac { d y } { d x } = \\frac { 1 } { 5 y ^ { 4 } - 1 }", "s": 0.781123207998462, "error": null}
+{"id": "mw_02452", "src": "mw", "raw": "H = \\int d ^ { 3 } x H", "s": 0.33618516600108705, "error": null}
+{"id": "mw_02529", "src": "mw", "raw": "V _ { T - j + 1 } ( k )", "s": 0.44340062500850763, "error": null}
+{"id": "mw_02585", "src": "mw", "raw": "2 ^ { 2 } + 2 + 1 - 1", "s": 0.3842462920001708, "error": null}
+{"id": "mw_02622", "src": "mw", "raw": "V _ { n } = a ^ { n } + b ^ { n }", "s": 0.5208246660040459, "error": null}
+{"id": "mw_02625", "src": "mw", "raw": "a _ { n } = G ^ { \\prime } ( 1 - \\frac { 1 } { n } )", "s": 0.593423582991818, "error": null}
+{"id": "mw_02632", "src": "mw", "raw": "k _ { i } = \\frac { n - i + 1 } { i } k", "s": 0.5690613750048215, "error": null}
+{"id": "mw_02656", "src": "mw", "raw": "J _ { - \\alpha } ( x )", "s": 0.4117091250082012, "error": null}
+{"id": "mw_02750", "src": "mw", "raw": "V _ { T - j + 1 } ( k )", "s": 0.5498964589933166, "error": null}
+{"id": "mw_02787", "src": "mw", "raw": "1 = \\sqrt { ( N _ { x } ^ { 2 } + N _ { z } ^ { 2 } ) }", "s": 0.8176897919911426, "error": null}
+{"id": "mw_02827", "src": "mw", "raw": "\\frac { 3 ^ { n + 1 } - 1 } { 2 }", "s": 0.6605510840017814, "error": null}
+{"id": "mw_02846", "src": "mw", "raw": "C _ { x } ^ { - 1 } = 0", "s": 0.5624348330020439, "error": null}
+{"id": "mw_02861", "src": "mw", "raw": "Z _ { r } = \\frac { N _ { r } } { 0 . 5 ( t - q ) }", "s": 0.8046436669974355, "error": null}
+{"id": "mw_02886", "src": "mw", "raw": "2 ^ { k } t _ { 0 }", "s": 0.5262887499993667, "error": null}
+{"id": "mw_02911", "src": "mw", "raw": "U ( g , e )", "s": 0.3462245420087129, "error": null}
+{"id": "mw_02917", "src": "mw", "raw": "\\Pi ( 0 . 9 9 ) \\times V ( 1 0 0 0 )", "s": 0.7907960829907097, "error": null}
+{"id": "mw_02939", "src": "mw", "raw": "1 / n = ( n - 1 ) \\cdot 1", "s": 0.49394133299938403, "error": null}
+{"id": "mw_02988", "src": "mw", "raw": "2 ^ { 2 } + 2 + 1 - 1", "s": 0.5072718750016065, "error": null}
+{"id": "mw_03037", "src": "mw", "raw": "( d y , - d x )", "s": 0.4105817920062691, "error": null}
+{"id": "mw_03073", "src": "mw", "raw": "A ^ { 4 } = V J ^ { 4 } V ^ { - 1 }", "s": 0.6832437499979278, "error": null}
+{"id": "mw_03074", "src": "mw", "raw": "v _ { 1 } ( \\frac { 1 } { 2 } ) = v _ { 2 } ( \\frac { 1 } { 2 } )", "s": 1.0032309999951394, "error": null}
+{"id": "mw_03081", "src": "mw", "raw": "1 9 6 8 8 4 / e ^ { \\pi \\sqrt { d } }", "s": 0.704152582999086, "error": null}
+{"id": "mw_03125", "src": "mw", "raw": "L _ { X } f = i _ { X } d f", "s": 0.4698100829991745, "error": null}
+{"id": "mw_03147", "src": "mw", "raw": "\\frac { x ^ { 2 } } { 1 - x ^ { 2 } } R", "s": 0.7260654169949703, "error": null}
+{"id": "mw_03173", "src": "mw", "raw": "\\Delta S = \\frac { Q } { T } ( 1 )", "s": 0.5552586249978049, "error": null}
+{"id": "mw_03183", "src": "mw", "raw": "( E ) - ( G ) - ( H )", "s": 0.472151166992262, "error": null}
+{"id": "mw_03218", "src": "mw", "raw": "y = A ( 1 - e ^ { B t } )", "s": 0.5989514170069015, "error": null}
+{"id": "mw_03223", "src": "mw", "raw": "y = \\frac { k e ^ { a x } - b } { a }", "s": 0.6837624170002528, "error": null}
+{"id": "mw_03305", "src": "mw", "raw": "\\pm \\sqrt { \\frac { 3 } { 7 } + \\frac { 2 } { 7 } \\sqrt { \\frac { 6 } { 5 } } }", "s": 2.113513083997532, "error": null}
+{"id": "mw_03333", "src": "mw", "raw": "A - x", "s": 0.5195177499990677, "error": null}
+{"id": "mw_03338", "src": "mw", "raw": "\\tfrac { 1 } { 2 } + \\tfrac { 1 } { 1 0 } \\sqrt { 1 5 }", "s": 1.537869125008001, "error": null}
+{"id": "mw_03368", "src": "mw", "raw": "\\frac { h L ( P - U ) } { 2 P U } + \\frac { S } { L }", "s": 0.8517952080001123, "error": null}
+{"id": "mw_03375", "src": "mw", "raw": "\\frac { 3 ^ { n + 1 } - 1 } { 2 }", "s": 0.6124754579941509, "error": null}
+{"id": "mw_03386", "src": "mw", "raw": "d = 2 m n ( m ^ { 2 } - n ^ { 2 } )", "s": 0.6897965829994064, "error": null}
+{"id": "mw_03389", "src": "mw", "raw": "\\frac { h L ( P - U ) } { 2 P U } + \\frac { S } { L }", "s": 0.7429269580024993, "error": null}
+{"id": "mw_03393", "src": "mw", "raw": "0 \\leq s _ { k } \\leq s _ { k + 1 }", "s": 0.6614225000084843, "error": null}
+{"id": "mw_03435", "src": "mw", "raw": "Y = \\sqrt { 1 - T ^ { 2 } }", "s": 0.5752867499977583, "error": null}
+{"id": "mw_03446", "src": "mw", "raw": "\\beta _ { 2 } = k ^ { 2 } - k _ { x } ^ { 2 } - k _ { y } ^ { 2 }", "s": 0.9659829580050427, "error": null}
+{"id": "mw_03452", "src": "mw", "raw": "\\frac { x } { x _ { 0 } } = e ^ { - k }", "s": 0.6977937080082484, "error": null}
+{"id": "mw_03474", "src": "mw", "raw": "( E ) - ( G ) - ( H )", "s": 0.4413222500006668, "error": null}
+{"id": "mw_03531", "src": "mw", "raw": "( B + 1 ) ^ { m } = B _ { m }", "s": 0.6221189159987262, "error": null}
+{"id": "mw_03573", "src": "mw", "raw": "X ^ { i } Y ^ { n - i } , 0 \\leq i \\leq n", "s": 0.752869333999115, "error": null}
+{"id": "mw_03595", "src": "mw", "raw": "F _ { v } ( t ) + F _ { c v } ( t ) = 0", "s": 0.6633180829958292, "error": null}
+{"id": "mw_03635", "src": "mw", "raw": "( - 1 ) ^ { n } \\frac { d ^ { n } } { d t ^ { n } } f ( t ) \\geq 0", "s": 0.9465705000038724, "error": null}
+{"id": "mw_03655", "src": "mw", "raw": "2 ^ { m } \\geq 2 ^ { n } ( a n + 1 )", "s": 0.6611892079963582, "error": null}
+{"id": "mw_03660", "src": "mw", "raw": "S = \\frac { c } { 4 \\pi } E \\times B", "s": 0.621498624997912, "error": null}
+{"id": "mw_03662", "src": "mw", "raw": "3 ^ { ( F _ { n } - 1 ) / 2 }", "s": 0.5744017499964684, "error": null}
+{"id": "mw_03664", "src": "mw", "raw": "\\tfrac { 1 } { 2 } + \\tfrac { 1 } { 1 0 } \\sqrt { 1 5 }", "s": 0.9412712499906775, "error": null}
+{"id": "mw_03694", "src": "mw", "raw": "c r + c s = a ^ { 2 } + b ^ { 2 }", "s": 0.5935167499992531, "error": null}
+{"id": "mw_03782", "src": "mw", "raw": "V _ { T - j + 1 } ( k )", "s": 0.4763672909903107, "error": null}
+{"id": "mw_03785", "src": "mw", "raw": "( F _ { p } ) ^ { d }", "s": 0.44692154199583456, "error": null}
+{"id": "mw_03815", "src": "mw", "raw": "v = A ( 1 - e ^ { B t } )", "s": 0.5207092500058934, "error": null}
+{"id": "mw_03825", "src": "mw", "raw": "t _ { b j } + t _ { j }", "s": 0.44467691700265277, "error": null}
+{"id": "mw_03885", "src": "mw", "raw": "V _ { y _ { 0 } } t = h", "s": 0.5198782500083325, "error": null}
+{"id": "mw_03906", "src": "mw", "raw": "g = w / 2 - n + 1", "s": 0.4490859170036856, "error": null}
+{"id": "mw_03930", "src": "mw", "raw": "B _ { 0 } ^ { 2 } ( x ) = ( 1 - x ) ^ { 2 }", "s": 0.8063658339960966, "error": null}
+{"id": "mw_04071", "src": "mw", "raw": "S = \\frac { c } { 4 \\pi } E \\times B", "s": 0.5658923330047401, "error": null}
+{"id": "mw_04076", "src": "mw", "raw": "d = 2 m n ( m ^ { 2 } - n ^ { 2 } )", "s": 0.6650790839921683, "error": null}
+{"id": "mw_04117", "src": "mw", "raw": "x + 2 y - 3 = 0", "s": 0.4125076249911217, "error": null}
+{"id": "mw_04118", "src": "mw", "raw": "X = U _ { 2 } U _ { 1 } ^ { - 1 }", "s": 0.7207047090050764, "error": null}
+{"id": "mw_04210", "src": "mw", "raw": "4 ^ { n } + 2 ^ { n + 1 } - 1", "s": 0.5681838750024326, "error": null}
+{"id": "mw_04227", "src": "mw", "raw": "a _ { n } = G ^ { - 1 } ( 1 - \\frac { 1 } { n } )", "s": 0.8035364999959711, "error": null}
+{"id": "mw_04258", "src": "mw", "raw": "1 / n = ( n - 1 ) _ { - 1 }", "s": 0.5621808330033673, "error": null}
+{"id": "mw_04279", "src": "mw", "raw": "\\frac { q ^ { 2 } } { 4 } + \\frac { p ^ { 3 } } { 2 7 } > 0", "s": 0.9032799590058858, "error": null}
+{"id": "mw_04299", "src": "mw", "raw": "S _ { x } = \\{ R , S , T , P \\}", "s": 0.5516780829930212, "error": null}
+{"id": "mw_04349", "src": "mw", "raw": "2 ^ { 2 } + 2 + 1 - 1", "s": 0.5210042499966221, "error": null}
+{"id": "mw_04424", "src": "mw", "raw": "\\frac { n L ( P - U ) } { 2 P V } + \\frac { S } { L }", "s": 0.8369050420005806, "error": null}
+{"id": "mw_04448", "src": "mw", "raw": "v _ { 1 } ( \\frac { 1 } { 2 } ) = v _ { 2 } ( \\frac { 1 } { 2 } )", "s": 1.0845819169917377, "error": null}
+{"id": "mw_04450", "src": "mw", "raw": "f _ { 1 } ( y _ { 1 } ) = z _ { 1 1 }", "s": 0.734688875003485, "error": null}
+{"id": "mw_04468", "src": "mw", "raw": "( P _ { i } P _ { j } - P _ { i - 1 } P _ { j - 1 } )", "s": 0.8782182080030907, "error": null}
+{"id": "mw_04548", "src": "mw", "raw": "C _ { 3 } = \\frac { C _ { 1 } C _ { 2 } } { C _ { 1 } + C _ { 2 } }", "s": 1.0742278329998953, "error": null}
+{"id": "mw_04563", "src": "mw", "raw": "\\pi r ( r + \\sqrt { r ^ { 2 } + h ^ { 2 } } )", "s": 1.0719779579958413, "error": null}
+{"id": "mw_04583", "src": "mw", "raw": "Z _ { i , j } Z _ { k , l } = Z _ { i , l } Z _ { k , j }", "s": 1.1344567499909317, "error": null}
+{"id": "mw_04589", "src": "mw", "raw": "R _ { D M } = \\frac { k } { 1 \\times n } = \\frac { k } { n }", "s": 1.6910900000075344, "error": null}
+{"id": "mw_04610", "src": "mw", "raw": "d = 2 m n ( m ^ { 2 } - n ^ { 2 } )", "s": 1.346441000001505, "error": null}
+{"id": "mw_04682", "src": "mw", "raw": "A - X", "s": 0.355561458010925, "error": null}
+{"id": "mw_04711", "src": "mw", "raw": "\\pi ( 0 . 9 9 ) \\times V ( 1 0 0 0 )", "s": 0.8446109579963377, "error": null}
+{"id": "mw_04733", "src": "mw", "raw": "Z _ { i , j } Z _ { k , l } = Z _ { i , l } Z _ { k , j }", "s": 0.8356868330010911, "error": null}
+{"id": "mw_04817", "src": "mw", "raw": "( F _ { p } ) ^ { d }", "s": 0.5049290419992758, "error": null}
+{"id": "mw_04922", "src": "mw", "raw": "P _ { t + 1 } - P _ { t }", "s": 0.5329328329971759, "error": null}
+{"id": "mw_04980", "src": "mw", "raw": "\\frac { d x } { d t } = ( x ( t - 1 ) ) ^ { 2 }", "s": 0.9797457089880481, "error": null}
+{"id": "mw_05020", "src": "mw", "raw": "a _ { n } = G ^ { - 1 } ( 1 - \\frac { 1 } { n } )", "s": 0.993005832991912, "error": null}
+{"id": "mw_05026", "src": "mw", "raw": "f ( x ) = \\frac { b - x } { 1 + c x }", "s": 0.6224819579947507, "error": null}
+{"id": "mw_05041", "src": "mw", "raw": "p = \\theta p _ { 0 } + ( 1 - \\theta ) p _ { 1 }", "s": 0.7165483749995474, "error": null}
+{"id": "mw_05055", "src": "mw", "raw": "U _ { 2 n } = \\frac { 2 U _ { n } u _ { n } } { U _ { n } + u _ { n } }", "s": 1.107648999997764, "error": null}
+{"id": "mw_05145", "src": "mw", "raw": "f g - g f = i ( f , g )", "s": 0.8520810000045458, "error": null}
+{"id": "mw_05204", "src": "mw", "raw": "U ^ { ( k ) } x _ { w } = x ^ { ( k ) }", "s": 1.2497504999919329, "error": null}
+{"id": "mw_05210", "src": "mw", "raw": "s o ( 2 n + 1 , C )", "s": 0.7713278339942917, "error": null}
+{"id": "mw_05249", "src": "mw", "raw": "\\frac { h L ( P - U ) } { 2 P U } + \\frac { s } { L }", "s": 0.9446057910099626, "error": null}
+{"id": "mw_05259", "src": "mw", "raw": "\\frac { h L ( P - U ) } { 2 P U } + \\frac { S } { L }", "s": 0.7949745420046384, "error": null}
+{"id": "mw_05261", "src": "mw", "raw": "c _ { d _ { 2 } } > 0", "s": 0.46652504200756084, "error": null}
+{"id": "mw_05276", "src": "mw", "raw": "L _ { X } f = i _ { X } d f", "s": 0.5529968329938129, "error": null}
+{"id": "mw_05283", "src": "mw", "raw": "Z _ { i , j } Z _ { k , l } = Z _ { i , l } Z _ { k , j }", "s": 0.8421160419966327, "error": null}
+{"id": "mw_05295", "src": "mw", "raw": "y = e ^ { - k t + C }", "s": 0.5155787909898208, "error": null}
+{"id": "mw_05305", "src": "mw", "raw": "- 2 7 - 2 0 \\sqrt { 2 }", "s": 0.5799864169966895, "error": null}
+{"id": "mw_05311", "src": "mw", "raw": "V _ { T - j + 1 } ( k )", "s": 0.4636526660033269, "error": null}
+{"id": "mw_05377", "src": "mw", "raw": "f g - g f = i ( f , g )", "s": 0.48352324998995755, "error": null}
+{"id": "mw_05381", "src": "mw", "raw": "V _ { T - j + 1 } ( k )", "s": 0.5357877499918686, "error": null}
+{"id": "mw_05401", "src": "mw", "raw": "\\pi ( 0 . 9 9 ) \\times v ( 1 0 0 0 )", "s": 0.8384711250109831, "error": null}
+{"id": "mw_05418", "src": "mw", "raw": "X _ { t } = N _ { t } D _ { t } ^ { - 1 }", "s": 0.7418859999888809, "error": null}
+{"id": "mw_05436", "src": "mw", "raw": "( s , t , f ( s , t ) )", "s": 0.445269832998747, "error": null}
+{"id": "mw_05529", "src": "mw", "raw": "P = ( 1 - \\frac { 2 } { 9 } ) ^ { 2 } Q", "s": 0.7493458750104764, "error": null}
+{"id": "mw_05600", "src": "mw", "raw": "\\frac { d x } { d t } = ( x ( t - 1 ) ) ^ { 2 }", "s": 0.7998613749950891, "error": null}
+{"id": "mw_05606", "src": "mw", "raw": "D _ { x - 1 } = ( x , f ( x ) )", "s": 0.557820707996143, "error": null}
+{"id": "mw_05680", "src": "mw", "raw": "B G _ { m } ( F _ { q } )", "s": 0.5675371249963064, "error": null}
+{"id": "mw_05693", "src": "mw", "raw": "\\frac { h L ( P - U ) } { 2 P U } + \\frac { S } { L }", "s": 0.8084898749948479, "error": null}
+{"id": "mw_05733", "src": "mw", "raw": "( G , q , g _ { 1 } , g _ { 2 } , c , d , h )", "s": 0.7731015830067918, "error": null}
+{"id": "mw_05745", "src": "mw", "raw": "\\gamma _ { w } ( q ) = \\frac { 1 } { 3 }", "s": 0.662690625002142, "error": null}
+{"id": "mw_05794", "src": "mw", "raw": "F ^ { 2 } ( f ) = f ( - t )", "s": 0.486417166001047, "error": null}
+{"id": "mw_05801", "src": "mw", "raw": "( \\frac { m } { s } )", "s": 0.4368828749866225, "error": null}
+{"id": "mw_05812", "src": "mw", "raw": "u v = - \\frac { 1 } { 3 } p", "s": 0.5489601669978583, "error": null}
+{"id": "mw_05820", "src": "mw", "raw": "1 - C _ { x y }", "s": 0.3933988750068238, "error": null}
+{"id": "mw_05821", "src": "mw", "raw": "d x / d y = - y / x", "s": 0.4708907089952845, "error": null}
+{"id": "mw_05879", "src": "mw", "raw": "2 ^ { 4 } t _ { 0 }", "s": 0.4692450410075253, "error": null}
+{"id": "mw_05883", "src": "mw", "raw": "B = ( T _ { n } ( s ) = x )", "s": 0.529611959005706, "error": null}
+{"id": "mw_05912", "src": "mw", "raw": "- 2 7 - 2 0 \\sqrt { 2 }", "s": 0.6065830830048071, "error": null}
+{"id": "mw_05914", "src": "mw", "raw": "A = A _ { 3 } A _ { 2 } A _ { 1 } A _ { 0 }", "s": 0.7495937499916181, "error": null}
+{"id": "mw_05922", "src": "mw", "raw": "\\frac { P V } { T } = \\sqrt { k _ { p } k _ { v } k _ { T } }", "s": 0.8324057920108316, "error": null}
+{"id": "mw_05934", "src": "mw", "raw": "\\frac { \\frac { p + 1 } { 2 } } { p } = \\frac { 1 + \\frac { 1 } { p } } { 2 }", "s": 1.1636195830069482, "error": null}
+{"id": "mw_05949", "src": "mw", "raw": "\\pi r ( r + \\sqrt { r ^ { 2 } + h ^ { 2 } } )", "s": 0.7892109170061303, "error": null}
+{"id": "mw_05958", "src": "mw", "raw": "V _ { T - j + 1 } ( k )", "s": 0.5002281250053784, "error": null}
+{"id": "mw_05978", "src": "mw", "raw": "1 0 \\times ( \\frac { 1 } { 2 } ) ^ { 6 } = \\frac { 5 } { 3 2 }", "s": 0.9740290840127273, "error": null}
+{"id": "mw_06009", "src": "mw", "raw": "2 \\pi k + \\frac { \\pi } { 2 }", "s": 0.5860770419967594, "error": null}
+{"id": "mw_06086", "src": "mw", "raw": "a = ( 1 - \\alpha ) ^ { \\frac { 1 } { n } }", "s": 0.6989878750027856, "error": null}
+{"id": "mw_06104", "src": "mw", "raw": "y ( t ) = a e ^ { - b e ^ { - c t } }", "s": 0.7283633339975495, "error": null}
+{"id": "mw_06110", "src": "mw", "raw": "\\frac { d x } { d t } = ( x ( t - 1 ) ) ^ { 2 }", "s": 0.7988900420023128, "error": null}
+{"id": "mw_06118", "src": "mw", "raw": "\\frac { P _ { i } + P _ { o } } { 2 } \\times \\frac { 1 } { P _ { o } }", "s": 0.9903267500048969, "error": null}
+{"id": "mw_06128", "src": "mw", "raw": "f ^ { m a n } x = ( f ^ { m } ) ^ { n } x", "s": 0.6819990410003811, "error": null}
+{"id": "mw_06138", "src": "mw", "raw": "\\frac { \\int _ { a } ^ { b } f ( x ) d x } { b - a }", "s": 0.841064499996719, "error": null}
+{"id": "mw_06140", "src": "mw", "raw": "A ^ { k } = V J ^ { k } V ^ { - 1 }", "s": 0.6247295420034789, "error": null}
+{"id": "mw_06173", "src": "mw", "raw": "2 ^ { k } t _ { 0 }", "s": 0.4069509170076344, "error": null}
+{"id": "mw_06260", "src": "mw", "raw": "1 0 . 2", "s": 0.37063066600239836, "error": null}
+{"id": "mw_06295", "src": "mw", "raw": "p q", "s": 0.2710222919995431, "error": null}
+{"id": "mw_06316", "src": "mw", "raw": "( 0 ) ( x ^ { 2 } + 1 ) = 0", "s": 0.6112515840068227, "error": null}
+{"id": "mw_06327", "src": "mw", "raw": "T _ { f } = \\frac { T _ { w } + T _ { \\infty } } { 2 }", "s": 0.8289852500020061, "error": null}
+{"id": "mw_06374", "src": "mw", "raw": "b = 1 2 = 2 ^ { 2 } \\cdot 3", "s": 0.6874384580005426, "error": null}
+{"id": "mw_06378", "src": "mw", "raw": "\\int _ { a } ^ { b } f ( x ) d _ { h } x", "s": 0.6836769590008771, "error": null}
+{"id": "mw_06436", "src": "mw", "raw": "A _ { 1 } = \\frac { P } { \\sqrt { 2 } }", "s": 0.6998943329963367, "error": null}
+{"id": "mw_06456", "src": "mw", "raw": "L _ { r } , L _ { t } , L _ { L } / 1 0", "s": 0.7535798750031972, "error": null}
+{"id": "mw_06515", "src": "mw", "raw": "J = \\alpha ( X )", "s": 0.3489870420016814, "error": null}
+{"id": "mw_06524", "src": "mw", "raw": "0 < b ^ { 2 } - c", "s": 0.45528508300776593, "error": null}
+{"id": "mw_06588", "src": "mw", "raw": "Z _ { i } ^ { ( m ) } = m Y _ { i } ^ { ( m ) }", "s": 0.7640404580015456, "error": null}
+{"id": "mw_06614", "src": "mw", "raw": "A ^ { k } = V J ^ { k } V ^ { - 1 }", "s": 0.6607560000120429, "error": null}
+{"id": "mw_06619", "src": "mw", "raw": "\\frac { \\pi } { L } \\cdot \\frac { L } { 2 \\pi T } = \\frac { 0 . 5 } { T }", "s": 0.9415761249983916, "error": null}
+{"id": "mw_06657", "src": "mw", "raw": "l ^ { f ( x ) }", "s": 0.3644514170009643, "error": null}
+{"id": "mw_06679", "src": "mw", "raw": "U _ { 2 n } = \\frac { 2 U _ { n } u _ { n } } { u _ { n } + u _ { n } }", "s": 1.0541659590089694, "error": null}
+{"id": "mw_06738", "src": "mw", "raw": "g ( x ) F ( x ) + C", "s": 0.43783454099320807, "error": null}
+{"id": "mw_06744", "src": "mw", "raw": "2 ^ { m / 1 5 } = e ^ { m / T }", "s": 0.6118877499975497, "error": null}
+{"id": "mw_06772", "src": "mw", "raw": "g = w / 2 - n + 1", "s": 0.44708541699219495, "error": null}
+{"id": "mw_06807", "src": "mw", "raw": "3 ( F _ { n } - 1 ) / 2", "s": 0.5389787080057431, "error": null}
+{"id": "mw_06864", "src": "mw", "raw": "S = \\frac { c } { 4 \\pi } E \\times B", "s": 0.5828348750073928, "error": null}
+{"id": "mw_06894", "src": "mw", "raw": "a ^ { ( b ^ { c } ) }", "s": 0.4728976249898551, "error": null}
+{"id": "mw_06912", "src": "mw", "raw": "V = \\sqrt { 2 . 6 7 x }", "s": 0.5182492080057273, "error": null}
+{"id": "mw_06920", "src": "mw", "raw": "f ( x ) = \\frac { b - x } { 1 + c x }", "s": 0.6753398750006454, "error": null}
+{"id": "mw_06924", "src": "mw", "raw": "\\beta _ { 2 } = k ^ { 2 } - k _ { x } ^ { 2 } - k _ { y } ^ { 2 }", "s": 1.0446177499979967, "error": null}
+{"id": "mw_06951", "src": "mw", "raw": "d = 2 . 9 n ^ { 2 } a _ { 0 }", "s": 0.6654999589954969, "error": null}
+{"id": "mw_06953", "src": "mw", "raw": "a ^ { ( b ^ { c } ) }", "s": 0.41450462499051355, "error": null}
+{"id": "mw_07013", "src": "mw", "raw": "1 ^ { f ( x ) }", "s": 0.406327250006143, "error": null}
+{"id": "mw_07018", "src": "mw", "raw": "3 ^ { ( F _ { n } - 1 ) / 2 }", "s": 0.6129157499963185, "error": null}
+{"id": "mw_07108", "src": "mw", "raw": "\\Delta u = u _ { x x } + u _ { y y }", "s": 0.573781750004855, "error": null}
+{"id": "mw_07109", "src": "mw", "raw": "Y _ { n + 1 } = 2 - x Y _ { n }", "s": 0.7300930839992361, "error": null}
+{"id": "mw_07147", "src": "mw", "raw": "X _ { t } = N _ { t } D _ { t } ^ { - 1 }", "s": 0.6746087920037098, "error": null}
+{"id": "mw_07162", "src": "mw", "raw": "( s , t , f ( s , t ) )", "s": 0.45823416599887423, "error": null}
+{"id": "mw_07187", "src": "mw", "raw": "2 ^ { m / 1 5 } = e ^ { m / T }", "s": 0.6372271250002086, "error": null}
+{"id": "mw_07215", "src": "mw", "raw": "I _ { S H } = \\frac { V _ { j } } { R _ { S H } }", "s": 0.7878539999946952, "error": null}
+{"id": "mw_07240", "src": "mw", "raw": "2 ^ { 2 } + 2 + 1 - 1", "s": 0.6222082500025863, "error": null}
+{"id": "mw_07280", "src": "mw", "raw": "4 ^ { n } + 2 ^ { n + 1 } - 1", "s": 0.5961439590028021, "error": null}
+{"id": "mw_07281", "src": "mw", "raw": "1 - C _ { x y }", "s": 0.39952137500222307, "error": null}
+{"id": "mw_07328", "src": "mw", "raw": "\\sqrt { 1 } \\sqrt { 1 } = \\sqrt { - 1 } \\sqrt { - 1 }", "s": 0.8384552920033457, "error": null}
+{"id": "mw_07344", "src": "mw", "raw": "u _ { 2 n } = \\frac { 2 v _ { n + 1 } } { v _ { n } + u _ { n } }", "s": 1.0143822910031304, "error": null}
+{"id": "mw_07399", "src": "mw", "raw": "( s , t , f ( s , t ) )", "s": 0.4631468340085121, "error": null}
+{"id": "mw_07443", "src": "mw", "raw": "\\int _ { a } ^ { b } f ( x ) d _ { n } x", "s": 0.7210501250083325, "error": null}
+{"id": "mw_07459", "src": "mw", "raw": "A = C", "s": 0.26654895801038947, "error": null}
+{"id": "mw_07468", "src": "mw", "raw": "V _ { 1 } ( \\frac { 1 } { 2 } ) = V _ { 2 } ( \\frac { 1 } { 2 } )", "s": 1.0565372499986552, "error": null}
+{"id": "mw_07470", "src": "mw", "raw": "f ( x ) > f ( y )", "s": 0.411274375001085, "error": null}
+{"id": "mw_07518", "src": "mw", "raw": "\\frac { p V } { T } = \\sqrt { k _ { p } k _ { V } }", "s": 0.7754236670007231, "error": null}
+{"id": "mw_07519", "src": "mw", "raw": "\\frac { 1 9 } { 1 3 } < \\sqrt { 3 }", "s": 0.6437466669885907, "error": null}
+{"id": "mw_07537", "src": "mw", "raw": "1 - p + ( 1 - p )", "s": 0.40732320900133345, "error": null}
+{"id": "mw_07563", "src": "mw", "raw": "( i d _ { V } ) ^ { C } = i d _ { V C }", "s": 0.640319374986575, "error": null}
+{"id": "mw_07607", "src": "mw", "raw": "\\int _ { a } ^ { b } f ( x ) d _ { h } x", "s": 0.7662504579930101, "error": null}
+{"id": "mw_07640", "src": "mw", "raw": "2 r \\sqrt { r ^ { 2 } - x ^ { 2 } }", "s": 0.6158737919904524, "error": null}
+{"id": "crohme_00262", "src": "crohme", "raw": "M = E - e \\sin E", "s": 0.5226592919934774, "error": null}
+{"id": "crohme_00277", "src": "crohme", "raw": "\\frac { p } { q }", "s": 0.5361235830059741, "error": null}
+{"id": "crohme_00315", "src": "crohme", "raw": "t a n \\alpha _ { i }", "s": 0.5804964999988442, "error": null}
+{"id": "crohme_00317", "src": "crohme", "raw": "g ^ { 2 } = g g = e", "s": 0.6773873329948401, "error": null}
+{"id": "crohme_00322", "src": "crohme", "raw": "\\sqrt { x ^ { 5 } }", "s": 0.6119380830059526, "error": null}
+{"id": "crohme_00325", "src": "crohme", "raw": "3 0 0 0 0 0 0 0 3", "s": 0.8219521670107497, "error": null}
+{"id": "crohme_00329", "src": "crohme", "raw": "0 < x < \\sqrt { 2 }", "s": 0.5475825419998728, "error": null}
+{"id": "crohme_00355", "src": "crohme", "raw": "1 . 3 7 9 1 9 4 1 7 1", "s": 0.8227824579953449, "error": null}
+{"id": "crohme_00359", "src": "crohme", "raw": "( e ^ { s } - q ) / q", "s": 0.5849273329949938, "error": null}
+{"id": "crohme_00360", "src": "crohme", "raw": "1 = \\frac { Y } { Y }", "s": 0.5712292079988401, "error": null}
+{"id": "crohme_00376", "src": "crohme", "raw": "x ^ { 3 } + 8 y ^ { 3 }", "s": 0.7020695829996839, "error": null}
+{"id": "crohme_00378", "src": "crohme", "raw": "L _ { t } = L + L = 2 L", "s": 0.6369782080000732, "error": null}
+{"id": "crohme_00379", "src": "crohme", "raw": "4 - 4 + 4 - \\sqrt { 4 }", "s": 0.6867300420126412, "error": null}
+{"id": "crohme_00390", "src": "crohme", "raw": "3 x ^ { 3 } e ^ { 3 x }", "s": 0.6835063329926925, "error": null}
+{"id": "crohme_00400", "src": "crohme", "raw": "\\frac { 4 + 4 } { 4 + 4 }", "s": 0.7224157500022557, "error": null}
+{"id": "crohme_00404", "src": "crohme", "raw": "a = - 2 X Y - 2 Y ^ { 2 }", "s": 0.7683029159961734, "error": null}
+{"id": "crohme_00413", "src": "crohme", "raw": "\\cos ( z ) + i \\sin ( z )", "s": 0.5799566250061616, "error": null}
+{"id": "crohme_00430", "src": "crohme", "raw": "e ^ { - t } \\cos 2 t", "s": 0.624224792001769, "error": null}
+{"id": "crohme_00444", "src": "crohme", "raw": "\\sqrt { 2 } \\sqrt { 2 } = 2", "s": 0.7875486249977257, "error": null}
+{"id": "crohme_00445", "src": "crohme", "raw": "\\sqrt { 7 } + 2 \\sqrt { 7 }", "s": 0.7001677500084043, "error": null}
+{"id": "crohme_00451", "src": "crohme", "raw": "3 x + 1 = A ( x + 1 ) + B x", "s": 0.7724062500055879, "error": null}
+{"id": "crohme_00461", "src": "crohme", "raw": "\\frac { d } { d x } d ^ { x }", "s": 0.6504160830081673, "error": null}
+{"id": "crohme_00468", "src": "crohme", "raw": "f ( a ) f ( b ) = f ( a + b )", "s": 0.7599474160087993, "error": null}
+{"id": "crohme_00478", "src": "crohme", "raw": "q \\theta = q \\sin \\theta", "s": 0.5326134170027217, "error": null}
+{"id": "crohme_00479", "src": "crohme", "raw": "\\sqrt { 9 } \\times \\sqrt { 5 }", "s": 0.6720974580093753, "error": null}
+{"id": "crohme_00494", "src": "crohme", "raw": "z = \\cos \\theta + j \\sin \\theta", "s": 0.6434525839868002, "error": null}
+{"id": "crohme_00502", "src": "crohme", "raw": "\\int \\sin ( x ) \\sin ( 2 x ) d x", "s": 0.8447280420077732, "error": null}
+{"id": "crohme_00503", "src": "crohme", "raw": "\\langle \\frac { \\pi } { \\sqrt { 1 } } \\rangle", "s": 0.7420494999969378, "error": null}
+{"id": "crohme_00511", "src": "crohme", "raw": "x ^ { 2 } - x y + x y - y ^ { 2 }", "s": 0.8076054170087446, "error": null}
+{"id": "crohme_00513", "src": "crohme", "raw": "h ( s ) = \\frac { 1 } { 1 + s T }", "s": 0.7379500419920078, "error": null}
+{"id": "crohme_00534", "src": "crohme", "raw": "2 x ( 9 x + 1 ) ( 3 x + 1 ) ^ { 3 }", "s": 0.9350373330089496, "error": null}
+{"id": "crohme_00546", "src": "crohme", "raw": "p ^ { \\alpha } - p ^ { \\alpha - 1 }", "s": 0.8024038330040639, "error": null}
+{"id": "crohme_00548", "src": "crohme", "raw": "y = y _ { 0 } + m ( x - x _ { 0 } )", "s": 0.804525667001144, "error": null}
+{"id": "crohme_00555", "src": "crohme", "raw": "q - ( q - \\sqrt { 2 } ) = \\sqrt { 2 }", "s": 0.7794792920030886, "error": null}
+{"id": "crohme_00565", "src": "crohme", "raw": "\\frac { f ( b ) - f ( a ) } { b - a }", "s": 0.7371572089905385, "error": null}
+{"id": "crohme_00594", "src": "crohme", "raw": "\\frac { 9 + 3 \\sqrt { 6 5 } } { - 5 6 }", "s": 1.0641202919941861, "error": null}
+{"id": "crohme_00602", "src": "crohme", "raw": "4 ^ { 2 } + 4 ^ { 2 } + \\frac { 4 } { 4 }", "s": 0.895220040998538, "error": null}
+{"id": "crohme_00610", "src": "crohme", "raw": "\\frac { d a } { d c } = \\frac { c } { a }", "s": 0.8065534589986783, "error": null}
+{"id": "crohme_00611", "src": "crohme", "raw": "1 - 2 a + b - 2 a b = 1 - 2 b + a - 2 a b", "s": 0.9361711249948712, "error": null}
+{"id": "crohme_00613", "src": "crohme", "raw": "\\frac { \\sqrt { 6 } + \\sqrt { 2 } } { 4 }", "s": 0.8056837920012185, "error": null}
+{"id": "crohme_00639", "src": "crohme", "raw": "( x ^ { 2 } + 2 ) ^ { 2 } - ( 2 x ) ^ { 2 }", "s": 0.9262726249871776, "error": null}
+{"id": "crohme_00647", "src": "crohme", "raw": "\\log x - \\log y = \\log ( \\frac { x } { y } )", "s": 0.8341169579944108, "error": null}
+{"id": "crohme_00661", "src": "crohme", "raw": "( x ^ { 4 } + 4 x ^ { 2 } + 4 ) - 4 x ^ { 2 }", "s": 1.0092917080037296, "error": null}
+{"id": "crohme_00664", "src": "crohme", "raw": "x _ { k } x x _ { k + 1 } y _ { k } y x _ { k }", "s": 0.9043538330006413, "error": null}
+{"id": "crohme_00669", "src": "crohme", "raw": "( 6 4 8 + 6 4 8 ) ^ { \\frac { 1 } { 9 } } + 8", "s": 1.0763027089997195, "error": null}
+{"id": "crohme_00680", "src": "crohme", "raw": "\\cos ( x + y ) = \\cos x \\cos y - \\sin x \\sin y", "s": 0.8380386249918956, "error": null}
+{"id": "crohme_00683", "src": "crohme", "raw": "\\sin ( x - y ) = \\sin x \\cos y - \\cos x \\sin y", "s": 0.8923994579963619, "error": null}
+{"id": "crohme_00685", "src": "crohme", "raw": "\\frac { 3 + 9 + 7 + 3 + 6 + 1 6 + 4 } { 7 } = 6", "s": 1.0903075420064852, "error": null}
+{"id": "crohme_00703", "src": "crohme", "raw": "\\frac { ( X ) ( X ) ( X ) ( X ) ( X ) } { ( X ) }", "s": 0.887146125009167, "error": null}
+{"id": "crohme_00731", "src": "crohme", "raw": "( I - T ) ^ { - 1 } = I + T + T ^ { 2 } + T ^ { 3 }", "s": 1.0143378749926342, "error": null}
+{"id": "crohme_00739", "src": "crohme", "raw": "\\frac { 3 \\div 3 } { 9 \\div 3 } = \\frac { 1 } { 3 }", "s": 1.049692624990712, "error": null}
+{"id": "crohme_00747", "src": "crohme", "raw": "\\sqrt { 4 5 } = \\sqrt { 9 \\times 5 } = 3 \\sqrt { 5 }", "s": 1.0358105829945998, "error": null}
+{"id": "crohme_00753", "src": "crohme", "raw": "q = ( x _ { q } , y _ { q } , z _ { q } , w _ { q } )", "s": 1.0257408330071485, "error": null}
+{"id": "crohme_00776", "src": "crohme", "raw": "\\partial _ { 1 1 } \\partial _ { 2 2 } - \\partial _ { 1 2 } \\partial _ { 2 1 }", "s": 1.2793275830044877, "error": null}
+{"id": "crohme_00783", "src": "crohme", "raw": "y ^ { \\frac { 1 } { b } } \\leq x ^ { \\frac { 1 } { b } }", "s": 0.960089208005229, "error": null}
+{"id": "crohme_00799", "src": "crohme", "raw": "\\frac { a z ^ { - 1 } } { ( 1 - a z ^ { - 1 } ) ^ { 2 } }", "s": 1.193145084005664, "error": null}
+{"id": "crohme_00806", "src": "crohme", "raw": "\\int x \\cos ( x ) d x = x \\sin ( x ) - \\int \\sin ( x ) d x", "s": 1.6701545840041945, "error": null}
+{"id": "crohme_00830", "src": "crohme", "raw": "\\frac { d } { d \\theta } e ^ { i \\theta } = i e ^ { i \\theta }", "s": 1.5031223749974743, "error": null}
+{"id": "crohme_00833", "src": "crohme", "raw": "\\frac { d } { d x } \\sqrt { x } = \\frac { 1 } { 2 \\sqrt { x } }", "s": 1.7068910839880118, "error": null}
+{"id": "crohme_00834", "src": "crohme", "raw": "b _ { 1 } B _ { 1 } + b _ { 2 } B _ { 2 } + b _ { 3 } B _ { 3 }", "s": 2.0905849999981, "error": null}
+{"id": "crohme_00848", "src": "crohme", "raw": "f ^ { ( i + k ) } ( 0 ) = f ^ { ( i ) } ( 0 ) f ^ { ( k ) } ( 0 )", "s": 2.0160004579956876, "error": null}
+{"id": "crohme_00849", "src": "crohme", "raw": "a ( 1 ) = \\int a ^ { ( 1 ) } d t = \\int a _ { 0 } ^ { ( 1 ) } d t", "s": 1.9275725000043167, "error": null}
+{"id": "crohme_00866", "src": "crohme", "raw": "\\frac { \\alpha } { 2 } - \\frac { \\alpha + 1 } { 2 } = \\frac { 1 } { 2 }", "s": 1.8062356669979636, "error": null}
+{"id": "crohme_00876", "src": "crohme", "raw": "\\sqrt { a } \\sqrt { - a } = \\sqrt { - a ^ { 2 } } = j \\sqrt { a ^ { 2 } }", "s": 1.8367460000008577, "error": null}
+{"id": "crohme_00879", "src": "crohme", "raw": "- \\frac { \\sin ( n \\pi ) } { n \\pi } + \\frac { \\sin ( n \\pi ) } { n \\pi }", "s": 1.7860929999878863, "error": null}
+{"id": "crohme_00899", "src": "crohme", "raw": "\\frac { d } { d \\theta } \\sqrt { \\theta } = \\frac { 1 } { 2 \\sqrt { \\theta } }", "s": 1.803271417011274, "error": null}
+{"id": "crohme_00909", "src": "crohme", "raw": "\\sin x - \\sin y = 2 \\cos ( \\frac { x + y } { 2 } ) \\sin ( \\frac { x - y } { 2 } )", "s": 2.097147207998205, "error": null}
+{"id": "crohme_00914", "src": "crohme", "raw": "\\frac { x ^ { 2 } + 1 3 x + 4 0 } { 2 x ^ { 3 } + 2 7 x ^ { 2 } + 1 1 1 x + 1 4 0 }", "s": 2.6863843750033993, "error": null}
+{"id": "crohme_00918", "src": "crohme", "raw": "( 1 - 1 ) ^ { 3 } + 1 ^ { 3 } < \\frac { 1 } { 4 } 2 ^ { 4 } < 1 ^ { 3 } + 2 ^ { 3 }", "s": 2.683986250005546, "error": null}
+{"id": "crohme_00924", "src": "crohme", "raw": "\\sqrt { ( \\frac { \\Delta x } { x } ) ^ { 2 } + ( \\frac { \\Delta y } { y } ) ^ { 2 } }", "s": 2.0284610420058016, "error": null}
+{"id": "crohme_00931", "src": "crohme", "raw": "\\frac { z ^ { - 1 } ( 1 + 4 z ^ { - 1 } + z ^ { - 2 } ) } { ( 1 - z ^ { - 1 } ) ^ { 4 } }", "s": 2.438986624998506, "error": null}
+{"id": "crohme_00935", "src": "crohme", "raw": "x ^ { 2 } + y ^ { 2 } = l _ { 1 } ^ { 2 } + l _ { 2 } ^ { 2 } + 2 l _ { 1 } l _ { 2 } c _ { 2 }", "s": 2.9133403329906287, "error": null}
+{"id": "crohme_00973", "src": "crohme", "raw": "\\tan ( 5 x ) = \\frac { 5 \\tan ( x ) - 1 0 \\tan ^ { 3 } ( x ) + \\tan ^ { 5 } ( x ) } { 1 - 1 0 \\tan ^ { 2 } ( x ) + 5 \\tan ^ { 4 } ( x ) }", "s": 3.4647470839991, "error": null}
+{"id": "crohme_00974", "src": "crohme", "raw": "\\frac { 2 9 3 0 2 } { 7 5 8 0 3 } = \\frac { 7 \\times 7 \\times 1 3 \\times 4 6 } { 7 \\times 7 \\times 1 3 \\times 1 1 9 } = \\frac { 4 6 } { 1 1 9 }", "s": 3.8365329999942333, "error": null}
+{"id": "crohme_00977", "src": "crohme", "raw": "r _ { 0 } = \\frac { ( \\frac { p + 1 } { p } ) r _ { e } + ( p + 2 + \\frac { 2 } { p } ) r _ { g } } { 2 + \\frac { 2 } { p } }", "s": 2.9413893330056453, "error": null}

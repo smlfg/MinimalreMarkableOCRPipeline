@@ -1,0 +1,136 @@
+{"id": "h001", "src": "synth_hard", "raw": "\\int x ^ { 2 } d x = x ^ { 3 } / 3 + C", "s": 0.8251205839915201, "error": null}
+{"id": "h002", "src": "synth_hard", "raw": "\\int x ^ { 5 } d x = x ^ { 6 } / 6 + C", "s": 0.8602205830102321, "error": null}
+{"id": "h003", "src": "synth_hard", "raw": "\\int x ^ { 3 } d x = x ^ { 4 } / 4 + C", "s": 0.859897541013197, "error": null}
+{"id": "h004", "src": "synth_hard", "raw": "\\int x ^ { 3 } d x = x ^ { 4 } / 4 + C", "s": 0.8572847089963034, "error": null}
+{"id": "h005", "src": "synth_hard", "raw": "\\int x ^ { 3 } d x = x ^ { 4 } / 4 + C", "s": 0.7267216250038473, "error": null}
+{"id": "h006", "src": "synth_hard", "raw": "\\int x ^ { 2 } d x = x ^ { 3 } / 3 + C", "s": 0.8348684170050547, "error": null}
+{"id": "h007", "src": "synth_hard", "raw": "\\int x ^ { 5 } d x = x ^ { 6 } / 6 + C", "s": 0.8610449170082575, "error": null}
+{"id": "h008", "src": "synth_hard", "raw": "\\int x ^ { 2 } d x = x ^ { 3 } / 3 + C", "s": 0.834025375006604, "error": null}
+{"id": "h009", "src": "synth_hard", "raw": "\\int x ^ { 5 } d x = x ^ { 6 } / 6 + C", "s": 0.8320079160039313, "error": null}
+{"id": "h010", "src": "synth_hard", "raw": "\\int x ^ { 4 } d x = x ^ { 5 } / 5 + C", "s": 0.8510331659927033, "error": null}
+{"id": "h011", "src": "synth_hard", "raw": "\\int x ^ { 3 } d x = x ^ { 4 } / 4 + C", "s": 0.7158878339978401, "error": null}
+{"id": "h012", "src": "synth_hard", "raw": "\\int x ^ { 5 } d x = x ^ { 6 } / 6 + C", "s": 0.8606807080068393, "error": null}
+{"id": "h013", "src": "synth_hard", "raw": "\\int x ^ { 2 } d x = x ^ { 3 } / 3 + C", "s": 0.7325996669969754, "error": null}
+{"id": "h014", "src": "synth_hard", "raw": "\\int x ^ { 3 } d x = x ^ { 4 } / 4 + C", "s": 0.8301155419903807, "error": null}
+{"id": "h015", "src": "synth_hard", "raw": "\\int ( 3 x + 7 ) d x = 3 / 2 \\cdot x ^ { 2 } + 7 x + C", "s": 1.2242949170031352, "error": null}
+{"id": "h016", "src": "synth_hard", "raw": "\\int ( 5 x + 4 ) d x = 5 / 2 \\cdot x ^ { 2 } + 4 x + C", "s": 1.0876043750031386, "error": null}
+{"id": "h017", "src": "synth_hard", "raw": "\\int ( 4 x + 4 ) d x = 4 / 2 \\cdot x ^ { 2 } + 4 x + C", "s": 1.1074079160025576, "error": null}
+{"id": "h018", "src": "synth_hard", "raw": "\\int ( 3 x + 8 ) d x = 3 / 2 \\cdot x ^ { 2 } + 8 x + C", "s": 1.047331875000964, "error": null}
+{"id": "h019", "src": "synth_hard", "raw": "\\int ( 4 x + 6 ) d x = 4 / 2 \\cdot x ^ { 2 } + 6 x + C", "s": 1.1119669589970727, "error": null}
+{"id": "h020", "src": "synth_hard", "raw": "\\int ( 4 x + 4 ) d x = 4 / 2 \\cdot x ^ { 2 } + 4 x + C", "s": 1.1059031670010881, "error": null}
+{"id": "h021", "src": "synth_hard", "raw": "\\int ( 4 x + 3 ) d x = 4 / 2 \\cdot x ^ { 2 } + 3 x + C", "s": 1.093412125002942, "error": null}
+{"id": "h022", "src": "synth_hard", "raw": "\\int ( 4 x + 2 ) d x = 4 / 2 \\cdot x ^ { 2 } + 2 x + C", "s": 1.092526791995624, "error": null}
+{"id": "h023", "src": "synth_hard", "raw": "\\int ( 4 x + 2 ) d x = 4 / 2 \\cdot x ^ { 2 } + 2 x + C", "s": 1.1006566249998286, "error": null}
+{"id": "h024", "src": "synth_hard", "raw": "\\int ( 4 x + 4 ) d x = 4 / 2 \\cdot x ^ { 2 } + 4 x + C", "s": 1.071578083006898, "error": null}
+{"id": "h025", "src": "synth_hard", "raw": "\\int ( 4 x + 8 ) d x = 4 / 2 . x ^ { 2 } + 8 x + C", "s": 0.9940763339982368, "error": null}
+{"id": "h026", "src": "synth_hard", "raw": "f ( 2 x + 5 ) d x = 2 / 2 \\cdot x ^ { 2 } + 5 x + C", "s": 0.9667191250046017, "error": null}
+{"id": "h027", "src": "synth_hard", "raw": "\\int ( 2 x + 4 ) d x = 2 / 2 \\cdot x ^ { 2 } + 4 x + C", "s": 1.0936675410048338, "error": null}
+{"id": "h028", "src": "synth_hard", "raw": "\\int ( 3 x + 8 ) d x = 3 / 2 \\cdot x ^ { 2 } + 8 x + C", "s": 1.0941039169993019, "error": null}
+{"id": "h029", "src": "synth_hard", "raw": "\\int _ { 2 } ^ { 6 } x d x = 1 6", "s": 0.8341522910050116, "error": null}
+{"id": "h030", "src": "synth_hard", "raw": "\\int _ { 1 } ^ { 7 } x d x = 2 4", "s": 0.7787346249970142, "error": null}
+{"id": "h031", "src": "synth_hard", "raw": "\\int _ { 0 } ^ { 4 } x d x = 8", "s": 0.6825127909978619, "error": null}
+{"id": "h032", "src": "synth_hard", "raw": "\\int _ { 2 } ^ { 8 } x d x = 3 0", "s": 0.8721155420062132, "error": null}
+{"id": "h033", "src": "synth_hard", "raw": "\\int _ { 0 } ^ { 4 } x d x = 8", "s": 0.6747304589953274, "error": null}
+{"id": "h034", "src": "synth_hard", "raw": "\\int _ { 1 } ^ { 5 } x d x = 1 2", "s": 0.7290594170044642, "error": null}
+{"id": "h035", "src": "synth_hard", "raw": "\\int _ { 1 } ^ { 7 } x d x = 2 4", "s": 0.8158459999976913, "error": null}
+{"id": "h036", "src": "synth_hard", "raw": "\\int _ { 0 } ^ { 2 } x d x = 2", "s": 0.7293914159963606, "error": null}
+{"id": "h037", "src": "synth_hard", "raw": "\\int _ { 2 } ^ { 4 } x d x = 6", "s": 0.7459395829937421, "error": null}
+{"id": "h038", "src": "synth_hard", "raw": "\\int _ { 0 } ^ { 2 } x d x = 2", "s": 0.7369199579989072, "error": null}
+{"id": "h039", "src": "synth_hard", "raw": "\\int _ { 1 } ^ { 7 } x d x = 2 4", "s": 0.8041535000083968, "error": null}
+{"id": "h040", "src": "synth_hard", "raw": "\\int _ { 2 ^ { 8 } } ^ { x } d x = 3 0", "s": 0.8565774580056313, "error": null}
+{"id": "h041", "src": "synth_hard", "raw": "\\sum _ { k = 1 } ^ { n } k = n ( n + 1 ) / 2", "s": 0.8084379999927478, "error": null}
+{"id": "h042", "src": "synth_hard", "raw": "\\sum _ { k = 1 } ^ { n } k = n ( n + 1 ) / 2", "s": 0.8118616660067346, "error": null}
+{"id": "h043", "src": "synth_hard", "raw": "\\sum _ { k = 1 } ^ { n } k = n ( n + 1 ) / 2", "s": 0.8781424579938175, "error": null}
+{"id": "h044", "src": "synth_hard", "raw": "\\sum _ { k = 1 } ^ { n } k = n ( n + 1 ) / 2", "s": 0.8081292909919284, "error": null}
+{"id": "h045", "src": "synth_hard", "raw": "\\sum _ { k = 1 } ^ { n } k = n ( n + 1 ) / 2", "s": 0.8609597500035306, "error": null}
+{"id": "h046", "src": "synth_hard", "raw": "\\sum _ { k = 1 } ^ { n } k = n ( n + 1 ) / 2", "s": 0.7974402909894707, "error": null}
+{"id": "h047", "src": "synth_hard", "raw": "\\sum _ { k = 1 } ^ { n } k = n ( n + 1 ) / 2", "s": 0.8630704169918317, "error": null}
+{"id": "h048", "src": "synth_hard", "raw": "z _ { k = 1 } ^ { n } k = n ( n + 1 ) / 2", "s": 0.8861766669870121, "error": null}
+{"id": "h049", "src": "synth_hard", "raw": "z _ { k = 1 } ^ { n } k ^ { 2 } \\geq n ( n + 1 ) ( 2 n + 1 ) / 6", "s": 1.1849055000056978, "error": null}
+{"id": "h050", "src": "synth_hard", "raw": "\\sum _ { k = 1 } ^ { n } k ^ { 2 } = n ( n + 1 ) ( 2 n + 1 ) / 6", "s": 1.16054462500324, "error": null}
+{"id": "h051", "src": "synth_hard", "raw": "\\sum _ { k = 1 } ^ { n } k ^ { 2 } = n ( n + 1 ) ( 2 n + 1 ) / 6", "s": 1.175934041995788, "error": null}
+{"id": "h052", "src": "synth_hard", "raw": "\\sum _ { k = 1 } ^ { n } k ^ { 2 } = n ( n + 1 ) ( 2 n + 1 ) / 6", "s": 1.1722481659962796, "error": null}
+{"id": "h053", "src": "synth_hard", "raw": "\\sum _ { k = 1 } ^ { n } k ^ { 2 } = n ( n + 1 ) ( 2 n + 1 ) / 6", "s": 1.138159333000658, "error": null}
+{"id": "h054", "src": "synth_hard", "raw": "\\Sigma _ { k = 1 } ^ { n } k ^ { 2 } = n ( n + 1 ) ( 2 n + 1 ) / 6", "s": 1.163534791994607, "error": null}
+{"id": "h055", "src": "synth_hard", "raw": "\\Sigma _ { k = 1 } ^ { n } k ^ { 2 } = n ( n + 1 ) ( 2 n + 1 ) / 6", "s": 1.1573681669979123, "error": null}
+{"id": "h056", "src": "synth_hard", "raw": "\\sum _ { k = 1 } ^ { n } k ^ { 2 } = n ( n + 1 ) ( 2 n + 1 ) / 6", "s": 1.1544107919908129, "error": null}
+{"id": "h057", "src": "synth_hard", "raw": "\\sum _ { k = 1 } ^ { n } 4 k = 2 n ( n + 1 )", "s": 0.8900798329996178, "error": null}
+{"id": "h058", "src": "synth_hard", "raw": "\\sum _ { k = 1 } ^ { n } 2 k = 1 n ( n + 1 )", "s": 0.8380464580113767, "error": null}
+{"id": "h059", "src": "synth_hard", "raw": "\\sum _ { k = 1 } ^ { n } 6 k = 3 n ( n + 1 )", "s": 0.826460833006422, "error": null}
+{"id": "h060", "src": "synth_hard", "raw": "\\sum _ { k = 1 } ^ { n } 8 k = 4 n ( n + 1 )", "s": 0.827888375002658, "error": null}
+{"id": "h061", "src": "synth_hard", "raw": "z _ { k = 1 } ^ { n } 4 k = 2 n ( n + 1 )", "s": 0.8089416250004433, "error": null}
+{"id": "h062", "src": "synth_hard", "raw": "\\sum _ { k = 1 } ^ { n } 8 k = 4 n ( n + 1 )", "s": 0.8847388330032118, "error": null}
+{"id": "h063", "src": "synth_hard", "raw": "\\sum _ { k = 0 } ^ { n } q ^ { k } = ( q ^ { n + 1 } - 1 ) / ( q - 1 )", "s": 1.3968195829947945, "error": null}
+{"id": "h064", "src": "synth_hard", "raw": "\\sum _ { k = 0 } ^ { n } q ^ { k } = ( q ^ { n + 1 } - 1 ) / ( q - 1 )", "s": 1.1955118339974433, "error": null}
+{"id": "h065", "src": "synth_hard", "raw": "\\sum _ { k = 0 } ^ { n } q ^ { k } = ( q ^ { n + 1 } - 1 ) / ( q - 1 )", "s": 1.1893129159871023, "error": null}
+{"id": "h066", "src": "synth_hard", "raw": "\\sum _ { k = 0 } ^ { n } q ^ { k } = ( q ^ { n + 1 } - 1 ) / ( q - 1 )", "s": 1.3895445419911994, "error": null}
+{"id": "h067", "src": "synth_hard", "raw": "\\sum _ { k = 0 } ^ { n } q ^ { k } = ( q ^ { n + 1 } - 1 ) / ( q - 1 )", "s": 1.1824386249936651, "error": null}
+{"id": "h068", "src": "synth_hard", "raw": "\\sum _ { k = 0 } ^ { n } q ^ { k } = ( q ^ { n + 1 } - 1 ) / ( q - 1 )", "s": 1.1766986250004265, "error": null}
+{"id": "h069", "src": "synth_hard", "raw": "( a + b ) ^ { 2 } = a ^ { 2 } + 2 a b + b ^ { 2 }", "s": 0.9330632079945644, "error": null}
+{"id": "h070", "src": "synth_hard", "raw": "( a + b ) ^ { 2 } = a ^ { 2 } + 2 a b + b ^ { 2 }", "s": 0.9415139580087271, "error": null}
+{"id": "h071", "src": "synth_hard", "raw": "( a + b ) ^ { 2 } = a ^ { 2 } + 2 a b + b ^ { 2 }", "s": 0.942990750001627, "error": null}
+{"id": "h072", "src": "synth_hard", "raw": "( a + b ) ^ { 2 } = a ^ { 2 } + 2 a b + b ^ { 2 }", "s": 0.9387343330017757, "error": null}
+{"id": "h073", "src": "synth_hard", "raw": "( a + b ) ^ { 2 } = a ^ { 2 } + 2 a b + b ^ { 2 }", "s": 0.9406966660026228, "error": null}
+{"id": "h074", "src": "synth_hard", "raw": "( a + b ) ^ { 2 } = a ^ { 2 } + 2 a b + b ^ { 2 }", "s": 0.9470838330016704, "error": null}
+{"id": "h075", "src": "synth_hard", "raw": "( a + b ) ^ { 2 } = a ^ { 2 } + 2 a b + b ^ { 2 }", "s": 0.9072269169992069, "error": null}
+{"id": "h076", "src": "synth_hard", "raw": "( a + b ) ^ { 2 } = a ^ { 2 } + 2 a b + b ^ { 2 }", "s": 0.9089868330047466, "error": null}
+{"id": "h077", "src": "synth_hard", "raw": "( a + b ) ^ { 3 } = a ^ { 3 } + 3 a ^ { 2 } b + 3 a b ^ { 2 } + b ^ { 3 }", "s": 1.405995332999737, "error": null}
+{"id": "h078", "src": "synth_hard", "raw": "( a + b ) ^ { 3 } = a ^ { 3 } + 3 a ^ { 2 } b + 3 a b ^ { 2 } + b ^ { 3 }", "s": 1.4257814589946065, "error": null}
+{"id": "h079", "src": "synth_hard", "raw": "( a + b ) ^ { 3 } = a ^ { 3 } + 3 a ^ { 2 } b + 3 a b ^ { 2 } + b ^ { 3 }", "s": 1.4009732080012327, "error": null}
+{"id": "h080", "src": "synth_hard", "raw": "( a + b ) ^ { 3 } = a ^ { 3 } + 3 a ^ { 2 } b + 3 a b ^ { 2 } + b ^ { 3 }", "s": 1.5414896669972222, "error": null}
+{"id": "h081", "src": "synth_hard", "raw": "( a + b ) ^ { 3 } = a ^ { 3 } + 3 a ^ { 2 } b + 3 a b ^ { 2 } + b ^ { 3 }", "s": 1.5845890000055078, "error": null}
+{"id": "h082", "src": "synth_hard", "raw": "( a + b ) ^ { 3 } = a ^ { 3 } + 3 a ^ { 2 } b + 3 a b ^ { 2 } + b ^ { 3 }", "s": 1.3515136250061914, "error": null}
+{"id": "h083", "src": "synth_hard", "raw": "( a + b ) ^ { 3 } = a ^ { 3 } + 3 a ^ { 2 } b + 3 a b ^ { 2 } + b ^ { 3 }", "s": 1.4027430419955635, "error": null}
+{"id": "h084", "src": "synth_hard", "raw": "( a + b ) ^ { 3 } = a ^ { 3 } + 3 a ^ { 2 } b + 3 a b ^ { 2 } + b ^ { 3 }", "s": 1.5009870829962892, "error": null}
+{"id": "h085", "src": "synth_hard", "raw": "( a - b ) ( a + b ) = a ^ { 2 } - b ^ { 2 }", "s": 0.8718650410010014, "error": null}
+{"id": "h086", "src": "synth_hard", "raw": "( a - b ) ( a + b ) = a ^ { 2 } - b ^ { 2 }", "s": 0.8299131249950733, "error": null}
+{"id": "h087", "src": "synth_hard", "raw": "( a - b ) ( a + b ) = a ^ { 2 } - b ^ { 2 }", "s": 0.7741966250032419, "error": null}
+{"id": "h088", "src": "synth_hard", "raw": "( a - b ) ( a + b ) = a ^ { 2 } - b ^ { 2 }", "s": 0.7767220840032678, "error": null}
+{"id": "h089", "src": "synth_hard", "raw": "( a - b ) ( a + b ) = a ^ { 2 } - b ^ { 2 }", "s": 0.7755331660009688, "error": null}
+{"id": "h090", "src": "synth_hard", "raw": "( a - b ) ( a + b ) = a ^ { 2 } - b ^ { 2 }", "s": 0.7847004590003053, "error": null}
+{"id": "h091", "src": "synth_hard", "raw": "a ^ { m } \\cdot a ^ { n } = a ^ { m + n }", "s": 0.6766904590040212, "error": null}
+{"id": "h092", "src": "synth_hard", "raw": "a ^ { m } \\cdot a ^ { n } = a ^ { m + n }", "s": 0.6847521660092752, "error": null}
+{"id": "h093", "src": "synth_hard", "raw": "a ^ { m } \\cdot a ^ { n } = a ^ { m + n }", "s": 0.7366375420097029, "error": null}
+{"id": "h094", "src": "synth_hard", "raw": "a ^ { m } \\cdot a ^ { n } = a ^ { m + n }", "s": 0.6913279999862425, "error": null}
+{"id": "h095", "src": "synth_hard", "raw": "a ^ { m } \\cdot a ^ { n } = a ^ { m + n }", "s": 0.6679069590027211, "error": null}
+{"id": "h096", "src": "synth_hard", "raw": "a ^ { m } \\cdot a ^ { n } = a ^ { m + n }", "s": 0.6664055830042344, "error": null}
+{"id": "h097", "src": "synth_hard", "raw": "( a ^ { m } ) ^ { n } = a ^ { m n }", "s": 0.6171962919906946, "error": null}
+{"id": "h098", "src": "synth_hard", "raw": "( a ^ { m } ) ^ { n } = a ^ { m n }", "s": 0.7286501669877907, "error": null}
+{"id": "h099", "src": "synth_hard", "raw": "( a ^ { m } ) ^ { n } = a ^ { m n }", "s": 0.6247164999949746, "error": null}
+{"id": "h100", "src": "synth_hard", "raw": "( a ^ { m } ) ^ { n } = a ^ { m n }", "s": 0.6370054170110961, "error": null}
+{"id": "h101", "src": "synth_hard", "raw": "( a ^ { n } ) ^ { n } = a ^ { n n }", "s": 0.7754052499949466, "error": null}
+{"id": "h102", "src": "synth_hard", "raw": "\\sqrt { 3 \\cdot \\sqrt { 1 2 } } = 6", "s": 0.7021121249999851, "error": null}
+{"id": "h103", "src": "synth_hard", "raw": "\\sqrt { 5 \\cdot \\sqrt { 2 0 } = 1 0 }", "s": 0.6983818750013597, "error": null}
+{"id": "h104", "src": "synth_hard", "raw": "\\sqrt { 6 } \\cdot \\sqrt { 2 4 } = 1 2", "s": 0.6922292919916799, "error": null}
+{"id": "h105", "src": "synth_hard", "raw": "\\sqrt { 6 } \\cdot \\sqrt { 2 4 } = 1 2", "s": 0.7193568749935366, "error": null}
+{"id": "h106", "src": "synth_hard", "raw": "r 2 \\cdot r 8 = 4", "s": 0.6563262919953559, "error": null}
+{"id": "h107", "src": "synth_hard", "raw": "\\sqrt { 6 } \\cdot \\sqrt { 2 4 } = 1 2", "s": 0.8332626250048634, "error": null}
+{"id": "h108", "src": "synth_hard", "raw": "\\sqrt { 6 } \\cdot \\sqrt { 2 4 } = 1 2", "s": 0.7810094169981312, "error": null}
+{"id": "h109", "src": "synth_hard", "raw": "7 \\cdot 1 6 3 = 2 1", "s": 0.5130463330133352, "error": null}
+{"id": "h110", "src": "synth_hard", "raw": "\\sqrt { | a b | } = \\sqrt { a \\cdot b }", "s": 0.6990266670036362, "error": null}
+{"id": "h111", "src": "synth_hard", "raw": "\\sqrt { ( a b ) } = \\sqrt { a \\cdot b }", "s": 0.7064890420006122, "error": null}
+{"id": "h112", "src": "synth_hard", "raw": "\\sqrt { ( a b ) } = \\sqrt { a } \\cdot \\sqrt { b }", "s": 0.6863912910048384, "error": null}
+{"id": "h113", "src": "synth_hard", "raw": "\\sqrt { ( a b ) } = \\sqrt { a } \\cdot \\sqrt { b }", "s": 0.8762690419971477, "error": null}
+{"id": "h114", "src": "synth_hard", "raw": "\\sqrt { 1 0 0 } = 1 0", "s": 1.1234253750008065, "error": null}
+{"id": "h115", "src": "synth_hard", "raw": "\\sqrt { 1 6 9 } = 1 3", "s": 0.8556474579963833, "error": null}
+{"id": "h116", "src": "synth_hard", "raw": "\\sqrt { 4 9 } = 7", "s": 0.45675179100362584, "error": null}
+{"id": "h117", "src": "synth_hard", "raw": "\\sqrt { 1 2 1 } = 1 1", "s": 0.6296052079997025, "error": null}
+{"id": "h118", "src": "synth_hard", "raw": "A = \\pi r ^ { 2 }", "s": 0.523043790992233, "error": null}
+{"id": "h119", "src": "synth_hard", "raw": "A = \\pi r ^ { 2 }", "s": 0.507625290993019, "error": null}
+{"id": "h120", "src": "synth_hard", "raw": "A = \\pi r ^ { 2 }", "s": 0.4974840420036344, "error": null}
+{"id": "h121", "src": "synth_hard", "raw": "A = F r ^ { 2 }", "s": 0.4652791660046205, "error": null}
+{"id": "h122", "src": "synth_hard", "raw": "U = 2 \\pi r", "s": 0.4002774580003461, "error": null}
+{"id": "h123", "src": "synth_hard", "raw": "U = 2 \\pi r", "s": 0.4779443750012433, "error": null}
+{"id": "h124", "src": "synth_hard", "raw": "U = 2 \\pi r", "s": 0.3310932910098927, "error": null}
+{"id": "h125", "src": "synth_hard", "raw": "1 / x + 1 / y = ( x + y ) / x y", "s": 1.1197286250098841, "error": null}
+{"id": "h126", "src": "synth_hard", "raw": "1 / x + 1 / y = ( x + y ) / x y", "s": 0.665831916994648, "error": null}
+{"id": "h127", "src": "synth_hard", "raw": "1 / x ^ { + } ] / y = ( x + y ) / x y", "s": 0.6607379170018248, "error": null}
+{"id": "h128", "src": "synth_hard", "raw": "1 / x + 1 / y = ( x + y ) / x y", "s": 0.6904497080104193, "error": null}
+{"id": "h129", "src": "synth_hard", "raw": "1 / x + 1 / y = ( x + y ) / x y", "s": 0.7861795000062557, "error": null}
+{"id": "h130", "src": "synth_hard", "raw": "1 / x + 1 / y = ( x + y ) / x y", "s": 0.7658459579979535, "error": null}
+{"id": "h131", "src": "synth_hard", "raw": "a / 9 + c / 9 = ( a + c ) / 9", "s": 0.7658620409929426, "error": null}
+{"id": "h132", "src": "synth_hard", "raw": "a / 7 + c / 7 = ( a + c ) / 7", "s": 0.7595867089985404, "error": null}
+{"id": "h133", "src": "synth_hard", "raw": "a / 9 + c / 9 = ( a + c ) / 9", "s": 1.2122180000005756, "error": null}
+{"id": "h134", "src": "synth_hard", "raw": "a / 5 + c / 5 = ( a + c ) / 5", "s": 1.1927359580004122, "error": null}
+{"id": "h135", "src": "synth_hard", "raw": "a / 5 + c / 5 = ( a + c ) / 5", "s": 1.0285299999959534, "error": null}
+{"id": "h136", "src": "synth_hard", "raw": "a / 3 + c / 3 = ( a + c ) / 3", "s": 0.8844114999956219, "error": null}

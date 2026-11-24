@@ -1,0 +1,100 @@
+{"id": "s000", "src": "synth", "raw": "1 2 x + 5 = 8 9", "s": 0.5956025420018705, "error": null}
+{"id": "s001", "src": "synth", "raw": "5 b = 5", "s": 0.2737307920033345, "error": null}
+{"id": "s002", "src": "synth", "raw": "1 5 y + 1 4 = 4 4", "s": 0.5153285839915043, "error": null}
+{"id": "s003", "src": "synth", "raw": "3 / 2 + 2 7", "s": 0.42956725000112783, "error": null}
+{"id": "s004", "src": "synth", "raw": "3 x = 2 1", "s": 0.4711846249992959, "error": null}
+{"id": "s005", "src": "synth", "raw": "6 ( y - 7 ) = 1 0", "s": 0.4669002919981722, "error": null}
+{"id": "s006", "src": "synth", "raw": "1 1 ( x - 3 ) = 1 8", "s": 0.6164703329995973, "error": null}
+{"id": "s007", "src": "synth", "raw": "8 / 2 + 1 2", "s": 0.5502041250001639, "error": null}
+{"id": "s008", "src": "synth", "raw": "3 / 4 + 2 0", "s": 0.4278650829946855, "error": null}
+{"id": "s009", "src": "synth", "raw": "z ^ { 2 } + 1 2 z = 1 5", "s": 0.5962854579993291, "error": null}
+{"id": "s010", "src": "synth", "raw": "7 ( x - 4 ) = 2 3", "s": 0.4557690840010764, "error": null}
+{"id": "s011", "src": "synth", "raw": "a ^ { 2 } + 1 7 a = 2 9", "s": 0.595868333010003, "error": null}
+{"id": "s012", "src": "synth", "raw": "4 a = 3 6", "s": 0.3341055420023622, "error": null}
+{"id": "s013", "src": "synth", "raw": "6 a + 3 0 = 7 8", "s": 0.45524179200583603, "error": null}
+{"id": "s014", "src": "synth", "raw": "b = 3 6 / 4", "s": 0.5195658750017174, "error": null}
+{"id": "s015", "src": "synth", "raw": "1 2 \\cdot 6 = 7 2", "s": 0.5069117499951972, "error": null}
+{"id": "s016", "src": "synth", "raw": "1 6 \\cdot 2 = 3 2", "s": 0.4654114169970853, "error": null}
+{"id": "s017", "src": "synth", "raw": "4 / 5 + 2", "s": 0.37272933300118893, "error": null}
+{"id": "s018", "src": "synth", "raw": "1 1 z + 2 3 = 1 0 0", "s": 0.5869954580120975, "error": null}
+{"id": "s019", "src": "synth", "raw": "1 3 a + 6 = 3 2", "s": 0.49713441700441763, "error": null}
+{"id": "s020", "src": "synth", "raw": "1 1 \\cdot 4 = 4 4", "s": 0.462110082997242, "error": null}
+{"id": "s021", "src": "synth", "raw": "1 7 . 3 = 5 1", "s": 0.4608219579968136, "error": null}
+{"id": "s022", "src": "synth", "raw": "b ^ { 2 } + 6 b = 2 7", "s": 0.5483709999971325, "error": null}
+{"id": "s023", "src": "synth", "raw": "1 3 y = 9 1", "s": 0.3882835409895051, "error": null}
+{"id": "s024", "src": "synth", "raw": "6 . 4 = 2 4", "s": 0.40184175000467803, "error": null}
+{"id": "s025", "src": "synth", "raw": "7 x = 3 5", "s": 0.3246699159935815, "error": null}
+{"id": "s026", "src": "synth", "raw": "1 3 / 6 + 2 0", "s": 0.5176649159984663, "error": null}
+{"id": "s027", "src": "synth", "raw": "3 . 9 = 2 7", "s": 0.4113617920083925, "error": null}
+{"id": "s028", "src": "synth", "raw": "5 x = 3 5", "s": 6.90479304100154, "error": null}
+{"id": "s029", "src": "synth", "raw": "x ^ { 2 } + 8 x = 1 5", "s": 0.5432681249949383, "error": null}
+{"id": "s030", "src": "synth", "raw": "5 b + 1 = 1 6", "s": 0.49261637500603683, "error": null}
+{"id": "s031", "src": "synth", "raw": "2 \\cdot 4 = 8", "s": 0.3572460409923224, "error": null}
+{"id": "s032", "src": "synth", "raw": "1 0 a + 1 2 = 7 2", "s": 0.5154486669925973, "error": null}
+{"id": "s033", "src": "synth", "raw": "d ^ { 2 } + 1 7 d = 1 5", "s": 0.673539958006586, "error": null}
+{"id": "s034", "src": "synth", "raw": "5 . 6 = 3 0", "s": 0.40491570900485385, "error": null}
+{"id": "s035", "src": "synth", "raw": "7 ( y - 1 ) = 1 7", "s": 0.4638363330013817, "error": null}
+{"id": "s036", "src": "synth", "raw": "b ^ { 2 } + 1 9 b = 3 0", "s": 0.5971615409944206, "error": null}
+{"id": "s037", "src": "synth", "raw": "b ^ { 2 } + 4 b = 2 3", "s": 0.5397918339876924, "error": null}
+{"id": "s038", "src": "synth", "raw": "1 3 ( b - 4 ) = 2 5", "s": 0.6196060000074795, "error": null}
+{"id": "s039", "src": "synth", "raw": "b = 4 8 / 1 2", "s": 0.43645641701004934, "error": null}
+{"id": "s040", "src": "synth", "raw": "8 / 4 + 2 6", "s": 0.41109024999605026, "error": null}
+{"id": "s041", "src": "synth", "raw": "8 / 8 + 1 7", "s": 0.4039909999992233, "error": null}
+{"id": "s042", "src": "synth", "raw": "a ^ { 2 } + 2 a = 2 6", "s": 0.5466214589978335, "error": null}
+{"id": "s043", "src": "synth", "raw": "1 3 z + 1 5 = 9 3", "s": 0.5266989169904264, "error": null}
+{"id": "s044", "src": "synth", "raw": "9 z = 3 6", "s": 0.4006899169908138, "error": null}
+{"id": "s045", "src": "synth", "raw": "x = 1 2 / 2", "s": 0.4219803340092767, "error": null}
+{"id": "s046", "src": "synth", "raw": "1 4 a = 5 6", "s": 0.40076699999917764, "error": null}
+{"id": "s047", "src": "synth", "raw": "1 2 \\cdot 7 = 8 4", "s": 0.4545924170088256, "error": null}
+{"id": "s048", "src": "synth", "raw": "4 y = 1 2", "s": 0.4031970829964848, "error": null}
+{"id": "s049", "src": "synth", "raw": "b = 4 8 / 1 6", "s": 0.5712307500070892, "error": null}
+{"id": "s050", "src": "synth", "raw": "1 7 ( y - 6 ) = 2 2", "s": 0.5866265419899719, "error": null}
+{"id": "s051", "src": "synth", "raw": "2 / 2 + 1", "s": 0.48472312500234693, "error": null}
+{"id": "s052", "src": "synth", "raw": "1 5 y + 2 8 = 8 8", "s": 0.5911349169909954, "error": null}
+{"id": "s053", "src": "synth", "raw": "b ^ { 2 } + 1 1 b = 1 7", "s": 0.6474801669974113, "error": null}
+{"id": "s054", "src": "synth", "raw": "1 5 / 3 + 2 7", "s": 0.5153271669987589, "error": null}
+{"id": "s055", "src": "synth", "raw": "a = 1 4 4 / 1 6", "s": 0.4774930410058005, "error": null}
+{"id": "s056", "src": "synth", "raw": "1 8 ( y - 9 ) = 5", "s": 0.5588086250063498, "error": null}
+{"id": "s057", "src": "synth", "raw": "1 6 b + 2 5 = 7 3", "s": 0.5632121250091586, "error": null}
+{"id": "s058", "src": "synth", "raw": "6 ( a - 3 ) = 6", "s": 0.43423833401175216, "error": null}
+{"id": "s059", "src": "synth", "raw": "1 9 ( b - 6 ) = 2", "s": 0.5742588749999413, "error": null}
+{"id": "s060", "src": "synth", "raw": "5 x = 4 5", "s": 6.873568875002093, "error": null}
+{"id": "s061", "src": "synth", "raw": "3 \\cdot 2 = 6", "s": 0.3872843749995809, "error": null}
+{"id": "s062", "src": "synth", "raw": "4 ( b - 6 ) = 1 5", "s": 0.4577800419938285, "error": null}
+{"id": "s063", "src": "synth", "raw": "8 ( a - 5 ) = 2 3", "s": 0.5631675839977106, "error": null}
+{"id": "s064", "src": "synth", "raw": "b ^ { 2 } + 1 7 b = 1 7", "s": 0.5901630419975845, "error": null}
+{"id": "s065", "src": "synth", "raw": "8 \\cdot 8 = 6 4", "s": 0.41690241600736044, "error": null}
+{"id": "s066", "src": "synth", "raw": "1 6 \\cdot 2 = 3 2", "s": 0.46272145900002215, "error": null}
+{"id": "s067", "src": "synth", "raw": "1 1 / 2 + 2 6", "s": 0.5151093330059666, "error": null}
+{"id": "s068", "src": "synth", "raw": "1 3 . 5 = 6 5", "s": 0.4557490840088576, "error": null}
+{"id": "s069", "src": "synth", "raw": "5 / 8 + 1 3", "s": 0.441200667002704, "error": null}
+{"id": "s070", "src": "synth", "raw": "7 - 7 = 4 9", "s": 0.410489999994752, "error": null}
+{"id": "s071", "src": "synth", "raw": "8 / 6 + 1 2", "s": 0.4331061669945484, "error": null}
+{"id": "s072", "src": "synth", "raw": "1 2 / 8 + 1 8", "s": 0.5151776249986142, "error": null}
+{"id": "s073", "src": "synth", "raw": "1 2 b + 1 7 = 7 7", "s": 0.5340371250058524, "error": null}
+{"id": "s074", "src": "synth", "raw": "x ^ { 2 } + 9 x = 2 9", "s": 0.5463829579966841, "error": null}
+{"id": "s075", "src": "synth", "raw": "a = 2 1 / 7", "s": 0.3798222499899566, "error": null}
+{"id": "s076", "src": "synth", "raw": "1 0 ( b - 3 ) = 1 3", "s": 0.6070539579959586, "error": null}
+{"id": "s077", "src": "synth", "raw": "x = 6 0 / 1 2", "s": 0.568995666995761, "error": null}
+{"id": "s078", "src": "synth", "raw": "1 5 z + 2 9 = 5 9", "s": 0.5834556669869926, "error": null}
+{"id": "s079", "src": "synth", "raw": "x ^ { 2 } + 1 0 x = 3", "s": 0.588532124995254, "error": null}
+{"id": "s080", "src": "synth", "raw": "1 6 \\cdot 6 = 9 6", "s": 0.4665590840013465, "error": null}
+{"id": "s081", "src": "synth", "raw": "1 0 ( x - 3 ) = 2 0", "s": 0.6196315830020467, "error": null}
+{"id": "s082", "src": "synth", "raw": "5 x = 2 5", "s": 0.40565083399997093, "error": null}
+{"id": "s083", "src": "synth", "raw": "b = 5 5 / 1 1", "s": 0.49089775000174996, "error": null}
+{"id": "s084", "src": "synth", "raw": "z ^ { 2 } + 1 6 z = 1 7", "s": 0.5936304169881623, "error": null}
+{"id": "s085", "src": "synth", "raw": "1 0 / 1 + 2", "s": 0.5145016249880427, "error": null}
+{"id": "s086", "src": "synth", "raw": "8 \\cdot 8 = 6 4", "s": 0.41060624999227, "error": null}
+{"id": "s087", "src": "synth", "raw": "b = 1 2 0 / 1 5", "s": 0.6066222910012584, "error": null}
+{"id": "s088", "src": "synth", "raw": "y ^ { 2 } + 1 8 y = 1 0", "s": 0.5916809589980403, "error": null}
+{"id": "s089", "src": "synth", "raw": "x = 3 6 / 6", "s": 0.5094470420008292, "error": null}
+{"id": "s090", "src": "synth", "raw": "4 a = 2 0", "s": 0.329266540997196, "error": null}
+{"id": "s091", "src": "synth", "raw": "1 4 ( z - 9 ) = 2 8", "s": 0.6058917079935782, "error": null}
+{"id": "s092", "src": "synth", "raw": "1 1 y = 8 8", "s": 0.44430824999290053, "error": null}
+{"id": "s093", "src": "synth", "raw": "2 ( z - 6 ) = 9", "s": 0.434776125010103, "error": null}
+{"id": "s094", "src": "synth", "raw": "y ^ { 2 } + 3 y = 2 9", "s": 0.5429437500133645, "error": null}
+{"id": "s095", "src": "synth", "raw": "a ^ { 2 } + 1 2 a = 1 3", "s": 0.6051637079945067, "error": null}
+{"id": "s096", "src": "synth", "raw": "8 x + 8 = 8 0", "s": 0.4152371249947464, "error": null}
+{"id": "s097", "src": "synth", "raw": "4 b + 5 = 3 3", "s": 0.42100654199020937, "error": null}
+{"id": "s098", "src": "synth", "raw": "1 1 ( x - 4 ) = 1 0", "s": 0.6235642919928068, "error": null}
+{"id": "s099", "src": "synth", "raw": "6 1 7 + 2 2", "s": 0.4486554999893997, "error": null}
