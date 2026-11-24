@@ -9,6 +9,8 @@ from ocr.latex import parse, same
 CONFUSE = [(r"(?<=\d) ?(?=\d)", r"\\cdot "), (r"(?<=\d)\.(?=\d)", r"\\cdot "), (r"\\div", r"\\cdot"),
            (r"(?<=\d)-(?=\d)", r"\\cdot "),
            ("0", "a"), ("0", "o"), ("2", "z"), ("1", "l"), ("9", "q"), ("5", "s"), ("6", "b")]
+# Indizes in CONFUSE, die ausgeschaltet sind. Leer = Produktverhalten (alle Paare an). Nur fuer Optuna-Schalter gesetzt.
+DISABLED: set[int] = set()
 
 
 def closed_truth(latex: str):
@@ -54,7 +56,9 @@ def coherent(latex: str, second: str | None = None):
         return latex, None, closed_truth(latex) is not False
     if agree(latex, second):
         return latex, None, True
-    for pat, rep in CONFUSE:
+    for idx, (pat, rep) in enumerate(CONFUSE):
+        if idx in DISABLED:
+            continue
         rx = pat if pat.startswith(("(", "\\")) else re.escape(pat)
         for m in re.finditer(rx, latex):
             cand = latex[:m.start()] + m.expand(rep) + latex[m.end():]
