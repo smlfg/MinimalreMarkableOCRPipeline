@@ -1,0 +1,15 @@
+{
+ "model": "bhaskar_v2",
+ "repo": "bhaskar1707/qwen3.5-latex-ocr-finetune-v2",
+ "revision": "34e3c36edc3f5223c0e949c92ba655d6bd40d5b2",
+ "split": "synth",
+ "n_new": 100,
+ "fetch_s": 0.08154987500165589,
+ "load_s": 2.4304065000033006,
+ "first_inference_s": 0.4350267919944599,
+ "device": "mps:0",
+ "peak_rss_mb": 821.16608,
+ "mps_driver_mb": 2485.010432,
+ "torch": "2.15.0",
+ "weights_disk_mb": 1767.011316
+}

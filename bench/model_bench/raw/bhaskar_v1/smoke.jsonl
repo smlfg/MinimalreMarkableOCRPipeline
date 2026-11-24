@@ -1,0 +1,5 @@
+{"id": "probe_01", "src": "probe", "raw": "0 1 2 3 4 5 6 7 8 9", "s": 0.9640298749873182, "error": null}
+{"id": "probe_02", "src": "probe", "raw": "1 7 + 1 7 1 = 8 8", "s": 0.3553062499995576, "error": null}
+{"id": "probe_03", "src": "probe", "raw": "1 + 7 = 8", "s": 0.25389908299257513, "error": null}
+{"id": "probe_04", "src": "probe", "raw": "z = 2 z - 2", "s": 0.23758420899685007, "error": null}
+{"id": "probe_05", "src": "probe", "raw": "x \\cdot 2 = 2 x", "s": 0.2629734169895528, "error": null}

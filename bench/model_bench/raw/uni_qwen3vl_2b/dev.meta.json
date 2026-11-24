@@ -1,0 +1,16 @@
+{
+ "model": "uni_qwen3vl_2b",
+ "repo": "phxember/Uni-MuMER-Qwen3-VL-2B",
+ "revision": "26d57451c9182b68c60aef78634bfea20c41a866",
+ "split": "dev",
+ "n_new": 326,
+ "fetch_s": 0.08428320799430367,
+ "load_s": 2.779362833010964,
+ "first_inference_s": 0.397527250010171,
+ "device": "mps:0",
+ "load_shared_across_splits": true,
+ "peak_rss_mb": 732.839936,
+ "mps_driver_mb": 5077.352448,
+ "torch": "2.15.0",
+ "weights_disk_mb": 4266.572214
+}

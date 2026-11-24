@@ -1,0 +1,16 @@
+{
+ "model": "clzoro_2b",
+ "repo": "clzoro/Qwen3-VL-2B-LaTeX-OCR",
+ "revision": "090ec6e7fb710b873edf91d087d5da91b0bdf887",
+ "split": "own_ketten",
+ "n_new": 60,
+ "fetch_s": 0.09123520900902804,
+ "load_s": 2.871246082999278,
+ "first_inference_s": 3.246105375001207,
+ "device": "mps:0",
+ "load_shared_across_splits": true,
+ "peak_rss_mb": 736.919552,
+ "mps_driver_mb": 5085.577216,
+ "torch": "2.15.0",
+ "weights_disk_mb": 4266.674016
+}

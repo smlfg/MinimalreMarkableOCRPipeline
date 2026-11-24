@@ -1,0 +1,128 @@
+Fetching 7 files:   0%|          | 0/7 [00:00<?, ?it/s]Fetching 7 files:  14%|█▍        | 1/7 [00:02<00:13,  2.21s/it]'[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)' thrown while requesting GET https://huggingface.co/api/models/Norm/nougat-latex-base/xet-read-token/6c6f2afe62ae51d57d0621ea9f2e11e02fb8385a
+Retrying in 1s [Retry 1/5].
+'The read operation timed out' thrown while requesting HEAD https://huggingface.co/Norm/nougat-latex-base/resolve/6c6f2afe62ae51d57d0621ea9f2e11e02fb8385a/tokenizer_config.json
+Retrying in 1s [Retry 1/5].
+'The read operation timed out' thrown while requesting HEAD https://huggingface.co/Norm/nougat-latex-base/resolve/6c6f2afe62ae51d57d0621ea9f2e11e02fb8385a/special_tokens_map.json
+Retrying in 1s [Retry 1/5].
+'The read operation timed out' thrown while requesting HEAD https://huggingface.co/Norm/nougat-latex-base/resolve/6c6f2afe62ae51d57d0621ea9f2e11e02fb8385a/tokenizer.json
+Retrying in 1s [Retry 1/5].
+'Server disconnected without sending a response.' thrown while requesting HEAD https://huggingface.co/Norm/nougat-latex-base/resolve/6c6f2afe62ae51d57d0621ea9f2e11e02fb8385a/special_tokens_map.json
+Retrying in 2s [Retry 2/5].
+'[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)' thrown while requesting HEAD https://huggingface.co/Norm/nougat-latex-base/resolve/6c6f2afe62ae51d57d0621ea9f2e11e02fb8385a/tokenizer.json
+Retrying in 2s [Retry 2/5].
+'[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)' thrown while requesting HEAD https://huggingface.co/Norm/nougat-latex-base/resolve/6c6f2afe62ae51d57d0621ea9f2e11e02fb8385a/tokenizer_config.json
+Retrying in 2s [Retry 2/5].
+'_ssl.c:993: The handshake operation timed out' thrown while requesting HEAD https://huggingface.co/Norm/nougat-latex-base/resolve/6c6f2afe62ae51d57d0621ea9f2e11e02fb8385a/tokenizer.json
+Retrying in 4s [Retry 3/5].
+'[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)' thrown while requesting HEAD https://huggingface.co/Norm/nougat-latex-base/resolve/6c6f2afe62ae51d57d0621ea9f2e11e02fb8385a/special_tokens_map.json
+Retrying in 4s [Retry 3/5].
+'[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)' thrown while requesting HEAD https://huggingface.co/Norm/nougat-latex-base/resolve/6c6f2afe62ae51d57d0621ea9f2e11e02fb8385a/tokenizer_config.json
+Retrying in 4s [Retry 3/5].
+Fetching 7 files:  14%|█▍        | 1/7 [26:04<2:36:29, 1564.94s/it]
+Traceback (most recent call last):
+  File "/Users/samuelfleig/Projects/01_WORK/Remarkable/MathOCR-ModelBench/.venv_mb/lib/python3.12/site-packages/httpx2/_transports/default.py", line 95, in map_httpcore_exceptions
+    yield
+  File "/Users/samuelfleig/Projects/01_WORK/Remarkable/MathOCR-ModelBench/.venv_mb/lib/python3.12/site-packages/httpx2/_transports/default.py", line 242, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samuelfleig/Projects/01_WORK/Remarkable/MathOCR-ModelBench/.venv_mb/lib/python3.12/site-packages/httpcore2/_sync/connection_pool.py", line 243, in handle_request
+    raise exc from None
+  File "/Users/samuelfleig/Projects/01_WORK/Remarkable/MathOCR-ModelBench/.venv_mb/lib/python3.12/site-packages/httpcore2/_sync/connection_pool.py", line 225, in handle_request
+    response = connection.handle_request(pool_request.request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samuelfleig/Projects/01_WORK/Remarkable/MathOCR-ModelBench/.venv_mb/lib/python3.12/site-packages/httpcore2/_sync/connection.py", line 98, in handle_request
+    return self._connection.handle_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samuelfleig/Projects/01_WORK/Remarkable/MathOCR-ModelBench/.venv_mb/lib/python3.12/site-packages/httpcore2/_sync/http11.py", line 125, in handle_request
+    raise exc
+  File "/Users/samuelfleig/Projects/01_WORK/Remarkable/MathOCR-ModelBench/.venv_mb/lib/python3.12/site-packages/httpcore2/_sync/http11.py", line 97, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samuelfleig/Projects/01_WORK/Remarkable/MathOCR-ModelBench/.venv_mb/lib/python3.12/site-packages/httpcore2/_sync/http11.py", line 167, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samuelfleig/Projects/01_WORK/Remarkable/MathOCR-ModelBench/.venv_mb/lib/python3.12/site-packages/httpcore2/_sync/http11.py", line 212, in _receive_event
+    raise RemoteProtocolError(msg)
+httpcore2.RemoteProtocolError: Server disconnected without sending a response.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/samuelfleig/Projects/01_WORK/Remarkable/MathOCR-ModelBench/bench/model_bench/mb_fetch.py", line 12, in <module>
+    snapshot_download(cfg["repo"], revision=cfg["revision"], allow_patterns=cfg["allow"], cache_dir=d)
+  File "/Users/samuelfleig/Projects/01_WORK/Remarkable/MathOCR-ModelBench/.venv_mb/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/samuelfleig/Projects/01_WORK/Remarkable/MathOCR-ModelBench/.venv_mb/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 276, in _inner
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/samuelfleig/Projects/01_WORK/Remarkable/MathOCR-ModelBench/.venv_mb/lib/python3.12/site-packages/huggingface_hub/_snapshot_download.py", line 541, in snapshot_download
+    hf_thread_map(
+  File "/Users/samuelfleig/Projects/01_WORK/Remarkable/MathOCR-ModelBench/.venv_mb/lib/python3.12/site-packages/huggingface_hub/utils/tqdm.py", line 441, in hf_thread_map
+    results[future_to_index[future]] = future.result()
+                                       ^^^^^^^^^^^^^^^
+  File "/Users/samuelfleig/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/samuelfleig/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/Users/samuelfleig/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samuelfleig/Projects/01_WORK/Remarkable/MathOCR-ModelBench/.venv_mb/lib/python3.12/site-packages/huggingface_hub/_snapshot_download.py", line 521, in _inner_hf_hub_download
+    hf_hub_download(  # type: ignore
+  File "/Users/samuelfleig/Projects/01_WORK/Remarkable/MathOCR-ModelBench/.venv_mb/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/samuelfleig/Projects/01_WORK/Remarkable/MathOCR-ModelBench/.venv_mb/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 276, in _inner
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/samuelfleig/Projects/01_WORK/Remarkable/MathOCR-ModelBench/.venv_mb/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 1047, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samuelfleig/Projects/01_WORK/Remarkable/MathOCR-ModelBench/.venv_mb/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 1117, in _hf_hub_download_to_cache_dir
+    (url_to_download, etag, commit_hash, expected_size, xet_file_data, head_call_error) = _get_metadata_or_catch_error(
+                                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samuelfleig/Projects/01_WORK/Remarkable/MathOCR-ModelBench/.venv_mb/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 1763, in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samuelfleig/Projects/01_WORK/Remarkable/MathOCR-ModelBench/.venv_mb/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/samuelfleig/Projects/01_WORK/Remarkable/MathOCR-ModelBench/.venv_mb/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 1670, in get_hf_file_metadata
+    response = _httpx2_follow_hub_redirects_with_backoff(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samuelfleig/Projects/01_WORK/Remarkable/MathOCR-ModelBench/.venv_mb/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 764, in _httpx2_follow_hub_redirects_with_backoff
+    response = http_backoff(
+               ^^^^^^^^^^^^^
+  File "/Users/samuelfleig/Projects/01_WORK/Remarkable/MathOCR-ModelBench/.venv_mb/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 637, in http_backoff
+    return next(
+           ^^^^^
+  File "/Users/samuelfleig/Projects/01_WORK/Remarkable/MathOCR-ModelBench/.venv_mb/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 545, in _http_backoff_base
+    response = client.request(method=method, url=url, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samuelfleig/Projects/01_WORK/Remarkable/MathOCR-ModelBench/.venv_mb/lib/python3.12/site-packages/httpx2/_client.py", line 791, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samuelfleig/Projects/01_WORK/Remarkable/MathOCR-ModelBench/.venv_mb/lib/python3.12/site-packages/httpx2/_client.py", line 974, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samuelfleig/Projects/01_WORK/Remarkable/MathOCR-ModelBench/.venv_mb/lib/python3.12/site-packages/httpx2/_client.py", line 1002, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samuelfleig/Projects/01_WORK/Remarkable/MathOCR-ModelBench/.venv_mb/lib/python3.12/site-packages/httpx2/_client.py", line 1037, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samuelfleig/Projects/01_WORK/Remarkable/MathOCR-ModelBench/.venv_mb/lib/python3.12/site-packages/httpx2/_client.py", line 1070, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samuelfleig/Projects/01_WORK/Remarkable/MathOCR-ModelBench/.venv_mb/lib/python3.12/site-packages/httpx2/_transports/default.py", line 241, in handle_request
+    with map_httpcore_exceptions():
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samuelfleig/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/Users/samuelfleig/Projects/01_WORK/Remarkable/MathOCR-ModelBench/.venv_mb/lib/python3.12/site-packages/httpx2/_transports/default.py", line 112, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx2.RemoteProtocolError: Server disconnected without sending a response.
+Fetching 7 files:   0%|          | 0/7 [00:00<?, ?it/s]Fetching 7 files: 100%|██████████| 7/7 [00:00<00:00,  7.32it/s]Fetching 7 files: 100%|██████████| 7/7 [00:00<00:00,  7.32it/s]
+nougat_latex: geladen 4.19 GB

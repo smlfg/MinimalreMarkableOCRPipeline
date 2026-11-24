@@ -1,0 +1,60 @@
+{"id": "ketten_K01_s1", "src": "ketten", "raw": "3 \\times = 1 ^ { 5 }", "s": 0.44456179199914914, "error": null}
+{"id": "ketten_K06_s1", "src": "ketten", "raw": "\\overline { { 5 } } X = 2 \\S", "s": 0.2592255420022411, "error": null}
+{"id": "ketten_K11_s1", "src": "ketten", "raw": "( X + \\frac { 3 } { 2 } ) ^ { 2 } = \\frac { 1 3 } { 4 }", "s": 0.49442966700007673, "error": null}
+{"id": "ketten_K15_s1", "src": "ketten", "raw": "X ^ { 2 } = 4", "s": 0.21714354198775254, "error": null}
+{"id": "ketten_K20_s1", "src": "ketten", "raw": "= \\frac { 3 } { 6 } + \\frac { 2 } { 6 }", "s": 0.3321928750083316, "error": null}
+{"id": "ketten_K25_s1", "src": "ketten", "raw": "3 \\cdot 1 0 + 3 . 7", "s": 0.2697389579989249, "error": null}
+{"id": "ketten_K01_s2", "src": "ketten", "raw": "X = \\sqrt { 2 }", "s": 0.19041370799823198, "error": null}
+{"id": "ketten_K06_s2", "src": "ketten", "raw": "X = 1 2 5", "s": 0.18482337500608992, "error": null}
+{"id": "ketten_K11_s2", "src": "ketten", "raw": "\\left( X + \\frac { 3 } { 2 } \\right) ^ { 2 } - \\frac { 1 3 } { 4 } - \\circ", "s": 0.5735469589999411, "error": null}
+{"id": "ketten_K15_s2", "src": "ketten", "raw": "\\left( X - 2 \\right) \\left( X + 2 \\right) = 6", "s": 0.3634590839938028, "error": null}
+{"id": "ketten_K20_s2", "src": "ketten", "raw": "= \\frac { 5 } { 6 }", "s": 0.22030895900388714, "error": null}
+{"id": "ketten_K25_s2", "src": "ketten", "raw": "3 0 + 2 1", "s": 0.2003279580094386, "error": null}
+{"id": "ketten_K25_s3", "src": "ketten", "raw": "\\l 1", "s": 0.13841237500309944, "error": null}
+{"id": "ketten_K02_s1", "src": "ketten", "raw": "2 \\times = - 4", "s": 0.1713693749916274, "error": null}
+{"id": "ketten_K07_s1", "src": "ketten", "raw": "\\frac { \\times } { \\underline { { 2 } } } = \\Upsilon", "s": 0.31988158299645875, "error": null}
+{"id": "ketten_K12_s1", "src": "ketten", "raw": "( X + \\frac { 3 } { 2 } ) ^ { 2 } = \\frac { 1 8 } { 1 3 }", "s": 0.5364991249953164, "error": null}
+{"id": "ketten_K16_s1", "src": "ketten", "raw": "X ^ { 2 } = 9", "s": 0.20860462500422727, "error": null}
+{"id": "ketten_K21_s1", "src": "ketten", "raw": "\\geq \\frac { 2 } { 5 }", "s": 0.23070508299861103, "error": null}
+{"id": "ketten_K02_s2", "src": "ketten", "raw": "X = - \\chi", "s": 0.1708024999970803, "error": null}
+{"id": "ketten_K07_s2", "src": "ketten", "raw": "\\mathrm { \\boldmath X } = 8", "s": 0.22628529199573677, "error": null}
+{"id": "ketten_K12_s2", "src": "ketten", "raw": "( X + \\frac { 3 } { 2 } ) ^ { 2 } - \\frac { 1 8 } { 1 3 } = 0", "s": 0.5662191250012256, "error": null}
+{"id": "ketten_K16_s2", "src": "ketten", "raw": "\\times - 3", "s": 0.15741312500904314, "error": null}
+{"id": "ketten_K21_s2", "src": "ketten", "raw": "= \\circ _ { 1 } 4", "s": 0.19503275000897702, "error": null}
+{"id": "ketten_K26_s1", "src": "ketten", "raw": "= 2 ^ { 5 }", "s": 0.1857739590050187, "error": null}
+{"id": "ketten_K26_s2", "src": "ketten", "raw": "= 3 2", "s": 0.1708697080030106, "error": null}
+{"id": "ketten_K03_s1", "src": "ketten", "raw": "3 \\times - 6 = 2 \\times + 1", "s": 0.25784291700983886, "error": null}
+{"id": "ketten_K08_s1", "src": "ketten", "raw": "\\frac { X } { 3 } = 3", "s": 0.24418079199676868, "error": null}
+{"id": "ketten_K13_s1", "src": "ketten", "raw": "X ^ { 2 } + \\frac { 3 } { 2 } \\times - 1 = 0", "s": 0.39729662500030827, "error": null}
+{"id": "ketten_K17_s1", "src": "ketten", "raw": "( \\times - \\frac { 5 } { 2 } ) ^ { 2 } = \\frac { 1 } { 4 }", "s": 0.4689371249987744, "error": null}
+{"id": "ketten_K22_s1", "src": "ketten", "raw": "= \\frac { 6 } { 3 6 }", "s": 0.25686454099195544, "error": null}
+{"id": "ketten_K03_s2", "src": "ketten", "raw": "\\times = \\not \\! \\gamma", "s": 0.19820762499875855, "error": null}
+{"id": "ketten_K08_s2", "src": "ketten", "raw": "X = 3 \\cdot 3", "s": 0.18605774999014102, "error": null}
+{"id": "ketten_K13_s2", "src": "ketten", "raw": "( X + \\frac { 3 } { 4 } ) ^ { 2 } = \\frac { 2 5 } { 1 6 }", "s": 0.5631285409908742, "error": null}
+{"id": "ketten_K17_s2", "src": "ketten", "raw": "\\l / X - 2 \\l / X - 3 \\r ) = 0", "s": 0.3079197920014849, "error": null}
+{"id": "ketten_K22_s2", "src": "ketten", "raw": "- \\frac { 1 } { 6 }", "s": 0.2289308329927735, "error": null}
+{"id": "ketten_K27_s1", "src": "ketten", "raw": "= 2 ^ { 6 }", "s": 0.20875991600041743, "error": null}
+{"id": "ketten_K08_s3", "src": "ketten", "raw": "\\times = 6", "s": 0.1552775419986574, "error": null}
+{"id": "ketten_K13_s3", "src": "ketten", "raw": "\\left( \\begin{matrix} { X } \\\\ { - \\frac { 1 } { 2 } } \\\\ \\end{matrix} \\right) \\left( \\begin{matrix} { X } \\\\ { + 2 } \\\\ \\end{matrix} \\right) = \\mathrm { G }", "s": 0.8923432919982588, "error": null}
+{"id": "ketten_K27_s2", "src": "ketten", "raw": "= \\sqrt { 4 }", "s": 0.1822051249910146, "error": null}
+{"id": "ketten_K04_s1", "src": "ketten", "raw": "3 \\times - 2 = 2 \\times + 1", "s": 0.24316962499869987, "error": null}
+{"id": "ketten_K18_s1", "src": "ketten", "raw": "( X - \\frac { \\pi } { 2 } ) ^ { 2 } = \\frac { 1 } { 4 }", "s": 0.514803749989369, "error": null}
+{"id": "ketten_K23_s1", "src": "ketten", "raw": "= \\frac { 6 } { 3 6 }", "s": 0.2565201249963138, "error": null}
+{"id": "ketten_K04_s2", "src": "ketten", "raw": "3 = X", "s": 0.13764549999905284, "error": null}
+{"id": "ketten_K09_s1", "src": "ketten", "raw": "( X + 3 ) ^ { 2 } = 1 6", "s": 0.2820943749975413, "error": null}
+{"id": "ketten_K14_s1", "src": "ketten", "raw": "\\lambda ^ { 2 } + \\frac { 3 } { 2 } \\lambda - 1 = 0", "s": 0.478529833999346, "error": null}
+{"id": "ketten_K18_s2", "src": "ketten", "raw": "\\left( X - 2 \\right) \\left( X + 3 \\right) = 0", "s": 0.3686785419995431, "error": null}
+{"id": "ketten_K23_s2", "src": "ketten", "raw": "= \\frac { 1 } { 3 }", "s": 0.25511458299297374, "error": null}
+{"id": "ketten_K28_s1", "src": "ketten", "raw": "= - \\S + 8", "s": 0.19042741699377075, "error": null}
+{"id": "ketten_K09_s2", "src": "ketten", "raw": "\\left( X - 1 \\right) \\left( X + \\not \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\", "s": 3.807047958005569, "error": null}
+{"id": "ketten_K14_s2", "src": "ketten", "raw": "\\left( X + \\frac { 3 } { 4 } \\right) ^ { 2 } = \\frac { 2 ^ { 5 } } { 1 6 }", "s": 0.6002817499975208, "error": null}
+{"id": "ketten_K28_s2", "src": "ketten", "raw": "= - \\lambda", "s": 0.16221220800071023, "error": null}
+{"id": "ketten_K05_s1", "src": "ketten", "raw": "\\circ \\fbox { X } = 2", "s": 0.21332787499704864, "error": null}
+{"id": "ketten_K14_s3", "src": "ketten", "raw": "\\left( X - \\frac { 1 } { 2 } \\right) ( X - 2 ) = 0", "s": 0.4976206249993993, "error": null}
+{"id": "ketten_K19_s1", "src": "ketten", "raw": "2 X ^ { 2 } + 3 X = \\circ", "s": 0.24791279100463726, "error": null}
+{"id": "ketten_K24_s1", "src": "ketten", "raw": "= 3 \\cdot 1 0 + 3 \\cdot 7", "s": 0.33912537500145845, "error": null}
+{"id": "ketten_K05_s2", "src": "ketten", "raw": "\\times = 4", "s": 0.1716757910035085, "error": null}
+{"id": "ketten_K10_s1", "src": "ketten", "raw": "( X + 3 ) ^ { 2 } = 1 0", "s": 0.2526033330068458, "error": null}
+{"id": "ketten_K19_s2", "src": "ketten", "raw": "\\times ( 2 \\times + 3 ) = 0", "s": 0.32336437499907333, "error": null}
+{"id": "ketten_K24_s2", "src": "ketten", "raw": "= 5 1", "s": 0.1739295419974951, "error": null}
+{"id": "ketten_K10_s2", "src": "ketten", "raw": "\\left( X + 3 \\right) ^ { 2 } - 1 C = 0", "s": 0.32420254198950715, "error": null}

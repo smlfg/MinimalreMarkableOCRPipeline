@@ -1,0 +1,5 @@
+{"id": "probe_01", "src": "probe", "raw": "0 1 2 3 4 5 6 \\neq 8 9", "s": 0.5729582500061952, "error": null}
+{"id": "probe_02", "src": "probe", "raw": "\\begin{matrix} { 1 } & { - } & { 7 } \\\\ { + } & { 1 } & { = } \\\\ \\end{matrix}", "s": 0.6488739579945104, "error": null}
+{"id": "probe_03", "src": "probe", "raw": "1 + 7 = 8", "s": 0.18848695899941958, "error": null}
+{"id": "probe_04", "src": "probe", "raw": "\\mathrm { \\boldmath \\cal F } = 2 \\mathrm { \\boldmath \\cal F } - 2", "s": 0.4938655000005383, "error": null}
+{"id": "probe_05", "src": "probe", "raw": "X \\cdot 2 = 2 X", "s": 0.22494404199824203, "error": null}

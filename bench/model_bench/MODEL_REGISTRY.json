@@ -1,0 +1,226 @@
+{
+ "_meta": {
+  "created": "2026-11-24",
+  "mission": "M-20261124T194047-0dbdbb55",
+  "hardware": "Apple M3 Max, 48 GB unified memory",
+  "backend_policy": "PyTorch MPS only; adapter aborts if MPS unavailable (no silent CPU fallback)",
+  "decoding": "greedy (do_sample=false / num_beams=1), max_new_tokens=256; deviations from model cards are listed per model",
+  "weights_policy": "only pinned *.safetensors + config/tokenizer files, never *.pt/*.bin/optimizer states, no trust_remote_code",
+  "disk_free_gib_at_start": 11
+ },
+ "models": [
+  {
+   "key": "uni_qwen3vl_2b",
+   "repo": "phxember/Uni-MuMER-Qwen3-VL-2B",
+   "revision": "26d57451c9182b68c60aef78634bfea20c41a866",
+   "license": "apache-2.0",
+   "arch": "Qwen3VLForConditionalGeneration",
+   "family": "qwen_vl",
+   "weights_gb": 4.27,
+   "dtype": "bfloat16",
+   "prompt": "I have an image of a handwritten mathematical expression. Please write out the expression of the formula in the image using LaTeX format.",
+   "prompt_source": "github.com/BFlameSwift/Uni-MuMER example_data/CROHME/README.md",
+   "priority": 1,
+   "allow": [
+    "*.safetensors",
+    "*.json",
+    "tokenizer*",
+    "*.txt",
+    "*.jinja"
+   ],
+   "notes": "Task-trained on handwritten math (HMER). Card suggests temp 0.2; benchmark uses greedy.",
+   "status": "kept_stage0_unoptimized",
+   "optimization": "none (Stufe 0, Rohlauf)",
+   "next": "Flywheel-Optimierung (siehe README.md)"
+  },
+  {
+   "key": "uni_qwen35_2b",
+   "repo": "phxember/Uni-MuMER-Qwen3.5-2B",
+   "revision": "40a6288292057f1c162b3b0eaccd362036dbd495",
+   "license": "apache-2.0",
+   "arch": "Qwen3_5ForConditionalGeneration",
+   "family": "qwen_vl",
+   "weights_gb": 4.45,
+   "dtype": "bfloat16",
+   "prompt": "I have an image of a handwritten mathematical expression. Please write out the expression of the formula in the image using LaTeX format.",
+   "prompt_source": "github.com/BFlameSwift/Uni-MuMER example_data/CROHME/README.md",
+   "priority": 1,
+   "allow": [
+    "*.safetensors",
+    "*.json",
+    "tokenizer*",
+    "*.txt",
+    "*.jinja"
+   ],
+   "notes": "Thinking disabled via chat template if supported.",
+   "status": "not_run_stopped_by_owner"
+  },
+  {
+   "key": "bhaskar_v2",
+   "repo": "bhaskar1707/qwen3.5-latex-ocr-finetune-v2",
+   "revision": "34e3c36edc3f5223c0e949c92ba655d6bd40d5b2",
+   "license": "apache-2.0",
+   "arch": "Qwen3_5ForConditionalGeneration",
+   "family": "qwen_vl",
+   "weights_gb": 1.75,
+   "dtype": "bfloat16",
+   "prompt": "Write the LaTeX representation for this image.",
+   "prompt_source": "repo inference.py",
+   "priority": 1,
+   "allow": [
+    "*.safetensors",
+    "*.json",
+    "tokenizer*",
+    "*.txt",
+    "*.jinja"
+   ],
+   "notes": "Model card inference uses temperature=1.5,min_p=0.1 sampling and trust_remote_code; benchmark deviates to greedy and no remote code. Trained on printed unsloth/LaTeX_OCR (not handwriting-specific). Qwen3.5-0.8B base.",
+   "status": "stage0_done_poor_on_own_handwriting"
+  },
+  {
+   "key": "bhaskar_v1",
+   "repo": "bhaskar1707/qwen3.5-latex-ocr-finetune",
+   "revision": "4a18f87c30b5f814468396e03d49e909d660bcdc",
+   "license": "apache-2.0",
+   "arch": "Qwen3_5ForConditionalGeneration",
+   "family": "qwen_vl",
+   "weights_gb": 1.75,
+   "dtype": "bfloat16",
+   "prompt": "Write the LaTeX representation for this image.",
+   "prompt_source": "same as v2",
+   "priority": 3,
+   "allow": [
+    "*.safetensors",
+    "*.json",
+    "tokenizer*",
+    "*.txt",
+    "*.jinja"
+   ],
+   "notes": "30-step demo run per v2 card; expected weak.",
+   "status": "kept_stage0_unoptimized",
+   "optimization": "none (Stufe 0, Rohlauf)",
+   "next": "Flywheel-Optimierung (siehe README.md)"
+  },
+  {
+   "key": "clzoro_2b",
+   "repo": "clzoro/Qwen3-VL-2B-LaTeX-OCR",
+   "revision": "090ec6e7fb710b873edf91d087d5da91b0bdf887",
+   "license": "apache-2.0",
+   "arch": "Qwen3VLForConditionalGeneration",
+   "family": "qwen_vl",
+   "weights_gb": 4.26,
+   "dtype": "bfloat16",
+   "prompt": "Transcribe the formula in the image to LaTeX.",
+   "prompt_source": "model card",
+   "priority": 2,
+   "allow": [
+    "model.safetensors",
+    "*.json",
+    "tokenizer*",
+    "*.txt",
+    "*.jinja"
+   ],
+   "notes": "Repo also holds 25 GB DeepSpeed optimizer states (.pt) - NOT downloaded.",
+   "status": "stage0_done_poor_or_suspect_adapter"
+  },
+  {
+   "key": "clzoro_4b",
+   "repo": "clzoro/Qwen3-VL-4B-LaTeX-OCR",
+   "revision": "53de2fde37f7acae1143d3e7ab0312ee9b3c8936",
+   "license": "apache-2.0",
+   "arch": "Qwen3VLForConditionalGeneration",
+   "family": "qwen_vl",
+   "weights_gb": 8.87,
+   "dtype": "bfloat16",
+   "prompt": "Transcribe the formula in the image to LaTeX.",
+   "prompt_source": "model card",
+   "priority": 2,
+   "allow": [
+    "model-*.safetensors",
+    "model.safetensors.index.json",
+    "*.json",
+    "tokenizer*",
+    "*.txt",
+    "*.jinja"
+   ],
+   "notes": "Repo also holds 53 GB optimizer states (.pt) - NOT downloaded.",
+   "status": "not_run_stopped_by_owner"
+  },
+  {
+   "key": "clzoro_8b",
+   "repo": "clzoro/Qwen3-VL-8B-LaTeX-OCR",
+   "revision": "53128e61ccce2fab582b2294c9f1c3f9525a1261",
+   "license": "apache-2.0",
+   "arch": "Qwen3VLForConditionalGeneration",
+   "family": "qwen_vl",
+   "weights_gb": 17.53,
+   "dtype": "bfloat16",
+   "prompt": "Transcribe the formula in the image to LaTeX.",
+   "prompt_source": "model card",
+   "priority": 2,
+   "allow": [
+    "*.safetensors",
+    "*.json",
+    "tokenizer*",
+    "*.txt",
+    "*.jinja"
+   ],
+   "notes": "17.5 GB weights exceed free disk (11 GiB) -> only runnable if owner frees space.",
+   "status": "not_run_disk_17.5GB"
+  },
+  {
+   "key": "nougat_latex",
+   "repo": "Norm/nougat-latex-base",
+   "revision": "6c6f2afe62ae51d57d0621ea9f2e11e02fb8385a",
+   "license": "apache-2.0",
+   "arch": "VisionEncoderDecoderModel",
+   "family": "ved_nougat",
+   "weights_gb": 1.4,
+   "dtype": "float32",
+   "prompt": null,
+   "priority": 2,
+   "allow": [
+    "model.safetensors",
+    "*.json",
+    "tokenizer*",
+    "*.txt"
+   ],
+   "notes": "Card uses third-party NougatLaTexProcessor (GitHub NormXU/nougat-latex-ocr) - NOT executed; HF NougatImageProcessor (224x560) used instead, beam search 1 instead of 5. Printed im2latex-100k training, no handwriting.",
+   "status": "not_run_stopped_by_owner"
+  },
+  {
+   "key": "mixtex",
+   "repo": "MixTex/ZhEn-Latex-OCR",
+   "revision": "37da0497956ac97f0a81f4da001f000d5295b77c",
+   "license": "apache-2.0",
+   "arch": "VisionEncoderDecoderModel",
+   "family": "ved_mixtex",
+   "weights_gb": 0.17,
+   "dtype": "float32",
+   "prompt": null,
+   "priority": 2,
+   "allow": [
+    "model.safetensors",
+    "*.json",
+    "*.txt"
+   ],
+   "notes": "Repo zip (MixTeX.zip, 249 MB Windows exe) NOT downloaded. Card output post-processing (\\[ -> align*) not applied.",
+   "status": "not_run_stopped_by_owner"
+  },
+  {
+   "key": "aditya",
+   "repo": "adityarajsahu/LaTeX-OCR",
+   "revision": "fa4b98025758e1ab39208a45616a81e76db7d697",
+   "license": "apache-2.0",
+   "arch": "LaTeXOCRModel (custom, CLIP-ViT-B/32 + Pythia-160m + MLP projector)",
+   "family": "custom_blocked",
+   "weights_gb": 1.01,
+   "dtype": "float32",
+   "prompt": null,
+   "priority": 3,
+   "allow": [],
+   "notes": "Model class lives in author's project repo (src/model.py), not in the HF repo; config says transformers 5.16.1. Not runnable without third-party code - see status in MODEL_COMPARISON.md.",
+   "status": "blocked_third_party_code"
+  }
+ ]
+}

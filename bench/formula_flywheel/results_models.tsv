@@ -1,0 +1,11 @@
+commit	split	struct	char	p95_s	coverage	prec_certain	struct_mw	struct_crohme	description
+719b7d7	own_probe	0.7500	0.9220	0.66	1.000	0.7500	0.000	0.000	Uni-MuMER-Qwen3-VL-2B (phxember, rev 26d5745) ROH: greedy, ohne Pre/Post/Kohaerenz, MPS bf16 - Stufe 0, NICHT optimiert
+719b7d7	own_ketten	0.8500	0.9318	0.78	1.000	0.8500	0.000	0.000	Uni-MuMER-Qwen3-VL-2B (phxember, rev 26d5745) ROH: greedy, ohne Pre/Post/Kohaerenz, MPS bf16 - Stufe 0, NICHT optimiert
+719b7d7	dev	0.8190	0.9594	0.89	1.000	0.8190	0.821	0.813	Uni-MuMER-Qwen3-VL-2B (phxember, rev 26d5745) ROH: greedy, ohne Pre/Post/Kohaerenz, MPS bf16 - Stufe 0, NICHT optimiert
+719b7d7	synth	0.9300	0.9910	0.45	1.000	0.9300	0.000	0.000	Uni-MuMER-Qwen3-VL-2B (phxember, rev 26d5745) ROH: greedy, ohne Pre/Post/Kohaerenz, MPS bf16 - Stufe 0, NICHT optimiert
+719b7d7	synth_hard	0.7794	0.8161	3.52	1.000	0.7794	0.000	0.000	Uni-MuMER-Qwen3-VL-2B (phxember, rev 26d5745) ROH: greedy, ohne Pre/Post/Kohaerenz, MPS bf16 - Stufe 0, NICHT optimiert
+719b7d7	own_probe	0.7000	0.9171	0.63	1.000	0.7000	0.000	0.000	qwen3.5-latex-ocr-finetune v1 (bhaskar1707, rev 4a18f87) ROH: greedy, ohne Pre/Post/Kohaerenz, MPS bf16 - Stufe 0, NICHT optimiert
+719b7d7	own_ketten	0.8000	0.9442	0.65	1.000	0.8000	0.000	0.000	qwen3.5-latex-ocr-finetune v1 (bhaskar1707, rev 4a18f87) ROH: greedy, ohne Pre/Post/Kohaerenz, MPS bf16 - Stufe 0, NICHT optimiert
+719b7d7	dev	0.5337	0.8892	1.04	1.000	0.5337	0.522	0.573	qwen3.5-latex-ocr-finetune v1 (bhaskar1707, rev 4a18f87) ROH: greedy, ohne Pre/Post/Kohaerenz, MPS bf16 - Stufe 0, NICHT optimiert
+719b7d7	synth	0.9000	0.9843	0.44	1.000	0.9000	0.000	0.000	qwen3.5-latex-ocr-finetune v1 (bhaskar1707, rev 4a18f87) ROH: greedy, ohne Pre/Post/Kohaerenz, MPS bf16 - Stufe 0, NICHT optimiert
+719b7d7	synth_hard	0.8897	0.8095	0.81	1.000	0.8897	0.000	0.000	qwen3.5-latex-ocr-finetune v1 (bhaskar1707, rev 4a18f87) ROH: greedy, ohne Pre/Post/Kohaerenz, MPS bf16 - Stufe 0, NICHT optimiert

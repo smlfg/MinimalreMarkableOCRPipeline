@@ -1,0 +1,100 @@
+{"id": "s000", "src": "synth", "raw": "1 2 \\times \\neq 5 = 8 9", "s": 0.4350267919944599, "error": null}
+{"id": "s001", "src": "synth", "raw": "5 b = 5", "s": 0.15192625000781845, "error": null}
+{"id": "s002", "src": "synth", "raw": "\\begin{matrix} { 1 } & { 5 } \\\\ { y + } & { 1 } \\\\ { 4 } & { = 4 } \\\\ { 4 } & { } \\\\ \\end{matrix}", "s": 0.7248052920040209, "error": null}
+{"id": "s003", "src": "synth", "raw": "3 / 2 + 2 7", "s": 0.2117992499988759, "error": null}
+{"id": "s004", "src": "synth", "raw": "3 \\times = 2 1", "s": 0.18130558299890254, "error": null}
+{"id": "s005", "src": "synth", "raw": "6 \\left( \\begin{matrix} { y } \\\\ { - } \\\\ \\end{matrix} \\right) \\begin{matrix} { 7 } \\\\ { J } \\\\ \\end{matrix} = \\begin{matrix} { 1 } \\\\ { 0 } \\\\ \\end{matrix}", "s": 0.870488957996713, "error": null}
+{"id": "s006", "src": "synth", "raw": "1 1 \\left( \\times - 3 \\right) = 1 8", "s": 0.3170959999988554, "error": null}
+{"id": "s007", "src": "synth", "raw": "\\o / 2 + \\uparrow 2", "s": 0.22831683298863936, "error": null}
+{"id": "s008", "src": "synth", "raw": "3 / 4 + 2 0", "s": 0.24318829100229777, "error": null}
+{"id": "s009", "src": "synth", "raw": "z ^ { 2 } + 1 2 \\zeta = 1 5", "s": 0.2974510839994764, "error": null}
+{"id": "s010", "src": "synth", "raw": "\\mathrm { \\boldmath \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large", "s": 3.3170648330124095, "error": null}
+{"id": "s011", "src": "synth", "raw": "\\sigma ^ { 2 } + 1 \\bigtriangledown \\mathrm { a } = 2 9", "s": 0.4128340410097735, "error": null}
+{"id": "s012", "src": "synth", "raw": "4 \\ d = 3 \\ d _ { \\mathrm { \\scriptsize { 6 } } }", "s": 0.3522250840032939, "error": null}
+{"id": "s013", "src": "synth", "raw": "\\begin{matrix} { 6 } & { \\circ } & { + } & { 3 } \\\\ { 0 } & { = } & { 7 } & { 8 } \\\\ \\end{matrix}", "s": 0.7023677499964833, "error": null}
+{"id": "s014", "src": "synth", "raw": "b = 3 6 / 4", "s": 0.19094291700457688, "error": null}
+{"id": "s015", "src": "synth", "raw": "1 2 \\cdot 6 > 7 2", "s": 0.21475312499387655, "error": null}
+{"id": "s016", "src": "synth", "raw": "1 6 \\cdot 2 = 3 2", "s": 0.21962375000293832, "error": null}
+{"id": "s017", "src": "synth", "raw": "4 / 5 + 2", "s": 0.17419229199003894, "error": null}
+{"id": "s018", "src": "synth", "raw": "1 1 \\slash \\slash + 2 \\slash \\slash = 1 0 \\slash \\slash", "s": 0.3403573750110809, "error": null}
+{"id": "s019", "src": "synth", "raw": "1 3 \\d a + 6 = 3 2", "s": 0.29456016699259635, "error": null}
+{"id": "s020", "src": "synth", "raw": "\\begin{matrix} { 1 } & { 1 } \\\\ { \\cdot } & { 4 = 4 } \\\\ \\end{matrix}", "s": 0.5375479999929667, "error": null}
+{"id": "s021", "src": "synth", "raw": "\\begin{matrix} { 1 } & { 7 } & { . } \\\\ { 3 } & { = } & { 5 } \\\\ { 1 } & { } & { } \\\\ \\end{matrix}", "s": 0.6804864999867277, "error": null}
+{"id": "s022", "src": "synth", "raw": "\\mathrm { b } ^ { 2 } + \\mathrm { c } \\mathrm { b } = \\bigcup \\mathrm { g }", "s": 0.4732655420084484, "error": null}
+{"id": "s023", "src": "synth", "raw": "\\begin{matrix} { 1 } & { 3 } & { y = 9 } \\\\ { 1 } & { } & { } \\\\ \\end{matrix}", "s": 0.6367506249953294, "error": null}
+{"id": "s024", "src": "synth", "raw": "6 \\cdot 4 = 2 4", "s": 0.22525658299855422, "error": null}
+{"id": "s025", "src": "synth", "raw": "\\gamma _ { X } = 3 5", "s": 0.2171487919986248, "error": null}
+{"id": "s026", "src": "synth", "raw": "1 3 / 6 + 2 0", "s": 0.21915937498852145, "error": null}
+{"id": "s027", "src": "synth", "raw": "3 \\cdot 9 = 2 \\: 7", "s": 0.2218572919955477, "error": null}
+{"id": "s028", "src": "synth", "raw": "5 \\times = 3 5", "s": 0.17894791600701865, "error": null}
+{"id": "s029", "src": "synth", "raw": "X ^ { 2 + 8 } \\times = 1 5", "s": 0.25549462500202935, "error": null}
+{"id": "s030", "src": "synth", "raw": "5 \\b b + 1 = 1 6", "s": 0.22392829100135714, "error": null}
+{"id": "s031", "src": "synth", "raw": "2 \\cdot 4 = 8", "s": 0.18244204099755734, "error": null}
+{"id": "s032", "src": "synth", "raw": "\\begin{matrix} { 1 } & { 0 } & { a + 1 } \\\\ { 2 } & { = } & { 7 } \\\\ { 2 } & { } & { } \\\\ \\end{matrix}", "s": 0.7129536669963272, "error": null}
+{"id": "s033", "src": "synth", "raw": "d ^ { 2 + } 1 7 d = 1 5", "s": 0.27232983300928026, "error": null}
+{"id": "s034", "src": "synth", "raw": "5 \\cdot 6 = 3 0", "s": 0.2148069170070812, "error": null}
+{"id": "s035", "src": "synth", "raw": "\\bigtriangledown \\bigtriangledown \\bigtriangledown = \\bigtriangledown \\bigtriangledown \\bigtriangledown \\bigtriangledown \\bigtriangledown \\bigtriangledown \\bigtriangledown \\bigtriangledown \\bigtriangledown \\bigtriangledown \\bigtriangledown \\bigtriangledown \\bigtriangledown \\bigtriangledown \\bigtriangledown \\bigtriangledown \\bigtriangledown \\bigtriangledown \\bigtriangledown \\bigtriangledown \\bigtriangledown \\bigtriangledown \\bigtriangledown \\bigtriangledown \\bigtriangledown \\bigtriangledown \\bigtriangledown \\bigtriangledown \\bigtriangledown \\bigtriangledown \\bigtriangledown \\bigtriangledown \\bigtriangledown \\bigtriangledown \\bigtriangledown \\bigtriangledown \\bigtriangledown \\bigtriangledown \\bigtriangledown \\bigtriangledown \\bigtriangledown \\bigtriangledown \\bigtriangledown \\bigtriangledown \\bigtriangledown \\bigtriangledown \\bigtriangledown \\bigtriangledown", "s": 4.117124917000183, "error": null}
+{"id": "s036", "src": "synth", "raw": "\\o { 2 } { + 1 } \\o { 9 } { \\o { 1 } { 2 } } = 3 \\o { 1 } { 2 }", "s": 0.7192299159942195, "error": null}
+{"id": "s037", "src": "synth", "raw": "b ^ { 2 } + 4 b = 2 3", "s": 0.2543284169951221, "error": null}
+{"id": "s038", "src": "synth", "raw": "1 \\jmath \\jmath ( b - 4 ) \\jmath = 2 \\jmath", "s": 0.4115337080002064, "error": null}
+{"id": "s039", "src": "synth", "raw": "\\mathrm { b } = 4 \\ 8 \\slash 1 2", "s": 0.45173120898834895, "error": null}
+{"id": "s040", "src": "synth", "raw": "\\o { 1 } { 4 + 2 6 }", "s": 0.24866012501297519, "error": null}
+{"id": "s041", "src": "synth", "raw": "\\o / \\o + \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o \\o", "s": 3.6977694999950472, "error": null}
+{"id": "s042", "src": "synth", "raw": "a ^ { 2 } + \\Z \\ a = \\Z \\b 6", "s": 0.30919233299209736, "error": null}
+{"id": "s043", "src": "synth", "raw": "1 3 Z + 1 5 = 9 \\ 3", "s": 0.31729016700410284, "error": null}
+{"id": "s044", "src": "synth", "raw": "9 _ { z } = 3 \\o { 6 }", "s": 0.2717917080008192, "error": null}
+{"id": "s045", "src": "synth", "raw": "\\chi = 1 2 / 2", "s": 0.2288260409986833, "error": null}
+{"id": "s046", "src": "synth", "raw": "1 4 \\circ = 5 6", "s": 0.20506533299339935, "error": null}
+{"id": "s047", "src": "synth", "raw": "1 2 \\cdot 7 = 8 4", "s": 0.2277206250000745, "error": null}
+{"id": "s048", "src": "synth", "raw": "4 \\mathrm { \\boldmath y } = 1 2", "s": 0.2657738749985583, "error": null}
+{"id": "s049", "src": "synth", "raw": "b = \\d 8 \\d 1 6", "s": 0.22918883299280424, "error": null}
+{"id": "s050", "src": "synth", "raw": "1 \\bigtriangledown ( \\mathrm { y } - 6 ) \\biggr \\} = 2 \\mathcal { Z }", "s": 0.4252381249971222, "error": null}
+{"id": "s051", "src": "synth", "raw": "2 / 2 + 1", "s": 0.1978014170017559, "error": null}
+{"id": "s052", "src": "synth", "raw": "1 5 _ { y ^ { + } } 2 \\o = \\o \\o", "s": 0.31956070799787994, "error": null}
+{"id": "s053", "src": "synth", "raw": "b ^ { 2 + } 1 \\uparrow b = 1 \\uparrow", "s": 0.4049666249920847, "error": null}
+{"id": "s054", "src": "synth", "raw": "1 5 / 3 + 2 7", "s": 0.28710754099301994, "error": null}
+{"id": "s055", "src": "synth", "raw": "\\o = 1 \\o 4 \\o 4 \\o / \\o 1 \\o 6", "s": 0.5736261249985546, "error": null}
+{"id": "s056", "src": "synth", "raw": "1 8 \\left( y \\backslash - 9 \\right) = 5", "s": 0.36575433300458826, "error": null}
+{"id": "s057", "src": "synth", "raw": "1 6 \\o { 2 } { 5 } = 7 3", "s": 0.3582825000048615, "error": null}
+{"id": "s058", "src": "synth", "raw": "6 \\left( \\begin{matrix} { 1 } & { 0 } \\\\ { - 3 } & { 1 } \\\\ \\end{matrix} \\right) = \\left. \\begin{matrix} { 1 } & { 0 } \\\\ { - 3 } & { 1 } \\\\ \\end{matrix} \\right.", "s": 1.1391245419945335, "error": null}
+{"id": "s059", "src": "synth", "raw": "1 9 \\left( \\d B - \\d 6 \\right) = 2", "s": 0.3582340419961838, "error": null}
+{"id": "s060", "src": "synth", "raw": "5 \\times = 4 5", "s": 0.2566063749982277, "error": null}
+{"id": "s061", "src": "synth", "raw": "3 \\cdot 2 = 6", "s": 0.20281499999691732, "error": null}
+{"id": "s062", "src": "synth", "raw": "\\left\\{ \\begin{matrix} { b } \\\\ { - c } \\\\ \\end{matrix} \\right\\} = 1 5", "s": 0.5411387079948327, "error": null}
+{"id": "s063", "src": "synth", "raw": "8 \\left( \\begin{matrix} { 1 } \\\\ { - 5 } \\\\ \\end{matrix} \\right) = \\left. \\begin{matrix} { 2 } \\\\ { 3 } \\\\ \\end{matrix} \\right.", "s": 0.765062874997966, "error": null}
+{"id": "s064", "src": "synth", "raw": "\\o { 2 } + \\o { 1 } \\o { 7 } \\o { 1 } = \\o { 7 }", "s": 0.48673362500267103, "error": null}
+{"id": "s065", "src": "synth", "raw": "\\o { 8 } { 8 } = 6 4", "s": 0.28507041599368677, "error": null}
+{"id": "s066", "src": "synth", "raw": "1 6 \\cdot 2 = 3 2", "s": 0.2146577089879429, "error": null}
+{"id": "s067", "src": "synth", "raw": "1 1 / 2 + 2 6", "s": 0.2227826250018552, "error": null}
+{"id": "s068", "src": "synth", "raw": "1 3 \\cdot 5 = 6 \\hspace { 1 5 p t }", "s": 0.3483000839914894, "error": null}
+{"id": "s069", "src": "synth", "raw": "5 / 8 + 1 3", "s": 0.27317041700007394, "error": null}
+{"id": "s070", "src": "synth", "raw": "7 \\cdot 7 = 4 9", "s": 0.21602183301001787, "error": null}
+{"id": "s071", "src": "synth", "raw": "8 / 6 + 1 2", "s": 0.18995995899604168, "error": null}
+{"id": "s072", "src": "synth", "raw": "1 2 / 8 + 1 8", "s": 0.2088480420061387, "error": null}
+{"id": "s073", "src": "synth", "raw": "1 2 b + 1 7 = 7 7", "s": 0.24469095800304785, "error": null}
+{"id": "s074", "src": "synth", "raw": "X ^ { 2 } + 9 \\times = 2 9", "s": 0.26565079200372566, "error": null}
+{"id": "s075", "src": "synth", "raw": "\\mathrm { \\boldmath \\sigma } = 2 \\ 1 / 7", "s": 0.3517290000017965, "error": null}
+{"id": "s076", "src": "synth", "raw": "1 0 \\left( b - 3 \\right) = 1 \\: 3", "s": 0.3478047500102548, "error": null}
+{"id": "s077", "src": "synth", "raw": "X = 6 0 / 1 2", "s": 0.22834816700196825, "error": null}
+{"id": "s078", "src": "synth", "raw": "1 5 \\zeta + 2 9 = 5 9", "s": 0.2674907079926925, "error": null}
+{"id": "s079", "src": "synth", "raw": "\\times ^ { 2 } \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\! \\", "s": 2.8940974999859463, "error": null}
+{"id": "s080", "src": "synth", "raw": "1 6 \\cdot 6 = 9 6", "s": 0.23670404199219774, "error": null}
+{"id": "s081", "src": "synth", "raw": "1 \\circ \\left( X - 3 \\right) = 2 O", "s": 0.2755175420024898, "error": null}
+{"id": "s082", "src": "synth", "raw": "5 \\times = 2 \\hspace { 1 5 }", "s": 0.24509341600059997, "error": null}
+{"id": "s083", "src": "synth", "raw": "\\mathbf { \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large \\Large", "s": 2.899628415994812, "error": null}
+{"id": "s084", "src": "synth", "raw": "z ^ { 2 } + 1 6 Z = 1 7", "s": 0.27351829200051725, "error": null}
+{"id": "s085", "src": "synth", "raw": "1 0 / 1 + 2", "s": 0.1910302500036778, "error": null}
+{"id": "s086", "src": "synth", "raw": "8 \\cdot 8 = 6 \\ 4", "s": 0.22695829199801665, "error": null}
+{"id": "s087", "src": "synth", "raw": "\\mathrm { b } = 1 \\: 2 \\: 0 \\: / \\: 1 \\: 5", "s": 0.3855390829994576, "error": null}
+{"id": "s088", "src": "synth", "raw": "y ^ { 2 + } 1 \\o { 2 } \\o { 2 } = \\o { 2 } \\o { 2 }", "s": 0.44899350000196137, "error": null}
+{"id": "s089", "src": "synth", "raw": "X = 3 6 / 6", "s": 0.2111307499872055, "error": null}
+{"id": "s090", "src": "synth", "raw": "4 \\bar { a } = 2 O", "s": 0.19035391700163018, "error": null}
+{"id": "s091", "src": "synth", "raw": "1 4 \\slash _ { Z } - 9 J = 2 8", "s": 0.2679380420013331, "error": null}
+{"id": "s092", "src": "synth", "raw": "\\begin{matrix} { 1 } & { 1 } \\\\ { y } & { = \\varrho } \\\\ \\end{matrix}", "s": 0.453369416994974, "error": null}
+{"id": "s093", "src": "synth", "raw": "2 \\left( \\begin{matrix} { 2 } \\\\ { - 6 } \\\\ \\end{matrix} \\right) = 9", "s": 0.4632537089928519, "error": null}
+{"id": "s094", "src": "synth", "raw": "\\mathrm { y } ^ { 2 } + 3 y = 2 9", "s": 0.32509466700139455, "error": null}
+{"id": "s095", "src": "synth", "raw": "\\sigma ^ { 2 + } \\uparrow 2 \\uparrow = 1 \\uparrow 3", "s": 0.36101645800226834, "error": null}
+{"id": "s096", "src": "synth", "raw": "\\o { 2 } { 2 } + \\o { 2 } { 2 } = \\o { 2 } { 2 } \\o { 2 }", "s": 0.49231787500320934, "error": null}
+{"id": "s097", "src": "synth", "raw": "4 \\o { 5 } = 3 3", "s": 0.2335277079982916, "error": null}
+{"id": "s098", "src": "synth", "raw": "1 1 \\left( X - \\not \\! \\! D \\right) = 1 0", "s": 0.3223126659868285, "error": null}
+{"id": "s099", "src": "synth", "raw": "6 / 1 + 2 2", "s": 0.1932037499936996, "error": null}

@@ -1,0 +1,15 @@
+{
+ "model": "mixtex",
+ "repo": "MixTex/ZhEn-Latex-OCR",
+ "revision": "37da0497956ac97f0a81f4da001f000d5295b77c",
+ "split": "own_probe",
+ "n_new": 5,
+ "fetch_s": 0.6984623329917667,
+ "load_s": 1.8882520829938585,
+ "first_inference_s": 0.10035349999088794,
+ "device": "mps:0",
+ "peak_rss_mb": 519.847936,
+ "mps_driver_mb": 1158.168576,
+ "torch": "2.15.0",
+ "weights_disk_mb": 172.793301
+}
