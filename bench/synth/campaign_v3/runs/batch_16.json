@@ -1,0 +1,212 @@
+{
+ "batch": 16,
+ "level": "L5",
+ "art": "formel",
+ "n": 50,
+ "struct": 0.2,
+ "char": 0.6550079849012777,
+ "coverage": 0.2,
+ "prec_certain": 1.0,
+ "misses": [
+  {
+   "id": "H051",
+   "topic": "summe",
+   "pred": "3_{k=1}^{n}k=n(n+1)/2"
+  },
+  {
+   "id": "H052",
+   "topic": "summe",
+   "pred": "3_{k=1}^{n}k=n(n+1)/2"
+  },
+  {
+   "id": "H053",
+   "topic": "summe",
+   "pred": "3_{k=1}^{n}k=n(n+1)/2"
+  },
+  {
+   "id": "H054",
+   "topic": "summe",
+   "pred": "3 \\times 2^{n}k=n(n+1)/2"
+  },
+  {
+   "id": "H055",
+   "topic": "summe",
+   "pred": "3^{n}_{k=1}k=n(n+1)/2"
+  },
+  {
+   "id": "H056",
+   "topic": "summe",
+   "pred": "s_{k=1}^{n}k=n(n+1)/2"
+  },
+  {
+   "id": "H057",
+   "topic": "summe",
+   "pred": "S_{k=1}^{n}k=n(n+1)/2"
+  },
+  {
+   "id": "H058",
+   "topic": "summe",
+   "pred": "3_{k=1}^{n}k=n(n+1)/2"
+  },
+  {
+   "id": "H059",
+   "topic": "summe",
+   "pred": "3^{n}=n(n+1)/2"
+  },
+  {
+   "id": "H060",
+   "topic": "summe",
+   "pred": "3^{n}=1^{n}k=n(n+1)/2"
+  },
+  {
+   "id": "H061",
+   "topic": "summe",
+   "pred": "I_{k=1}^{n}k=n(n+1)/2"
+  },
+  {
+   "id": "H062",
+   "topic": "summe",
+   "pred": "3_{k=1}^{n}k=n(n+1)/2"
+  },
+  {
+   "id": "H063",
+   "topic": "summe",
+   "pred": "S_{k=1}^{n}k^{2}=n(n+1)(2n+1)/6"
+  },
+  {
+   "id": "H064",
+   "topic": "summe",
+   "pred": "3^{n}_{k=1}k^{2}=n(n+1)(2n+1)/6"
+  },
+  {
+   "id": "H065",
+   "topic": "summe",
+   "pred": "3^{n}_{k=1}k^{2}=n(n+1)(2n+1)/6"
+  },
+  {
+   "id": "H066",
+   "topic": "summe",
+   "pred": "S_{k=1}^{n}k^{2}=n(n+1)(2n+1)/6"
+  },
+  {
+   "id": "H067",
+   "topic": "summe",
+   "pred": "S_{k=1}^{n}k^{2}=n(n+1)(2n+1)/6"
+  },
+  {
+   "id": "H068",
+   "topic": "summe",
+   "pred": "3n^{2}-n(n+1)(2n+1)/6"
+  },
+  {
+   "id": "H069",
+   "topic": "summe",
+   "pred": "S_{k=1}^{n}k^{2}=n(n+1)(2n+1)/6"
+  },
+  {
+   "id": "H070",
+   "topic": "summe",
+   "pred": "3^{n}_{k=1}k^{2}=n(n+1)(2n+1)/6"
+  },
+  {
+   "id": "H071",
+   "topic": "summe",
+   "pred": "3n^{2}=n(n+1)(2n+1)/6"
+  },
+  {
+   "id": "H072",
+   "topic": "summe",
+   "pred": "3n=1^{n}k^{2}=n(n+1)(2n+1)/6"
+  },
+  {
+   "id": "H073",
+   "topic": "summe",
+   "pred": "3n+1=6k=3n(n+1)"
+  },
+  {
+   "id": "H074",
+   "topic": "summe",
+   "pred": "5_{k=1}^{n}6k=3n(n+1)"
+  },
+  {
+   "id": "H075",
+   "topic": "summe",
+   "pred": "3n=2^{n}8k=4n(n+1)"
+  },
+  {
+   "id": "H076",
+   "topic": "summe",
+   "pred": "3^{n}_{k=1}2k=1n(n+1)"
+  },
+  {
+   "id": "H077",
+   "topic": "summe",
+   "pred": "3k=1^{n}2k=1n(n+1)"
+  },
+  {
+   "id": "H078",
+   "topic": "summe",
+   "pred": "3n+1=2k=4n(n+1)"
+  },
+  {
+   "id": "H079",
+   "topic": "summe",
+   "pred": "3n+1=28n+7"
+  },
+  {
+   "id": "H080",
+   "topic": "summe",
+   "pred": "3n=1^{n}4k=2n(n+1)"
+  },
+  {
+   "id": "H081",
+   "topic": "summe",
+   "pred": "3^{n} \\times 9^{k}=(q^{n+1}-1)/(q-1)"
+  },
+  {
+   "id": "H082",
+   "topic": "summe",
+   "pred": "3^{n}q^{k}=(q^{n+1}-1)/(q-1)"
+  },
+  {
+   "id": "H083",
+   "topic": "summe",
+   "pred": "Z_{k=0}^{n}q^{k}=(q^{n+1}-1)/(q-1)"
+  },
+  {
+   "id": "H084",
+   "topic": "summe",
+   "pred": "z_{k=0}^{n}q^{k}=(q^{n+1}-1)/(q-1)"
+  },
+  {
+   "id": "H085",
+   "topic": "summe",
+   "pred": "3^{n} \\cdot q^{k}=(q^{n+1}-1)/(q-1)"
+  },
+  {
+   "id": "H086",
+   "topic": "summe",
+   "pred": "3^{n}q^{k}=(q^{n+1}-1)/(q-1)"
+  },
+  {
+   "id": "H087",
+   "topic": "summe",
+   "pred": "S_{k=0}^{n}q^{k}=(q^{n+1}-1)/(q-1)"
+  },
+  {
+   "id": "H088",
+   "topic": "summe",
+   "pred": "I_{k=0}^{n}q^{k}=(q^{n+1}-1)/(q-1)"
+  },
+  {
+   "id": "H089",
+   "topic": "summe",
+   "pred": "3^{n}=0^{n}q^{k}=(q^{n+1}-1)/(q-1)"
+  },
+  {
+   "id": "H090",
+   "topic": "summe",
+   "pred": "S_{k=0}^{n}q^{k}=(q^{n+1}-1)/(q-1)"
+  }
+ ]
+}

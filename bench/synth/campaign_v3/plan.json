@@ -1,0 +1,28 @@
+{
+ "seed": 314,
+ "batch_size": 50,
+ "levels": {
+  "L1": 200,
+  "L2": 200,
+  "L3": 150,
+  "L4": 150,
+  "L5": 150,
+  "L6": 150
+ },
+ "err_rate": 0.45,
+ "schrift": {
+  "scale_min": 2.6,
+  "scale_max": 3.3,
+  "sup_raise": 8.5,
+  "sup_scale": 0.55
+ },
+ "glyph_sigma": "v2",
+ "erzeugt": {
+  "ketten": 700,
+  "slots": 1472,
+  "formeln": 315,
+  "seiten": 145,
+  "drops": 0,
+  "dauer_s": 10
+ }
+}

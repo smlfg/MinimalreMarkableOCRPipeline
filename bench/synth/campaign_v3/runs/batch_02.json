@@ -1,0 +1,21 @@
+{
+ "batch": 2,
+ "level": "L1",
+ "art": "kette",
+ "n": 50,
+ "F1_strict": 0.9836065573770492,
+ "coverage": 0.98,
+ "misses": [
+  {
+   "id": "C078",
+   "label": -1,
+   "pred": "ask",
+   "stage": "③ OCR",
+   "read": [
+    "3x+7=31",
+    "3x=24",
+    "x=8"
+   ]
+  }
+ ]
+}

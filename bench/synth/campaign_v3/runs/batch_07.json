@@ -1,0 +1,9 @@
+{
+ "batch": 7,
+ "level": "L2",
+ "art": "kette",
+ "n": 50,
+ "F1_strict": 1.0,
+ "coverage": 1.0,
+ "misses": []
+}

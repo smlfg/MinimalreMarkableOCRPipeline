@@ -1,0 +1,315 @@
+{"id": "H001", "level": "L5", "topic": "integral", "gt_latex": "\\int x^{2} dx=\\frac{x^{3}}{3}+C", "png": "png/lines/H001.png"}
+{"id": "H002", "level": "L5", "topic": "integral", "gt_latex": "\\int x^{3} dx=\\frac{x^{4}}{4}+C", "png": "png/lines/H002.png"}
+{"id": "H003", "level": "L5", "topic": "integral", "gt_latex": "\\int x^{2} dx=\\frac{x^{3}}{3}+C", "png": "png/lines/H003.png"}
+{"id": "H004", "level": "L5", "topic": "integral", "gt_latex": "\\int x^{4} dx=\\frac{x^{5}}{5}+C", "png": "png/lines/H004.png"}
+{"id": "H005", "level": "L5", "topic": "integral", "gt_latex": "\\int x^{2} dx=\\frac{x^{3}}{3}+C", "png": "png/lines/H005.png"}
+{"id": "H006", "level": "L5", "topic": "integral", "gt_latex": "\\int x^{2} dx=\\frac{x^{3}}{3}+C", "png": "png/lines/H006.png"}
+{"id": "H007", "level": "L5", "topic": "integral", "gt_latex": "\\int x^{5} dx=\\frac{x^{6}}{6}+C", "png": "png/lines/H007.png"}
+{"id": "H008", "level": "L5", "topic": "integral", "gt_latex": "\\int x^{5} dx=\\frac{x^{6}}{6}+C", "png": "png/lines/H008.png"}
+{"id": "H009", "level": "L5", "topic": "integral", "gt_latex": "\\int x^{4} dx=\\frac{x^{5}}{5}+C", "png": "png/lines/H009.png"}
+{"id": "H010", "level": "L5", "topic": "integral", "gt_latex": "\\int x^{4} dx=\\frac{x^{5}}{5}+C", "png": "png/lines/H010.png"}
+{"id": "H011", "level": "L5", "topic": "integral", "gt_latex": "\\int x^{5} dx=\\frac{x^{6}}{6}+C", "png": "png/lines/H011.png"}
+{"id": "H012", "level": "L5", "topic": "integral", "gt_latex": "\\int x^{5} dx=\\frac{x^{6}}{6}+C", "png": "png/lines/H012.png"}
+{"id": "H013", "level": "L5", "topic": "integral", "gt_latex": "\\int x^{4} dx=\\frac{x^{5}}{5}+C", "png": "png/lines/H013.png"}
+{"id": "H014", "level": "L5", "topic": "integral", "gt_latex": "\\int x^{3} dx=\\frac{x^{4}}{4}+C", "png": "png/lines/H014.png"}
+{"id": "H015", "level": "L5", "topic": "integral", "gt_latex": "\\int x^{2} dx=\\frac{x^{3}}{3}+C", "png": "png/lines/H015.png"}
+{"id": "H016", "level": "L5", "topic": "integral", "gt_latex": "\\int x^{2} dx=\\frac{x^{3}}{3}+C", "png": "png/lines/H016.png"}
+{"id": "H017", "level": "L5", "topic": "integral", "gt_latex": "\\int x^{3} dx=\\frac{x^{4}}{4}+C", "png": "png/lines/H017.png"}
+{"id": "H018", "level": "L5", "topic": "integral", "gt_latex": "\\int x^{5} dx=\\frac{x^{6}}{6}+C", "png": "png/lines/H018.png"}
+{"id": "H019", "level": "L5", "topic": "integral", "gt_latex": "\\int x^{3} dx=\\frac{x^{4}}{4}+C", "png": "png/lines/H019.png"}
+{"id": "H020", "level": "L5", "topic": "integral", "gt_latex": "\\int x^{2} dx=\\frac{x^{3}}{3}+C", "png": "png/lines/H020.png"}
+{"id": "H021", "level": "L5", "topic": "integral", "gt_latex": "\\int (3x+7) dx=\\frac{3}{2}x^{2}+7x+C", "png": "png/lines/H021.png"}
+{"id": "H022", "level": "L5", "topic": "integral", "gt_latex": "\\int (4x+6) dx=\\frac{4}{2}x^{2}+6x+C", "png": "png/lines/H022.png"}
+{"id": "H023", "level": "L5", "topic": "integral", "gt_latex": "\\int (4x+2) dx=\\frac{4}{2}x^{2}+2x+C", "png": "png/lines/H023.png"}
+{"id": "H024", "level": "L5", "topic": "integral", "gt_latex": "\\int (5x+8) dx=\\frac{5}{2}x^{2}+8x+C", "png": "png/lines/H024.png"}
+{"id": "H025", "level": "L5", "topic": "integral", "gt_latex": "\\int (5x+5) dx=\\frac{5}{2}x^{2}+5x+C", "png": "png/lines/H025.png"}
+{"id": "H026", "level": "L5", "topic": "integral", "gt_latex": "\\int (5x+3) dx=\\frac{5}{2}x^{2}+3x+C", "png": "png/lines/H026.png"}
+{"id": "H027", "level": "L5", "topic": "integral", "gt_latex": "\\int (5x+6) dx=\\frac{5}{2}x^{2}+6x+C", "png": "png/lines/H027.png"}
+{"id": "H028", "level": "L5", "topic": "integral", "gt_latex": "\\int (2x+7) dx=\\frac{2}{2}x^{2}+7x+C", "png": "png/lines/H028.png"}
+{"id": "H029", "level": "L5", "topic": "integral", "gt_latex": "\\int (5x+5) dx=\\frac{5}{2}x^{2}+5x+C", "png": "png/lines/H029.png"}
+{"id": "H030", "level": "L5", "topic": "integral", "gt_latex": "\\int (3x+3) dx=\\frac{3}{2}x^{2}+3x+C", "png": "png/lines/H030.png"}
+{"id": "H031", "level": "L5", "topic": "integral", "gt_latex": "\\int (2x+3) dx=\\frac{2}{2}x^{2}+3x+C", "png": "png/lines/H031.png"}
+{"id": "H032", "level": "L5", "topic": "integral", "gt_latex": "\\int (2x+2) dx=\\frac{2}{2}x^{2}+2x+C", "png": "png/lines/H032.png"}
+{"id": "H033", "level": "L5", "topic": "integral", "gt_latex": "\\int (5x+2) dx=\\frac{5}{2}x^{2}+2x+C", "png": "png/lines/H033.png"}
+{"id": "H034", "level": "L5", "topic": "integral", "gt_latex": "\\int (5x+9) dx=\\frac{5}{2}x^{2}+9x+C", "png": "png/lines/H034.png"}
+{"id": "H035", "level": "L5", "topic": "integral", "gt_latex": "\\int (5x+8) dx=\\frac{5}{2}x^{2}+8x+C", "png": "png/lines/H035.png"}
+{"id": "H036", "level": "L5", "topic": "integral", "gt_latex": "\\int (2x+5) dx=\\frac{2}{2}x^{2}+5x+C", "png": "png/lines/H036.png"}
+{"id": "H037", "level": "L5", "topic": "integral", "gt_latex": "\\int (4x+5) dx=\\frac{4}{2}x^{2}+5x+C", "png": "png/lines/H037.png"}
+{"id": "H038", "level": "L5", "topic": "integral", "gt_latex": "\\int (4x+2) dx=\\frac{4}{2}x^{2}+2x+C", "png": "png/lines/H038.png"}
+{"id": "H039", "level": "L5", "topic": "integral", "gt_latex": "\\int_{0}^{4} x dx=8", "png": "png/lines/H039.png"}
+{"id": "H040", "level": "L5", "topic": "integral", "gt_latex": "\\int_{0}^{6} x dx=18", "png": "png/lines/H040.png"}
+{"id": "H041", "level": "L5", "topic": "integral", "gt_latex": "\\int_{2}^{6} x dx=16", "png": "png/lines/H041.png"}
+{"id": "H042", "level": "L5", "topic": "integral", "gt_latex": "\\int_{2}^{8} x dx=30", "png": "png/lines/H042.png"}
+{"id": "H043", "level": "L5", "topic": "integral", "gt_latex": "\\int_{2}^{4} x dx=6", "png": "png/lines/H043.png"}
+{"id": "H044", "level": "L5", "topic": "integral", "gt_latex": "\\int_{1}^{5} x dx=12", "png": "png/lines/H044.png"}
+{"id": "H045", "level": "L5", "topic": "integral", "gt_latex": "\\int_{1}^{5} x dx=12", "png": "png/lines/H045.png"}
+{"id": "H046", "level": "L5", "topic": "integral", "gt_latex": "\\int_{2}^{6} x dx=16", "png": "png/lines/H046.png"}
+{"id": "H047", "level": "L5", "topic": "integral", "gt_latex": "\\int_{0}^{4} x dx=8", "png": "png/lines/H047.png"}
+{"id": "H048", "level": "L5", "topic": "integral", "gt_latex": "\\int_{0}^{6} x dx=18", "png": "png/lines/H048.png"}
+{"id": "H049", "level": "L5", "topic": "integral", "gt_latex": "\\int_{1}^{7} x dx=24", "png": "png/lines/H049.png"}
+{"id": "H050", "level": "L5", "topic": "integral", "gt_latex": "\\int_{2}^{8} x dx=30", "png": "png/lines/H050.png"}
+{"id": "H051", "level": "L5", "topic": "summe", "gt_latex": "\\sum_{k=1}^{n} k=\\frac{n(n+1)}{2}", "png": "png/lines/H051.png"}
+{"id": "H052", "level": "L5", "topic": "summe", "gt_latex": "\\sum_{k=1}^{n} k=\\frac{n(n+1)}{2}", "png": "png/lines/H052.png"}
+{"id": "H053", "level": "L5", "topic": "summe", "gt_latex": "\\sum_{k=1}^{n} k=\\frac{n(n+1)}{2}", "png": "png/lines/H053.png"}
+{"id": "H054", "level": "L5", "topic": "summe", "gt_latex": "\\sum_{k=1}^{n} k=\\frac{n(n+1)}{2}", "png": "png/lines/H054.png"}
+{"id": "H055", "level": "L5", "topic": "summe", "gt_latex": "\\sum_{k=1}^{n} k=\\frac{n(n+1)}{2}", "png": "png/lines/H055.png"}
+{"id": "H056", "level": "L5", "topic": "summe", "gt_latex": "\\sum_{k=1}^{n} k=\\frac{n(n+1)}{2}", "png": "png/lines/H056.png"}
+{"id": "H057", "level": "L5", "topic": "summe", "gt_latex": "\\sum_{k=1}^{n} k=\\frac{n(n+1)}{2}", "png": "png/lines/H057.png"}
+{"id": "H058", "level": "L5", "topic": "summe", "gt_latex": "\\sum_{k=1}^{n} k=\\frac{n(n+1)}{2}", "png": "png/lines/H058.png"}
+{"id": "H059", "level": "L5", "topic": "summe", "gt_latex": "\\sum_{k=1}^{n} k=\\frac{n(n+1)}{2}", "png": "png/lines/H059.png"}
+{"id": "H060", "level": "L5", "topic": "summe", "gt_latex": "\\sum_{k=1}^{n} k=\\frac{n(n+1)}{2}", "png": "png/lines/H060.png"}
+{"id": "H061", "level": "L5", "topic": "summe", "gt_latex": "\\sum_{k=1}^{n} k=\\frac{n(n+1)}{2}", "png": "png/lines/H061.png"}
+{"id": "H062", "level": "L5", "topic": "summe", "gt_latex": "\\sum_{k=1}^{n} k=\\frac{n(n+1)}{2}", "png": "png/lines/H062.png"}
+{"id": "H063", "level": "L5", "topic": "summe", "gt_latex": "\\sum_{k=1}^{n} k^{2}=\\frac{n(n+1)(2n+1)}{6}", "png": "png/lines/H063.png"}
+{"id": "H064", "level": "L5", "topic": "summe", "gt_latex": "\\sum_{k=1}^{n} k^{2}=\\frac{n(n+1)(2n+1)}{6}", "png": "png/lines/H064.png"}
+{"id": "H065", "level": "L5", "topic": "summe", "gt_latex": "\\sum_{k=1}^{n} k^{2}=\\frac{n(n+1)(2n+1)}{6}", "png": "png/lines/H065.png"}
+{"id": "H066", "level": "L5", "topic": "summe", "gt_latex": "\\sum_{k=1}^{n} k^{2}=\\frac{n(n+1)(2n+1)}{6}", "png": "png/lines/H066.png"}
+{"id": "H067", "level": "L5", "topic": "summe", "gt_latex": "\\sum_{k=1}^{n} k^{2}=\\frac{n(n+1)(2n+1)}{6}", "png": "png/lines/H067.png"}
+{"id": "H068", "level": "L5", "topic": "summe", "gt_latex": "\\sum_{k=1}^{n} k^{2}=\\frac{n(n+1)(2n+1)}{6}", "png": "png/lines/H068.png"}
+{"id": "H069", "level": "L5", "topic": "summe", "gt_latex": "\\sum_{k=1}^{n} k^{2}=\\frac{n(n+1)(2n+1)}{6}", "png": "png/lines/H069.png"}
+{"id": "H070", "level": "L5", "topic": "summe", "gt_latex": "\\sum_{k=1}^{n} k^{2}=\\frac{n(n+1)(2n+1)}{6}", "png": "png/lines/H070.png"}
+{"id": "H071", "level": "L5", "topic": "summe", "gt_latex": "\\sum_{k=1}^{n} k^{2}=\\frac{n(n+1)(2n+1)}{6}", "png": "png/lines/H071.png"}
+{"id": "H072", "level": "L5", "topic": "summe", "gt_latex": "\\sum_{k=1}^{n} k^{2}=\\frac{n(n+1)(2n+1)}{6}", "png": "png/lines/H072.png"}
+{"id": "H073", "level": "L5", "topic": "summe", "gt_latex": "\\sum_{k=1}^{n} 6k=3n(n+1)", "png": "png/lines/H073.png"}
+{"id": "H074", "level": "L5", "topic": "summe", "gt_latex": "\\sum_{k=1}^{n} 6k=3n(n+1)", "png": "png/lines/H074.png"}
+{"id": "H075", "level": "L5", "topic": "summe", "gt_latex": "\\sum_{k=1}^{n} 8k=4n(n+1)", "png": "png/lines/H075.png"}
+{"id": "H076", "level": "L5", "topic": "summe", "gt_latex": "\\sum_{k=1}^{n} 2k=1n(n+1)", "png": "png/lines/H076.png"}
+{"id": "H077", "level": "L5", "topic": "summe", "gt_latex": "\\sum_{k=1}^{n} 2k=1n(n+1)", "png": "png/lines/H077.png"}
+{"id": "H078", "level": "L5", "topic": "summe", "gt_latex": "\\sum_{k=1}^{n} 8k=4n(n+1)", "png": "png/lines/H078.png"}
+{"id": "H079", "level": "L5", "topic": "summe", "gt_latex": "\\sum_{k=1}^{n} 8k=4n(n+1)", "png": "png/lines/H079.png"}
+{"id": "H080", "level": "L5", "topic": "summe", "gt_latex": "\\sum_{k=1}^{n} 4k=2n(n+1)", "png": "png/lines/H080.png"}
+{"id": "H081", "level": "L5", "topic": "summe", "gt_latex": "\\sum_{k=0}^{n} q^{k}=\\frac{q^{n+1}-1}{q-1}", "png": "png/lines/H081.png"}
+{"id": "H082", "level": "L5", "topic": "summe", "gt_latex": "\\sum_{k=0}^{n} q^{k}=\\frac{q^{n+1}-1}{q-1}", "png": "png/lines/H082.png"}
+{"id": "H083", "level": "L5", "topic": "summe", "gt_latex": "\\sum_{k=0}^{n} q^{k}=\\frac{q^{n+1}-1}{q-1}", "png": "png/lines/H083.png"}
+{"id": "H084", "level": "L5", "topic": "summe", "gt_latex": "\\sum_{k=0}^{n} q^{k}=\\frac{q^{n+1}-1}{q-1}", "png": "png/lines/H084.png"}
+{"id": "H085", "level": "L5", "topic": "summe", "gt_latex": "\\sum_{k=0}^{n} q^{k}=\\frac{q^{n+1}-1}{q-1}", "png": "png/lines/H085.png"}
+{"id": "H086", "level": "L5", "topic": "summe", "gt_latex": "\\sum_{k=0}^{n} q^{k}=\\frac{q^{n+1}-1}{q-1}", "png": "png/lines/H086.png"}
+{"id": "H087", "level": "L5", "topic": "summe", "gt_latex": "\\sum_{k=0}^{n} q^{k}=\\frac{q^{n+1}-1}{q-1}", "png": "png/lines/H087.png"}
+{"id": "H088", "level": "L5", "topic": "summe", "gt_latex": "\\sum_{k=0}^{n} q^{k}=\\frac{q^{n+1}-1}{q-1}", "png": "png/lines/H088.png"}
+{"id": "H089", "level": "L5", "topic": "summe", "gt_latex": "\\sum_{k=0}^{n} q^{k}=\\frac{q^{n+1}-1}{q-1}", "png": "png/lines/H089.png"}
+{"id": "H090", "level": "L5", "topic": "summe", "gt_latex": "\\sum_{k=0}^{n} q^{k}=\\frac{q^{n+1}-1}{q-1}", "png": "png/lines/H090.png"}
+{"id": "H091", "level": "L5", "topic": "algebra", "gt_latex": "(a+b)^{2}=a^{2}+2ab+b^{2}", "png": "png/lines/H091.png"}
+{"id": "H092", "level": "L5", "topic": "algebra", "gt_latex": "(a+b)^{2}=a^{2}+2ab+b^{2}", "png": "png/lines/H092.png"}
+{"id": "H093", "level": "L5", "topic": "algebra", "gt_latex": "(a+b)^{2}=a^{2}+2ab+b^{2}", "png": "png/lines/H093.png"}
+{"id": "H094", "level": "L5", "topic": "algebra", "gt_latex": "(a+b)^{2}=a^{2}+2ab+b^{2}", "png": "png/lines/H094.png"}
+{"id": "H095", "level": "L5", "topic": "algebra", "gt_latex": "(a+b)^{2}=a^{2}+2ab+b^{2}", "png": "png/lines/H095.png"}
+{"id": "H096", "level": "L5", "topic": "algebra", "gt_latex": "(a+b)^{2}=a^{2}+2ab+b^{2}", "png": "png/lines/H096.png"}
+{"id": "H097", "level": "L5", "topic": "algebra", "gt_latex": "(a+b)^{2}=a^{2}+2ab+b^{2}", "png": "png/lines/H097.png"}
+{"id": "H098", "level": "L5", "topic": "algebra", "gt_latex": "(a+b)^{2}=a^{2}+2ab+b^{2}", "png": "png/lines/H098.png"}
+{"id": "H099", "level": "L5", "topic": "algebra", "gt_latex": "(a+b)^{3}=a^{3}+3a^{2}b+3ab^{2}+b^{3}", "png": "png/lines/H099.png"}
+{"id": "H100", "level": "L5", "topic": "algebra", "gt_latex": "(a+b)^{3}=a^{3}+3a^{2}b+3ab^{2}+b^{3}", "png": "png/lines/H100.png"}
+{"id": "H101", "level": "L5", "topic": "algebra", "gt_latex": "(a+b)^{3}=a^{3}+3a^{2}b+3ab^{2}+b^{3}", "png": "png/lines/H101.png"}
+{"id": "H102", "level": "L5", "topic": "algebra", "gt_latex": "(a+b)^{3}=a^{3}+3a^{2}b+3ab^{2}+b^{3}", "png": "png/lines/H102.png"}
+{"id": "H103", "level": "L5", "topic": "algebra", "gt_latex": "(a+b)^{3}=a^{3}+3a^{2}b+3ab^{2}+b^{3}", "png": "png/lines/H103.png"}
+{"id": "H104", "level": "L5", "topic": "algebra", "gt_latex": "(a+b)^{3}=a^{3}+3a^{2}b+3ab^{2}+b^{3}", "png": "png/lines/H104.png"}
+{"id": "H105", "level": "L5", "topic": "algebra", "gt_latex": "(a+b)^{3}=a^{3}+3a^{2}b+3ab^{2}+b^{3}", "png": "png/lines/H105.png"}
+{"id": "H106", "level": "L5", "topic": "algebra", "gt_latex": "(a-b)(a+b)=a^{2}-b^{2}", "png": "png/lines/H106.png"}
+{"id": "H107", "level": "L5", "topic": "algebra", "gt_latex": "(a-b)(a+b)=a^{2}-b^{2}", "png": "png/lines/H107.png"}
+{"id": "H108", "level": "L5", "topic": "algebra", "gt_latex": "(a-b)(a+b)=a^{2}-b^{2}", "png": "png/lines/H108.png"}
+{"id": "H109", "level": "L5", "topic": "algebra", "gt_latex": "(a-b)(a+b)=a^{2}-b^{2}", "png": "png/lines/H109.png"}
+{"id": "H110", "level": "L5", "topic": "algebra", "gt_latex": "(a-b)(a+b)=a^{2}-b^{2}", "png": "png/lines/H110.png"}
+{"id": "H111", "level": "L5", "topic": "algebra", "gt_latex": "a^{m}\\cdot a^{n}=a^{m+n}", "png": "png/lines/H111.png"}
+{"id": "H112", "level": "L5", "topic": "algebra", "gt_latex": "a^{m}\\cdot a^{n}=a^{m+n}", "png": "png/lines/H112.png"}
+{"id": "H113", "level": "L5", "topic": "algebra", "gt_latex": "a^{m}\\cdot a^{n}=a^{m+n}", "png": "png/lines/H113.png"}
+{"id": "H114", "level": "L5", "topic": "algebra", "gt_latex": "a^{m}\\cdot a^{n}=a^{m+n}", "png": "png/lines/H114.png"}
+{"id": "H115", "level": "L5", "topic": "algebra", "gt_latex": "a^{m}\\cdot a^{n}=a^{m+n}", "png": "png/lines/H115.png"}
+{"id": "H116", "level": "L5", "topic": "wurzel", "gt_latex": "\\sqrt{6}\\cdot\\sqrt{24}=12", "png": "png/lines/H116.png"}
+{"id": "H117", "level": "L5", "topic": "wurzel", "gt_latex": "\\sqrt{3}\\cdot\\sqrt{12}=6", "png": "png/lines/H117.png"}
+{"id": "H118", "level": "L5", "topic": "wurzel", "gt_latex": "\\sqrt{2}\\cdot\\sqrt{8}=4", "png": "png/lines/H118.png"}
+{"id": "H119", "level": "L5", "topic": "wurzel", "gt_latex": "\\sqrt{2}\\cdot\\sqrt{8}=4", "png": "png/lines/H119.png"}
+{"id": "H120", "level": "L5", "topic": "wurzel", "gt_latex": "\\sqrt{6}\\cdot\\sqrt{24}=12", "png": "png/lines/H120.png"}
+{"id": "H121", "level": "L5", "topic": "wurzel", "gt_latex": "\\sqrt{2}\\cdot\\sqrt{8}=4", "png": "png/lines/H121.png"}
+{"id": "H122", "level": "L5", "topic": "wurzel", "gt_latex": "\\sqrt{a b}=\\sqrt{a}\\sqrt{b}", "png": "png/lines/H122.png"}
+{"id": "H123", "level": "L5", "topic": "wurzel", "gt_latex": "\\sqrt{a b}=\\sqrt{a}\\sqrt{b}", "png": "png/lines/H123.png"}
+{"id": "H124", "level": "L5", "topic": "wurzel", "gt_latex": "\\sqrt{a b}=\\sqrt{a}\\sqrt{b}", "png": "png/lines/H124.png"}
+{"id": "H125", "level": "L5", "topic": "wurzel", "gt_latex": "\\sqrt{a b}=\\sqrt{a}\\sqrt{b}", "png": "png/lines/H125.png"}
+{"id": "H126", "level": "L5", "topic": "wurzel", "gt_latex": "\\sqrt{36}=6", "png": "png/lines/H126.png"}
+{"id": "H127", "level": "L5", "topic": "wurzel", "gt_latex": "\\sqrt{25}=5", "png": "png/lines/H127.png"}
+{"id": "H128", "level": "L5", "topic": "wurzel", "gt_latex": "\\sqrt{169}=13", "png": "png/lines/H128.png"}
+{"id": "H129", "level": "L5", "topic": "wurzel", "gt_latex": "\\sqrt{64}=8", "png": "png/lines/H129.png"}
+{"id": "H130", "level": "L5", "topic": "wurzel", "gt_latex": "\\sqrt{121}=11", "png": "png/lines/H130.png"}
+{"id": "H131", "level": "L5", "topic": "bruch", "gt_latex": "\\frac{1}{x}+\\frac{1}{y}=\\frac{x+y}{xy}", "png": "png/lines/H131.png"}
+{"id": "H132", "level": "L5", "topic": "bruch", "gt_latex": "\\frac{1}{x}+\\frac{1}{y}=\\frac{x+y}{xy}", "png": "png/lines/H132.png"}
+{"id": "H133", "level": "L5", "topic": "bruch", "gt_latex": "\\frac{1}{x}+\\frac{1}{y}=\\frac{x+y}{xy}", "png": "png/lines/H133.png"}
+{"id": "H134", "level": "L5", "topic": "bruch", "gt_latex": "\\frac{1}{x}+\\frac{1}{y}=\\frac{x+y}{xy}", "png": "png/lines/H134.png"}
+{"id": "H135", "level": "L5", "topic": "bruch", "gt_latex": "\\frac{1}{x}+\\frac{1}{y}=\\frac{x+y}{xy}", "png": "png/lines/H135.png"}
+{"id": "H136", "level": "L5", "topic": "bruch", "gt_latex": "\\frac{a}{5}+\\frac{c}{5}=\\frac{a+c}{5}", "png": "png/lines/H136.png"}
+{"id": "H137", "level": "L5", "topic": "bruch", "gt_latex": "\\frac{a}{3}+\\frac{c}{3}=\\frac{a+c}{3}", "png": "png/lines/H137.png"}
+{"id": "H138", "level": "L5", "topic": "bruch", "gt_latex": "\\frac{a}{9}+\\frac{c}{9}=\\frac{a+c}{9}", "png": "png/lines/H138.png"}
+{"id": "H139", "level": "L5", "topic": "bruch", "gt_latex": "\\frac{a}{5}+\\frac{c}{5}=\\frac{a+c}{5}", "png": "png/lines/H139.png"}
+{"id": "H140", "level": "L5", "topic": "bruch", "gt_latex": "\\frac{a}{5}+\\frac{c}{5}=\\frac{a+c}{5}", "png": "png/lines/H140.png"}
+{"id": "H141", "level": "L5", "topic": "pi", "gt_latex": "A=\\pi r^{2}", "png": "png/lines/H141.png"}
+{"id": "H142", "level": "L5", "topic": "pi", "gt_latex": "A=\\pi r^{2}", "png": "png/lines/H142.png"}
+{"id": "H143", "level": "L5", "topic": "pi", "gt_latex": "A=\\pi r^{2}", "png": "png/lines/H143.png"}
+{"id": "H144", "level": "L5", "topic": "pi", "gt_latex": "A=\\pi r^{2}", "png": "png/lines/H144.png"}
+{"id": "H145", "level": "L5", "topic": "pi", "gt_latex": "A=\\pi r^{2}", "png": "png/lines/H145.png"}
+{"id": "H146", "level": "L5", "topic": "pi", "gt_latex": "U=2\\pi r", "png": "png/lines/H146.png"}
+{"id": "H147", "level": "L5", "topic": "pi", "gt_latex": "U=2\\pi r", "png": "png/lines/H147.png"}
+{"id": "H148", "level": "L5", "topic": "pi", "gt_latex": "U=2\\pi r", "png": "png/lines/H148.png"}
+{"id": "H149", "level": "L5", "topic": "pi", "gt_latex": "U=2\\pi r", "png": "png/lines/H149.png"}
+{"id": "H150", "level": "L5", "topic": "pi", "gt_latex": "U=2\\pi r", "png": "png/lines/H150.png"}
+{"id": "H151", "level": "L6", "topic": "matrix_mm", "gt_latex": "\\begin{bmatrix}4&4\\\\5&9\\end{bmatrix}\\cdot\\begin{bmatrix}4&0\\\\2&1\\end{bmatrix}=\\begin{bmatrix}24&4\\\\38&9\\end{bmatrix}", "png": "png/lines/H151.png", "chain_id": "H151", "step": 0}
+{"id": "H152", "level": "L6", "topic": "matrix_mm", "gt_latex": "\\begin{bmatrix}6&9\\\\4&5\\end{bmatrix}\\cdot\\begin{bmatrix}8&4\\\\3&2\\end{bmatrix}=\\begin{bmatrix}75&42\\\\47&26\\end{bmatrix}", "png": "png/lines/H152.png", "chain_id": "H152", "step": 0}
+{"id": "H153", "level": "L6", "topic": "matrix_mm", "gt_latex": "\\begin{bmatrix}9&1\\\\9&1\\end{bmatrix}\\cdot\\begin{bmatrix}1&1\\\\0&9\\end{bmatrix}=\\begin{bmatrix}9&18\\\\9&18\\end{bmatrix}", "png": "png/lines/H153.png", "chain_id": "H153", "step": 0}
+{"id": "H154", "level": "L6", "topic": "matrix_mm", "gt_latex": "\\begin{bmatrix}8&2\\\\3&2\\end{bmatrix}\\cdot\\begin{bmatrix}9&8\\\\2&0\\end{bmatrix}=\\begin{bmatrix}76&64\\\\31&24\\end{bmatrix}", "png": "png/lines/H154.png", "chain_id": "H154", "step": 0}
+{"id": "H155", "level": "L6", "topic": "matrix_mm", "gt_latex": "\\begin{bmatrix}5&5\\\\2&7\\end{bmatrix}\\cdot\\begin{bmatrix}9&0\\\\3&0\\end{bmatrix}=\\begin{bmatrix}60&0\\\\39&0\\end{bmatrix}", "png": "png/lines/H155.png", "chain_id": "H155", "step": 0}
+{"id": "H156", "level": "L6", "topic": "matrix_mm", "gt_latex": "\\begin{bmatrix}3&3\\\\3&5\\end{bmatrix}\\cdot\\begin{bmatrix}4&4\\\\4&8\\end{bmatrix}=\\begin{bmatrix}24&36\\\\32&52\\end{bmatrix}", "png": "png/lines/H156.png", "chain_id": "H156", "step": 0}
+{"id": "H157", "level": "L6", "topic": "matrix_mm", "gt_latex": "\\begin{bmatrix}9&2\\\\5&7\\end{bmatrix}\\cdot\\begin{bmatrix}9&5\\\\2&1\\end{bmatrix}=\\begin{bmatrix}85&47\\\\59&32\\end{bmatrix}", "png": "png/lines/H157.png", "chain_id": "H157", "step": 0}
+{"id": "H158", "level": "L6", "topic": "matrix_mm", "gt_latex": "\\begin{bmatrix}2&3\\\\6&4\\end{bmatrix}\\cdot\\begin{bmatrix}7&3\\\\7&0\\end{bmatrix}=\\begin{bmatrix}35&6\\\\70&18\\end{bmatrix}", "png": "png/lines/H158.png", "chain_id": "H158", "step": 0}
+{"id": "H159", "level": "L6", "topic": "matrix_mm", "gt_latex": "\\begin{bmatrix}2&9\\\\1&8\\end{bmatrix}\\cdot\\begin{bmatrix}0&8\\\\5&1\\end{bmatrix}=\\begin{bmatrix}45&25\\\\40&16\\end{bmatrix}", "png": "png/lines/H159.png", "chain_id": "H159", "step": 0}
+{"id": "H160", "level": "L6", "topic": "matrix_mm", "gt_latex": "\\begin{bmatrix}7&9\\\\3&6\\end{bmatrix}\\cdot\\begin{bmatrix}0&4\\\\2&0\\end{bmatrix}=\\begin{bmatrix}18&28\\\\12&12\\end{bmatrix}", "png": "png/lines/H160.png", "chain_id": "H160", "step": 0}
+{"id": "H161", "level": "L6", "topic": "matrix_mm", "gt_latex": "\\begin{bmatrix}7&1\\\\3&9\\end{bmatrix}\\cdot\\begin{bmatrix}6&4\\\\8&2\\end{bmatrix}=\\begin{bmatrix}50&30\\\\90&30\\end{bmatrix}", "png": "png/lines/H161.png", "chain_id": "H161", "step": 0}
+{"id": "H162", "level": "L6", "topic": "matrix_mm", "gt_latex": "\\begin{bmatrix}8&4\\\\1&2\\end{bmatrix}\\cdot\\begin{bmatrix}4&9\\\\8&2\\end{bmatrix}=\\begin{bmatrix}64&80\\\\20&13\\end{bmatrix}", "png": "png/lines/H162.png", "chain_id": "H162", "step": 0}
+{"id": "H163", "level": "L6", "topic": "matrix_mm", "gt_latex": "\\begin{bmatrix}9&4\\\\6&1\\end{bmatrix}\\cdot\\begin{bmatrix}1&0\\\\9&8\\end{bmatrix}=\\begin{bmatrix}45&32\\\\15&8\\end{bmatrix}", "png": "png/lines/H163.png", "chain_id": "H163", "step": 0}
+{"id": "H164", "level": "L6", "topic": "matrix_mm", "gt_latex": "\\begin{bmatrix}6&1\\\\9&2\\end{bmatrix}\\cdot\\begin{bmatrix}3&4\\\\3&6\\end{bmatrix}=\\begin{bmatrix}21&30\\\\33&48\\end{bmatrix}", "png": "png/lines/H164.png", "chain_id": "H164", "step": 0}
+{"id": "H165", "level": "L6", "topic": "matrix_mm", "gt_latex": "\\begin{bmatrix}4&4\\\\1&3\\end{bmatrix}\\cdot\\begin{bmatrix}0&3\\\\1&8\\end{bmatrix}=\\begin{bmatrix}4&44\\\\3&27\\end{bmatrix}", "png": "png/lines/H165.png", "chain_id": "H165", "step": 0}
+{"id": "H166", "level": "L6", "topic": "matrix_mm", "gt_latex": "\\begin{bmatrix}5&2\\\\5&4\\end{bmatrix}\\cdot\\begin{bmatrix}9&2\\\\6&2\\end{bmatrix}=\\begin{bmatrix}57&14\\\\69&18\\end{bmatrix}", "png": "png/lines/H166.png", "chain_id": "H166", "step": 0}
+{"id": "H167", "level": "L6", "topic": "matrix_mm", "gt_latex": "\\begin{bmatrix}1&9\\\\9&6\\end{bmatrix}\\cdot\\begin{bmatrix}9&5\\\\0&7\\end{bmatrix}=\\begin{bmatrix}9&68\\\\81&87\\end{bmatrix}", "png": "png/lines/H167.png", "chain_id": "H167", "step": 0}
+{"id": "H168", "level": "L6", "topic": "matrix_mm", "gt_latex": "\\begin{bmatrix}8&2\\\\8&9\\end{bmatrix}\\cdot\\begin{bmatrix}9&8\\\\7&3\\end{bmatrix}=\\begin{bmatrix}86&70\\\\135&91\\end{bmatrix}", "png": "png/lines/H168.png", "chain_id": "H168", "step": 0}
+{"id": "H169", "level": "L6", "topic": "matrix_mm", "gt_latex": "\\begin{bmatrix}3&4\\\\3&5\\end{bmatrix}\\cdot\\begin{bmatrix}1&5\\\\1&8\\end{bmatrix}=\\begin{bmatrix}7&47\\\\8&55\\end{bmatrix}", "png": "png/lines/H169.png", "chain_id": "H169", "step": 0}
+{"id": "H170", "level": "L6", "topic": "matrix_mm", "gt_latex": "\\begin{bmatrix}2&6\\\\6&1\\end{bmatrix}\\cdot\\begin{bmatrix}6&5\\\\7&5\\end{bmatrix}=\\begin{bmatrix}54&40\\\\43&35\\end{bmatrix}", "png": "png/lines/H170.png", "chain_id": "H170", "step": 0}
+{"id": "H171", "level": "L6", "topic": "matrix_mm", "gt_latex": "\\begin{bmatrix}4&6\\\\4&5\\end{bmatrix}\\cdot\\begin{bmatrix}3&7\\\\0&6\\end{bmatrix}=\\begin{bmatrix}12&64\\\\12&58\\end{bmatrix}", "png": "png/lines/H171.png", "chain_id": "H171", "step": 0}
+{"id": "H172", "level": "L6", "topic": "matrix_mm", "gt_latex": "\\begin{bmatrix}4&1\\\\4&4\\end{bmatrix}\\cdot\\begin{bmatrix}4&9\\\\0&5\\end{bmatrix}=\\begin{bmatrix}16&41\\\\16&56\\end{bmatrix}", "png": "png/lines/H172.png", "chain_id": "H172", "step": 0}
+{"id": "H173", "level": "L6", "topic": "matrix_mm", "gt_latex": "\\begin{bmatrix}4&2\\\\1&5\\end{bmatrix}\\cdot\\begin{bmatrix}3&0\\\\5&0\\end{bmatrix}=\\begin{bmatrix}22&0\\\\28&0\\end{bmatrix}", "png": "png/lines/H173.png", "chain_id": "H173", "step": 0}
+{"id": "H174", "level": "L6", "topic": "matrix_mm", "gt_latex": "\\begin{bmatrix}3&8\\\\2&8\\end{bmatrix}\\cdot\\begin{bmatrix}6&4\\\\2&4\\end{bmatrix}=\\begin{bmatrix}34&44\\\\28&40\\end{bmatrix}", "png": "png/lines/H174.png", "chain_id": "H174", "step": 0}
+{"id": "H175", "level": "L6", "topic": "matrix_mm", "gt_latex": "\\begin{bmatrix}7&8\\\\1&2\\end{bmatrix}\\cdot\\begin{bmatrix}3&4\\\\5&2\\end{bmatrix}=\\begin{bmatrix}61&44\\\\13&8\\end{bmatrix}", "png": "png/lines/H175.png", "chain_id": "H175", "step": 0}
+{"id": "H176", "level": "L6", "topic": "matrix_mm", "gt_latex": "\\begin{bmatrix}6&1\\\\9&9\\end{bmatrix}\\cdot\\begin{bmatrix}3&7\\\\5&6\\end{bmatrix}=\\begin{bmatrix}23&48\\\\72&117\\end{bmatrix}", "png": "png/lines/H176.png", "chain_id": "H176", "step": 0}
+{"id": "H177", "level": "L6", "topic": "matrix_mm", "gt_latex": "\\begin{bmatrix}8&2\\\\4&3\\end{bmatrix}\\cdot\\begin{bmatrix}4&8\\\\1&7\\end{bmatrix}=\\begin{bmatrix}34&78\\\\19&53\\end{bmatrix}", "png": "png/lines/H177.png", "chain_id": "H177", "step": 0}
+{"id": "H178", "level": "L6", "topic": "matrix_mm", "gt_latex": "\\begin{bmatrix}8&6\\\\3&5\\end{bmatrix}\\cdot\\begin{bmatrix}3&9\\\\1&2\\end{bmatrix}=\\begin{bmatrix}30&84\\\\14&37\\end{bmatrix}", "png": "png/lines/H178.png", "chain_id": "H178", "step": 0}
+{"id": "H179", "level": "L6", "topic": "matrix_mm", "gt_latex": "\\begin{bmatrix}6&9\\\\8&1\\end{bmatrix}\\cdot\\begin{bmatrix}9&7\\\\3&5\\end{bmatrix}=\\begin{bmatrix}81&87\\\\75&61\\end{bmatrix}", "png": "png/lines/H179.png", "chain_id": "H179", "step": 0}
+{"id": "H180", "level": "L6", "topic": "matrix_mm", "gt_latex": "\\begin{bmatrix}1&3\\\\2&2\\end{bmatrix}\\cdot\\begin{bmatrix}9&5\\\\4&4\\end{bmatrix}=\\begin{bmatrix}21&17\\\\26&18\\end{bmatrix}", "png": "png/lines/H180.png", "chain_id": "H180", "step": 0}
+{"id": "H181", "level": "L6", "topic": "matrix_mm", "gt_latex": "\\begin{bmatrix}3&2\\\\7&8\\end{bmatrix}\\cdot\\begin{bmatrix}3&5\\\\7&4\\end{bmatrix}=\\begin{bmatrix}23&23\\\\77&67\\end{bmatrix}", "png": "png/lines/H181.png", "chain_id": "H181", "step": 0}
+{"id": "H182", "level": "L6", "topic": "matrix_mm", "gt_latex": "\\begin{bmatrix}2&1\\\\9&4\\end{bmatrix}\\cdot\\begin{bmatrix}0&8\\\\6&2\\end{bmatrix}=\\begin{bmatrix}6&18\\\\24&80\\end{bmatrix}", "png": "png/lines/H182.png", "chain_id": "H182", "step": 0}
+{"id": "H183", "level": "L6", "topic": "matrix_mm", "gt_latex": "\\begin{bmatrix}9&6\\\\5&2\\end{bmatrix}\\cdot\\begin{bmatrix}9&0\\\\4&3\\end{bmatrix}=\\begin{bmatrix}105&18\\\\53&6\\end{bmatrix}", "png": "png/lines/H183.png", "chain_id": "H183", "step": 0}
+{"id": "H184", "level": "L6", "topic": "matrix_mm", "gt_latex": "\\begin{bmatrix}9&2\\\\2&5\\end{bmatrix}\\cdot\\begin{bmatrix}4&0\\\\9&3\\end{bmatrix}=\\begin{bmatrix}54&6\\\\53&15\\end{bmatrix}", "png": "png/lines/H184.png", "chain_id": "H184", "step": 0}
+{"id": "H185", "level": "L6", "topic": "matrix_mm", "gt_latex": "\\begin{bmatrix}8&4\\\\6&1\\end{bmatrix}\\cdot\\begin{bmatrix}5&4\\\\3&9\\end{bmatrix}=\\begin{bmatrix}52&68\\\\33&33\\end{bmatrix}", "png": "png/lines/H185.png", "chain_id": "H185", "step": 0}
+{"id": "H186", "level": "L6", "topic": "matrix_mm", "gt_latex": "\\begin{bmatrix}4&1\\\\8&5\\end{bmatrix}\\cdot\\begin{bmatrix}6&7\\\\8&1\\end{bmatrix}=\\begin{bmatrix}32&29\\\\88&61\\end{bmatrix}", "png": "png/lines/H186.png", "chain_id": "H186", "step": 0}
+{"id": "H187", "level": "L6", "topic": "matrix_mm", "gt_latex": "\\begin{bmatrix}5&1\\\\7&3\\end{bmatrix}\\cdot\\begin{bmatrix}8&5\\\\3&4\\end{bmatrix}=\\begin{bmatrix}43&29\\\\65&47\\end{bmatrix}", "png": "png/lines/H187.png", "chain_id": "H187", "step": 0}
+{"id": "H188", "level": "L6", "topic": "matrix_mm", "gt_latex": "\\begin{bmatrix}5&2\\\\5&6\\end{bmatrix}\\cdot\\begin{bmatrix}1&4\\\\1&8\\end{bmatrix}=\\begin{bmatrix}7&36\\\\11&68\\end{bmatrix}", "png": "png/lines/H188.png", "chain_id": "H188", "step": 0}
+{"id": "H189", "level": "L6", "topic": "matrix_mm", "gt_latex": "\\begin{bmatrix}8&9\\\\2&5\\end{bmatrix}\\cdot\\begin{bmatrix}3&5\\\\8&2\\end{bmatrix}=\\begin{bmatrix}96&58\\\\46&20\\end{bmatrix}", "png": "png/lines/H189.png", "chain_id": "H189", "step": 0}
+{"id": "H190", "level": "L6", "topic": "matrix_mm", "gt_latex": "\\begin{bmatrix}6&7\\\\9&6\\end{bmatrix}\\cdot\\begin{bmatrix}5&0\\\\7&5\\end{bmatrix}=\\begin{bmatrix}79&35\\\\87&30\\end{bmatrix}", "png": "png/lines/H190.png", "chain_id": "H190", "step": 0}
+{"id": "H191", "level": "L6", "topic": "matrix_mm", "gt_latex": "\\begin{bmatrix}2&5\\\\6&9\\end{bmatrix}\\cdot\\begin{bmatrix}5&4\\\\8&2\\end{bmatrix}=\\begin{bmatrix}50&18\\\\102&42\\end{bmatrix}", "png": "png/lines/H191.png", "chain_id": "H191", "step": 0}
+{"id": "H192", "level": "L6", "topic": "matrix_mm", "gt_latex": "\\begin{bmatrix}1&3\\\\8&5\\end{bmatrix}\\cdot\\begin{bmatrix}9&0\\\\3&0\\end{bmatrix}=\\begin{bmatrix}18&0\\\\87&0\\end{bmatrix}", "png": "png/lines/H192.png", "chain_id": "H192", "step": 0}
+{"id": "H193", "level": "L6", "topic": "matrix_mm", "gt_latex": "\\begin{bmatrix}6&9\\\\6&7\\end{bmatrix}\\cdot\\begin{bmatrix}5&8\\\\6&0\\end{bmatrix}=\\begin{bmatrix}84&48\\\\72&48\\end{bmatrix}", "png": "png/lines/H193.png", "chain_id": "H193", "step": 0}
+{"id": "H194", "level": "L6", "topic": "matrix_mm", "gt_latex": "\\begin{bmatrix}7&9\\\\2&7\\end{bmatrix}\\cdot\\begin{bmatrix}9&4\\\\7&7\\end{bmatrix}=\\begin{bmatrix}126&91\\\\67&57\\end{bmatrix}", "png": "png/lines/H194.png", "chain_id": "H194", "step": 0}
+{"id": "H195", "level": "L6", "topic": "matrix_mm", "gt_latex": "\\begin{bmatrix}9&7\\\\4&8\\end{bmatrix}\\cdot\\begin{bmatrix}5&5\\\\1&8\\end{bmatrix}=\\begin{bmatrix}52&101\\\\28&84\\end{bmatrix}", "png": "png/lines/H195.png", "chain_id": "H195", "step": 0}
+{"id": "H196", "level": "L6", "topic": "matrix_mm", "gt_latex": "\\begin{bmatrix}3&5\\\\1&2\\end{bmatrix}\\cdot\\begin{bmatrix}7&3\\\\3&9\\end{bmatrix}=\\begin{bmatrix}36&54\\\\13&21\\end{bmatrix}", "png": "png/lines/H196.png", "chain_id": "H196", "step": 0}
+{"id": "H197", "level": "L6", "topic": "matrix_mm", "gt_latex": "\\begin{bmatrix}3&8\\\\6&8\\end{bmatrix}\\cdot\\begin{bmatrix}0&0\\\\4&0\\end{bmatrix}=\\begin{bmatrix}32&0\\\\32&0\\end{bmatrix}", "png": "png/lines/H197.png", "chain_id": "H197", "step": 0}
+{"id": "H198", "level": "L6", "topic": "matrix_mm", "gt_latex": "\\begin{bmatrix}3&1\\\\9&1\\end{bmatrix}\\cdot\\begin{bmatrix}9&0\\\\3&1\\end{bmatrix}=\\begin{bmatrix}30&1\\\\84&1\\end{bmatrix}", "png": "png/lines/H198.png", "chain_id": "H198", "step": 0}
+{"id": "H199", "level": "L6", "topic": "matrix_mm", "gt_latex": "\\begin{bmatrix}3&9\\\\7&2\\end{bmatrix}\\cdot\\begin{bmatrix}9&5\\\\2&0\\end{bmatrix}=\\begin{bmatrix}45&15\\\\67&35\\end{bmatrix}", "png": "png/lines/H199.png", "chain_id": "H199", "step": 0}
+{"id": "H200", "level": "L6", "topic": "matrix_mm", "gt_latex": "\\begin{bmatrix}5&6\\\\3&3\\end{bmatrix}\\cdot\\begin{bmatrix}6&6\\\\8&7\\end{bmatrix}=\\begin{bmatrix}78&72\\\\42&39\\end{bmatrix}", "png": "png/lines/H200.png", "chain_id": "H200", "step": 0}
+{"id": "H201", "level": "L6", "topic": "matrix_mv", "gt_latex": "\\begin{bmatrix}8&8\\\\3&3\\end{bmatrix}\\cdot\\begin{bmatrix}5\\\\2\\end{bmatrix}=\\begin{bmatrix}56\\\\21\\end{bmatrix}", "png": "png/lines/H201.png", "chain_id": "H201", "step": 0}
+{"id": "H202", "level": "L6", "topic": "matrix_mv", "gt_latex": "\\begin{bmatrix}1&3\\\\3&5\\end{bmatrix}\\cdot\\begin{bmatrix}3\\\\8\\end{bmatrix}=\\begin{bmatrix}27\\\\49\\end{bmatrix}", "png": "png/lines/H202.png", "chain_id": "H202", "step": 0}
+{"id": "H203", "level": "L6", "topic": "matrix_mv", "gt_latex": "\\begin{bmatrix}8&4\\\\7&6\\end{bmatrix}\\cdot\\begin{bmatrix}4\\\\5\\end{bmatrix}=\\begin{bmatrix}52\\\\58\\end{bmatrix}", "png": "png/lines/H203.png", "chain_id": "H203", "step": 0}
+{"id": "H204", "level": "L6", "topic": "matrix_mv", "gt_latex": "\\begin{bmatrix}8&4\\\\3&1\\end{bmatrix}\\cdot\\begin{bmatrix}1\\\\3\\end{bmatrix}=\\begin{bmatrix}20\\\\6\\end{bmatrix}", "png": "png/lines/H204.png", "chain_id": "H204", "step": 0}
+{"id": "H205", "level": "L6", "topic": "matrix_mv", "gt_latex": "\\begin{bmatrix}9&1\\\\1&8\\end{bmatrix}\\cdot\\begin{bmatrix}4\\\\1\\end{bmatrix}=\\begin{bmatrix}37\\\\12\\end{bmatrix}", "png": "png/lines/H205.png", "chain_id": "H205", "step": 0}
+{"id": "H206", "level": "L6", "topic": "matrix_mv", "gt_latex": "\\begin{bmatrix}9&5\\\\2&9\\end{bmatrix}\\cdot\\begin{bmatrix}3\\\\2\\end{bmatrix}=\\begin{bmatrix}37\\\\24\\end{bmatrix}", "png": "png/lines/H206.png", "chain_id": "H206", "step": 0}
+{"id": "H207", "level": "L6", "topic": "matrix_mv", "gt_latex": "\\begin{bmatrix}8&7\\\\9&3\\end{bmatrix}\\cdot\\begin{bmatrix}3\\\\1\\end{bmatrix}=\\begin{bmatrix}31\\\\30\\end{bmatrix}", "png": "png/lines/H207.png", "chain_id": "H207", "step": 0}
+{"id": "H208", "level": "L6", "topic": "matrix_mv", "gt_latex": "\\begin{bmatrix}8&5\\\\8&7\\end{bmatrix}\\cdot\\begin{bmatrix}4\\\\9\\end{bmatrix}=\\begin{bmatrix}77\\\\95\\end{bmatrix}", "png": "png/lines/H208.png", "chain_id": "H208", "step": 0}
+{"id": "H209", "level": "L6", "topic": "matrix_mv", "gt_latex": "\\begin{bmatrix}1&2\\\\4&8\\end{bmatrix}\\cdot\\begin{bmatrix}3\\\\1\\end{bmatrix}=\\begin{bmatrix}5\\\\20\\end{bmatrix}", "png": "png/lines/H209.png", "chain_id": "H209", "step": 0}
+{"id": "H210", "level": "L6", "topic": "matrix_mv", "gt_latex": "\\begin{bmatrix}3&9\\\\5&2\\end{bmatrix}\\cdot\\begin{bmatrix}7\\\\9\\end{bmatrix}=\\begin{bmatrix}102\\\\53\\end{bmatrix}", "png": "png/lines/H210.png", "chain_id": "H210", "step": 0}
+{"id": "H211", "level": "L6", "topic": "matrix_mv", "gt_latex": "\\begin{bmatrix}7&8\\\\3&7\\end{bmatrix}\\cdot\\begin{bmatrix}7\\\\2\\end{bmatrix}=\\begin{bmatrix}65\\\\35\\end{bmatrix}", "png": "png/lines/H211.png", "chain_id": "H211", "step": 0}
+{"id": "H212", "level": "L6", "topic": "matrix_mv", "gt_latex": "\\begin{bmatrix}1&3\\\\1&2\\end{bmatrix}\\cdot\\begin{bmatrix}3\\\\7\\end{bmatrix}=\\begin{bmatrix}24\\\\17\\end{bmatrix}", "png": "png/lines/H212.png", "chain_id": "H212", "step": 0}
+{"id": "H213", "level": "L6", "topic": "matrix_mv", "gt_latex": "\\begin{bmatrix}1&9\\\\6&6\\end{bmatrix}\\cdot\\begin{bmatrix}9\\\\3\\end{bmatrix}=\\begin{bmatrix}36\\\\72\\end{bmatrix}", "png": "png/lines/H213.png", "chain_id": "H213", "step": 0}
+{"id": "H214", "level": "L6", "topic": "matrix_mv", "gt_latex": "\\begin{bmatrix}3&9\\\\7&7\\end{bmatrix}\\cdot\\begin{bmatrix}1\\\\1\\end{bmatrix}=\\begin{bmatrix}12\\\\14\\end{bmatrix}", "png": "png/lines/H214.png", "chain_id": "H214", "step": 0}
+{"id": "H215", "level": "L6", "topic": "matrix_mv", "gt_latex": "\\begin{bmatrix}5&5\\\\5&3\\end{bmatrix}\\cdot\\begin{bmatrix}3\\\\4\\end{bmatrix}=\\begin{bmatrix}35\\\\27\\end{bmatrix}", "png": "png/lines/H215.png", "chain_id": "H215", "step": 0}
+{"id": "H216", "level": "L6", "topic": "matrix_mv", "gt_latex": "\\begin{bmatrix}7&8\\\\6&9\\end{bmatrix}\\cdot\\begin{bmatrix}3\\\\2\\end{bmatrix}=\\begin{bmatrix}37\\\\36\\end{bmatrix}", "png": "png/lines/H216.png", "chain_id": "H216", "step": 0}
+{"id": "H217", "level": "L6", "topic": "matrix_mv", "gt_latex": "\\begin{bmatrix}9&4\\\\8&2\\end{bmatrix}\\cdot\\begin{bmatrix}7\\\\5\\end{bmatrix}=\\begin{bmatrix}83\\\\66\\end{bmatrix}", "png": "png/lines/H217.png", "chain_id": "H217", "step": 0}
+{"id": "H218", "level": "L6", "topic": "matrix_mv", "gt_latex": "\\begin{bmatrix}3&4\\\\6&2\\end{bmatrix}\\cdot\\begin{bmatrix}2\\\\7\\end{bmatrix}=\\begin{bmatrix}34\\\\26\\end{bmatrix}", "png": "png/lines/H218.png", "chain_id": "H218", "step": 0}
+{"id": "H219", "level": "L6", "topic": "matrix_mv", "gt_latex": "\\begin{bmatrix}6&8\\\\5&7\\end{bmatrix}\\cdot\\begin{bmatrix}7\\\\7\\end{bmatrix}=\\begin{bmatrix}98\\\\84\\end{bmatrix}", "png": "png/lines/H219.png", "chain_id": "H219", "step": 0}
+{"id": "H220", "level": "L6", "topic": "matrix_mv", "gt_latex": "\\begin{bmatrix}7&3\\\\7&7\\end{bmatrix}\\cdot\\begin{bmatrix}6\\\\1\\end{bmatrix}=\\begin{bmatrix}45\\\\49\\end{bmatrix}", "png": "png/lines/H220.png", "chain_id": "H220", "step": 0}
+{"id": "H221", "level": "L6", "topic": "matrix_mv", "gt_latex": "\\begin{bmatrix}1&6\\\\9&7\\end{bmatrix}\\cdot\\begin{bmatrix}5\\\\8\\end{bmatrix}=\\begin{bmatrix}53\\\\101\\end{bmatrix}", "png": "png/lines/H221.png", "chain_id": "H221", "step": 0}
+{"id": "H222", "level": "L6", "topic": "matrix_mv", "gt_latex": "\\begin{bmatrix}6&8\\\\9&4\\end{bmatrix}\\cdot\\begin{bmatrix}6\\\\1\\end{bmatrix}=\\begin{bmatrix}44\\\\58\\end{bmatrix}", "png": "png/lines/H222.png", "chain_id": "H222", "step": 0}
+{"id": "H223", "level": "L6", "topic": "matrix_mv", "gt_latex": "\\begin{bmatrix}3&4\\\\4&6\\end{bmatrix}\\cdot\\begin{bmatrix}5\\\\5\\end{bmatrix}=\\begin{bmatrix}35\\\\50\\end{bmatrix}", "png": "png/lines/H223.png", "chain_id": "H223", "step": 0}
+{"id": "H224", "level": "L6", "topic": "matrix_mv", "gt_latex": "\\begin{bmatrix}4&7\\\\5&2\\end{bmatrix}\\cdot\\begin{bmatrix}5\\\\7\\end{bmatrix}=\\begin{bmatrix}69\\\\39\\end{bmatrix}", "png": "png/lines/H224.png", "chain_id": "H224", "step": 0}
+{"id": "H225", "level": "L6", "topic": "matrix_mv", "gt_latex": "\\begin{bmatrix}8&3\\\\3&2\\end{bmatrix}\\cdot\\begin{bmatrix}7\\\\6\\end{bmatrix}=\\begin{bmatrix}74\\\\33\\end{bmatrix}", "png": "png/lines/H225.png", "chain_id": "H225", "step": 0}
+{"id": "H226", "level": "L6", "topic": "matrix_mv", "gt_latex": "\\begin{bmatrix}7&1\\\\6&1\\end{bmatrix}\\cdot\\begin{bmatrix}5\\\\1\\end{bmatrix}=\\begin{bmatrix}36\\\\31\\end{bmatrix}", "png": "png/lines/H226.png", "chain_id": "H226", "step": 0}
+{"id": "H227", "level": "L6", "topic": "matrix_mv", "gt_latex": "\\begin{bmatrix}7&5\\\\8&4\\end{bmatrix}\\cdot\\begin{bmatrix}6\\\\1\\end{bmatrix}=\\begin{bmatrix}47\\\\52\\end{bmatrix}", "png": "png/lines/H227.png", "chain_id": "H227", "step": 0}
+{"id": "H228", "level": "L6", "topic": "matrix_mv", "gt_latex": "\\begin{bmatrix}2&2\\\\7&1\\end{bmatrix}\\cdot\\begin{bmatrix}6\\\\8\\end{bmatrix}=\\begin{bmatrix}28\\\\50\\end{bmatrix}", "png": "png/lines/H228.png", "chain_id": "H228", "step": 0}
+{"id": "H229", "level": "L6", "topic": "matrix_mv", "gt_latex": "\\begin{bmatrix}7&6\\\\3&5\\end{bmatrix}\\cdot\\begin{bmatrix}9\\\\8\\end{bmatrix}=\\begin{bmatrix}111\\\\67\\end{bmatrix}", "png": "png/lines/H229.png", "chain_id": "H229", "step": 0}
+{"id": "H230", "level": "L6", "topic": "matrix_mv", "gt_latex": "\\begin{bmatrix}2&4\\\\2&5\\end{bmatrix}\\cdot\\begin{bmatrix}7\\\\6\\end{bmatrix}=\\begin{bmatrix}38\\\\44\\end{bmatrix}", "png": "png/lines/H230.png", "chain_id": "H230", "step": 0}
+{"id": "H231", "level": "L6", "topic": "matrix_mv", "gt_latex": "\\begin{bmatrix}7&6\\\\6&4\\end{bmatrix}\\cdot\\begin{bmatrix}3\\\\5\\end{bmatrix}=\\begin{bmatrix}51\\\\38\\end{bmatrix}", "png": "png/lines/H231.png", "chain_id": "H231", "step": 0}
+{"id": "H232", "level": "L6", "topic": "matrix_mv", "gt_latex": "\\begin{bmatrix}4&8\\\\1&1\\end{bmatrix}\\cdot\\begin{bmatrix}2\\\\1\\end{bmatrix}=\\begin{bmatrix}16\\\\3\\end{bmatrix}", "png": "png/lines/H232.png", "chain_id": "H232", "step": 0}
+{"id": "H233", "level": "L6", "topic": "matrix_mv", "gt_latex": "\\begin{bmatrix}6&3\\\\5&2\\end{bmatrix}\\cdot\\begin{bmatrix}5\\\\2\\end{bmatrix}=\\begin{bmatrix}36\\\\29\\end{bmatrix}", "png": "png/lines/H233.png", "chain_id": "H233", "step": 0}
+{"id": "H234", "level": "L6", "topic": "matrix_mv", "gt_latex": "\\begin{bmatrix}6&4\\\\4&7\\end{bmatrix}\\cdot\\begin{bmatrix}2\\\\5\\end{bmatrix}=\\begin{bmatrix}32\\\\43\\end{bmatrix}", "png": "png/lines/H234.png", "chain_id": "H234", "step": 0}
+{"id": "H235", "level": "L6", "topic": "matrix_mv", "gt_latex": "\\begin{bmatrix}8&4\\\\5&7\\end{bmatrix}\\cdot\\begin{bmatrix}4\\\\2\\end{bmatrix}=\\begin{bmatrix}40\\\\34\\end{bmatrix}", "png": "png/lines/H235.png", "chain_id": "H235", "step": 0}
+{"id": "H236", "level": "L6", "topic": "matrix_mv", "gt_latex": "\\begin{bmatrix}5&9\\\\4&3\\end{bmatrix}\\cdot\\begin{bmatrix}7\\\\5\\end{bmatrix}=\\begin{bmatrix}80\\\\43\\end{bmatrix}", "png": "png/lines/H236.png", "chain_id": "H236", "step": 0}
+{"id": "H237", "level": "L6", "topic": "matrix_mv", "gt_latex": "\\begin{bmatrix}4&9\\\\9&1\\end{bmatrix}\\cdot\\begin{bmatrix}4\\\\9\\end{bmatrix}=\\begin{bmatrix}97\\\\45\\end{bmatrix}", "png": "png/lines/H237.png", "chain_id": "H237", "step": 0}
+{"id": "H238", "level": "L6", "topic": "matrix_mv", "gt_latex": "\\begin{bmatrix}7&4\\\\2&6\\end{bmatrix}\\cdot\\begin{bmatrix}2\\\\5\\end{bmatrix}=\\begin{bmatrix}34\\\\34\\end{bmatrix}", "png": "png/lines/H238.png", "chain_id": "H238", "step": 0}
+{"id": "H239", "level": "L6", "topic": "matrix_mv", "gt_latex": "\\begin{bmatrix}8&1\\\\8&9\\end{bmatrix}\\cdot\\begin{bmatrix}5\\\\6\\end{bmatrix}=\\begin{bmatrix}46\\\\94\\end{bmatrix}", "png": "png/lines/H239.png", "chain_id": "H239", "step": 0}
+{"id": "H240", "level": "L6", "topic": "matrix_mv", "gt_latex": "\\begin{bmatrix}8&7\\\\3&6\\end{bmatrix}\\cdot\\begin{bmatrix}3\\\\3\\end{bmatrix}=\\begin{bmatrix}45\\\\27\\end{bmatrix}", "png": "png/lines/H240.png", "chain_id": "H240", "step": 0}
+{"id": "H241", "level": "L6", "topic": "matrix_sm", "gt_latex": "9\\cdot\\begin{bmatrix}1&8\\\\2&5\\end{bmatrix}=\\begin{bmatrix}9&72\\\\18&45\\end{bmatrix}", "png": "png/lines/H241.png", "chain_id": "H241", "step": 0}
+{"id": "H242", "level": "L6", "topic": "matrix_sm", "gt_latex": "5\\cdot\\begin{bmatrix}3&4\\\\7&4\\end{bmatrix}=\\begin{bmatrix}15&20\\\\35&20\\end{bmatrix}", "png": "png/lines/H242.png", "chain_id": "H242", "step": 0}
+{"id": "H243", "level": "L6", "topic": "matrix_sm", "gt_latex": "4\\cdot\\begin{bmatrix}2&9\\\\6&6\\end{bmatrix}=\\begin{bmatrix}8&36\\\\24&24\\end{bmatrix}", "png": "png/lines/H243.png", "chain_id": "H243", "step": 0}
+{"id": "H244", "level": "L6", "topic": "matrix_sm", "gt_latex": "5\\cdot\\begin{bmatrix}4&6\\\\1&8\\end{bmatrix}=\\begin{bmatrix}20&30\\\\5&40\\end{bmatrix}", "png": "png/lines/H244.png", "chain_id": "H244", "step": 0}
+{"id": "H245", "level": "L6", "topic": "matrix_sm", "gt_latex": "9\\cdot\\begin{bmatrix}2&1\\\\9&9\\end{bmatrix}=\\begin{bmatrix}18&9\\\\81&81\\end{bmatrix}", "png": "png/lines/H245.png", "chain_id": "H245", "step": 0}
+{"id": "H246", "level": "L6", "topic": "matrix_sm", "gt_latex": "3\\cdot\\begin{bmatrix}1&1\\\\2&5\\end{bmatrix}=\\begin{bmatrix}3&3\\\\6&15\\end{bmatrix}", "png": "png/lines/H246.png", "chain_id": "H246", "step": 0}
+{"id": "H247", "level": "L6", "topic": "matrix_sm", "gt_latex": "6\\cdot\\begin{bmatrix}1&2\\\\7&2\\end{bmatrix}=\\begin{bmatrix}6&12\\\\42&12\\end{bmatrix}", "png": "png/lines/H247.png", "chain_id": "H247", "step": 0}
+{"id": "H248", "level": "L6", "topic": "matrix_sm", "gt_latex": "7\\cdot\\begin{bmatrix}4&3\\\\9&9\\end{bmatrix}=\\begin{bmatrix}28&21\\\\63&63\\end{bmatrix}", "png": "png/lines/H248.png", "chain_id": "H248", "step": 0}
+{"id": "H249", "level": "L6", "topic": "matrix_sm", "gt_latex": "6\\cdot\\begin{bmatrix}9&3\\\\7&8\\end{bmatrix}=\\begin{bmatrix}54&18\\\\42&48\\end{bmatrix}", "png": "png/lines/H249.png", "chain_id": "H249", "step": 0}
+{"id": "H250", "level": "L6", "topic": "matrix_sm", "gt_latex": "6\\cdot\\begin{bmatrix}8&5\\\\2&3\\end{bmatrix}=\\begin{bmatrix}48&30\\\\12&18\\end{bmatrix}", "png": "png/lines/H250.png", "chain_id": "H250", "step": 0}
+{"id": "H251", "level": "L6", "topic": "matrix_sm", "gt_latex": "9\\cdot\\begin{bmatrix}2&1\\\\4&3\\end{bmatrix}=\\begin{bmatrix}18&9\\\\36&27\\end{bmatrix}", "png": "png/lines/H251.png", "chain_id": "H251", "step": 0}
+{"id": "H252", "level": "L6", "topic": "matrix_sm", "gt_latex": "5\\cdot\\begin{bmatrix}3&3\\\\1&2\\end{bmatrix}=\\begin{bmatrix}15&15\\\\5&10\\end{bmatrix}", "png": "png/lines/H252.png", "chain_id": "H252", "step": 0}
+{"id": "H253", "level": "L6", "topic": "matrix_sm", "gt_latex": "9\\cdot\\begin{bmatrix}2&4\\\\9&7\\end{bmatrix}=\\begin{bmatrix}18&36\\\\81&63\\end{bmatrix}", "png": "png/lines/H253.png", "chain_id": "H253", "step": 0}
+{"id": "H254", "level": "L6", "topic": "matrix_sm", "gt_latex": "2\\cdot\\begin{bmatrix}6&2\\\\4&6\\end{bmatrix}=\\begin{bmatrix}12&4\\\\8&12\\end{bmatrix}", "png": "png/lines/H254.png", "chain_id": "H254", "step": 0}
+{"id": "H255", "level": "L6", "topic": "matrix_sm", "gt_latex": "2\\cdot\\begin{bmatrix}7&5\\\\9&9\\end{bmatrix}=\\begin{bmatrix}14&10\\\\18&18\\end{bmatrix}", "png": "png/lines/H255.png", "chain_id": "H255", "step": 0}
+{"id": "H256", "level": "L6", "topic": "matrix_sm", "gt_latex": "5\\cdot\\begin{bmatrix}9&5\\\\8&5\\end{bmatrix}=\\begin{bmatrix}45&25\\\\40&25\\end{bmatrix}", "png": "png/lines/H256.png", "chain_id": "H256", "step": 0}
+{"id": "H257", "level": "L6", "topic": "matrix_sm", "gt_latex": "7\\cdot\\begin{bmatrix}7&3\\\\9&4\\end{bmatrix}=\\begin{bmatrix}49&21\\\\63&28\\end{bmatrix}", "png": "png/lines/H257.png", "chain_id": "H257", "step": 0}
+{"id": "H258", "level": "L6", "topic": "matrix_sm", "gt_latex": "9\\cdot\\begin{bmatrix}4&2\\\\5&2\\end{bmatrix}=\\begin{bmatrix}36&18\\\\45&18\\end{bmatrix}", "png": "png/lines/H258.png", "chain_id": "H258", "step": 0}
+{"id": "H259", "level": "L6", "topic": "matrix_sm", "gt_latex": "3\\cdot\\begin{bmatrix}8&8\\\\5&1\\end{bmatrix}=\\begin{bmatrix}24&24\\\\15&3\\end{bmatrix}", "png": "png/lines/H259.png", "chain_id": "H259", "step": 0}
+{"id": "H260", "level": "L6", "topic": "matrix_sm", "gt_latex": "4\\cdot\\begin{bmatrix}4&8\\\\4&6\\end{bmatrix}=\\begin{bmatrix}16&32\\\\16&24\\end{bmatrix}", "png": "png/lines/H260.png", "chain_id": "H260", "step": 0}
+{"id": "H261", "level": "L6", "topic": "matrix_sm", "gt_latex": "4\\cdot\\begin{bmatrix}9&2\\\\6&2\\end{bmatrix}=\\begin{bmatrix}36&8\\\\24&8\\end{bmatrix}", "png": "png/lines/H261.png", "chain_id": "H261", "step": 0}
+{"id": "H262", "level": "L6", "topic": "matrix_sm", "gt_latex": "7\\cdot\\begin{bmatrix}4&7\\\\8&9\\end{bmatrix}=\\begin{bmatrix}28&49\\\\56&63\\end{bmatrix}", "png": "png/lines/H262.png", "chain_id": "H262", "step": 0}
+{"id": "H263", "level": "L6", "topic": "matrix_sm", "gt_latex": "2\\cdot\\begin{bmatrix}5&1\\\\6&9\\end{bmatrix}=\\begin{bmatrix}10&2\\\\12&18\\end{bmatrix}", "png": "png/lines/H263.png", "chain_id": "H263", "step": 0}
+{"id": "H264", "level": "L6", "topic": "matrix_sm", "gt_latex": "9\\cdot\\begin{bmatrix}8&6\\\\4&2\\end{bmatrix}=\\begin{bmatrix}72&54\\\\36&18\\end{bmatrix}", "png": "png/lines/H264.png", "chain_id": "H264", "step": 0}
+{"id": "H265", "level": "L6", "topic": "matrix_sm", "gt_latex": "9\\cdot\\begin{bmatrix}1&2\\\\2&4\\end{bmatrix}=\\begin{bmatrix}9&18\\\\18&36\\end{bmatrix}", "png": "png/lines/H265.png", "chain_id": "H265", "step": 0}
+{"id": "H266", "level": "L6", "topic": "matrix_sm", "gt_latex": "6\\cdot\\begin{bmatrix}2&6\\\\6&2\\end{bmatrix}=\\begin{bmatrix}12&36\\\\36&12\\end{bmatrix}", "png": "png/lines/H266.png", "chain_id": "H266", "step": 0}
+{"id": "H267", "level": "L6", "topic": "matrix_sm", "gt_latex": "9\\cdot\\begin{bmatrix}4&5\\\\7&9\\end{bmatrix}=\\begin{bmatrix}36&45\\\\63&81\\end{bmatrix}", "png": "png/lines/H267.png", "chain_id": "H267", "step": 0}
+{"id": "H268", "level": "L6", "topic": "matrix_sm", "gt_latex": "4\\cdot\\begin{bmatrix}2&1\\\\9&5\\end{bmatrix}=\\begin{bmatrix}8&4\\\\36&20\\end{bmatrix}", "png": "png/lines/H268.png", "chain_id": "H268", "step": 0}
+{"id": "H269", "level": "L6", "topic": "matrix_sm", "gt_latex": "8\\cdot\\begin{bmatrix}5&2\\\\3&2\\end{bmatrix}=\\begin{bmatrix}40&16\\\\24&16\\end{bmatrix}", "png": "png/lines/H269.png", "chain_id": "H269", "step": 0}
+{"id": "H270", "level": "L6", "topic": "matrix_sm", "gt_latex": "7\\cdot\\begin{bmatrix}5&5\\\\2&2\\end{bmatrix}=\\begin{bmatrix}35&35\\\\14&14\\end{bmatrix}", "png": "png/lines/H270.png", "chain_id": "H270", "step": 0}
+{"id": "H271", "level": "L6", "topic": "matrix_pow", "gt_latex": "\\begin{bmatrix}1&7\\\\5&8\\end{bmatrix}^{2}=\\begin{bmatrix}36&63\\\\45&99\\end{bmatrix}", "png": "png/lines/H271.png", "chain_id": "H271", "step": 0}
+{"id": "H272", "level": "L6", "topic": "matrix_pow", "gt_latex": "\\begin{bmatrix}2&3\\\\9&7\\end{bmatrix}^{2}=\\begin{bmatrix}31&27\\\\81&76\\end{bmatrix}", "png": "png/lines/H272.png", "chain_id": "H272", "step": 0}
+{"id": "H273", "level": "L6", "topic": "matrix_pow", "gt_latex": "\\begin{bmatrix}7&6\\\\1&8\\end{bmatrix}^{2}=\\begin{bmatrix}55&90\\\\15&70\\end{bmatrix}", "png": "png/lines/H273.png", "chain_id": "H273", "step": 0}
+{"id": "H274", "level": "L6", "topic": "matrix_pow", "gt_latex": "\\begin{bmatrix}2&1\\\\3&2\\end{bmatrix}^{2}=\\begin{bmatrix}7&4\\\\12&7\\end{bmatrix}", "png": "png/lines/H274.png", "chain_id": "H274", "step": 0}
+{"id": "H275", "level": "L6", "topic": "matrix_pow", "gt_latex": "\\begin{bmatrix}2&8\\\\4&8\\end{bmatrix}^{2}=\\begin{bmatrix}36&80\\\\40&96\\end{bmatrix}", "png": "png/lines/H275.png", "chain_id": "H275", "step": 0}
+{"id": "H276", "level": "L6", "topic": "matrix_pow", "gt_latex": "\\begin{bmatrix}3&7\\\\1&6\\end{bmatrix}^{2}=\\begin{bmatrix}16&63\\\\9&43\\end{bmatrix}", "png": "png/lines/H276.png", "chain_id": "H276", "step": 0}
+{"id": "H277", "level": "L6", "topic": "matrix_pow", "gt_latex": "\\begin{bmatrix}9&7\\\\1&6\\end{bmatrix}^{2}=\\begin{bmatrix}88&105\\\\15&43\\end{bmatrix}", "png": "png/lines/H277.png", "chain_id": "H277", "step": 0}
+{"id": "H278", "level": "L6", "topic": "matrix_pow", "gt_latex": "\\begin{bmatrix}6&2\\\\4&2\\end{bmatrix}^{2}=\\begin{bmatrix}44&16\\\\32&12\\end{bmatrix}", "png": "png/lines/H278.png", "chain_id": "H278", "step": 0}
+{"id": "H279", "level": "L6", "topic": "matrix_pow", "gt_latex": "\\begin{bmatrix}3&9\\\\6&5\\end{bmatrix}^{2}=\\begin{bmatrix}63&72\\\\48&79\\end{bmatrix}", "png": "png/lines/H279.png", "chain_id": "H279", "step": 0}
+{"id": "H280", "level": "L6", "topic": "matrix_pow", "gt_latex": "\\begin{bmatrix}2&1\\\\1&7\\end{bmatrix}^{2}=\\begin{bmatrix}5&9\\\\9&50\\end{bmatrix}", "png": "png/lines/H280.png", "chain_id": "H280", "step": 0}
+{"id": "H281", "level": "L6", "topic": "matrix_pow", "gt_latex": "\\begin{bmatrix}2&9\\\\6&8\\end{bmatrix}^{2}=\\begin{bmatrix}58&90\\\\60&118\\end{bmatrix}", "png": "png/lines/H281.png", "chain_id": "H281", "step": 0}
+{"id": "H282", "level": "L6", "topic": "matrix_pow", "gt_latex": "\\begin{bmatrix}9&5\\\\1&1\\end{bmatrix}^{2}=\\begin{bmatrix}86&50\\\\10&6\\end{bmatrix}", "png": "png/lines/H282.png", "chain_id": "H282", "step": 0}
+{"id": "H283", "level": "L6", "topic": "matrix_pow", "gt_latex": "\\begin{bmatrix}7&7\\\\4&2\\end{bmatrix}^{2}=\\begin{bmatrix}77&63\\\\36&32\\end{bmatrix}", "png": "png/lines/H283.png", "chain_id": "H283", "step": 0}
+{"id": "H284", "level": "L6", "topic": "matrix_pow", "gt_latex": "\\begin{bmatrix}3&4\\\\3&3\\end{bmatrix}^{2}=\\begin{bmatrix}21&24\\\\18&21\\end{bmatrix}", "png": "png/lines/H284.png", "chain_id": "H284", "step": 0}
+{"id": "H285", "level": "L6", "topic": "matrix_pow", "gt_latex": "\\begin{bmatrix}6&8\\\\8&4\\end{bmatrix}^{2}=\\begin{bmatrix}100&80\\\\80&80\\end{bmatrix}", "png": "png/lines/H285.png", "chain_id": "H285", "step": 0}
+{"id": "H286", "level": "L6", "topic": "matrix_2step", "gt_latex": "\\begin{bmatrix}8&5\\\\7&2\\end{bmatrix}\\cdot\\begin{bmatrix}8&3\\\\6&4\\end{bmatrix}=\\begin{bmatrix}94&44\\\\68&29\\end{bmatrix}", "png": "png/lines/H286.png", "chain_id": "H286", "step": 0}
+{"id": "H287", "level": "L6", "topic": "matrix_2step", "gt_latex": "\\begin{bmatrix}94&44\\\\68&29\\end{bmatrix}\\cdot\\begin{bmatrix}5\\\\9\\end{bmatrix}=\\begin{bmatrix}866\\\\601\\end{bmatrix}", "png": "png/lines/H287.png", "chain_id": "H286", "step": 1}
+{"id": "H288", "level": "L6", "topic": "matrix_2step", "gt_latex": "\\begin{bmatrix}6&7\\\\3&9\\end{bmatrix}\\cdot\\begin{bmatrix}7&9\\\\8&6\\end{bmatrix}=\\begin{bmatrix}98&96\\\\93&81\\end{bmatrix}", "png": "png/lines/H288.png", "chain_id": "H288", "step": 0}
+{"id": "H289", "level": "L6", "topic": "matrix_2step", "gt_latex": "\\begin{bmatrix}98&96\\\\93&81\\end{bmatrix}\\cdot\\begin{bmatrix}7\\\\6\\end{bmatrix}=\\begin{bmatrix}1262\\\\1137\\end{bmatrix}", "png": "png/lines/H289.png", "chain_id": "H288", "step": 1}
+{"id": "H290", "level": "L6", "topic": "matrix_2step", "gt_latex": "\\begin{bmatrix}6&7\\\\6&5\\end{bmatrix}\\cdot\\begin{bmatrix}2&3\\\\8&4\\end{bmatrix}=\\begin{bmatrix}68&46\\\\52&38\\end{bmatrix}", "png": "png/lines/H290.png", "chain_id": "H290", "step": 0}
+{"id": "H291", "level": "L6", "topic": "matrix_2step", "gt_latex": "\\begin{bmatrix}68&46\\\\52&38\\end{bmatrix}\\cdot\\begin{bmatrix}7\\\\2\\end{bmatrix}=\\begin{bmatrix}568\\\\440\\end{bmatrix}", "png": "png/lines/H291.png", "chain_id": "H290", "step": 1}
+{"id": "H292", "level": "L6", "topic": "matrix_2step", "gt_latex": "\\begin{bmatrix}8&1\\\\4&6\\end{bmatrix}\\cdot\\begin{bmatrix}5&9\\\\9&1\\end{bmatrix}=\\begin{bmatrix}49&73\\\\74&42\\end{bmatrix}", "png": "png/lines/H292.png", "chain_id": "H292", "step": 0}
+{"id": "H293", "level": "L6", "topic": "matrix_2step", "gt_latex": "\\begin{bmatrix}49&73\\\\74&42\\end{bmatrix}\\cdot\\begin{bmatrix}6\\\\8\\end{bmatrix}=\\begin{bmatrix}878\\\\780\\end{bmatrix}", "png": "png/lines/H293.png", "chain_id": "H292", "step": 1}
+{"id": "H294", "level": "L6", "topic": "matrix_2step", "gt_latex": "\\begin{bmatrix}7&2\\\\2&2\\end{bmatrix}\\cdot\\begin{bmatrix}6&7\\\\7&6\\end{bmatrix}=\\begin{bmatrix}56&61\\\\26&26\\end{bmatrix}", "png": "png/lines/H294.png", "chain_id": "H294", "step": 0}
+{"id": "H295", "level": "L6", "topic": "matrix_2step", "gt_latex": "\\begin{bmatrix}56&61\\\\26&26\\end{bmatrix}\\cdot\\begin{bmatrix}7\\\\4\\end{bmatrix}=\\begin{bmatrix}636\\\\286\\end{bmatrix}", "png": "png/lines/H295.png", "chain_id": "H294", "step": 1}
+{"id": "H296", "level": "L6", "topic": "matrix_2step", "gt_latex": "\\begin{bmatrix}4&4\\\\6&6\\end{bmatrix}\\cdot\\begin{bmatrix}7&2\\\\8&6\\end{bmatrix}=\\begin{bmatrix}60&32\\\\90&48\\end{bmatrix}", "png": "png/lines/H296.png", "chain_id": "H296", "step": 0}
+{"id": "H297", "level": "L6", "topic": "matrix_2step", "gt_latex": "\\begin{bmatrix}60&32\\\\90&48\\end{bmatrix}\\cdot\\begin{bmatrix}5\\\\1\\end{bmatrix}=\\begin{bmatrix}332\\\\498\\end{bmatrix}", "png": "png/lines/H297.png", "chain_id": "H296", "step": 1}
+{"id": "H298", "level": "L6", "topic": "matrix_2step", "gt_latex": "\\begin{bmatrix}8&9\\\\1&5\\end{bmatrix}\\cdot\\begin{bmatrix}3&6\\\\7&3\\end{bmatrix}=\\begin{bmatrix}87&75\\\\38&21\\end{bmatrix}", "png": "png/lines/H298.png", "chain_id": "H298", "step": 0}
+{"id": "H299", "level": "L6", "topic": "matrix_2step", "gt_latex": "\\begin{bmatrix}87&75\\\\38&21\\end{bmatrix}\\cdot\\begin{bmatrix}4\\\\7\\end{bmatrix}=\\begin{bmatrix}873\\\\299\\end{bmatrix}", "png": "png/lines/H299.png", "chain_id": "H298", "step": 1}
+{"id": "H300", "level": "L6", "topic": "matrix_2step", "gt_latex": "\\begin{bmatrix}3&6\\\\6&5\\end{bmatrix}\\cdot\\begin{bmatrix}6&2\\\\4&7\\end{bmatrix}=\\begin{bmatrix}42&48\\\\56&47\\end{bmatrix}", "png": "png/lines/H300.png", "chain_id": "H300", "step": 0}
+{"id": "H301", "level": "L6", "topic": "matrix_2step", "gt_latex": "\\begin{bmatrix}42&48\\\\56&47\\end{bmatrix}\\cdot\\begin{bmatrix}5\\\\2\\end{bmatrix}=\\begin{bmatrix}306\\\\374\\end{bmatrix}", "png": "png/lines/H301.png", "chain_id": "H300", "step": 1}
+{"id": "H302", "level": "L6", "topic": "matrix_2step", "gt_latex": "\\begin{bmatrix}4&8\\\\7&5\\end{bmatrix}\\cdot\\begin{bmatrix}8&1\\\\4&3\\end{bmatrix}=\\begin{bmatrix}64&28\\\\76&22\\end{bmatrix}", "png": "png/lines/H302.png", "chain_id": "H302", "step": 0}
+{"id": "H303", "level": "L6", "topic": "matrix_2step", "gt_latex": "\\begin{bmatrix}64&28\\\\76&22\\end{bmatrix}\\cdot\\begin{bmatrix}4\\\\5\\end{bmatrix}=\\begin{bmatrix}396\\\\414\\end{bmatrix}", "png": "png/lines/H303.png", "chain_id": "H302", "step": 1}
+{"id": "H304", "level": "L6", "topic": "matrix_2step", "gt_latex": "\\begin{bmatrix}9&3\\\\9&6\\end{bmatrix}\\cdot\\begin{bmatrix}5&2\\\\9&8\\end{bmatrix}=\\begin{bmatrix}72&42\\\\99&66\\end{bmatrix}", "png": "png/lines/H304.png", "chain_id": "H304", "step": 0}
+{"id": "H305", "level": "L6", "topic": "matrix_2step", "gt_latex": "\\begin{bmatrix}72&42\\\\99&66\\end{bmatrix}\\cdot\\begin{bmatrix}1\\\\4\\end{bmatrix}=\\begin{bmatrix}240\\\\363\\end{bmatrix}", "png": "png/lines/H305.png", "chain_id": "H304", "step": 1}
+{"id": "H306", "level": "L6", "topic": "matrix_2step", "gt_latex": "\\begin{bmatrix}3&8\\\\9&8\\end{bmatrix}\\cdot\\begin{bmatrix}5&1\\\\5&7\\end{bmatrix}=\\begin{bmatrix}55&59\\\\85&65\\end{bmatrix}", "png": "png/lines/H306.png", "chain_id": "H306", "step": 0}
+{"id": "H307", "level": "L6", "topic": "matrix_2step", "gt_latex": "\\begin{bmatrix}55&59\\\\85&65\\end{bmatrix}\\cdot\\begin{bmatrix}4\\\\8\\end{bmatrix}=\\begin{bmatrix}692\\\\860\\end{bmatrix}", "png": "png/lines/H307.png", "chain_id": "H306", "step": 1}
+{"id": "H308", "level": "L6", "topic": "matrix_2step", "gt_latex": "\\begin{bmatrix}3&3\\\\2&5\\end{bmatrix}\\cdot\\begin{bmatrix}4&3\\\\6&1\\end{bmatrix}=\\begin{bmatrix}30&12\\\\38&11\\end{bmatrix}", "png": "png/lines/H308.png", "chain_id": "H308", "step": 0}
+{"id": "H309", "level": "L6", "topic": "matrix_2step", "gt_latex": "\\begin{bmatrix}30&12\\\\38&11\\end{bmatrix}\\cdot\\begin{bmatrix}7\\\\5\\end{bmatrix}=\\begin{bmatrix}270\\\\321\\end{bmatrix}", "png": "png/lines/H309.png", "chain_id": "H308", "step": 1}
+{"id": "H310", "level": "L6", "topic": "matrix_2step", "gt_latex": "\\begin{bmatrix}6&6\\\\1&4\\end{bmatrix}\\cdot\\begin{bmatrix}6&8\\\\9&1\\end{bmatrix}=\\begin{bmatrix}90&54\\\\42&12\\end{bmatrix}", "png": "png/lines/H310.png", "chain_id": "H310", "step": 0}
+{"id": "H311", "level": "L6", "topic": "matrix_2step", "gt_latex": "\\begin{bmatrix}90&54\\\\42&12\\end{bmatrix}\\cdot\\begin{bmatrix}1\\\\7\\end{bmatrix}=\\begin{bmatrix}468\\\\126\\end{bmatrix}", "png": "png/lines/H311.png", "chain_id": "H310", "step": 1}
+{"id": "H312", "level": "L6", "topic": "matrix_2step", "gt_latex": "\\begin{bmatrix}2&8\\\\6&4\\end{bmatrix}\\cdot\\begin{bmatrix}4&9\\\\4&4\\end{bmatrix}=\\begin{bmatrix}40&50\\\\40&70\\end{bmatrix}", "png": "png/lines/H312.png", "chain_id": "H312", "step": 0}
+{"id": "H313", "level": "L6", "topic": "matrix_2step", "gt_latex": "\\begin{bmatrix}40&50\\\\40&70\\end{bmatrix}\\cdot\\begin{bmatrix}3\\\\3\\end{bmatrix}=\\begin{bmatrix}270\\\\330\\end{bmatrix}", "png": "png/lines/H313.png", "chain_id": "H312", "step": 1}
+{"id": "H314", "level": "L6", "topic": "matrix_2step", "gt_latex": "\\begin{bmatrix}5&4\\\\6&4\\end{bmatrix}\\cdot\\begin{bmatrix}6&6\\\\3&4\\end{bmatrix}=\\begin{bmatrix}42&46\\\\48&52\\end{bmatrix}", "png": "png/lines/H314.png", "chain_id": "H314", "step": 0}
+{"id": "H315", "level": "L6", "topic": "matrix_2step", "gt_latex": "\\begin{bmatrix}42&46\\\\48&52\\end{bmatrix}\\cdot\\begin{bmatrix}7\\\\1\\end{bmatrix}=\\begin{bmatrix}340\\\\388\\end{bmatrix}", "png": "png/lines/H315.png", "chain_id": "H314", "step": 1}

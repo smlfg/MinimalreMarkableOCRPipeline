@@ -1,0 +1,227 @@
+{
+ "batch": 20,
+ "level": "L6",
+ "art": "formel",
+ "n": 50,
+ "struct": 0.14,
+ "char": 0.5197253565857247,
+ "coverage": 0.0,
+ "prec_certain": 0.0,
+ "misses": [
+  {
+   "id": "H251",
+   "topic": "matrix_sm",
+   "pred": "9 \\cdot( \\frac{21}{43})=( \\frac{18}{36} \\frac{9}{27})"
+  },
+  {
+   "id": "H252",
+   "topic": "matrix_sm",
+   "pred": "5 \\cdot( \\frac{33}{12})=( \\frac{15}{5} \\frac{15}{10})"
+  },
+  {
+   "id": "H253",
+   "topic": "matrix_sm",
+   "pred": "9 \\cdot( \\frac{24}{97})=( \\frac{1836}{8163})"
+  },
+  {
+   "id": "H256",
+   "topic": "matrix_sm",
+   "pred": "5 \\cdot( \\frac{95}{85})=( \\frac{4525}{4025})"
+  },
+  {
+   "id": "H257",
+   "topic": "matrix_sm",
+   "pred": "7 \\cdot( \\frac{7}{94})=( \\frac{49}{63} \\frac{21}{28})"
+  },
+  {
+   "id": "H258",
+   "topic": "matrix_sm",
+   "pred": "9 \\cdot( \\frac{42}{52})=( \\frac{36}{45} \\frac{18}{18})"
+  },
+  {
+   "id": "H260",
+   "topic": "matrix_sm",
+   "pred": "4 \\cdot(\n\\begin{matrix}\n48 \\\\\n46\n\\end{matrix}\n)=(\n\\begin{matrix}\n1632 \\\\\n1624\n\\end{matrix}\n)"
+  },
+  {
+   "id": "H261",
+   "topic": "matrix_sm",
+   "pred": "4 \\cdot( \\frac{92}{62})=( \\frac{368}{248})"
+  },
+  {
+   "id": "H262",
+   "topic": "matrix_sm",
+   "pred": "7 \\cdot(\n\\begin{matrix}\n47 \\\\\n89\n\\end{matrix}\n)=(\n\\begin{matrix}\n2849 \\\\\n5663\n\\end{matrix}\n)"
+  },
+  {
+   "id": "H263",
+   "topic": "matrix_sm",
+   "pred": "2 \\cdot( \\frac{5}{6} \\frac{1}{9})=( \\frac{10}{12} \\frac{2}{18})"
+  },
+  {
+   "id": "H264",
+   "topic": "matrix_sm",
+   "pred": "9 \\cdot( \\frac{86}{42})=( \\frac{725}{36} \\frac{4}{18})"
+  },
+  {
+   "id": "H265",
+   "topic": "matrix_sm",
+   "pred": "9 \\cdot( \\frac{12}{24})=( \\frac{9}{18} \\frac{18}{36})"
+  },
+  {
+   "id": "H266",
+   "topic": "matrix_sm",
+   "pred": "6 \\cdot(\n\\begin{matrix}\n26 \\\\\n62\n\\end{matrix}\n)=(\n\\begin{matrix}\n12&36 \\\\\n36&12\n\\end{matrix}\n)"
+  },
+  {
+   "id": "H267",
+   "topic": "matrix_sm",
+   "pred": "9 \\cdot( \\frac{45}{79})=( \\frac{36}{63} \\frac{45}{81})"
+  },
+  {
+   "id": "H268",
+   "topic": "matrix_sm",
+   "pred": "4 \\cdot( \\frac{21}{95})=( \\frac{8}{36} \\frac{4}{20})"
+  },
+  {
+   "id": "H269",
+   "topic": "matrix_sm",
+   "pred": "8 \\cdot( \\frac{52}{32})=( \\frac{40}{24} \\frac{16}{16})"
+  },
+  {
+   "id": "H270",
+   "topic": "matrix_sm",
+   "pred": "7.(\n\\begin{matrix}\n5&5 \\\\\n2&2\n\\end{matrix}\n)={(\n\\begin{matrix}\n35&35 \\\\\n14&14\n\\end{matrix}\n)}"
+  },
+  {
+   "id": "H271",
+   "topic": "matrix_pow",
+   "pred": "( \\frac{17}{58})^{2}=( \\frac{3663}{4599})"
+  },
+  {
+   "id": "H272",
+   "topic": "matrix_pow",
+   "pred": "( \\frac{3}{9} \\frac{3}{7})^{2}=( \\frac{3}{8} \\frac{127}{176})"
+  },
+  {
+   "id": "H273",
+   "topic": "matrix_pow",
+   "pred": "( \\frac{7}{18})^{2}=( \\frac{5590}{1570})"
+  },
+  {
+   "id": "H274",
+   "topic": "matrix_pow",
+   "pred": "\\left(\n\\begin{matrix}\n2&1 \\\\\n3&2\n\\end{matrix}\n\\right)^{2}= \\left(\n\\begin{matrix}\n7&4 \\\\\n1&2\n\\end{matrix}\n\\right)"
+  },
+  {
+   "id": "H275",
+   "topic": "matrix_pow",
+   "pred": "( \\frac{28}{48})^{2}=( \\frac{36}{40} \\frac{80}{96})"
+  },
+  {
+   "id": "H276",
+   "topic": "matrix_pow",
+   "pred": "( \\frac{37}{16})^{2}=( \\frac{16}{9} \\frac{63}{43})"
+  },
+  {
+   "id": "H277",
+   "topic": "matrix_pow",
+   "pred": "(\n\\begin{matrix}\n97 \\\\\n16\n\\end{matrix}\n)^{2}=(\n\\begin{matrix}\n88&105 \\\\\n15&43\n\\end{matrix}\n)"
+  },
+  {
+   "id": "H278",
+   "topic": "matrix_pow",
+   "pred": "\\left(\n\\begin{matrix}\n62 \\\\\n42\n\\end{matrix}\n\\right)^{2}= \\left(\n\\begin{matrix}\n44&16 \\\\\n32&12\n\\end{matrix}\n\\right)"
+  },
+  {
+   "id": "H279",
+   "topic": "matrix_pow",
+   "pred": "( \\frac{39}{65})^{2}=( \\frac{6372}{4879})"
+  },
+  {
+   "id": "H280",
+   "topic": "matrix_pow",
+   "pred": "( \\frac{21}{17})^{2}=( \\frac{59}{950})"
+  },
+  {
+   "id": "H281",
+   "topic": "matrix_pow",
+   "pred": "( \\frac{29}{68})^{2}=( \\frac{58}{60} \\frac{90}{118})"
+  },
+  {
+   "id": "H282",
+   "topic": "matrix_pow",
+   "pred": "(951)^{2}=( \\frac{86}{10} \\frac{50}{6})"
+  },
+  {
+   "id": "H283",
+   "topic": "matrix_pow",
+   "pred": "(\n\\begin{matrix}\n77 \\\\\n42\n\\end{matrix}\n)2=(\n\\begin{matrix}\n77&63 \\\\\n36&32\n\\end{matrix}\n)"
+  },
+  {
+   "id": "H285",
+   "topic": "matrix_pow",
+   "pred": "({ \\frac{6}{8}8}4)^{2}=( \\frac{10080}{8080})"
+  },
+  {
+   "id": "H287",
+   "topic": "matrix_2step",
+   "pred": "(\n\\begin{matrix}\n9444 \\\\\n6829\n\\end{matrix}\n) \\cdot(\n\\begin{matrix}\n5 \\\\\n9\n\\end{matrix}\n)=(\n\\begin{matrix}\n866 \\\\\n601\n\\end{matrix}\n)"
+  },
+  {
+   "id": "H288",
+   "topic": "matrix_2step",
+   "pred": "(\n\\begin{matrix}\n67\\\\\n39\n\\end{matrix}\n) \\cdot(\n\\begin{matrix}\n79 \\\\\n86\n\\end{matrix}\n)=(\n\\begin{matrix}\n9896 \\\\\n9381\n\\end{matrix}\n)"
+  },
+  {
+   "id": "H289",
+   "topic": "matrix_2step",
+   "pred": "(\n\\begin{matrix}\n98&96 \\\\\n9&381\n\\end{matrix}\n) \\cdot(\n\\begin{matrix}\n7 \\\\\n6\n\\end{matrix}\n)=(\n\\begin{matrix}\n1262 \\\\\n1137\n\\end{matrix}\n)"
+  },
+  {
+   "id": "H292",
+   "topic": "matrix_2step",
+   "pred": "(\n\\begin{matrix}\n81\\\\\n46\n\\end{matrix}\n) \\cdot(\n\\begin{matrix}\n59 \\\\\n91\n\\end{matrix}\n)=(\n\\begin{matrix}\n4973 \\\\\n7442\n\\end{matrix}\n)"
+  },
+  {
+   "id": "H293",
+   "topic": "matrix_2step",
+   "pred": "(49 \\frac{73}{242}) \\cdot( \\frac{6}{8})=( \\frac{878}{780})"
+  },
+  {
+   "id": "H294",
+   "topic": "matrix_2step",
+   "pred": "\\left(\n\\begin{matrix}\n72 \\\\\n22\n\\end{matrix}\n\\right) \\cdot \\left(\n\\begin{matrix}\n67 \\\\\n76\n\\end{matrix}\n\\right)= \\left(\n\\begin{matrix}\n56&61 \\\\\n26&26\n\\end{matrix}\n\\right)"
+  },
+  {
+   "id": "H295",
+   "topic": "matrix_2step",
+   "pred": "( \\frac{5661}{2626}) \\cdot( \\frac{7}{4})=( \\frac{636}{286})"
+  },
+  {
+   "id": "H296",
+   "topic": "matrix_2step",
+   "pred": "(\n\\begin{matrix}\n44\\\\\n66\n\\end{matrix}\n) \\cdot(\n\\begin{matrix}\n72 \\\\\n86\n\\end{matrix}\n)=(\n\\begin{matrix}\n60&32 \\\\\n90&48\n\\end{matrix}\n)"
+  },
+  {
+   "id": "H297",
+   "topic": "matrix_2step",
+   "pred": "(\n\\begin{matrix}\n60&32 \\\\\n90&48\n\\end{matrix}\n) \\cdot(\n\\begin{matrix}\n5 \\\\\n1\n\\end{matrix}\n)=(\n\\begin{matrix}\n3&32 \\\\\n4&98\n\\end{matrix}\n)"
+  },
+  {
+   "id": "H298",
+   "topic": "matrix_2step",
+   "pred": "(\n\\begin{matrix}\n89\\\\\n15\n\\end{matrix}\n) \\cdot(\n\\begin{matrix}\n36 \\\\\n73\n\\end{matrix}\n)=(\n\\begin{matrix}\n87&75 \\\\\n38&21\n\\end{matrix}\n)"
+  },
+  {
+   "id": "H299",
+   "topic": "matrix_2step",
+   "pred": "(\n\\begin{matrix}\n87&75 \\\\\n38&21\n\\end{matrix}\n) \\cdot(\n\\begin{matrix}\n4 \\\\\n7\n\\end{matrix}\n)=(\n\\begin{matrix}\n8&73 \\\\\n2&99\n\\end{matrix}\n)"
+  },
+  {
+   "id": "H300",
+   "topic": "matrix_2step",
+   "pred": "( \\frac{36}{65}) \\cdot( \\frac{62}{47})=( \\frac{4248}{5647})"
+  }
+ ]
+}

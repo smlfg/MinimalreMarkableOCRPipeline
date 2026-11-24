@@ -1,0 +1,62 @@
+{
+ "batch": 17,
+ "level": "L5",
+ "art": "formel",
+ "n": 50,
+ "struct": 0.8,
+ "char": 0.7423518776150355,
+ "coverage": 0.78,
+ "prec_certain": 1.0,
+ "misses": [
+  {
+   "id": "H111",
+   "topic": "algebra",
+   "pred": "0^{m} \\cdot 0^{n}=0^{m+n}"
+  },
+  {
+   "id": "H112",
+   "topic": "algebra",
+   "pred": "0^{m} \\cdot 0^{n}=0^{m+n}"
+  },
+  {
+   "id": "H119",
+   "topic": "wurzel",
+   "pred": "12.58=4"
+  },
+  {
+   "id": "H120",
+   "topic": "wurzel",
+   "pred": "r_{6} \\sqrt{24}=12"
+  },
+  {
+   "id": "H121",
+   "topic": "wurzel",
+   "pred": "r2 \\cdot \\sqrt{8}=4"
+  },
+  {
+   "id": "H122",
+   "topic": "wurzel",
+   "pred": "r(ab)=ra \\cdot rb"
+  },
+  {
+   "id": "H123",
+   "topic": "wurzel",
+   "pred": "r(ab)=ra \\cdot rb"
+  },
+  {
+   "id": "H124",
+   "topic": "wurzel",
+   "pred": "r(ab)=ra \\cdot rb"
+  },
+  {
+   "id": "H125",
+   "topic": "wurzel",
+   "pred": "r(ab)=ra \\cdot rb"
+  },
+  {
+   "id": "H130",
+   "topic": "wurzel",
+   "pred": "1121=11"
+  }
+ ]
+}

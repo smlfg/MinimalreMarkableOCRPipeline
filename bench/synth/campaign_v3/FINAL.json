@@ -1,0 +1,93 @@
+{
+ "ketten": {
+  "L1": {
+   "n": 200,
+   "F1_strict": 0.995,
+   "F1_answered": 1.0,
+   "coverage": 0.99,
+   "acc_err": 1.0,
+   "acc_ok": 0.991
+  },
+  "L2": {
+   "n": 200,
+   "F1_strict": 1.0,
+   "F1_answered": 1.0,
+   "coverage": 1.0,
+   "acc_err": 1.0,
+   "acc_ok": 1.0
+  },
+  "L3": {
+   "n": 150,
+   "F1_strict": 0.987,
+   "F1_answered": 0.987,
+   "coverage": 1.0,
+   "acc_err": 1.0,
+   "acc_ok": 0.974
+  },
+  "L4": {
+   "n": 150,
+   "F1_strict": 0.93,
+   "F1_answered": 0.93,
+   "coverage": 1.0,
+   "acc_err": 0.969,
+   "acc_ok": 0.894
+  }
+ },
+ "formeln_themen": {
+  "algebra": {
+   "n": 25,
+   "struct": 0.92,
+   "unsicher": 0.12
+  },
+  "bruch": {
+   "n": 10,
+   "struct": 1.0,
+   "unsicher": 0.0
+  },
+  "integral": {
+   "n": 50,
+   "struct": 0.72,
+   "unsicher": 0.28
+  },
+  "matrix_2step": {
+   "n": 30,
+   "struct": 0.133,
+   "unsicher": 1.0
+  },
+  "matrix_mm": {
+   "n": 50,
+   "struct": 0.06,
+   "unsicher": 1.0
+  },
+  "matrix_mv": {
+   "n": 40,
+   "struct": 0.15,
+   "unsicher": 1.0
+  },
+  "matrix_pow": {
+   "n": 15,
+   "struct": 0.067,
+   "unsicher": 1.0
+  },
+  "matrix_sm": {
+   "n": 30,
+   "struct": 0.133,
+   "unsicher": 1.0
+  },
+  "pi": {
+   "n": 10,
+   "struct": 1.0,
+   "unsicher": 0.0
+  },
+  "summe": {
+   "n": 40,
+   "struct": 0.0,
+   "unsicher": 1.0
+  },
+  "wurzel": {
+   "n": 15,
+   "struct": 0.467,
+   "unsicher": 0.533
+  }
+ }
+}

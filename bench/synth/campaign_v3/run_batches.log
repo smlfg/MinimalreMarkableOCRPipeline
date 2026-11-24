@@ -1,0 +1,22 @@
+batch 1 fertig (0.5 min): Batch 1. Stufe 1, 50 Ketten. F eins strikt: 1.000. 0 Fehltreffer.
+batch 2 fertig (0.5 min): Batch 2. Stufe 1, 50 Ketten. F eins strikt: 0.984. 1 Fehltreffer, alle Stufe drei, also Lesefehler. Nachfragen: 2%.
+batch 3 fertig (0.5 min): Batch 3. Stufe 1, 50 Ketten. F eins strikt: 1.000. 0 Fehltreffer.
+batch 4 fertig (0.5 min): Batch 4. Stufe 1, 50 Ketten. F eins strikt: 1.000. 0 Fehltreffer.
+batch 5 fertig (0.6 min): Batch 5. Stufe 2, 50 Ketten. F eins strikt: 1.000. 0 Fehltreffer.
+batch 6 fertig (0.6 min): Batch 6. Stufe 2, 50 Ketten. F eins strikt: 1.000. 0 Fehltreffer.
+batch 7 fertig (0.6 min): Batch 7. Stufe 2, 50 Ketten. F eins strikt: 1.000. 0 Fehltreffer.
+batch 8 fertig (0.6 min): Batch 8. Stufe 2, 50 Ketten. F eins strikt: 1.000. 0 Fehltreffer.
+batch 9 fertig (0.7 min): Batch 9. Stufe 3, 50 Ketten. F eins strikt: 0.963. 2 Fehltreffer, alle Stufe drei, also Lesefehler.
+batch 10 fertig (0.2 min): Batch 10. Stufe 3, 50 Ketten. F eins strikt: 1.000. 0 Fehltreffer.
+batch 11 fertig (0.7 min): Batch 11. Stufe 3, 50 Ketten. F eins strikt: 1.000. 0 Fehltreffer.
+Traceback (most recent call last):
+batch 12 fertig (0.5 min): Batch 12. Stufe 4, 50 Ketten. F eins strikt: 0.945. 3 Fehltreffer, alle Stufe drei, also Lesefehler.
+batch 13 fertig (0.6 min): Batch 13. Stufe 4, 50 Ketten. F eins strikt: 0.848. 8 Fehltreffer, alle Stufe drei, also Lesefehler.
+batch 14 fertig (0.6 min): Batch 14. Stufe 4, 50 Ketten. F eins strikt: 1.000. 0 Fehltreffer.
+batch 15 fertig (0.7 min): Batch 15. Stufe 5, 50 Zeilen. Strukturgenauigkeit 72%, Zeichen 74%. Sicher gelesen: 72%, davon richtig: 97%.
+batch 16 fertig (0.7 min): Batch 16. Stufe 5, 50 Zeilen. Strukturgenauigkeit 20%, Zeichen 66%. Sicher gelesen: 20%, davon richtig: 100%.
+batch 17 fertig (0.5 min): Batch 17. Stufe 5, 50 Zeilen. Strukturgenauigkeit 80%, Zeichen 74%. Sicher gelesen: 78%, davon richtig: 100%.
+batch 18 fertig (1.6 min): Batch 18. Stufe 6, 50 Zeilen. Strukturgenauigkeit 6%, Zeichen 63%. Sicher gelesen: 0%, davon richtig: 0%.
+batch 19 fertig (1.1 min): Batch 19. Stufe 6, 50 Zeilen. Strukturgenauigkeit 14%, Zeichen 63%. Sicher gelesen: 0%, davon richtig: 0%.
+batch 20 fertig (1.3 min): Batch 20. Stufe 6, 50 Zeilen. Strukturgenauigkeit 14%, Zeichen 52%. Sicher gelesen: 0%, davon richtig: 0%.
+batch 21 fertig (0.6 min): Batch 21. Stufe 6, 15 Zeilen. Strukturgenauigkeit 7%, Zeichen 55%. Sicher gelesen: 0%, davon richtig: 0%.

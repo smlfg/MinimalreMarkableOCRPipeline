@@ -1,0 +1,82 @@
+{
+ "batch": 15,
+ "level": "L5",
+ "art": "formel",
+ "n": 50,
+ "struct": 0.72,
+ "char": 0.7391300428217263,
+ "coverage": 0.72,
+ "prec_certain": 0.9722222222222222,
+ "misses": [
+  {
+   "id": "H027",
+   "topic": "integral",
+   "pred": "\\int(5x+6)dx=5/2 \\cdot x^{2}+6x+6"
+  },
+  {
+   "id": "H029",
+   "topic": "integral",
+   "pred": "\\int(5x+5)dx=5/2 \\cdot x^{2}+5x+6"
+  },
+  {
+   "id": "H030",
+   "topic": "integral",
+   "pred": "f(3x+3)dx=3/2 \\cdot x^{2}+3x+C"
+  },
+  {
+   "id": "H031",
+   "topic": "integral",
+   "pred": "f(2x+3)dx=2/2 \\cdot x^{2}+3x+C"
+  },
+  {
+   "id": "H036",
+   "topic": "integral",
+   "pred": "\\int(2x+5)dx=2/2x^{2}+5x+c"
+  },
+  {
+   "id": "H039",
+   "topic": "integral",
+   "pred": "\\int o^{4}xdx=8"
+  },
+  {
+   "id": "H041",
+   "topic": "integral",
+   "pred": "\\int 2^{6}xdx=16"
+  },
+  {
+   "id": "H042",
+   "topic": "integral",
+   "pred": "\\int 2^{8} \\times dx=30"
+  },
+  {
+   "id": "H043",
+   "topic": "integral",
+   "pred": "\\int 2^{4}xdx=6"
+  },
+  {
+   "id": "H044",
+   "topic": "integral",
+   "pred": "\\int 1^{5}xdx=12"
+  },
+  {
+   "id": "H046",
+   "topic": "integral",
+   "pred": "\\int 2^{6}xdx=16"
+  },
+  {
+   "id": "H048",
+   "topic": "integral",
+   "pred": "\\int 0^{6}xdx=18"
+  },
+  {
+   "id": "H049",
+   "topic": "integral",
+   "pred": "\\int 3^{7}xdx=24"
+  },
+  {
+   "id": "H050",
+   "topic": "integral",
+   "pred": "\\int 2^{8}xdx=30"
+  }
+ ]
+}

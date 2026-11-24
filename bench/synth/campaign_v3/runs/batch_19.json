@@ -1,0 +1,227 @@
+{
+ "batch": 19,
+ "level": "L6",
+ "art": "formel",
+ "n": 50,
+ "struct": 0.14,
+ "char": 0.6253581907670892,
+ "coverage": 0.0,
+ "prec_certain": 0.0,
+ "misses": [
+  {
+   "id": "H202",
+   "topic": "matrix_mv",
+   "pred": "( \\frac{13}{35}) \\cdot( \\frac{3}{8})=( \\frac{27}{49})"
+  },
+  {
+   "id": "H203",
+   "topic": "matrix_mv",
+   "pred": "( \\frac{84}{76}) \\cdot( \\frac{4}{5})=( \\frac{52}{58})"
+  },
+  {
+   "id": "H204",
+   "topic": "matrix_mv",
+   "pred": "(\n\\begin{matrix}\n84\\\\\n31\n\\end{matrix}\n) \\cdot(\n\\begin{matrix}\n13\n\\end{matrix}\n)=(\n\\begin{matrix}\n20 \\\\\n6\n\\end{matrix}\n)"
+  },
+  {
+   "id": "H206",
+   "topic": "matrix_mv",
+   "pred": "(\n\\begin{matrix}\n95 \\\\\n29\n\\end{matrix}\n) \\cdot(\n\\begin{matrix}\n3 \\\\\n2\n\\end{matrix}\n)=(\n\\begin{matrix}\n37 \\\\\n24\n\\end{matrix}\n)"
+  },
+  {
+   "id": "H207",
+   "topic": "matrix_mv",
+   "pred": "(\n\\begin{matrix}\n87\\\\\n93\n\\end{matrix}\n) \\cdot(\n\\begin{matrix}\n31 \\\\\n1\n\\end{matrix}\n)=(\n\\begin{matrix}\n31 \\\\\n30\n\\end{matrix}\n)"
+  },
+  {
+   "id": "H208",
+   "topic": "matrix_mv",
+   "pred": "( \\frac{85}{87}) \\cdot( \\frac{4}{9})=( \\frac{77}{95})"
+  },
+  {
+   "id": "H209",
+   "topic": "matrix_mv",
+   "pred": "(\n\\begin{matrix}\n12 \\\\\n48\n\\end{matrix}\n) \\cdot(\n\\begin{matrix}\n3 \\\\\n1\n\\end{matrix}\n)=(\n\\begin{matrix}\n5 \\\\\n20\n\\end{matrix}\n)"
+  },
+  {
+   "id": "H210",
+   "topic": "matrix_mv",
+   "pred": "( \\frac{39}{52}) \\cdot( \\frac{7}{9})=( \\frac{102}{53})"
+  },
+  {
+   "id": "H211",
+   "topic": "matrix_mv",
+   "pred": "(\n\\begin{matrix}\n78 \\\\\n37\n\\end{matrix}\n) \\cdot(\n\\begin{matrix}\n7 \\\\\n2\n\\end{matrix}\n)=(\n\\begin{matrix}\n65 \\\\\n35\n\\end{matrix}\n)"
+  },
+  {
+   "id": "H212",
+   "topic": "matrix_mv",
+   "pred": "(\n\\begin{matrix}\n13 \\\\\n12\n\\end{matrix}\n)(\n\\begin{matrix}\n3 \\\\\n7\n\\end{matrix}\n)=(\n\\begin{matrix}\n24 \\\\\n17\n\\end{matrix}\n)"
+  },
+  {
+   "id": "H213",
+   "topic": "matrix_mv",
+   "pred": "( \\frac{19}{66}) \\cdot( \\frac{9}{3})=( \\frac{36}{72})"
+  },
+  {
+   "id": "H214",
+   "topic": "matrix_mv",
+   "pred": "( \\frac{39}{77}) \\cdot( \\frac{1}{2})=( \\frac{12}{14})"
+  },
+  {
+   "id": "H215",
+   "topic": "matrix_mv",
+   "pred": "(\n\\begin{matrix}\n55\\\\\n53\n\\end{matrix}\n) \\cdot(\n\\begin{matrix}\n3 \\\\\n4\n\\end{matrix}\n)=(\n\\begin{matrix}\n35 \\\\\n27\n\\end{matrix}\n)"
+  },
+  {
+   "id": "H216",
+   "topic": "matrix_mv",
+   "pred": "(\n\\begin{matrix}\n78 \\\\\n69\n\\end{matrix}\n) \\cdot(\n\\begin{matrix}\n3 \\\\\n2\n\\end{matrix}\n)=(\n\\begin{matrix}\n37 \\\\\n36\n\\end{matrix}\n)"
+  },
+  {
+   "id": "H217",
+   "topic": "matrix_mv",
+   "pred": "(\n\\begin{matrix}\n94 \\\\\n82\n\\end{matrix}\n)(\n\\begin{matrix}\n7 \\\\\n5\n\\end{matrix}\n)=(\n\\begin{matrix}\n83 \\\\\n66\n\\end{matrix}\n)"
+  },
+  {
+   "id": "H218",
+   "topic": "matrix_mv",
+   "pred": "(\n\\begin{matrix}\n3&4 \\\\\n6&2\n\\end{matrix}\n) \\cdot(\n\\begin{matrix}\n2 \\\\\n7\n\\end{matrix}\n)=(\n\\begin{matrix}\n3&4 \\\\\n2&6\n\\end{matrix}\n)"
+  },
+  {
+   "id": "H220",
+   "topic": "matrix_mv",
+   "pred": "\\left(\n\\begin{matrix}\n73 \\\\\n77\n\\end{matrix}\n\\right) \\cdot \\left(\n\\begin{matrix}\n6 \\\\\n1\n\\end{matrix}\n\\right)= \\left(\n\\begin{matrix}\n45 \\\\\n49\n\\end{matrix}\n\\right)"
+  },
+  {
+   "id": "H221",
+   "topic": "matrix_mv",
+   "pred": "( \\frac{16}{97}) \\cdot( \\frac{5}{8})=( \\frac{53}{101})"
+  },
+  {
+   "id": "H222",
+   "topic": "matrix_mv",
+   "pred": "(\n\\begin{matrix}\n68 \\\\\n94\n\\end{matrix}\n) \\cdot(\n\\begin{matrix}\n6 \\\\\n1\n\\end{matrix}\n)= \\left(\n\\begin{matrix}\n44 \\\\\n58\n\\end{matrix}\n\\right)"
+  },
+  {
+   "id": "H223",
+   "topic": "matrix_mv",
+   "pred": "(\n\\begin{matrix}\n34 \\\\\n46\n\\end{matrix}\n) \\cdot(\n\\begin{matrix}\n5 \\\\\n5\n\\end{matrix}\n)=(\n\\begin{matrix}\n35 \\\\\n50\n\\end{matrix}\n)"
+  },
+  {
+   "id": "H225",
+   "topic": "matrix_mv",
+   "pred": "(\n\\begin{matrix}\n83 \\\\\n32\n\\end{matrix}\n) \\cdot(\n\\begin{matrix}\n7 \\\\\n6\n\\end{matrix}\n)=(\n\\begin{matrix}\n74 \\\\\n33\n\\end{matrix}\n)"
+  },
+  {
+   "id": "H226",
+   "topic": "matrix_mv",
+   "pred": "(\n\\begin{matrix}\n71 \\\\\n61\n\\end{matrix}\n) \\cdot(\n\\begin{matrix}\n51 \\\\\n1\n\\end{matrix}\n)=(\n\\begin{matrix}\n36 \\\\\n31\n\\end{matrix}\n)"
+  },
+  {
+   "id": "H227",
+   "topic": "matrix_mv",
+   "pred": "(\n\\begin{matrix}\n75 \\\\\n84\n\\end{matrix}\n) \\cdot(\n\\begin{matrix}\n6 \\\\\n1\n\\end{matrix}\n)=(\n\\begin{matrix}\n47 \\\\\n52\n\\end{matrix}\n)"
+  },
+  {
+   "id": "H228",
+   "topic": "matrix_mv",
+   "pred": "(33) \\cdot(8)=(58)"
+  },
+  {
+   "id": "H229",
+   "topic": "matrix_mv",
+   "pred": "( \\frac{76}{35}) \\cdot( \\frac{9}{8})=( \\frac{111}{67})"
+  },
+  {
+   "id": "H230",
+   "topic": "matrix_mv",
+   "pred": "( \\frac{24}{25}) \\cdot( \\frac{7}{6})=( \\frac{38}{44})"
+  },
+  {
+   "id": "H231",
+   "topic": "matrix_mv",
+   "pred": "(\n\\begin{matrix}\n76 \\\\\n64\n\\end{matrix}\n) \\cdot(\n\\begin{matrix}\n3 \\\\\n5\n\\end{matrix}\n)=(\n\\begin{matrix}\n51 \\\\\n38\n\\end{matrix}\n)"
+  },
+  {
+   "id": "H232",
+   "topic": "matrix_mv",
+   "pred": "(\n\\begin{matrix}\n49\\\\\n11\n\\end{matrix}\n)\\cdot(\n\\begin{matrix}\n7\\\\\n1\n\\end{matrix}\n)=(\n\\begin{matrix}\n16\\\\\n3\n\\end{matrix}\n)"
+  },
+  {
+   "id": "H234",
+   "topic": "matrix_mv",
+   "pred": "(\n\\begin{matrix}\n64\\\\\n47\n\\end{matrix}\n) \\cdot(\n\\begin{matrix}\n2 \\\\\n5\n\\end{matrix}\n)=(\n\\begin{matrix}\n32 \\\\\n43\n\\end{matrix}\n)"
+  },
+  {
+   "id": "H236",
+   "topic": "matrix_mv",
+   "pred": "(\n\\begin{matrix}\n59\\\\\n43\n\\end{matrix}\n) \\cdot(\n\\begin{matrix}\n7 \\\\\n5\n\\end{matrix}\n)=(\n\\begin{matrix}\n80 \\\\\n43\n\\end{matrix}\n)"
+  },
+  {
+   "id": "H237",
+   "topic": "matrix_mv",
+   "pred": "(\n\\begin{matrix}\n49\\\\\n91\n\\end{matrix}\n) \\cdot(\n\\begin{matrix}\n49 \\\\\n9\n\\end{matrix}\n)=(\n\\begin{matrix}\n97 \\\\\n45\n\\end{matrix}\n)"
+  },
+  {
+   "id": "H238",
+   "topic": "matrix_mv",
+   "pred": "(\n\\begin{matrix}\n74 \\\\\n26\n\\end{matrix}\n) \\cdot(\n\\begin{matrix}\n2 \\\\\n5\n\\end{matrix}\n)=(\n\\begin{matrix}\n34 \\\\\n34\n\\end{matrix}\n)"
+  },
+  {
+   "id": "H239",
+   "topic": "matrix_mv",
+   "pred": "( \\frac{81}{89}) \\cdot( \\frac{5}{6})=( \\frac{46}{94})"
+  },
+  {
+   "id": "H240",
+   "topic": "matrix_mv",
+   "pred": "(\n\\begin{matrix}\n87\\\\\n36\n\\end{matrix}\n) \\cdot(\n\\begin{matrix}\n3 \\\\\n3\n\\end{matrix}\n)=(\n\\begin{matrix}\n45 \\\\\n27\n\\end{matrix}\n)"
+  },
+  {
+   "id": "H241",
+   "topic": "matrix_sm",
+   "pred": "9 \\cdot( \\frac{18}{25})=( \\frac{9}{18} \\frac{72}{45})"
+  },
+  {
+   "id": "H242",
+   "topic": "matrix_sm",
+   "pred": "5 \\cdot( \\frac{34}{74})=( \\frac{15}{35} \\frac{20}{20})"
+  },
+  {
+   "id": "H243",
+   "topic": "matrix_sm",
+   "pred": "4 \\cdot(\n\\begin{matrix}\n29 \\\\\n66\n\\end{matrix}\n)=(\n\\begin{matrix}\n8&36 \\\\\n24&24\n\\end{matrix}\n)"
+  },
+  {
+   "id": "H244",
+   "topic": "matrix_sm",
+   "pred": "5 \\cdot(\n\\begin{matrix}\n46 \\\\\n18\n\\end{matrix}\n)=(\n\\begin{matrix}\n20&30 \\\\\n5&40\n\\end{matrix}\n)"
+  },
+  {
+   "id": "H245",
+   "topic": "matrix_sm",
+   "pred": "9 \\cdot(\n\\begin{matrix}\n71 \\\\\n99\n\\end{matrix}\n)=(\n\\begin{matrix}\n18&9 \\\\\n81&81\n\\end{matrix}\n)"
+  },
+  {
+   "id": "H246",
+   "topic": "matrix_sm",
+   "pred": "3 \\cdot( \\frac{1}{2} \\frac{1}{5})=( \\frac{3}{6} \\frac{3}{15})"
+  },
+  {
+   "id": "H247",
+   "topic": "matrix_sm",
+   "pred": "6 \\cdot( \\frac{12}{12})=( \\frac{6}{42} \\frac{12}{12})"
+  },
+  {
+   "id": "H248",
+   "topic": "matrix_sm",
+   "pred": "7.( \\frac{43}{99})=( \\frac{28}{63} \\frac{21}{63})"
+  },
+  {
+   "id": "H249",
+   "topic": "matrix_sm",
+   "pred": "6 \\cdot( \\frac{93}{78})=( \\frac{54}{42} \\frac{18}{48})"
+  }
+ ]
+}
