@@ -33,6 +33,11 @@ Hardware-Benchmark dieser VM (live TexTeller CPU): p50 0,65 s / p95 1,14 s /
    **Widerlegt** (Ketten-F1 real 28/28; nur Diagnosewert `ocr_hit` bricht am unparsebaren `=`).
 5. Pass 2, Chunk C: `\frac{a}{b}` vs `a/b` ist ein sympy_equal-Fehler. → **Widerlegt**
    (`same` bereits gleich; die Cache-Zeilen sind führende-`=`-Artefakte).
+6. Pass 3/4 — alle Matrix-Fehler (struct 0,000) stammen aus dem Vergleich, nicht der
+   Erkennung: `simplify(Matrix−Matrix)==0` ist immer falsch (Nullmatrix ≠ Skalar 0).
+7. Pass 4 — TexTeller bricht Matrix-Umgebungen über Zeilen um und nutzt `smallmatrix`/
+   `\left(…\right)`, die latex2sympy nicht parst; `parse` muss voll normalisieren.
+8. Pass 4 — `\left|…\right|` um eine Matrix ist die **Determinante**, nicht `Abs(Matrix)`.
 
 ## Experiment results
 
@@ -44,19 +49,32 @@ Hardware-Benchmark dieser VM (live TexTeller CPU): p50 0,65 s / p95 1,14 s /
 | Chunk A: x/X-Normalisierung | 0 Messfehler (Parser faltet X→x); Risiko legitime Großbuchstaben | **REVERT/REJECT** — nur dokumentiert |
 | Chunk B: führende-`=`-Kohärenzregel | Ketten-F1 real 28/28 unverändert; GLM hier nicht messbar; `=`-Erfinden ohne Stütze = stiller Eingriff | **REVERT/REJECT** — Artefakt dokumentiert |
 | Chunk C: frac-vs-Slash-Hack | `same('\frac{20}{6}','20/6')`=True; 24 Cache-Zeilen sind `=`-Artefakte | **REJECT** per Vorgabe („already equal → nur dokumentieren") |
+| Pass 4 A: `equivalent_expr` vergleicht Matrizen (Nullmatrix) | dev struct 0,714 → 0,814, matrix 0,000 → 0,438 | **KEEP** |
+| Pass 4 B: `parse` entfernt Whitespace | dev struct → 0,886, matrix → 0,688, parse_err 0,157 → 0,086 | **KEEP** |
+| Pass 4 C–E: `normalize` smallmatrix/vmatrix/`\vspace`/`\mathsf` | dev struct → 0,929, matrix → 0,812 | **KEEP** |
+| Pass 4 F: `parse` wendet `normalize` an | dev struct **0,943**, matrix **0,875**, parse_err **0,043**; holdout **0,944** | **KEEP** |
 
 ## Kept and rejected changes
 
 **Behalten (Produktcode):** `ocr/formula.py` (uncertain = reine OCR-Evidenz + `math_status`),
 `ocr/coherence.py` (Reparatur/second-None trusted=False), `ocr/latex.py` (Artefakt-
-Normalisierung). **Verworfen:** jede x/X-Regel, jede führende-`=`-Reparatur ohne
-Zweitmeinung, jeder frac-Produkt-Hack. Nicht angetastet: `prepare.py`, `models.py`,
-`structure_bench.py`, Test-Labels, `results_2026-11-23.tsv`, GT-Dateien.
+Normalisierung, Matrix-Umgebungen `smallmatrix`→`matrix`/`|`-Matrix→`vmatrix`,
+`\vspace`/`\mathsf`, `parse` wendet `normalize` an, `equivalent_expr` vergleicht Matrizen).
+**Verworfen:** jede x/X-Regel, jede führende-`=`-Reparatur ohne Zweitmeinung, jeder frac-
+Produkt-Hack, jedes blinde Kollabieren mehrerer Determinanten-Balken (würde `‖M‖` mit
+`|M|` verwechseln), `\langle→(` (würde echte Inner-Products korrumpieren). Nicht angetastet:
+`prepare.py`, `models.py`, `structure_bench.py`, Test-Labels, `results_2026-11-23.tsv`,
+GT-Dateien.
 
 ## Validation evidence
 
-- `venv/bin/python -m pytest -q` → **grün** (Issue-#1-Sicherheit, coherent-Pfade, normalize).
+- `venv/bin/python -m pytest -q` → **grün** (21 Tests: Issue-#1-Sicherheit, coherent-Pfade,
+  normalize, Matrix-Umgebungen/`parse`-Robustheit).
 - `venv/bin/python bench/structure_bench.py --selftest` → **OK**.
+- Level 4–5 (dev 70 / holdout 36, live TexTeller CPU, synthetisch gerendert): dev struct
+  **0,714 → 0,943** (matrix 0,000 → 0,875, integral 1,000, parse_err 0,157 → 0,043);
+  holdout struct **0,944** (integral/trig/special 1,000, matrix 0,778) → **keine Überanpassung**.
+  Anchor `overnight_synth` (50) bleibt **1,000**.
 - `venv/bin/python bench/overnight/error_distribution.py` → Cache-Analyse:
   real 28/28 Ketten-F1, einzige ocr_hit=false-Kette K25 = reines führende-`=`-Artefakt
   (Schülerfehler `41` erhalten); synth 44/47, 24× frac-`=`-Artefakt, 3× fusionierter
@@ -72,9 +90,13 @@ Zweitmeinung, jeder frac-Produkt-Hack. Nicht angetastet: `prepare.py`, `models.p
    synth-README ein Simulator-Loch, Generator-Fix benötigt dynamic_writer, hier nicht
    verfügbar). Eine Pipeline-Reparatur ohne Zweitmeinung wäre stiller Eingriff → abgelehnt.
 2. `\sum_{k\,=\ ,1}`-Spacing/Komma-Artefakt im Subskript (mehrdeutig, nicht normalisiert).
-3. Matrizen im Benchmark nicht abgedeckt (mathtext kann sie nicht rendern).
-4. `coverage`/`prec_certain`-Neumessung nach Issue #1 auf Mac MPS ausstehend.
-5. S39 (`ask` durch OCR-Unsicherheit) — Ketten-F1-Synth-Verfehlung ohne Zeilen-Mismatch.
+3. Determinanten-Balken (Level 4–5 matrix): dev `l45_dev_22/31`, holdout `l45_holdout_12/13` —
+   TexTeller liest `\left|…\right|` teils als verstümmelte Mehrfach-Balken (teils Renderer-
+   Glyphe, teils echte OCR-Verwechslung); blindes Kollabieren wäre `‖M‖`-vs-`|M|`-Verwechslung.
+4. Winkelklammern `\langle\pi\rangle` statt `(\pi)` und `i`/`j`-Verwechslung (echte OCR-
+   Fehler, ohne Kontext nicht sicher auflösbar → nicht geraten).
+5. `coverage`/`prec_certain`-Neumessung nach Issue #1 auf Mac MPS ausstehend.
+6. S39 (`ask` durch OCR-Unsicherheit) — Ketten-F1-Synth-Verfehlung ohne Zeilen-Mismatch.
 
 ## Reproduction commands
 
@@ -84,5 +106,7 @@ venv/bin/python -m pytest -q                                # Regressionstests
 venv/bin/python bench/structure_bench.py --selftest        # Metrik-Selbsttest
 venv/bin/python bench/overnight/error_distribution.py       # Cache-Fehlerverteilung (nur lesend)
 venv/bin/python bench/overnight/benchmark.py --tag "notiz"  # live TexTeller CPU (synth. gerendert)
+venv/bin/python bench/overnight/level45.py dev --tag "notiz"  # Level 4-5, live TexTeller CPU
+venv/bin/python bench/overnight/level45.py holdout          # Holdout (einmal am Ende)
 venv/bin/python bench/overnight/latency.py 3                # Latenz, Linux CPU
 ```

@@ -183,6 +183,70 @@ alle 10 Matrix-Zeilen. Nächster Schritt (getrennte Experimente): `\vspace`-Norm
 und Matrix-Umgebungs-Normalisierung nur für Fälle mit erhaltenem `&`; das `&`-Droppen ist
 Strukturverlust und ohne Stütze nicht rekonstruierbar.
 
+## Pass 4 — Skalierte Level 4–5 Live-Eval + Optimierung (live TexTeller CPU)
+
+### Benchmark & fairer Renderer
+
+`bench/overnight/level45.py` wurde erweitert: festes Seed-Dataset **dev 70 / holdout 36**
+(null Überlappung, stratifiziert über Integral/Matrix/Trig/Special, je mit gültigen UND
+absichtlich FALSCHEN Schülergleichungen). Der Renderer bekam feste, realistische Parameter
+(Fontgröße 30, Zellabstand 25, Matrizen als Zell-Komposition `tail`/`parts`) und zusätzliche
+Formen (2×3, 3×3, `bmatrix`, `vmatrix`, falsche Determinanten/Matrixsummen). Synthetisch
+gerendert — **nicht Handschrift** (ADR-008). Metriken: struct (`sympy_equal`), char (CER),
+`parse_err`, `student_error_preserved` (sep), p50/p95 (Linux CPU ≠ Mac MPS).
+
+### Baseline (vor jeder Produktänderung)
+
+| Split | struct | char | parse_err | sep | n |
+|---|---:|---:|---:|---:|---:|
+| dev | 0,7143 | 0,9179 | 0,1571 | 0,7500 | 70 |
+| **Anchor `overnight_synth` (50)** | **1,000** | **1,000** | – | – | 50 |
+
+Baseline-Fehler (dev): 10/20 Matrix-Zeilen (SymPy-Fehler plus Strukturverlust); Rest Integrale
+mit `\vspace`-Artefakt, Trig/Special vereinzelt.
+
+### One-Factor-Iterationen (dev, nach jedem Schritt gemessen)
+
+| # | Faktor (Commit) | struct | matrix | parse_err | sep |
+|---|---|---:|---:|---:|---:|
+| A | `equivalent_expr` vergleicht Matrizen (Nullmatrix statt Skalar-0) — `7353668` | 0,8143 | 0,438 | 0,1571 | 0,8125 |
+| B | `parse` entfernt Whitespace (TexTeller-Zeilenumbrüche in Matrizen) — `c25755e` | 0,8857 | 0,688 | 0,0857 | 0,8125 |
+| C–E | `normalize`: `smallmatrix`→`matrix`, `\|`-Matrix→`vmatrix` (Determinante), `\vspace`/`\hspace`, `\mathsf/\texttt/\textsf` — `4c8b58f` | 0,9286 | 0,812 | 0,0857 | 0,8750 |
+| F | `parse` wendet **`normalize`** an (statt nur Whitespace) — `4c8b58f` | **0,9429** | **0,875** | **0,0429** | **0,875** |
+
+Per Bucket final (dev): integral **1,000**, matrix **0,875**, trig 0,944, special 0,944.
+Anchor bleibt **1,000** (`anchor-after-l45-fixes`). Alle 21 Pytest-Tests + Selftest grün.
+
+**Wichtig (Issue #1):** Der Sprung bei B/F ist kein stilles Korrigieren — `parse` normalisiert
+nur die *Darstellung* (Umgebung/Whitespace/Artefakt), nie die Rechenwahrheit. Falsche
+Schülergleichungen werden weiterhin als falsch gelesen (sep 0,875 = 7/8 falsche Gleichungen
+bleiben falsch erhalten).
+
+### Holdout (einmal am Ende, unangetastet bis dahin)
+
+| Split | struct | char | parse_err | sep | p50 | n |
+|---|---:|---:|---:|---:|---:|---:|
+| holdout | **0,9444** | 0,9235 | 0,0000 | 0,8750 | 0,876 s | 36 |
+
+Per Bucket: integral **1,000**, trig **1,000**, special **1,000**, matrix 0,778 (7/9).
+dev 0,943 vs holdout 0,944 → **keine Überanpassung**; beide Splits stimmen überein.
+
+### Verbleibende Fehlermodi (ehrlich, nicht behoben)
+
+- **Determinanten-Balken (matrix):** dev `l45_dev_22/31`, holdout `l45_holdout_12/13`. TexTeller
+  liest die `\left|…\right|`-Determinante als **verstümmelte Mehrfach-Balken**
+  (`\left|\!\left|\!…\right|\!\right|`, teils 3 Balken) und verwürfelt die Zellzahl. Ursache ist
+  teils die Balken-Glyphe des eigenen Renderers (defekt, nicht „Tuning"), teils eine echte
+  OCR-Verwechslung. Ein blindes Kollabieren mehrerer `|` → vmatrix würde die **Norm `‖M‖`**
+  (Frobenius) mit der Determinante verwechseln → bewusst NICHT normalisiert.
+- **Winkelklammern (trig):** `l45_dev_51` `\sin\langle\pi\rangle` statt `\sin(\pi)` — echte
+  OCR-Verwechslung; globales `\langle→(` würde echte Inner-Products/Erwartungswerte korrumpieren.
+- **`i`/`j` (special):** `l45_dev_56` `j^{2}=1` statt `i^{2}=1` — echte OCR-Verwechslung, ohne
+  Kontext nicht sicher auflösbar (dürfte nicht geraten werden).
+
+Alle offenen Fehler sind entweder echte OCR-Verwechslungen oder ein Renderer-Defekt — kein
+Produktlogik-Fehler. Sie werden dokumentiert, nicht durch Raten „weggerechnet".
+
 ## Reproduktion
 
 ```bash
