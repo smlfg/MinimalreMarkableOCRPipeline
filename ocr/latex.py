@@ -41,13 +41,23 @@ def parse(latex: str):
         return None
 
 
+def _is_zero(a, b) -> bool:
+    """a == b symbolisch: Differenz ist 0 (Skalar) bzw. die Nullmatrix (Matrix).
+    sympy.simplify(Matrix - Matrix) == 0 ist immer False, weil die Nullmatrix
+    kein Skalar ist — deshalb wird hier is_zero_matrix geprueft."""
+    d = sympy.simplify(a - b)
+    if isinstance(d, sympy.MatrixBase):
+        return bool(d.is_zero_matrix)
+    return d == 0
+
+
 def equivalent_expr(a, b) -> bool:
     if isinstance(a, sympy.Equality) and isinstance(b, sympy.Equality):
-        d = lambda x, y: sympy.simplify(x - y) == 0
-        return (d(a.lhs, b.lhs) and d(a.rhs, b.rhs)) or (d(a.lhs, b.rhs) and d(a.rhs, b.lhs))
+        return ((_is_zero(a.lhs, b.lhs) and _is_zero(a.rhs, b.rhs))
+                or (_is_zero(a.lhs, b.rhs) and _is_zero(a.rhs, b.lhs)))
     if isinstance(a, sympy.Equality) != isinstance(b, sympy.Equality):
         return False
-    return sympy.simplify(a - b) == 0
+    return _is_zero(a, b)
 
 
 
