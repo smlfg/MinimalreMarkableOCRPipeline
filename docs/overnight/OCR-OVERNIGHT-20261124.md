@@ -569,3 +569,67 @@ Artifacts: `bench/results_pass9_multiline_multitask_live.{json,tsv}`, suite unde
 | F1 broken paren unwrap | **KEEP** |
 | F2 multiline over-merge | **KEEP** |
 | F3 multiline_multitask_live | **KEEP** |
+
+## Pass 10 — task-marker text unwrap + shared eval runner (2026-11-24)
+
+**Scope:** `ocr/coherence.py` `tt_text_marker_artifacts`, `tt_mbox_small_dollar` raisebox path, `array_single_cell_artifact` trailing `\\\\`; `bench/formula_flywheel/run_shared_eval.py`.
+
+### F1 — `tt_text_marker_artifacts` (**KEEP**)
+
+`\text{) }` / `\text{)}` → `)`; strip empty `\text{ }` / `\text{}`.
+
+| Metric | Pass 9 | Pass 10 F1 |
+|---|---:|---:|
+| multiline_multitask line_sympy (live TT) | 0.844 (27/32) | **0.906 (29/32)** |
+| overnight_synth rescore | 20/20 | **20/20** |
+| level45 dev rescore pipe_sympy | 0.833 | **0.833** |
+
+### F2 — mbox raisebox + small dollar (**KEEP**)
+
+`\mbox{\raisebox{…}{\small$…$}}` → inner (MMT_05_l2).
+
+| Metric | After F1 | After F2 |
+|---|---:|---:|
+| multiline_multitask line_sympy | 0.906 | **0.938 (30/32)** |
+
+### F3 — single-cell array hardening (**KEEP**)
+
+Trailing lone `\\\\` before `\end{array}`; normalize terminal `\,+` → `+` (MMT_05_l1).
+
+| Metric | After F2 | After F3 |
+|---|---:|---:|
+| multiline_multitask line_sympy | 0.938 | **0.969 (31/32)** |
+| multiline_multitask chain | 1.000 | **1.000** |
+
+### F4 — `MMT_02_l1` (**DOCUMENT**)
+
+TexTeller OCR reads task marker `a)` as garbage `\ada Ba+6=12` (glyph collision). **No silent math fix** (Issue #1); remains the sole line_sympy miss.
+
+### Shared eval (`run_shared_eval.py`)
+
+```bash
+PYTHONPATH=/workspace /workspace/.venv_structure/bin/python \
+  bench/formula_flywheel/run_shared_eval.py --out bench/results_pass10_shared_eval.json
+```
+
+| Dataset | Key metric |
+|---|---:|
+| overnight_synth (rescore) | pipe_sympy **1.000** (20/20) |
+| level45 dev (rescore) | pipe_sympy **0.833** |
+| level45 holdout (rescore, not for KEEP) | pipe_sympy **0.889** |
+| multiline_live / multiline_l45 | chain **1.000**, line_sympy **1.000** |
+| multiline_multitask_live | chain **1.000**, line_sympy **0.969** (31/32) |
+| kalib ketten grouping | **1.000** (28/28) |
+| pytest | **102/102** |
+
+Artifacts: `bench/results_pass10_{shared_eval,multiline_multitask_live}.{json,tsv}`.
+
+### Pass 10 keep / revert
+
+| Factor | Verdict |
+|---|---|
+| F1 text marker / empty `\text{}` | **KEEP** |
+| F2 raisebox mbox unwrap | **KEEP** |
+| F3 array single-cell trailing `\\` | **KEEP** |
+| F4 `MMT_02_l1` TT OCR limit | **DOCUMENT** |
+| shared eval runner | **KEEP** |
