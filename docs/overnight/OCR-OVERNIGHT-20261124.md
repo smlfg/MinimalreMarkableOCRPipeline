@@ -469,3 +469,51 @@ Suite: `bench/formula_flywheel/multiline_l45/` (12 pages, seed 20261124).
 | H1 wide-split TT | **REVERT** |
 | H2 tall matrix pad | **REVERT** (document renderer limit) |
 | Product `prepare_tt_input` defaults | unchanged (off) |
+
+## Pass 8 — lead-eq thin space + mbox/text dollar unwrap (2026-11-24)
+
+**Scope:** `ocr/coherence.py` `tt_postprocess` only (no multiline logic change). **own_probe / school dev:** live re-measure **BLOCKED** (gitignored PNGs + `last_*.jsonl` + `cache.sqlite` absent on CI VM).
+
+### F1 — `tt_lead_eq_space_artifacts` (**KEEP**)
+
+Strip leading `\,` / `\!` / `\:` / `\;` / `\ ` before continuation `=` / `=>` / …; normalize glued `\,=` / `\!=` → `=` (semantic spacing only).
+
+| Metric | Pass 7 | Pass 8 F1 |
+|---|---:|---:|
+| multiline_l45 chain (live TT) | 0.833 (10/12) | **1.000** (12/12) |
+| multiline_l45 line_sympy | 0.895 (17/19) | 0.895 |
+| kalib ketten grouping | 1.000 | 1.000 |
+| pytest | 75/75 | 80/80 |
+
+Artifact: `bench/results_pass8_f1_multiline_l45.json`.
+
+### F2 — `tt_mbox_small_dollar` + `tt_text_paren_dollar` (**KEEP**)
+
+- `\mbox{\small$…$}` → inner
+- `\text{($…$)}…` / multi-factor `\text{($a$)($b$)}` → `(...)` without `$` wrappers
+
+| Metric | Pass 7 | Pass 8 F1+F2 |
+|---|---:|---:|
+| multiline_l45 line_sympy (live TT) | 0.895 | **1.000** (19/19) |
+| multiline_l45 chain | 0.833 | **1.000** |
+| level45_live dev pipe_sympy (rescore baseline jsonl) | 0.833 | **0.833** |
+| level45 integral / trig / special (dev) | 1.0 / 1.0 / 1.0 | 1.0 / 1.0 / 1.0 |
+| level45 matrix (dev) | 0.333 | 0.333 |
+| holdout pipe_sympy (rescore) | 0.861 | **0.889** (integral **1.0**) |
+| overnight_synth anchor rescore | ≥0.95 | **0.95** (19/20) |
+| kalib ketten grouping | 1.000 | 1.000 |
+| pytest | 75/75 | **86/86** |
+
+Artifacts: `bench/results_pass8_multiline_l45.{json,tsv}`, `bench/results_pass8_f2_l45_{dev,holdout}.json`, `bench/results_pass8_overnight_synth_rescore.json`.
+
+### F3 — cached synth/kalib mining (**SKIP**)
+
+`bench/synth/last_synth_real.jsonl` and kalib `last_real.jsonl` contain no additional fixable `mbox` / lead-eq patterns beyond F1+F2; remaining failures are matrix fusion / student errors (not semantic-preserving unwrap).
+
+### Pass 8 keep / revert
+
+| Factor | Verdict |
+|---|---|
+| F1 lead-eq spacing | **KEEP** |
+| F2 mbox/text dollar | **KEEP** |
+| F3 optional mine | **SKIP** |
