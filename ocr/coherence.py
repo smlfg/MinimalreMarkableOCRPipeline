@@ -35,6 +35,17 @@ def tt_render_artifacts(latex: str) -> str:
     return s
 
 
+def tt_text_marker_artifacts(latex: str) -> str:
+    """TexTeller task markers: \\text{) }, \\text{)} and empty \\text{ } / \\text{} wrappers."""
+    if r"\text{" not in latex:
+        return latex
+    s = latex
+    s = s.replace(r"\text{) }", ")")
+    s = s.replace(r"\text{)}", ")")
+    s = re.sub(r"\\text\{\s*\}", "", s)
+    return s
+
+
 def tt_delim_artifacts(latex: str) -> str:
     """TexTeller-CPU: mangled delimiters (\\bigl{(}, \\text{(}, angle brackets)."""
     if not re.search(
@@ -187,6 +198,7 @@ def tt_postprocess(latex: str) -> str:
     """Product pipe before coherent(): decimal + render/texttt/integral artifacts."""
     s = tt_render_artifacts(texttt_artifacts(decimal_comma(latex)))
     s = tt_delim_artifacts(s)
+    s = tt_text_marker_artifacts(s)
     s = tt_mbox_reim_artifacts(s)
     s = tt_mbox_small_dollar(s)
     s = tt_text_paren_dollar(s)
