@@ -1,3 +1,4 @@
 commit	struct	char	p50_s	p95_s	n	tag
 bbfe850	1.0000	1.0000	0.821	7.437	50	baseline-after-normalize
 fe00bea	-	-	0.649	1.1426	150	latency-3passes-load3.7s
+4c8b58f	1.0000	1.0000	0.575	1.959	50	anchor-after-l45-fixes
