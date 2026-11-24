@@ -107,6 +107,31 @@ def test_single_cell_array_unwrap():
     assert same(ARRAY_INT_GT, _repair(ARRAY_INT_RAW))
 
 
+@pytest.mark.parametrize(
+    "raw,gt",
+    [
+        (r"\sin\bigl{(}\frac{\pi}{2}\bigr{)}=1", r"\sin(\frac{\pi}{2})=1"),
+        (r"\sin\text{(}2x\text{)}=2\text{sin}\,x\text{cos}\,x", r"\sin(2x)=2\sin x\cos x"),
+        (
+            r"\text{cos}^{2}\left\langle x\right\rangle-\text{sin}^{2}\left\langle x\right\rangle "
+            r"=\text{cos(2}x\text{)}",
+            r"\cos^2(x)-\sin^2(x)=\cos(2x)",
+        ),
+    ],
+)
+def test_tt_delim_paren_artifacts(raw: str, gt: str):
+    assert same(gt, _repair(raw))
+
+
+def test_tt_delim_student_paren_text_untouched():
+    """\\text{)} fix must not turn a wrong student line into GT."""
+    raw = r"\text{($6$}+2\text{)}\cdot 2=4"
+    gt = r"(6+2)\cdot 2=4"
+    rep = _repair(raw)
+    assert rep != gt
+    assert not same(gt, rep)
+
+
 @pytest.mark.parametrize("a,b", [(r"\cos(\pi)=1", r"\cos(\pi)=1"), (r"e^{i\pi}=1", r"e^{i\pi}=1")])
 def test_no_artifact_strings_identity(a, b):
     assert texttt_artifacts(a) == a

@@ -35,6 +35,32 @@ def tt_render_artifacts(latex: str) -> str:
     return s
 
 
+def tt_delim_artifacts(latex: str) -> str:
+    """TexTeller-CPU: mangled delimiters (\\bigl{(}, \\text{(}, angle brackets)."""
+    if not re.search(
+        r"\\bigl\{\(|\\bigr\{\)|\\Bigl\{\(|\\Bigr\{\)|\\text\{\(\}|\\text\{\)\}|"
+        r"\\left\\langle|\\right\\rangle|"
+        r"\\text\{cos\(\d+\}x\\text\{\)\}|\\text\{sin\(\d+\}x\\text\{\)\}",
+        latex,
+    ):
+        return latex
+    s = latex
+    for src, dst in (
+        (r"\bigl{(}", "("),
+        (r"\bigr{)}", ")"),
+        (r"\Bigl{(}", "("),
+        (r"\Bigr{)}", ")"),
+    ):
+        s = s.replace(src, dst)
+    s = re.sub(r"\\text\{cos\((\d+)\}x\\text\{\)\}", r"\\cos(\1x)", s)
+    s = re.sub(r"\\text\{sin\((\d+)\}x\\text\{\)\}", r"\\sin(\1x)", s)
+    s = s.replace(r"\text{(}", "(")
+    s = s.replace(r"\text{)}", ")")
+    s = s.replace(r"\left\langle", r"\left(")
+    s = s.replace(r"\right\rangle", r"\right)")
+    return s
+
+
 def texttt_artifacts(latex: str) -> str:
     """TexTeller-CPU: \\backslash\\texttt{…} statt \\begin/\\end, \\texttt{token}-Hüllen, \\&."""
     if not re.search(
@@ -87,6 +113,7 @@ def array_single_cell_artifact(latex: str) -> str:
 def tt_postprocess(latex: str) -> str:
     """Product pipe before coherent(): decimal + render/texttt/integral artifacts."""
     s = tt_render_artifacts(texttt_artifacts(decimal_comma(latex)))
+    s = tt_delim_artifacts(s)
     s = array_single_cell_artifact(s)
     return integral_eq_artifact(s)
 

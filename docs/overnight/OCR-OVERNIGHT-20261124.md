@@ -391,4 +391,28 @@ Gates with default (preprocess off): `overnight_synth` dev 100 %, `multiline_liv
 
 Artifacts: `bench/results_pass6_l45_*_dev.json`, `bench/results_pass6_matrix_preprocess.{json,tsv}`.
 
-Deferred: F1 trig `\bigl{(}` / `\text{(}` fixes, P3 antialias, Re/Im mbox — no safe measured win on matrix bucket.
+### Pass 6 F1 — delimiter / text-paren artifacts (**KEEP**)
+
+`ocr/coherence.tt_delim_artifacts()` wired in `tt_postprocess` **after** `tt_render_artifacts` (text `{sin,cos,…}` mapping):
+
+- `\bigl{(}` / `\bigr{)}` → `(`/`)`
+- `\text{(}` / `\text{)}` → `(`/`)`
+- `\left\langle` / `\right\rangle` → `\left(`/`\right)`
+- `\text{cos(2}x\text{)}` / `\text{sin(…)}` mangled TT tails → `\cos(2x)` / `\sin(…)`
+
+Re-score cached `results_pass6_l45_baseline_dev.jsonl` (no re-infer):
+
+| Metric | before F1 | after F1 |
+|---|---:|---:|
+| pipe_sympy (dev 72) | 0.778 | **0.819** |
+| trig | 0.833 | **1.000** |
+| matrix | 0.333 | 0.333 |
+| holdout pipe_sympy | 0.861 | **0.861** (trig 1.0) |
+
+Gates: overnight_synth anchor re-score **0.95**, multiline 100%, pytest **61/61**, Issue #1 regressions pass.
+
+Artifact: `bench/results_pass6_f1_delim_dev.json` (from `rescore_pipe.py`).
+
+P1/P2 preprocess: **REVERT** for production (env hooks remain **default off** only).
+
+Deferred: P3 antialias, Re/Im mbox.
