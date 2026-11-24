@@ -31,7 +31,7 @@ _TRAIL_OPEN = re.compile(
 )
 
 _LABEL_BREAK = re.compile(
-    r"^\s*(?:\d+\.\s|[a-zA-ZäöüÄÖÜ]\)\s|Aufgabe\b|Aufg\.|Exercise\b|Übung\b)",
+    r"^\s*(?:\d+\.\s|\d+\)\s|[a-zA-ZäöüÄÖÜ]\)\s|Aufgabe\b|Aufg\.|Exercise\b|Übung\b)",
     re.IGNORECASE,
 )
 
@@ -140,6 +140,32 @@ def standalone_equation_breaker(latex: str) -> bool:
     return True
 
 
+def finished_solve_step(latex: str) -> bool:
+    """Terminal assignment like x=5 after a solve chain (triggers fresh-equation break)."""
+    s = (latex or "").strip()
+    if not s or "=" not in s:
+        return False
+    left, _, right = s.partition("=")
+    if not (left.strip() and right.strip()):
+        return False
+    return (
+        bool(re.match(r"^[a-zA-Z]\s*=", s))
+        and not re.search(r"[\+\-\*\\/]", left)
+        and not leading_continuation(s)
+    )
+
+
+def _fresh_equation_after_solve(prev_tex: str, cur_tex: str) -> bool:
+    """Break merge when a new multi-term equation follows a bare x=n step."""
+    return (
+        finished_solve_step(prev_tex)
+        and standalone_equation_breaker(cur_tex)
+        and not trailing_open(prev_tex)
+        and not trailing_transform_annotation(prev_tex)
+        and not leading_continuation(cur_tex)
+    )
+
+
 def _column_ok(x0_a: float, x0_b: float, med_w: float) -> bool:
     slack = max(24.0, med_w * _COL_SLACK)
     return abs(x0_a - x0_b) <= slack
@@ -193,6 +219,7 @@ def _links(prev: dict, cur: dict, prev_idx: int, med_h: float, med_w: float) -> 
         and "=" in prev_tex
         and "=" in cur_tex
         and not label_breaker(cur_tex)
+        and not _fresh_equation_after_solve(prev_tex, cur_tex)
     ):
         return True
     if prev_idx == 0 and "=" not in cur_tex and gap <= med_h * _GAP_TIGHT:
