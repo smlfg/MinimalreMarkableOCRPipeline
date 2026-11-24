@@ -1,0 +1,43 @@
+{
+ "summary": {
+  "pages": 3,
+  "lines": 56,
+  "suspicious": 16,
+  "pages_with_suspicious": 3,
+  "strokes": 585,
+  "unassigned_strokes": 0,
+  "cl_rows": 21,
+  "cl_suspicious": 6,
+  "cl_pages_with_suspicious": 2,
+  "seconds": 14
+ },
+ "pages": [
+  {
+   "id": "8b9c7467_15d328c7",
+   "lines": 20,
+   "suspicious": 9,
+   "unassigned": 0,
+   "strokes": 381,
+   "cl_rows": 8,
+   "cl_suspicious": 4
+  },
+  {
+   "id": "8b9c7467_3b27a2dc",
+   "lines": 25,
+   "suspicious": 5,
+   "unassigned": 0,
+   "strokes": 122,
+   "cl_rows": 5,
+   "cl_suspicious": 2
+  },
+  {
+   "id": "8b9c7467_3f0cf67a",
+   "lines": 11,
+   "suspicious": 2,
+   "unassigned": 0,
+   "strokes": 82,
+   "cl_rows": 8,
+   "cl_suspicious": 0
+  }
+ ]
+}

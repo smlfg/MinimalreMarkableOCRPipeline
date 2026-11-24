@@ -1,0 +1,153 @@
+{
+ "probe": {
+  "slots": 40,
+  "clean": 32,
+  "split": 7,
+  "merged": 1,
+  "missed": 0,
+  "clean_rate": 0.8,
+  "problems": [
+   [
+    "9",
+    "zerteilt",
+    2
+   ],
+   [
+    "14",
+    "zerteilt",
+    2
+   ],
+   [
+    "15",
+    "zusammengelegt"
+   ],
+   [
+    "24",
+    "zerteilt",
+    2
+   ],
+   [
+    "30",
+    "zerteilt",
+    2
+   ],
+   [
+    "31",
+    "zerteilt",
+    2
+   ],
+   [
+    "32",
+    "zerteilt",
+    2
+   ],
+   [
+    "35",
+    "zerteilt",
+    2
+   ]
+  ]
+ },
+ "ketten": {
+  "slots": 60,
+  "clean": 40,
+  "split": 12,
+  "merged": 8,
+  "missed": 0,
+  "clean_rate": 0.667,
+  "problems": [
+   [
+    "('K09', 1)",
+    "zerteilt",
+    2
+   ],
+   [
+    "('K10', 2)",
+    "zerteilt",
+    2
+   ],
+   [
+    "('K11', 1)",
+    "zerteilt",
+    2
+   ],
+   [
+    "('K11', 2)",
+    "zerteilt",
+    2
+   ],
+   [
+    "('K12', 1)",
+    "zerteilt",
+    2
+   ],
+   [
+    "('K13', 1)",
+    "zusammengelegt"
+   ],
+   [
+    "('K13', 2)",
+    "zerteilt",
+    3
+   ],
+   [
+    "('K13', 3)",
+    "zusammengelegt"
+   ],
+   [
+    "('K16', 1)",
+    "zerteilt",
+    2
+   ],
+   [
+    "('K17', 1)",
+    "zerteilt",
+    2
+   ],
+   [
+    "('K18', 1)",
+    "zerteilt",
+    3
+   ],
+   [
+    "('K18', 2)",
+    "zusammengelegt"
+   ],
+   [
+    "('K20', 1)",
+    "zerteilt",
+    3
+   ],
+   [
+    "('K20', 2)",
+    "zusammengelegt"
+   ],
+   [
+    "('K23', 1)",
+    "zusammengelegt"
+   ],
+   [
+    "('K23', 2)",
+    "zusammengelegt"
+   ],
+   [
+    "('K26', 1)",
+    "zerteilt",
+    2
+   ],
+   [
+    "('K27', 1)",
+    "zerteilt",
+    2
+   ],
+   [
+    "('K28', 1)",
+    "zusammengelegt"
+   ],
+   [
+    "('K28', 2)",
+    "zusammengelegt"
+   ]
+  ]
+ }
+}

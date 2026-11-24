@@ -1,0 +1,38 @@
+{
+ "sheet": {
+  "norm": "plain",
+  "scale": 1.0,
+  "pmax": 0.941,
+  "boxes": 18,
+  "lines_found": 10,
+  "merged": 0,
+  "extra_fragments": 8
+ },
+ "sheet2": {
+  "norm": "plain",
+  "scale": 1.0,
+  "pmax": 0.979,
+  "boxes": 15,
+  "lines_found": 10,
+  "merged": 0,
+  "extra_fragments": 5
+ },
+ "sheet3": {
+  "norm": "imagenet",
+  "scale": 1.0,
+  "pmax": 0.926,
+  "boxes": 16,
+  "lines_found": 9,
+  "merged": 0,
+  "extra_fragments": 7
+ },
+ "sheet4": {
+  "norm": "plain",
+  "scale": 1.0,
+  "pmax": 0.952,
+  "boxes": 15,
+  "lines_found": 9,
+  "merged": 0,
+  "extra_fragments": 6
+ }
+}

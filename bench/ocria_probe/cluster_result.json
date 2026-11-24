@@ -1,0 +1,20 @@
+{
+ "probe": {
+  "slots": 40,
+  "clean": 40,
+  "split": 0,
+  "merged": 0,
+  "empty": 0,
+  "clean_rate": 1.0,
+  "problems": []
+ },
+ "ketten": {
+  "slots": 60,
+  "clean": 60,
+  "split": 0,
+  "merged": 0,
+  "empty": 0,
+  "clean_rate": 1.0,
+  "problems": []
+ }
+}

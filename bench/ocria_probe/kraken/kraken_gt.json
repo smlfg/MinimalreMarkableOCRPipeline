@@ -1,0 +1,243 @@
+{
+ "probe": {
+  "slots": 40,
+  "clean": 18,
+  "split": 1,
+  "merged": 0,
+  "missed": 21,
+  "clean_rate": 0.45,
+  "problems": [
+   [
+    "6",
+    "Striche ohne Zeile"
+   ],
+   [
+    "8",
+    "Striche ohne Zeile"
+   ],
+   [
+    "9",
+    "Striche ohne Zeile"
+   ],
+   [
+    "10",
+    "Striche ohne Zeile"
+   ],
+   [
+    "12",
+    "Striche ohne Zeile"
+   ],
+   [
+    "13",
+    "Striche ohne Zeile"
+   ],
+   [
+    "14",
+    "Striche ohne Zeile"
+   ],
+   [
+    "16",
+    "Striche ohne Zeile"
+   ],
+   [
+    "17",
+    "Striche ohne Zeile"
+   ],
+   [
+    "18",
+    "Striche ohne Zeile"
+   ],
+   [
+    "19",
+    "Striche ohne Zeile"
+   ],
+   [
+    "23",
+    "Striche ohne Zeile"
+   ],
+   [
+    "24",
+    "Striche ohne Zeile"
+   ],
+   [
+    "25",
+    "Striche ohne Zeile"
+   ],
+   [
+    "26",
+    "Striche ohne Zeile"
+   ],
+   [
+    "27",
+    "Striche ohne Zeile"
+   ],
+   [
+    "28",
+    "Striche ohne Zeile"
+   ],
+   [
+    "30",
+    "Striche ohne Zeile"
+   ],
+   [
+    "31",
+    "Striche ohne Zeile"
+   ],
+   [
+    "32",
+    "Striche ohne Zeile"
+   ],
+   [
+    "35",
+    "zerteilt",
+    2
+   ],
+   [
+    "36",
+    "Striche ohne Zeile"
+   ]
+  ]
+ },
+ "ketten": {
+  "slots": 60,
+  "clean": 27,
+  "split": 0,
+  "merged": 0,
+  "missed": 33,
+  "clean_rate": 0.45,
+  "problems": [
+   [
+    "('K07', 1)",
+    "Striche ohne Zeile"
+   ],
+   [
+    "('K08', 1)",
+    "Striche ohne Zeile"
+   ],
+   [
+    "('K09', 1)",
+    "Striche ohne Zeile"
+   ],
+   [
+    "('K10', 1)",
+    "Striche ohne Zeile"
+   ],
+   [
+    "('K10', 2)",
+    "Striche ohne Zeile"
+   ],
+   [
+    "('K11', 1)",
+    "Striche ohne Zeile"
+   ],
+   [
+    "('K11', 2)",
+    "Striche ohne Zeile"
+   ],
+   [
+    "('K12', 1)",
+    "Striche ohne Zeile"
+   ],
+   [
+    "('K12', 2)",
+    "Striche ohne Zeile"
+   ],
+   [
+    "('K13', 1)",
+    "Striche ohne Zeile"
+   ],
+   [
+    "('K13', 2)",
+    "Striche ohne Zeile"
+   ],
+   [
+    "('K14', 1)",
+    "Striche ohne Zeile"
+   ],
+   [
+    "('K14', 2)",
+    "Striche ohne Zeile"
+   ],
+   [
+    "('K15', 1)",
+    "Striche ohne Zeile"
+   ],
+   [
+    "('K16', 1)",
+    "Striche ohne Zeile"
+   ],
+   [
+    "('K17', 1)",
+    "Striche ohne Zeile"
+   ],
+   [
+    "('K18', 1)",
+    "Striche ohne Zeile"
+   ],
+   [
+    "('K19', 1)",
+    "Striche ohne Zeile"
+   ],
+   [
+    "('K20', 1)",
+    "Striche ohne Zeile"
+   ],
+   [
+    "('K20', 2)",
+    "Striche ohne Zeile"
+   ],
+   [
+    "('K21', 1)",
+    "Striche ohne Zeile"
+   ],
+   [
+    "('K21', 2)",
+    "Striche ohne Zeile"
+   ],
+   [
+    "('K22', 1)",
+    "Striche ohne Zeile"
+   ],
+   [
+    "('K22', 2)",
+    "Striche ohne Zeile"
+   ],
+   [
+    "('K23', 1)",
+    "Striche ohne Zeile"
+   ],
+   [
+    "('K23', 2)",
+    "Striche ohne Zeile"
+   ],
+   [
+    "('K24', 1)",
+    "Striche ohne Zeile"
+   ],
+   [
+    "('K24', 2)",
+    "Striche ohne Zeile"
+   ],
+   [
+    "('K26', 1)",
+    "Striche ohne Zeile"
+   ],
+   [
+    "('K26', 2)",
+    "Striche ohne Zeile"
+   ],
+   [
+    "('K27', 1)",
+    "Striche ohne Zeile"
+   ],
+   [
+    "('K28', 1)",
+    "Striche ohne Zeile"
+   ],
+   [
+    "('K28', 2)",
+    "Striche ohne Zeile"
+   ]
+  ]
+ }
+}
