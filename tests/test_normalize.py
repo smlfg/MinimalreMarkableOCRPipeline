@@ -1,6 +1,6 @@
 """Normalisierungs-Regressionen: TexTeller-Artefakte muessen zu strukturgleichem LaTeX
 kollabieren (ADR-008 metrik v2; einseitige Quelle mit der Pipeline)."""
-from ocr.latex import normalize, same
+from ocr.latex import normalize, parse, same
 
 
 def test_font_size_commands_removed():
@@ -34,3 +34,52 @@ def test_integral_texter_artifact_same():
 def test_trig_texter_artifact_same():
     assert same(r"\sin(2x)=2\sin(x)\cos(x)",
                 r"\sin\text{(2}x\text{)}=2\text{sin(}x\text{)}\text{cos(}x\text{)}")
+
+
+# --- Matrizen / Robustheit (Pass 4) ---
+
+
+def test_matrix_env_variants_equal():
+    gt = r"\begin{pmatrix}1&2\\3&4\end{pmatrix}"
+    for tt in (r"\left(\begin{array}{cc}1&2\\3&4\end{array}\right)",
+               r"\left(\begin{matrix}1&2\\3&4\end{matrix}\right)",
+               r"\left(\begin{smallmatrix}1&2\\3&4\end{smallmatrix}\right)"):
+        assert same(gt, tt)
+    assert not same(gt, r"\left(\begin{matrix}9&9\\9&9\end{matrix}\right)")
+
+
+def test_matrix_determinant_vmatrix():
+    # '|' um eine Matrix-Umgebung ist die Determinante, nicht Abs().
+    assert same(r"\begin{vmatrix}1&2\\3&4\end{vmatrix}=-2",
+                r"\left|\begin{matrix}1&2\\3&4\end{matrix}\right|=-2")
+
+
+def test_matrix_compound_addition():
+    gt = (r"\begin{pmatrix}1&2\\3&4\end{pmatrix}+\begin{pmatrix}5&6\\7&8\end{pmatrix}"
+          r"=\begin{pmatrix}6&8\\10&12\end{pmatrix}")
+    tt = (r"\left(\begin{smallmatrix}1&2\\3&4\end{smallmatrix}\right)+"
+          r"\left(\begin{smallmatrix}5&6\\7&8\end{smallmatrix}\right)="
+          r"\left(\begin{smallmatrix}6&8\\10&12\end{smallmatrix}\right)")
+    assert same(gt, tt)
+
+
+def test_vspace_hspace_removed():
+    assert normalize(r"\vspace{0.2cm}x") == "x"
+    assert normalize(r"\hspace{1em}x") == "x"
+
+
+def test_mathsf_texttt_textsf_unwrapped():
+    assert normalize(r"\mathsf{a}") == "a"
+    assert normalize(r"\texttt{12}") == "12"
+    assert normalize(r"\textsf{x}") == "x"
+
+
+def test_parse_handles_newlines_in_matrix():
+    raw = "\n\\left(\n\\begin{array}\n{cc}1&2\\\\\n3&4\n\\end{array}\n\\right)"
+    assert parse(raw) is not None
+    assert same(r"\begin{pmatrix}1&2\\3&4\end{pmatrix}", raw)
+
+
+def test_scalar_abs_not_changed_to_determinant():
+    # '|x|' (Skalar-Betrag) darf NICHT zu vmatrix werden.
+    assert r"\begin{vmatrix}" not in normalize(r"\left|x\right|")

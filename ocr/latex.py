@@ -10,11 +10,20 @@ def normalize(s: str) -> str:
     # TexTeller-Artefakte: Fontgrößen-Kommandos und innere $-Begrenzer sind semantisch leer.
     s = re.sub(r"\\(?:huge|Huge|LARGE|Large|large|normalsize|small|footnotesize|scriptsize|tiny)\b", "", s)
     s = s.replace("$", "")
+    # Vertikaler/horizontaler Leerraum und smallmatrix (parst latex2sympy nicht) entfernen.
+    s = re.sub(r"\\[vh]space\{[^{}]*\}", "", s)
+    s = s.replace(r"\begin{smallmatrix}", r"\begin{matrix}").replace(r"\end{smallmatrix}", r"\end{matrix}")
     # einspaltige array-Umgebung -> Inhalt (TexTeller wrappt z. B. Integrale so); nur {c} ist
     # strukturgleich, mehrspaltige {cc} usw. (Matrizen) bleiben unangetastet. \s* toleriert
     # Zeilenumbrüche/Leerzeichen, die TexTeller um die Umgebung herum ausgibt.
     s = re.sub(r"\\begin\{array\}\s*\{c\}([\s\S]*?)\\end\{array\}", r"\1", s)
     s = re.sub(r"\\(left|right|,|;|!|quad|qquad)\b|\\[,;! ]", "", s)
+    # Determinante: '|' um eine Matrix-Umgebung ist det(), nicht Abs(). \left|...\right| wurde
+    # oben zu '|' reduziert; nur Matrix-Umgebungen werden zu vmatrix (kein '|x|' für Skalare).
+    s = re.sub(r"\|\s*\\begin\{matrix\}([\s\S]*?)\\end\{matrix\}\s*\|",
+               r"\\begin{vmatrix}\1\\end{vmatrix}", s)
+    s = re.sub(r"\|\s*\\begin\{array\}(\{[^{}]*\})([\s\S]*?)\\end\{array\}\s*\|",
+               r"\\begin{vmatrix}\2\\end{vmatrix}", s)
     s = s.replace("\\dfrac", "\\frac").replace("\\tfrac", "\\frac")
     s = s.replace("\\cdot", "*").replace("\\times", "*").replace("\\div", "/")
     # LaTeX-Synonyme: identische Glyphe/Bedeutung
@@ -25,7 +34,7 @@ def normalize(s: str) -> str:
     s = re.sub(r"\\(no)?limits(?![A-Za-z])", "", s)
     # TexTeller-Artefakte: \mbox{...}, \text{...}, \mathrm{...} -> Inhalt (eine Ebene, keine
     # Verschachtelung). Funktionsnamen (sin, cos, …) wurden oben bereits mit Backslash versehen.
-    for cmd in ("mbox", "text", "mathrm"):
+    for cmd in ("mbox", "text", "mathrm", "mathsf", "texttt", "textsf"):
         s = re.sub(r"\\" + cmd + r"\{([^{}]*)\}", r"\1", s)
     s = re.sub(r"\^\{?((?:'|\\prime)+)\}?", lambda m: "'" * (m.group(1).count("'") + m.group(1).count("prime")), s)  # f^{'} == f'
     s = re.sub(r"\s+", "", s)
@@ -35,11 +44,11 @@ def normalize(s: str) -> str:
 
 
 def parse(latex: str):
-    # Whitespace entfernen: TexTeller bricht Matrix-Umgebungen ueber Zeilen um und latex2sympy
-    # verlangt z. B. '\begin{array}{cc}' ohne Leerzeichen. '\sinx' wird vom Parser korrekt
-    # als sin(x) gelesen, daher ist volles Entfernen des Whitespace sicher.
+    # Erst normalisieren, dann parsen: die Engine-Ausgabe enthaelt TexTeller-Artefakte
+    # (Zeilenumbrueche, \quad, \left/\right, smallmatrix, \vspace, ...), die latex2sympy
+    # nicht versteht. normalize ist die eine Quelle (ADR-008) und entfernt sie konsistent.
     try:
-        return latex2sympy(re.sub(r"\s+", "", latex))
+        return latex2sympy(normalize(latex))
     except Exception:
         return None
 
