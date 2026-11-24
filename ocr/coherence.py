@@ -192,10 +192,14 @@ def array_single_cell_artifact(latex: str) -> str:
     if not m:
         return latex
     inner = m.group(1).strip()
-    if "\\\\" in inner or "&" in inner:
+    inner = re.sub(r"\\\\\s*$", "", inner).strip()
+    if "&" in inner:
+        return latex
+    if "\\\\" in inner:
         return latex
     if re.search(r"\\begin\{", inner):
         return latex
+    inner = re.sub(r"\\,\s*\+\s*$", "+", inner)
     return inner
 
 
