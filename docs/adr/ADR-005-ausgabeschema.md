@@ -123,9 +123,10 @@ Ob das LLM mit dieser Fassung den Wahrheitswert richtig deutet, wird **getrennt*
 ## Nachtrag 23.11. (aus ADR-006/007/008)
 
 - **Neues Zeilenfeld `repair`:** `null` oder `"<vorher> -> <nachher>"`, wenn die Kohärenz-Schicht ein Verwechslungspaar getauscht hat. Eine reparierte Zeile ist immer `uncertain` (ADR-007).
-- **„Unsicher“ ist jetzt gemessen definiert:** TexTeller und GLM-OCR SymPy-ungleich, oder Reparatur, oder variablenfreie Gleichungskette falsch. Ersetzt den Vorschlag `top3_disagree` (Vision-Top-N spielt für Formeln keine Rolle mehr, ADR-006).
+- **„Unsicher" ist jetzt gemessen definiert:** `uncertain` ist **reine OCR-Unsicherheit**: TexTeller und GLM-OCR SymPy-ungleich oder eine Reparatur. Ersetzt den Vorschlag `top3_disagree` (Vision-Top-N spielt für Formeln keine Rolle mehr, ADR-006).
+- **`math_status` (neu, Issue #1):** `closed_truth(fixed)` als getrennte Diagnose (`True`/`False`/`None`). Eine falsche, aber übereinstimmend gelesene Gleichung ist OCR-**sicher** mit `math_status=False` — die Rechenwahrheit beeinflusst `uncertain` nicht.
 - **Dezimalkomma:** `latex` enthält `0.5`, auch wenn `0,5` geschrieben wurde; in Mengen/Tupeln bleibt das Komma Trenner.
-- **Teilweise implementiert und gemessen:** Zeilen-`latex`, `uncertain`, `repair` in `ocr/formula.py`. Seitenstruktur (`order`, `steps`, `checks`) weiter offen.
+- **Teilweise implementiert und gemessen:** Zeilen-`latex`, `uncertain`, `repair`, `math_status` in `ocr/formula.py`. Seitenstruktur (`order`, `steps`, `checks`) weiter offen.
 
 ## Offen
 

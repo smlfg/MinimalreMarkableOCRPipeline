@@ -22,6 +22,19 @@ Kontext-Check auf echten Rechenketten (23.11.) ergab die Entscheidungsregel:
 4. **Deutsches Dezimalkomma** `0,5` → `0.5`, aber nicht innerhalb von `{…}`, `(…)`, `[…]` (dort Trennzeichen, z. B. `{1,3}`).
 5. Fehlender Malpunkt zwischen Ziffern (`3 10`) ist ein Verwechslungspaar wie die anderen (nur wenn die Kette dadurch stimmt).
 
+## Nachtrag 24.11. (Issue #1)
+
+Issue #1 präzisiert die Trennung von OCR-Evidenz und Rechenwahrheit:
+
+- `uncertain` ist **nur** OCR-Unsicherheit (Engine-Einigkeit + Reparatur). Punkt 3 oben
+  („Eine falsche Zahlengleichung ist immer `uncertain`") ist damit abgelöst: eine falsche,
+  aber übereinstimmend gelesene Gleichung ist OCR-sicher, `math_status=False`.
+- `recognize()` liefert `math_status = closed_truth(fixed)` als getrennte Diagnose.
+- `coherent()` liefert für **jede** Reparatur `trusted=False` — auch für eine von GLM
+  korroborierte (Punkt 2). Ohne Zweitmeinung entscheidet `closed_truth` nie über `trusted`.
+- Der Punkt-1-Tausch („wenn die Rechnung dadurch stimmt") bleibt, ist aber stets unsicher
+  und hinterlässt `repair` + `alt`.
+
 ## Folgen
 
 - Synthetische Zeilen: Präzision der „sicheren“ Zeilen 100 % bei 73 % Abdeckung; dev unverändert (kein Rückschritt).
