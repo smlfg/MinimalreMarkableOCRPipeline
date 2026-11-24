@@ -123,10 +123,15 @@ _CONTINUATION_HEAD = (
 
 
 def tt_mbox_small_dollar(latex: str) -> str:
-    """Unwrap \\mbox{\\small$…$} font-size wrappers (TT CPU noise)."""
-    if r"\mbox{\small$" not in latex:
+    """Unwrap \\mbox{\\small$…$} and \\mbox{\\raisebox{…}{\\small$…$}} font wrappers."""
+    if r"\mbox{\small$" not in latex and r"\mbox{\raisebox" not in latex:
         return latex
-    return re.sub(r"\\mbox\{\\small\$([^$]*)\$\}", r"\1", latex)
+    s = re.sub(
+        r"\\mbox\{\\raisebox\{[^}]*\}\{\\small\$([^$]*)\$\}\}",
+        r"\1",
+        latex,
+    )
+    return re.sub(r"\\mbox\{\\small\$([^$]*)\$\}", r"\1", s)
 
 
 _TEXT_PAREN_DOLLAR = re.compile(r"\\text\{((?:\(\$[^$]+\$\))+)\}")
