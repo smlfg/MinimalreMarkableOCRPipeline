@@ -104,6 +104,12 @@ Memo-gestützt, keine neuen Messungen nötig:
 
 ## Bekannte Restfehler / offen
 
+- **Fusionierte Exponenten** (synthetisch belegt, `last_synth_real.jsonl`): S34 (`=3^{9}` →
+  `=39`), S41 (`=3^{5}` → `=35`, Ketten-F1 verfehlt: Erstfehler zu früh erkannt), S43
+  (`=3^{5}` → `=35`, Ketten-F1 verfehlt: Fehlalarm auf korrekter Kette). Laut
+  `bench/synth/README.md` ein **Realismusloch des Schrift-Simulators** (Exponent zu flach
+  gerendert), kein Pipeline-Fehler. Eine Reparatur-Regel ohne Zweitmeinung wäre ein
+  stilles Eingreifen in Schülerzahlen (`35` kann eine echte Zahl sein) — abgelehnt (Issue #1).
 - `\sum_{k=1}^{n}` wird von TexTeller teils als `\sum_{k\,=\ ,1}` gelesen (Spacing + Komma-
   Artefakt im Subskript). Das `,` ist mehrdeutig (Mengentrenner) → noch nicht normalisiert.
 - Matrizen (`\begin{pmatrix}`/`\bmatrix`) sind im Benchmark noch nicht abgedeckt (mathtext
@@ -111,12 +117,56 @@ Memo-gestützt, keine neuen Messungen nötig:
 - Issue-#1-Neumessung von `coverage`/`prec_certain` auf Mac MPS steht aus.
 - Seitenstruktur (`order`/`steps`/`checks`) ist weiterhin nicht gemessen (ADR-005).
 
+## Pass 2 — Fehlerverteilung über getrackte Cache-Ausgaben (Messung vor Code)
+
+`bench/overnight/error_distribution.py` (nur lesend) kategorisiert alle `ocr_hit=false`-
+Zeilen in `kalib/ketten/last_real.jsonl` und `bench/synth/last_synth_real.jsonl`.
+Ergebnis: **alle drei Kandidaten sind String-Match-Artefakte — kein Produktcode geändert.**
+
+### Chunk A — `x` vs `X` (K01/K06/K09/K13): ZURÜCKGEWIESEN (kein Fehler)
+
+`same('3X=15', '3x=15')` = **True** — latex2sympy faltet `X`→`x`, alle X-Zeilen haben
+`ocr_hit=true`. Eine x/X-Normalisierung wäre toter Code mit dem Risiko, legitime
+Großbuchstaben (eigenständige Variablen) zu korrumpieren. Kein Messgewinn → nicht behalten.
+
+### Chunk B — führendes `=` auf Fortsetzungszeilen (K25): ZURÜCKGEWIESEN (Artefakt)
+
+- `parse('=…')` = `None` (latex2sympy kann führendes `=` nicht) → `same()` kann nicht auf
+  SymPy-Äquivalenz ausweichen. K25 liest `3 \cdot 10+3 \cdot 7`, `30+21`, `41` ohne das
+  GT-führende `=`; **Inhalt identisch, Schülerfehler `41` erhalten**.
+- Ketten-F1 real: **28/28** — `chain_bench.validator_lines` behandelt Fortsetzungszeilen
+  (nackter Term = implizite Fortsetzung, K25-Konvention). Der strikte Zeilen-Diagnosewert
+  `ocr_hit` fällt nur wegen des unparsebaren `=`.
+- Eine Kohärenz-Regel, die `=` korroboriert erhält/hinzufügt, ist hier **nicht messbar**
+  (kein GLM/Ollama auf dieser VM) und ohne Primaer-Metrikgewinn → dokumentiert, kein Code.
+
+### Chunk C — `\frac{a}{b}` vs `a/b`: ZURÜCKGEWIESEN (bereits gleich)
+
+`same(r'\frac{20}{6}', r'20/6')` = **True**. Die 24 synthetischen `ocr_hit=false`-Zeilen
+(S03–S31) sind **keine** sympy_equal-Fehler, sondern dasselbe führende-`=`-Artefakt
+(GT `=\frac{20}{6}` vs read `=20/6`, beide unparsebar). Kein Produkt-Hack (Vorgabe
+„already equal → nur dokumentieren" erfüllt).
+
+### Pass-2-Härtung (Chunk 0): BEHALTEN
+
+- `coherent()`-Sicherheitskanten (Reparatur nie `trusted`, `second is None` nie
+  `closed_truth`-getrieben) waren aus Pass 1 bereits umgesetzt; direkte Unit-Tests
+  `test_coherent_repair_is_never_trusted` / `test_coherent_second_none_not_truth_driven`
+  decken beide Pfade.
+- `test_engines_disagree_uncertain_even_if_alt_true` assertiert jetzt zusätzlich
+  `math_status=False` (Rechenwahrheit getrennt von `uncertain`).
+- ADR-005-Nachtrag definiert `uncertain` als reine OCR-Evidenz, `math_status` trägt
+  `closed_truth` — Widerspruch zu ADR-007 aufgelöst.
+
 ## Reproduktion
 
 ```bash
 # Regressionstests (keine Modelle nötig)
 venv/bin/python -m pytest -q
 venv/bin/python bench/structure_bench.py --selftest
+
+# Fehlerverteilung über getrackte Cache-Ausgaben (nur lesend)
+venv/bin/python bench/overnight/error_distribution.py
 
 # Overnight-Benchmark (live TexTeller CPU, synthetisch gerendert)
 venv/bin/python bench/overnight/benchmark.py --tag "notiz"
