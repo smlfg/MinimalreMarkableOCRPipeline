@@ -309,6 +309,62 @@ korrekt, Ketten exakt) — gehört zur Matrix/Crop-Vorverarbeitung (Pass 6). Zwe
 gleiche-Variable-Aufgaben ohne sichtbare Lücke/Label werden verschmolzen (ohne Validator nicht
 auflösbar; bewusst kein Tutor).
 
+## Pass 6 — Matrix-Crop-Vorverarbeitung + restliche Nicht-Matrix-Fehler
+
+### Ausgangslage (real gemessen, nicht die alte 12/16-Annahme)
+
+Die Pass-4-Grundlage hat die Matrix-Crops bereits weitgehend geheilt (Matrix **14/16 = 0,875**,
+nicht 0,333). Vor Pass 6 verblieben genau **4 dev-Fehler**:
+
+| ID | Bucket | Ursache (Inspektion) |
+|---|---|---|
+| `l45_dev_22`, `l45_dev_31` | matrix (vbar) | TexTeller halluziniert mehrere `\|`-Balken um die Determinante; der **Zellinhalt** (`1&2\\3&4`) wird korrekt gelesen |
+| `l45_dev_51` | trig | `(` wird als `\langle` gelesen (`\sin\langle\pi\rangle`) — echte OCR-Verwechslung |
+| `l45_dev_56` | special | `i`→`j` in `i^{2}=1` — Zeichendetail geht bei sehr kleinem Crop verloren |
+
+Crop-Inspektion: **keine** Kanten-Clipping (Margins z. B. 136/17/27/17 px), keine zu niedrige
+Auflösung (500–660 px breit). Die vbar-Fehler sind Modell-Halluzination, kein Crop-Defekt.
+
+### Ein-Faktor-Experimente (live TexTeller CPU, gleiche Bilder, nur Transform variiert)
+
+| Faktor | Ergebnis auf den 4 Fehlern | Regressionscheck | Entscheidung |
+|---|---|---|---|
+| **P1 Rand-Padding** (32/64 px weiß) | **flach** — identische Reads auf allen 4 | keine | **REJECT** (kein Effekt) |
+| **P2 globales Upscale** (2× / Höhe 160) | `i`/`j` wird korrekt (`l45_dev_56`) | **bricht `l45_dev_21`** (funktionierende vbar-Determinante → Balken-Halluzination) | **REJECT** global (regressiv auf matrix) |
+| **P2 gated Min-Höhe** (nur Crops < 96 px hochskalieren, große unangetastet) | `l45_dev_56` → `i^{2}=1`; vbar/trig unverändert | **0 Regressionen** auf dev; stabil bei min_h ∈ {96,128,160} | **KEEP** |
+| **P3 Kontrast** (autocontrast) | **flach** | keine | **REJECT** (kein Effekt) |
+| **F1 `\langle`→`(`** | würde `l45_dev_51` „reparieren" | würde echte Inner-Products `\langle u,v\rangle` korrumpieren = stiller Eingriff | **REJECT** (nicht geraten) |
+
+Die vbar-Determinanten bleiben ungelöst: weder Padding noch Skalierung noch Kontrast ändern den
+multi-Balken-Halluzinations-Read → echte Modell-/Renderer-Grenze, dokumentiert (kein Hack).
+
+### Gehaltene Änderung (generalisiert, produktiv)
+
+`ocr/pre.py:ensure_min_height(img, min_height=96)` — skaliert **nur zu kurze** Crops auf
+Mindesthöhe (Seitenverhältnis erhalten, LANCZOS), bereits große Bilder bleiben unverändert.
+Verdrahtet in `ocr/formula.py:recognize` (TexTeller-Input; GLM unverändert) sowie in den
+Benchmarks (`level45`, `benchmark`, `multiline_bench`), damit die Messung exakt den Produktpfad
+abbildet. Reine Bild-Vorverarbeitung: keine Zeile/Mathematik wird verändert (Issue #1 unberührt).
+
+### Ergebnisse (dev / holdout / Anker)
+
+| Metrik | Pass 5 (vorher) | Pass 6 (nachher) |
+|---|---:|---:|
+| dev struct (70) | 0,943 | **0,957** |
+| dev integral / matrix / trig / special | 18/18 / 14/16 / 17/18 / 17/18 | 18/18 / 14/16 / 17/18 / **18/18** |
+| dev student_error_preserved | 14/16 = 0,875 | **15/16 = 0,938** (dev_56 jetzt treu gelesen) |
+| Holdout struct (36) | 0,944 | **0,944** (keine Divergenz/Überanpassung) |
+| Holdout matrix | 7/9 | 7/9 (2 vbar, unverändert) |
+| Anker `overnight_synth` (50) | 1,000 | **1,000** |
+| Multiline E2E chain_recall / exact | 1,000 / 1,000 | **1,000 / 1,000** (Studentenfehler 1,000, Anti-Domino True) |
+| Pytest | 36 | **40** (inkl. 4 neue `ensure_min_height`-Tests) |
+| Latenz dev / holdout / multiline p50 | – | 0,697 s / 0,573 s / 0,568 s |
+
+Ehrlich: der Gewinn ist **+1 dev-Item** (kleiner Crop `i^{2}`); Holdout unverändert (der i/j-Fall
+tritt dort nicht auf), Anker und Mehrzeilen unberührt. Die Änderung ist sicher (nur zu kurze
+Crops, keine Regression), aber bewusst kein „großer" Sprung — die 2 vbar-Determinanten und
+`\langle` bleiben echte Modellgrenzen.
+
 ## Reproduktion
 
 ```bash

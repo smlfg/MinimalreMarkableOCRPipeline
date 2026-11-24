@@ -43,6 +43,10 @@ Hardware-Benchmark dieser VM (live TexTeller CPU): p50 0,65 s / p95 1,14 s /
    gruppieren, **ohne** Tutor/Validator und ohne eine Zeile zu verändern (Issue #1).
 10. Pass 5 — die echten ketten-Muster brechen an OCR `x`/`X` und an K25 (verschlucktes
     führendes `=`); nackte Terme + Gross/Klein-Fold lösen beide strukturell.
+11. Pass 6 — die vbar-Matrix-Fehler sind kein Crop-Defekt (keine Clipping, genug Auflösung),
+    sondern `|`-Balken-Halluzination des Modells; Padding/Skalierung/Kontrast ändern nichts.
+12. Pass 6 — sehr kleine Crops verlieren bei TexTellers interner 448-px-Skalierung
+    Zeichendetail (i→j); ein **gated** Hochskalieren nur kleiner Crops behebt das regressionsfrei.
 
 ## Experiment results
 
@@ -59,6 +63,9 @@ Hardware-Benchmark dieser VM (live TexTeller CPU): p50 0,65 s / p95 1,14 s /
 | Pass 4 C–E: `normalize` smallmatrix/vmatrix/`\vspace`/`\mathsf` | dev struct → 0,929, matrix → 0,812 | **KEEP** |
 | Pass 4 F: `parse` wendet `normalize` an | dev struct **0,943**, matrix **0,875**, parse_err **0,043**; holdout **0,944** | **KEEP** |
 | Pass 5: Mehrzeilen-Gruppierung (`ocr/multiline.py`) | ketten within-chain 0,821 → **1,000**; live chain_recall **1,000**, chain_exact_pages **1,000**, merge_fp 0, Schuelerfehler/Anti-Domino 100 % | **KEEP** |
+| Pass 6 P1/P3: Pad/Kontrast | **flach** auf allen Restfehlern | **REJECT** |
+| Pass 6 P2 global: 2x/160-Upscale | fix i→j, **bricht** funktionierende vbar-Determinante | **REJECT** |
+| Pass 6 P2 gated: Min-Hoehe 96 nur fuer kleine Crops | dev struct 0,943 → **0,957** (special 18/18), 0 Regressionen, holdout 0,944 unveraendert, Anker 1,000 | **KEEP** |
 
 ## Kept and rejected changes
 
@@ -68,22 +75,25 @@ Normalisierung, Matrix-Umgebungen `smallmatrix`→`matrix`/`|`-Matrix→`vmatrix
 `\vspace`/`\mathsf`, `parse` wendet `normalize` an, `equivalent_expr` vergleicht Matrizen),
 `ocr/multiline.py` (`group_lines`/`page_structure`: strukturelle Rechenketten, Issue-#1-sicher),
 `ocr/pre.py:split_lines_with_boxes` (Boxen; `split_lines` verhaltensgleich),
-`ocr/pipeline.py:recognize_page` (additiv; Segmentieren→Erkennen→Gruppieren).
+`ocr/pipeline.py:recognize_page` (additiv; Segmentieren→Erkennen→Gruppieren),
+`ocr/pre.py:ensure_min_height` (gated Min-Höhe 96 für zu kleine Crops, in `recognize` +
+Benchmarks verdrahtet; reine Bild-Vorverarbeitung).
 **Verworfen:** jede x/X-Regel im Vergleich, jede führende-`=`-Reparatur ohne Zweitmeinung, jeder
 frac-Produkt-Hack, jedes blinde Kollabieren mehrerer Determinanten-Balken (würde `‖M‖` mit
-`|M|` verwechseln), `\langle→(` (würde echte Inner-Products korrumpieren), **jegliche
-Tutor-/Schrittrichter-Logik** (bewusst nicht in der OCR-Struktur). Nicht angetastet:
+`|M|` verwechseln), `\langle→(` (würde echte Inner-Products korrumpieren), **globales
+Upscale/Padding/Kontrast** (flat bzw. regressiv auf matrix), **jegliche Tutor-/Schrittrichter-Logik**
+(bewusst nicht in der OCR-Struktur). Nicht angetastet:
 `prepare.py`, `models.py`, `structure_bench.py`, Test-Labels, `results_2026-11-23.tsv`,
 GT-Dateien.
 
 ## Validation evidence
 
-- `venv/bin/python -m pytest -q` → **grün** (36 Tests: Issue-#1-Sicherheit, coherent-Pfade,
-  normalize, Matrix-Umgebungen/`parse`-Robustheit, Mehrzeilen-Gruppierung).
+- `venv/bin/python -m pytest -q` → **grün** (40 Tests: Issue-#1-Sicherheit, coherent-Pfade,
+  normalize, Matrix-Umgebungen/`parse`-Robustheit, Mehrzeilen-Gruppierung, Min-Höhe-Preprocessing).
 - `venv/bin/python bench/structure_bench.py --selftest` → **OK**.
 - Level 4–5 (dev 70 / holdout 36, live TexTeller CPU, synthetisch gerendert): dev struct
-  **0,714 → 0,943** (matrix 0,000 → 0,875, integral 1,000, parse_err 0,157 → 0,043);
-  holdout struct **0,944** (integral/trig/special 1,000, matrix 0,778) → **keine Überanpassung**.
+  **0,714 → 0,943 → 0,957** (Pass 6: special 18/18, matrix 14/16, trig 17/18, integral 18/18,
+  parse_err 0,043); holdout struct **0,944** (unverändert → keine Überanpassung).
   Anchor `overnight_synth` (50) bleibt **1,000**.
 - Pass 5 real ketten-Muster (ohne Modell): within-chain **28/28 = 1,000** (vorher 23/28);
   packed mit Leerzeile **28/28 exakt, 0 verschmolzen**.
@@ -106,10 +116,11 @@ GT-Dateien.
    verfügbar). Eine Pipeline-Reparatur ohne Zweitmeinung wäre stiller Eingriff → abgelehnt.
 2. `\sum_{k\,=\ ,1}`-Spacing/Komma-Artefakt im Subskript (mehrdeutig, nicht normalisiert).
 3. Determinanten-Balken (Level 4–5 matrix): dev `l45_dev_22/31`, holdout `l45_holdout_12/13` —
-   TexTeller liest `\left|…\right|` teils als verstümmelte Mehrfach-Balken (teils Renderer-
-   Glyphe, teils echte OCR-Verwechslung); blindes Kollabieren wäre `‖M‖`-vs-`|M|`-Verwechslung.
-4. Winkelklammern `\langle\pi\rangle` statt `(\pi)` und `i`/`j`-Verwechslung (echte OCR-
-   Fehler, ohne Kontext nicht sicher auflösbar → nicht geraten).
+   TexTeller halluziniert mehrere `|`-Balken (Zellinhalt korrekt). Kein Crop-Defekt (keine
+   Clipping, genug Auflösung); Padding/Skalierung/Kontrast ändern nichts → echte Modellgrenze.
+   Blindes Kollabieren wäre `‖M‖`-vs-`|M|`-Verwechslung → abgelehnt.
+4. Winkelklammern `\langle\pi\rangle` statt `(\pi)` (dev `l45_dev_51`) und `i`/`j`-Verwechslung;
+   `i`→`j` ist durch gated Min-Höhe behoben, `\langle` ohne Kontext nicht sicher auflösbar → nicht geraten.
 5. `coverage`/`prec_certain`-Neumessung nach Issue #1 auf Mac MPS ausstehend.
 6. S39 (`ask` durch OCR-Unsicherheit) — Ketten-F1-Synth-Verfehlung ohne Zeilen-Mismatch.
 7. Pass 5 Segmentierung hoher Brüche/Integrale: dünner Bruchstrich fällt unter die Ink-Schwelle
