@@ -70,6 +70,24 @@ Fehlerverteilung Baseline: 3× Integral (`\mbox`/`\begin{array}`), 1× Trig (`\t
 **Latenz (Linux CPU, ≠ Mac MPS):** p50 ≈ 0,5–0,9 s, p95 schwankt (0,6–7,4 s; Modell-Load +
 VM-Last). Nur als Orientierung, nicht mit MPS vergleichbar.
 
+## Hardware-Benchmark — live TexTeller CPU (Pass 1b)
+
+Sauber gemessen (`bench/overnight/latency.py`): Modell einmal laden (3,7 s), 3× Warm-up,
+dann 3 Durchläufe über 50 Formeln = 150 Inferenzen.
+
+| Metrik | Linux CPU (diese VM) | Mac MPS (Baseline, eingefroren) |
+|---|---:|---:|
+| p50 | **0,65 s** | – (nicht erfasst) |
+| p95 | **1,14 s** | **0,32 s** (dev) / **0,23 s** (own_probe) |
+| min / max | 0,32 s / 4,47 s | – |
+| Durchsatz | 1,36 Formeln/s | – |
+| Modell-Load | 3,7 s | – |
+
+**Einordnung:** Linux-CPU-Inferenz ist hier **~2–4× langsamer** als der Mac-MPS-Baseline
+(p95 1,14 s vs 0,32 s). p95 liegt damit knapp unter der 2-s-Grenze, aber die CPU-Zahl ist
+nicht mit MPS gleichzusetzen und wird nicht als solche berichtet. Der Varianz-Ausreißer
+(max 4,47 s) stammt von VM-Last/GC während des ersten Durchlaufs nach dem Laden.
+
 ## Upstream-Entscheidungen (#2–#4) — DEFER
 
 Memo-gestützt, keine neuen Messungen nötig:
@@ -102,4 +120,7 @@ venv/bin/python bench/structure_bench.py --selftest
 
 # Overnight-Benchmark (live TexTeller CPU, synthetisch gerendert)
 venv/bin/python bench/overnight/benchmark.py --tag "notiz"
+
+# Latenz-Benchmark (Linux CPU, sauber protokolliert)
+venv/bin/python bench/overnight/latency.py 3
 ```
