@@ -7,6 +7,13 @@ from latex2sympy2_extended import latex2sympy
 
 def normalize(s: str) -> str:
     s = s.strip().strip("$")
+    # TexTeller-Artefakte: Fontgrößen-Kommandos und innere $-Begrenzer sind semantisch leer.
+    s = re.sub(r"\\(?:huge|Huge|LARGE|Large|large|normalsize|small|footnotesize|scriptsize|tiny)\b", "", s)
+    s = s.replace("$", "")
+    # einspaltige array-Umgebung -> Inhalt (TexTeller wrappt z. B. Integrale so); nur {c} ist
+    # strukturgleich, mehrspaltige {cc} usw. (Matrizen) bleiben unangetastet. \s* toleriert
+    # Zeilenumbrüche/Leerzeichen, die TexTeller um die Umgebung herum ausgibt.
+    s = re.sub(r"\\begin\{array\}\s*\{c\}([\s\S]*?)\\end\{array\}", r"\1", s)
     s = re.sub(r"\\(left|right|,|;|!|quad|qquad)\b|\\[,;! ]", "", s)
     s = s.replace("\\dfrac", "\\frac").replace("\\tfrac", "\\frac")
     s = s.replace("\\cdot", "*").replace("\\times", "*").replace("\\div", "/")
@@ -16,6 +23,10 @@ def normalize(s: str) -> str:
     s = re.sub(r"(?<![\\A-Za-z])(ln|log|sin|cos|tan|lim)(?![A-Za-z])", r"\\\1", s)
     s = re.sub(r"\\gt(?![A-Za-z])", ">", s); s = re.sub(r"\\lt(?![A-Za-z])", "<", s)
     s = re.sub(r"\\(no)?limits(?![A-Za-z])", "", s)
+    # TexTeller-Artefakte: \mbox{...}, \text{...}, \mathrm{...} -> Inhalt (eine Ebene, keine
+    # Verschachtelung). Funktionsnamen (sin, cos, …) wurden oben bereits mit Backslash versehen.
+    for cmd in ("mbox", "text", "mathrm"):
+        s = re.sub(r"\\" + cmd + r"\{([^{}]*)\}", r"\1", s)
     s = re.sub(r"\^\{?((?:'|\\prime)+)\}?", lambda m: "'" * (m.group(1).count("'") + m.group(1).count("prime")), s)  # f^{'} == f'
     s = re.sub(r"\s+", "", s)
     # Einzeltoken-Index/Exponent: x^2 == x^{2}, a_\alpha == a_{\alpha} (gleiche Darstellung)
