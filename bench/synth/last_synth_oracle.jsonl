@@ -1,47 +1,143 @@
 {"id": "S01", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
-{"id": "S02", "label": 2, "pred": 2, "status": ["correct", "correct", "incorrect"], "speak": "Zeile 3 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
-{"id": "S03", "label": 1, "pred": 1, "status": ["correct", "incorrect"], "speak": "Zeile 2 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
-{"id": "S04", "label": -1, "pred": -1, "status": ["correct", "correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
-{"id": "S05", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
-{"id": "S06", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S02", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S03", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S04", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S05", "label": 1, "pred": 1, "status": ["correct", "incorrect", "incorrect"], "speak": "Zeile 2 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S06", "label": -1, "pred": -1, "status": ["correct", "correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
 {"id": "S07", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
 {"id": "S08", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
-{"id": "S09", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
-{"id": "S10", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
-{"id": "S11", "label": 2, "pred": 2, "status": ["correct", "correct", "incorrect"], "speak": "Zeile 3 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
-{"id": "S12", "label": 2, "pred": 2, "status": ["correct", "correct", "incorrect"], "speak": "Zeile 3 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
-{"id": "S13", "label": -1, "pred": -1, "status": ["correct", "correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
-{"id": "S14", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
-{"id": "S15", "label": -1, "pred": -1, "status": ["correct", "correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
-{"id": "S16", "label": 1, "pred": 1, "status": ["correct", "incorrect"], "speak": "Zeile 2 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
-{"id": "S17", "label": -1, "pred": -1, "status": ["correct", "correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S09", "label": 1, "pred": 1, "status": ["correct", "incorrect"], "speak": "Zeile 2 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S10", "label": -1, "pred": -1, "status": ["correct", "correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S11", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S12", "label": 1, "pred": 1, "status": ["correct", "incorrect", "incorrect"], "speak": "Zeile 2 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S13", "label": 2, "pred": 2, "status": ["correct", "correct", "incorrect", "incorrect"], "speak": "Zeile 3 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S14", "label": -1, "pred": -1, "status": ["correct", "correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S15", "label": 2, "pred": 2, "status": ["correct", "correct", "incorrect"], "speak": "Zeile 3 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S16", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S17", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
 {"id": "S18", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
-{"id": "S19", "label": 2, "pred": 2, "status": ["correct", "correct", "incorrect"], "speak": "Zeile 3 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S19", "label": -1, "pred": -1, "status": ["correct", "correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
 {"id": "S20", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
-{"id": "S21", "label": 2, "pred": 2, "status": ["correct", "correct", "incorrect", "incorrect"], "speak": "Zeile 3 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S21", "label": -1, "pred": -1, "status": ["correct", "correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
 {"id": "S22", "label": -1, "pred": -1, "status": ["correct", "correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
-{"id": "S23", "label": 2, "pred": 2, "status": ["correct", "correct", "incorrect"], "speak": "Zeile 3 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
-{"id": "S24", "label": -1, "pred": -1, "status": ["correct", "correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
-{"id": "S25", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
-{"id": "S26", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S23", "label": 1, "pred": 1, "status": ["correct", "incorrect"], "speak": "Zeile 2 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S24", "label": 1, "pred": 1, "status": ["correct", "incorrect", "correct"], "speak": "Zeile 2 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S25", "label": 2, "pred": 2, "status": ["correct", "correct", "incorrect"], "speak": "Zeile 3 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S26", "label": 2, "pred": 2, "status": ["correct", "correct", "incorrect"], "speak": "Zeile 3 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
 {"id": "S27", "label": -1, "pred": -1, "status": ["correct", "correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
-{"id": "S28", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S28", "label": -1, "pred": -1, "status": ["correct", "correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
 {"id": "S29", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
-{"id": "S30", "label": -1, "pred": -1, "status": ["correct", "correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
-{"id": "S31", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
-{"id": "S32", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
-{"id": "S33", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
-{"id": "S34", "label": 1, "pred": 1, "status": ["correct", "incorrect", "correct"], "speak": "Zeile 2 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
-{"id": "S35", "label": 3, "pred": 3, "status": ["correct", "correct", "correct", "incorrect"], "speak": "Zeile 4 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S30", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S31", "label": -1, "pred": -1, "status": ["correct", "correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S32", "label": 1, "pred": 1, "status": ["correct", "incorrect", "incorrect"], "speak": "Zeile 2 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S33", "label": 1, "pred": 1, "status": ["correct", "incorrect", "incorrect"], "speak": "Zeile 2 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S34", "label": 2, "pred": 2, "status": ["correct", "correct", "incorrect"], "speak": "Zeile 3 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S35", "label": 1, "pred": 1, "status": ["correct", "incorrect"], "speak": "Zeile 2 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
 {"id": "S36", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
-{"id": "S37", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
-{"id": "S38", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
-{"id": "S39", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
-{"id": "S40", "label": 2, "pred": 2, "status": ["correct", "correct", "incorrect"], "speak": "Zeile 3 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
-{"id": "S41", "label": 2, "pred": 2, "status": ["correct", "correct", "incorrect"], "speak": "Zeile 3 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
-{"id": "S42", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S37", "label": 2, "pred": 2, "status": ["correct", "correct", "incorrect", "incorrect"], "speak": "Zeile 3 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S38", "label": 1, "pred": 1, "status": ["correct", "incorrect", "incorrect"], "speak": "Zeile 2 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S39", "label": -1, "pred": -1, "status": ["correct", "correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S40", "label": 3, "pred": 3, "status": ["correct", "correct", "correct", "incorrect"], "speak": "Zeile 4 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S41", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S42", "label": 2, "pred": 2, "status": ["correct", "correct", "incorrect"], "speak": "Zeile 3 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
 {"id": "S43", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
-{"id": "S44", "label": 1, "pred": 1, "status": ["correct", "incorrect", "incorrect"], "speak": "Zeile 2 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S44", "label": 1, "pred": 1, "status": ["correct", "incorrect"], "speak": "Zeile 2 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
 {"id": "S45", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
-{"id": "S46", "label": 2, "pred": 2, "status": ["correct", "correct", "incorrect"], "speak": "Zeile 3 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
-{"id": "S47", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S46", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S47", "label": -1, "pred": -1, "status": ["correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S48", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S49", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S50", "label": 1, "pred": 1, "status": ["correct", "incorrect", "correct"], "speak": "Zeile 2 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S51", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S52", "label": -1, "pred": -1, "status": ["correct", "correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S53", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S54", "label": 1, "pred": 1, "status": ["correct", "incorrect"], "speak": "Zeile 2 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S55", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S56", "label": 2, "pred": 2, "status": ["correct", "correct", "incorrect"], "speak": "Zeile 3 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S57", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S58", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S59", "label": 2, "pred": 2, "status": ["correct", "correct", "incorrect"], "speak": "Zeile 3 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S60", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S61", "label": 1, "pred": 1, "status": ["correct", "incorrect", "correct"], "speak": "Zeile 2 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S62", "label": 2, "pred": 2, "status": ["correct", "correct", "incorrect"], "speak": "Zeile 3 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S63", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S64", "label": -1, "pred": -1, "status": ["correct", "correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S65", "label": -1, "pred": -1, "status": ["correct", "correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S66", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S67", "label": 1, "pred": 1, "status": ["correct", "incorrect", "correct"], "speak": "Zeile 2 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S68", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S69", "label": 2, "pred": 2, "status": ["correct", "correct", "incorrect"], "speak": "Zeile 3 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S70", "label": 1, "pred": 1, "status": ["correct", "incorrect"], "speak": "Zeile 2 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S71", "label": 3, "pred": 3, "status": ["correct", "correct", "correct", "incorrect"], "speak": "Zeile 4 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S72", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S73", "label": -1, "pred": -1, "status": ["correct", "correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S74", "label": 1, "pred": 1, "status": ["correct", "incorrect", "incorrect"], "speak": "Zeile 2 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S75", "label": 2, "pred": 2, "status": ["correct", "correct", "incorrect"], "speak": "Zeile 3 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S76", "label": -1, "pred": -1, "status": ["correct", "correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S77", "label": 3, "pred": 3, "status": ["correct", "correct", "correct", "incorrect"], "speak": "Zeile 4 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S78", "label": 2, "pred": 2, "status": ["correct", "correct", "incorrect", "incorrect"], "speak": "Zeile 3 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S79", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S80", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S81", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S82", "label": 3, "pred": 3, "status": ["correct", "correct", "correct", "incorrect"], "speak": "Zeile 4 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S83", "label": 3, "pred": 3, "status": ["correct", "correct", "correct", "incorrect"], "speak": "Zeile 4 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S84", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S85", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S86", "label": 1, "pred": 1, "status": ["correct", "incorrect", "incorrect"], "speak": "Zeile 2 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S87", "label": 1, "pred": 1, "status": ["correct", "incorrect"], "speak": "Zeile 2 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S88", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S89", "label": 2, "pred": 2, "status": ["correct", "correct", "incorrect"], "speak": "Zeile 3 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S90", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S91", "label": 1, "pred": 1, "status": ["correct", "incorrect", "incorrect"], "speak": "Zeile 2 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S92", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S93", "label": 1, "pred": 1, "status": ["correct", "incorrect", "correct"], "speak": "Zeile 2 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S94", "label": 1, "pred": 1, "status": ["correct", "incorrect", "incorrect"], "speak": "Zeile 2 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S95", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S96", "label": 1, "pred": 1, "status": ["correct", "incorrect"], "speak": "Zeile 2 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S97", "label": 1, "pred": 1, "status": ["correct", "incorrect", "correct"], "speak": "Zeile 2 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S98", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S99", "label": 1, "pred": 1, "status": ["correct", "incorrect"], "speak": "Zeile 2 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S100", "label": -1, "pred": -1, "status": ["correct", "correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S101", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S102", "label": 2, "pred": 2, "status": ["correct", "correct", "incorrect"], "speak": "Zeile 3 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S103", "label": 1, "pred": 1, "status": ["correct", "incorrect"], "speak": "Zeile 2 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S104", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S105", "label": -1, "pred": -1, "status": ["correct", "correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S106", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S107", "label": 2, "pred": 2, "status": ["correct", "correct", "incorrect"], "speak": "Zeile 3 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S108", "label": 1, "pred": 1, "status": ["correct", "incorrect", "incorrect"], "speak": "Zeile 2 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S109", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S110", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S111", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S112", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S113", "label": 1, "pred": 1, "status": ["correct", "incorrect"], "speak": "Zeile 2 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S114", "label": -1, "pred": -1, "status": ["correct", "correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S115", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S116", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S117", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S118", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S119", "label": 3, "pred": 3, "status": ["correct", "correct", "correct", "incorrect"], "speak": "Zeile 4 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S120", "label": -1, "pred": -1, "status": ["correct", "correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S121", "label": 2, "pred": 2, "status": ["correct", "correct", "incorrect"], "speak": "Zeile 3 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S122", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S123", "label": -1, "pred": -1, "status": ["correct", "correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S124", "label": 2, "pred": 2, "status": ["correct", "correct", "incorrect", "incorrect"], "speak": "Zeile 3 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S125", "label": 2, "pred": 2, "status": ["correct", "correct", "incorrect"], "speak": "Zeile 3 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S126", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S127", "label": 1, "pred": 1, "status": ["correct", "incorrect"], "speak": "Zeile 2 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S128", "label": 1, "pred": 1, "status": ["correct", "incorrect"], "speak": "Zeile 2 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S129", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S130", "label": 1, "pred": 1, "status": ["correct", "incorrect", "incorrect"], "speak": "Zeile 2 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S131", "label": 1, "pred": 1, "status": ["correct", "incorrect", "incorrect"], "speak": "Zeile 2 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S132", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S133", "label": 2, "pred": 2, "status": ["correct", "correct", "incorrect", "incorrect"], "speak": "Zeile 3 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S134", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S135", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S136", "label": 3, "pred": 3, "status": ["correct", "correct", "correct", "incorrect"], "speak": "Zeile 4 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S137", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S138", "label": 2, "pred": 2, "status": ["correct", "correct", "incorrect"], "speak": "Zeile 3 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S139", "label": 1, "pred": 1, "status": ["correct", "incorrect"], "speak": "Zeile 2 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S140", "label": 1, "pred": 1, "status": ["correct", "incorrect", "incorrect"], "speak": "Zeile 2 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}
+{"id": "S141", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S142", "label": -1, "pred": -1, "status": ["correct", "correct", "correct"], "speak": "Alles richtig. Weiter so."}
+{"id": "S143", "label": 2, "pred": 2, "status": ["correct", "correct", "incorrect"], "speak": "Zeile 3 ist noch nicht richtig. Vergleiche linke und rechte Seite noch einmal."}

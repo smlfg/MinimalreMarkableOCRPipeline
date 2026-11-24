@@ -13,3 +13,10 @@ zeit	pfad	n	F1_strict	F1_answered	abdeckung	nachfrage	nachfrage_berechtigt	acc_e
 2026-11-23T21:43	synth_oracle	47	1.000	1.000	1.00	0.00	0	1.000	1.000	
 2026-11-23T21:44	real	28	1.000	1.000	1.00	0.00	0	1.000	1.000	seite 6 komplett: implizite gleichheit + kombinierte glm-artefakte
 2026-11-23T21:47	synth_real	47	0.934	0.948	0.98	0.02	0	0.929	0.939	ouroboros v1: 10 synth-seiten, seed 23
+2026-11-23T21:55	synth_oracle	143	1.000	1.000	1.00	0.00	0	1.000	1.000	
+2026-11-23T22:08	synth_real	143	0.965	0.965	1.00	0.00	0	0.968	0.963	ouroboros v2: 30 seiten, 143 ketten, exponent angehoben, haertere templates (seed 47)
+2026-11-23T22:14	synth_oracle	143	1.000	1.000	1.00	0.00	0	1.000	1.000	
+2026-11-23T22:35	synth	200	0.995	1.000	0.99	0.01	0	1.000	0.991	v3 kampagne L1 (200 ketten, seed 314, glyph v2, batches 1-4)
+2026-11-23T22:35	synth	200	1.000	1.000	1.00	0.00	0	1.000	1.000	v3 kampagne L2 (200 ketten, seed 314, glyph v2, batches 5-8)
+2026-11-23T22:35	synth	150	0.987	0.987	1.00	0.00	0	1.000	0.974	v3 kampagne L3 (150 ketten, seed 314, glyph v2, batches 9-11)
+2026-11-23T22:35	synth	150	0.930	0.930	1.00	0.00	0	0.969	0.894	v3 kampagne L4 (150 ketten, seed 314, glyph v2, batches 12-14)

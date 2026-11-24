@@ -118,51 +118,64 @@ def score(rows):
             "ask_justified": sum(r.get("ask_justified", False) for r in asks)}
 
 
+def _arg(name):
+    """Optional: --gt PFAD --rows PFAD (v3-Kampagne: Batch-Slices messen). Defaults unveraendert."""
+    return sys.argv[sys.argv.index(name) + 1] if name in sys.argv else None
+
+
+def run_real(chains, own, recognize, png_base):
+    """Ketten je Slot-PNG durch die OCR, dann Arbitrierung (ADR-007). Zurueck: rows."""
+    oracle_pred = {c["id"]: judge(c["steps"])[0] for c in chains}
+    rows = []
+    for c in chains:
+        read, unsure, hits, alt_reads = [c["steps"][0]], [], [], {}
+        for k in range(1, len(c["steps"])):
+            r = own.get((c["id"], k))
+            if r is None:
+                read.append(""); unsure.append(k); hits.append(False); continue
+            o = recognize(png_base / r["png"])
+            read.append(o["latex"]); hits.append(same(o["latex"], c["steps"][k]))
+            if o["uncertain"]:
+                unsure.append(k)
+                if o.get("alt") is not None:
+                    alt_reads[k] = o["alt"]
+        pred, st, speak = judge(read, unsure, alt_reads)
+        relevant = c["label"] if c["label"] != -1 else len(c["steps"]) - 1
+        row = {"id": c["id"], "label": c["label"], "pred": pred, "status": st, "speak": speak,
+               "read": read, "ocr_hit": hits, "oracle_pred": oracle_pred[c["id"]],
+               "miss_relevant": any(not h for h in hits[:relevant])}
+        if pred == "ask":
+            first = next(i for i, s in enumerate(st) if s in ("uncertain", "empty"))
+            row["ask_justified"] = first >= 1 and not hits[first - 1]
+        if pred != c["label"]:
+            row["stage"] = "③ OCR" if oracle_pred[c["id"]] == c["label"] else "④/⑤ Validator/Tutor"
+        rows.append(row)
+    return rows
+
+
 def main():
     oracle = "--oracle" in sys.argv
     synth = "--synth" in sys.argv
     note = " ".join(a for a in sys.argv[1:] if not a.startswith("--"))
-    src_dir = SYNTH if synth else KETTEN
+    gt_path = Path(_arg("--gt")) if _arg("--gt") else (SYNTH_GT if synth else KETTEN / "ketten_gt.jsonl")
+    rows_path = Path(_arg("--rows")) if _arg("--rows") else (SYNTH_ROWS if synth else OWN)
+    src_dir = gt_path.parent
     path = ("synth_" if synth else "") + ("oracle" if oracle else "real")
-    chains = [json.loads(l) for l in open(SYNTH_GT if synth else KETTEN / "ketten_gt.jsonl")]
+    chains = [json.loads(l) for l in open(gt_path)]
     rows = []
     if oracle:
         for c in chains:
             pred, st, speak = judge(c["steps"])
             rows.append({"id": c["id"], "label": c["label"], "pred": pred, "status": st, "speak": speak})
     else:
-        rows_src = SYNTH_ROWS if synth else OWN
-        if not rows_src.exists():
-            sys.exit(f"{rows_src} fehlt" +
+        if not rows_path.exists():
+            sys.exit(f"{rows_path} fehlt" +
                      ("" if synth else ": erst Blatt abschreiben und 'kalib_eval.py ketten' laufen lassen"))
         sys.path.insert(0, str(ROOT / "bench" / "formula_flywheel"))
         from pipeline import recognize
-        png_base = SYNTH if synth else OWN.parent.parent
-        own = {(r["chain_id"], r["step"]): r for r in map(json.loads, open(rows_src))}
-        oracle_pred = {c["id"]: judge(c["steps"])[0] for c in chains}
-        for c in chains:
-            read, unsure, hits, alt_reads = [c["steps"][0]], [], [], {}
-            for k in range(1, len(c["steps"])):
-                r = own.get((c["id"], k))
-                if r is None:
-                    read.append(""); unsure.append(k); hits.append(False); continue
-                o = recognize(png_base / r["png"])
-                read.append(o["latex"]); hits.append(same(o["latex"], c["steps"][k]))
-                if o["uncertain"]:
-                    unsure.append(k)
-                    if o.get("alt") is not None:
-                        alt_reads[k] = o["alt"]
-            pred, st, speak = judge(read, unsure, alt_reads)
-            relevant = c["label"] if c["label"] != -1 else len(c["steps"]) - 1
-            row = {"id": c["id"], "label": c["label"], "pred": pred, "status": st, "speak": speak,
-                   "read": read, "ocr_hit": hits, "oracle_pred": oracle_pred[c["id"]],
-                   "miss_relevant": any(not h for h in hits[:relevant])}
-            if pred == "ask":
-                first = next(i for i, s in enumerate(st) if s in ("uncertain", "empty"))
-                row["ask_justified"] = first >= 1 and not hits[first - 1]
-            if pred != c["label"]:
-                row["stage"] = "③ OCR" if oracle_pred[c["id"]] == c["label"] else "④/⑤ Validator/Tutor"
-            rows.append(row)
+        png_base = rows_path.parent if _arg("--rows") else (SYNTH if synth else OWN.parent.parent)
+        own = {(r["chain_id"], r["step"]): r for r in map(json.loads, open(rows_path))}
+        rows = run_real(chains, own, recognize, png_base)
     s = score(rows)
     (src_dir / f"last_{path}.jsonl").write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows))
     new = not TSV.exists()

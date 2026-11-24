@@ -212,6 +212,8 @@ def g_potenz(rng, err):
         disp = [d_task, ["=", f"{base}", (f"{m_ + n_}", "s")], [f"={base ** (m_ + n_)}"]]
         return dict(topic="potenz", steps=steps, disp=disp, label=-1, error_kind=None)
     if rng.random() < 0.5:
+        if m_ == 2 and n_ == 2:               # m+n = m*n: der 'Fehler' waere wahr
+            n_ = 3
         steps = [task, f"={base}^{{{m_ * n_}}}", f"={base ** (m_ * n_)}"]
         disp = [d_task, ["=", f"{base}", (f"{m_ * n_}", "s")], [f"={base ** (m_ * n_)}"]]
         return dict(topic="potenz", steps=steps, disp=disp, label=1,
@@ -221,8 +223,53 @@ def g_potenz(rng, err):
     return dict(topic="potenz", steps=steps, disp=disp, label=2, error_kind="Rechenfehler")
 
 
-GENS = [g_linear, g_linear, g_klammer, g_quad, g_quad_pq, g_quad_pq,
-        g_bruch_add, g_bruch_mul, g_zahl, g_potenz]
+def g_beidseitig(rng, err):
+    """v2: x auf beiden Seiten (haerter als g_linear)."""
+    for _ in range(30):
+        a = rng.randint(4, 9); c = rng.randint(2, a - 1)
+        b = rng.randint(1, 9); sol = rng.randint(2, 8)
+        d = (a - c) * sol + b
+        if b == d:
+            continue
+        if not err:
+            steps = [f"{a}x+{b}={c}x+{d}", f"{a - c}x={d - b}", f"x={sol}"]
+            return dict(topic="linear", steps=steps, disp=steps, label=-1, error_kind=None)
+        steps = [f"{a}x+{b}={c}x+{d}", f"{a + c}x={d + b}"]
+        return dict(topic="linear", steps=steps, disp=steps, label=1,
+                    error_kind="Vorzeichen beim Seitenwechsel")
+
+
+def g_klammer2(rng, err):
+    """v2: verschachtelte Klammer a(x+b(x+c)) — Distributiv zweimal."""
+    a = rng.randint(2, 4); b = rng.randint(1, 3); c = rng.randint(1, 4); sol = rng.randint(2, 6)
+    d = a * sol + a * b * sol + a * b * c
+    if not err:
+        steps = [f"{a}(x+{b}(x+{c}))={d}", f"{a}x+{a * b}x+{a * b * c}={d}",
+                 f"{a + a * b}x={d - a * b * c}", f"x={sol}"]
+        return dict(topic="klammer", steps=steps, disp=steps, label=-1, error_kind=None)
+    steps = [f"{a}(x+{b}(x+{c}))={d}", f"{a}x+{b}x+{c}={d}"]
+    return dict(topic="klammer", steps=steps, disp=steps, label=1,
+                error_kind="Distributivgesetz (verschachtelt)")
+
+
+def g_bruchgl(rng, err):
+    """v2: Bruchgleichung x/a+b=c (validatorfaehig, ganzzahlige Loesung x=a*k)."""
+    a = rng.randint(2, 5); b = rng.randint(1, 9); k = rng.randint(2, 9)
+    c = k + b
+    task = "\\frac{x}{" + str(a) + "}+" + str(b) + "=" + str(c)
+    mitte = "\\frac{x}{" + str(a) + "}=" + str(k)
+    if not err:
+        steps = [task, mitte, f"x={a * k}"]
+        disp = [f"x/{a}+{b}={c}", f"x/{a}={k}", f"x={a * k}"]
+        return dict(topic="bruch", steps=steps, disp=disp, label=-1, error_kind=None)
+    steps = [task, "\\frac{x}{" + str(a) + "}=" + str(c + b), f"x={a * (c + b)}"]
+    disp = [f"x/{a}+{b}={c}", f"x/{a}={c + b}", f"x={a * (c + b)}"]
+    return dict(topic="bruch", steps=steps, disp=disp, label=1,
+                error_kind="Vorzeichen beim Seitenwechsel")
+
+
+GENS = [g_linear, g_linear, g_klammer, g_klammer2, g_quad, g_quad_pq, g_quad_pq,
+        g_bruch_add, g_bruch_mul, g_zahl, g_potenz, g_beidseitig, g_bruchgl]
 
 
 # ---------------------------------------------------------------- Schriftsimulation
@@ -232,9 +279,10 @@ def write_tokens(tokens, x0, baseline, scale, seed):
     for tok in tokens:
         text, sup = (tok, "b") if isinstance(tok, str) else tok
         if sup == "s":
-            s = W.synthesize_handwriting_line(text, pen, baseline - scale * 6.5,
-                                              scale=scale * 0.62, style="student", seed=sd)
-            pen += W.measure_text_width(text, scale * 0.62) + scale * 1.1
+            # v2: staerker angehoben (v1-Fund: flache Exponenten wurden als Nachbarziffer gelesen)
+            s = W.synthesize_handwriting_line(text, pen, baseline - scale * 8.5,
+                                              scale=scale * 0.55, style="student", seed=sd)
+            pen += W.measure_text_width(text, scale * 0.55) + scale * 1.1
         else:
             s = W.synthesize_handwriting_line(text, pen, baseline, scale=scale,
                                               style="student", seed=sd)
