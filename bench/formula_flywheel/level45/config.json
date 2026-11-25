@@ -1,0 +1,8 @@
+{
+  "seed": 20261124,
+  "n_train": 40,
+  "n_dev": 24,
+  "renderer": "matplotlib.mathtext",
+  "buckets": ["integral", "matrix", "trig", "special"],
+  "note": "Level 4-5 diagnostic synthetics (integrals/matrices/trig/special). Not real handwriting."
+}

@@ -27,11 +27,204 @@ def closed_truth(latex: str):
         return None
 
 
+def tt_render_artifacts(latex: str) -> str:
+    """TexTeller-CPU: mathtext render quirks (\\mbox integral glyph, \\tfrac alias)."""
+    s = re.sub(r"\\mbox\{\\Large\$\\int\$\}", r"\\int", latex)
+    s = s.replace(r"\tfrac", r"\frac")
+    s = re.sub(r"\\text\{(sin|cos|tan|log|ln|det|lim)\}", r"\\\1", s)
+    if "\\mbox{" not in s:
+        s = re.sub(r"\\operatorname\{det\}", r"\\det", s)
+    return s
+
+
+def tt_text_marker_artifacts(latex: str) -> str:
+    """TexTeller task markers: \\text{) }, \\text{)} and empty \\text{ } / \\text{} wrappers."""
+    if r"\text{" not in latex:
+        return latex
+    s = latex
+    s = s.replace(r"\text{) }", ")")
+    s = s.replace(r"\text{)}", ")")
+    s = re.sub(r"\\text\{\s*\}", "", s)
+    return s
+
+
+def tt_delim_artifacts(latex: str) -> str:
+    """TexTeller-CPU: mangled delimiters (\\bigl{(}, \\text{(}, angle brackets)."""
+    if not re.search(
+        r"\\bigl\{\(|\\bigr\{\)|\\Bigl\{\(|\\Bigr\{\)|\\text\{\(\}|\\text\{\)\}|"
+        r"\\left\\langle|\\right\\rangle|"
+        r"\\text\{cos\(\d+\}x\\text\{\)\}|\\text\{sin\(\d+\}x\\text\{\)\}",
+        latex,
+    ):
+        return latex
+    s = latex
+    for src, dst in (
+        (r"\bigl{(}", "("),
+        (r"\bigr{)}", ")"),
+        (r"\Bigl{(}", "("),
+        (r"\Bigr{)}", ")"),
+    ):
+        s = s.replace(src, dst)
+    s = re.sub(r"\\text\{cos\((\d+)\}x\\text\{\)\}", r"\\cos(\1x)", s)
+    s = re.sub(r"\\text\{sin\((\d+)\}x\\text\{\)\}", r"\\sin(\1x)", s)
+    s = s.replace(r"\text{(}", "(")
+    s = s.replace(r"\text{)}", ")")
+    s = s.replace(r"\left\langle", r"\left(")
+    s = s.replace(r"\right\rangle", r"\right)")
+    return s
+
+
+def texttt_artifacts(latex: str) -> str:
+    """TexTeller-CPU: \\backslash\\texttt{…} statt \\begin/\\end, \\texttt{token}-Hüllen, \\&."""
+    if not re.search(
+        r"\\backslash\\(?:text|math)tt|\\(?:text|math)tt\{|\\backslash\s+\\|\\backslash\s+begin|@"
+        r"|\\mbox\{\\Large\$\\int\$\}|\\,\{=|\}\{=",
+        latex,
+    ):
+        if "\\&" not in latex and r"\backslash\backslash" not in latex and not re.search(r"\\\{", latex):
+            return latex
+    s = latex
+    s = re.sub(r"\\backslash\s*\\(?:text|math)tt\{begin\}", r"\\begin", s)
+    s = re.sub(r"\\backslash\s*\\(?:text|math)tt\{end\}", r"\\end", s)
+    s = re.sub(r"\\backslash\\(?:text|math)tt\{det\}", r"\\det", s)
+    s = re.sub(r"\\(?:text|math)tt\{([^}]*)\}", r"\1", s)
+    s = re.sub(r"\\\{", "{", s)
+    s = re.sub(r"\\\}", "}", s)
+    s = s.replace(r"\backslash\backslash", r"\\")
+    s = re.sub(r"\\backslash\s+\\backslash", r"\\\\", s)
+    s = re.sub(r"\\backslash\s+begin\{", r"\\begin{", s)
+    s = re.sub(r"\\backslash\s+end\{", r"\\end{", s)
+    s = re.sub(r"\\\\\s+", r"\\\\", s)
+    s = re.sub(r"\}\{=([^}]*)\}", r"}=\1", s)
+    s = s.replace("@", "&")
+    s = s.replace(r"\&", "&")
+    return s
+
+
+def tt_mbox_reim_artifacts(latex: str) -> str:
+    """TexTeller: \\mbox{\\it Re(} / \\mbox{\\it Im(} wrappers around complex Re/Im."""
+    if r"\mbox{\it" not in latex:
+        return latex
+    s = latex
+    for fn in ("Re", "Im"):
+        s = s.replace(rf"\mbox{{\it {fn}(}}", rf"{fn}(")
+    s = s.replace(r"\mbox{\it)}", ")")
+    return s
+
+
+def integral_eq_artifact(latex: str) -> str:
+    """TexTeller: \\,{=6} statt =6 nach Integrand."""
+    return re.sub(r"\\,\{=([^}]*)\}", r"=\1", latex)
+
+
+_THIN_SPACE_CMD = r"(?:\\[,:;!]|\\ )"
+_CONTINUATION_HEAD = (
+    r"=|<=>|=>|\\approx|\\equiv|\\sim|\\Rightarrow|\\Leftrightarrow|"
+    r"\\implies|\\iff|<|>|\\leq|\\geq|\\neq"
+)
+
+
+def tt_mbox_small_dollar(latex: str) -> str:
+    """Unwrap \\mbox{\\small$…$} and \\mbox{\\raisebox{…}{\\small$…$}} font wrappers."""
+    if r"\mbox{\small$" not in latex and r"\mbox{\raisebox" not in latex:
+        return latex
+    s = re.sub(
+        r"\\mbox\{\\raisebox\{[^}]*\}\{\\small\$([^$]*)\$\}\}",
+        r"\1",
+        latex,
+    )
+    return re.sub(r"\\mbox\{\\small\$([^$]*)\$\}", r"\1", s)
+
+
+_TEXT_PAREN_DOLLAR = re.compile(r"\\text\{((?:\(\$[^$]+\$\))+)\}")
+
+
+def _unwrap_paren_dollars(inner: str) -> str:
+    return re.sub(r"\(\$([^$]+)\$\)", r"(\1)", inner)
+
+
+def tt_text_paren_dollar(latex: str) -> str:
+    """\\text{($x$)} or \\text{($a$)($b$)} → parenthesized math without text/$ wrappers."""
+
+    def _repl(m: re.Match[str]) -> str:
+        return _unwrap_paren_dollars(m.group(1))
+
+    if r"\text{($" not in latex:
+        return latex
+    return _TEXT_PAREN_DOLLAR.sub(_repl, latex)
+
+
+_BROKEN_TEXT_PAREN_OPEN = re.compile(r"\\text\{\(\$([^$]+)\$\}")
+
+
+def tt_text_broken_paren_dollar(latex: str) -> str:
+    """Unwrap split TT paren fragments: \\text{($6$} → (6, \\text{($x$} → (x."""
+    if r"\text{($" not in latex:
+        return latex
+    return _BROKEN_TEXT_PAREN_OPEN.sub(r"(\1", latex)
+
+
+def tt_lead_eq_space_artifacts(latex: str) -> str:
+    """Strip thin/neg spaces before continuation =/=> at line start; normalize \\,= / \\!= markers."""
+    if not re.search(r"\\[,:;! ]", latex) and r"\," not in latex and r"\!" not in latex:
+        return latex
+    s = latex
+    s = re.sub(
+        rf"^(\s*)(?:{_THIN_SPACE_CMD}|\s)+(?=({_CONTINUATION_HEAD}))",
+        r"\1",
+        s,
+    )
+    s = re.sub(
+        rf"^(\s*)({_CONTINUATION_HEAD})(?:{_THIN_SPACE_CMD}|\s)+",
+        r"\1\2",
+        s,
+    )
+    s = re.sub(r"\\,\s*=", "=", s)
+    s = re.sub(r"\\!\s*=", "=", s)
+    return s
+
+
+def array_single_cell_artifact(latex: str) -> str:
+    """Unwrap \\begin{array}{c}… single formula …\\end{array} (TT line wrapper only)."""
+    m = re.fullmatch(
+        r"\\begin\{array\}\s*(?:\n\s*)?\{[lcr|]+\}\s*(?:\\vspace\{[^}]*\})?\s*(.+?)\s*\\end\{array\}\s*",
+        latex.strip(),
+        flags=re.DOTALL,
+    )
+    if not m:
+        return latex
+    inner = m.group(1).strip()
+    inner = re.sub(r"\\\\\s*$", "", inner).strip()
+    if "&" in inner:
+        return latex
+    if "\\\\" in inner:
+        return latex
+    if re.search(r"\\begin\{", inner):
+        return latex
+    inner = re.sub(r"\\,\s*\+\s*$", "+", inner)
+    return inner
+
+
+def tt_postprocess(latex: str) -> str:
+    """Product pipe before coherent(): decimal + render/texttt/integral artifacts."""
+    s = tt_render_artifacts(texttt_artifacts(decimal_comma(latex)))
+    s = tt_delim_artifacts(s)
+    s = tt_text_marker_artifacts(s)
+    s = tt_mbox_reim_artifacts(s)
+    s = tt_mbox_small_dollar(s)
+    s = tt_text_paren_dollar(s)
+    s = tt_text_broken_paren_dollar(s)
+    s = array_single_cell_artifact(s)
+    s = integral_eq_artifact(s)
+    return tt_lead_eq_space_artifacts(s)
+
+
 def variants(second: str) -> list[str]:
     """Artefakt-Interpretationen einer Zweitmeinung. GLM-Artefakte: Leerzeichen zwischen
     Ziffern (zerrissene Zahl '2 5' oder verschluckter Operator '3 3') und Punkt/Gedankenstrich
     statt Malpunkt ('3. 1 0'). Im deutschen Schulkontext ist ein Punkt zwischen Ziffern primaer
     ein Malpunkt (Dezimalzeichen ist das Komma), deshalb als Variante, nie als Ersatz."""
+    second = tt_postprocess(second)
     num = re.sub(r"(?<=\d) (?=\d)", "", second)
     mul = re.sub(r"(?<=\d) (?=\d)", r"\\cdot ", second)
     dot = re.sub(r"(?<=\d)[.\-] ?(?=\d)", r"\\cdot ", second)
@@ -48,12 +241,25 @@ def agree(latex: str, second: str) -> bool:
     return any(same(latex, v) for v in variants(second))
 
 
+_POWER_DIGIT = re.compile(r"(?<![0-9{\\^_])(\d)(\d)(?!\d)")
+
+
+def _power_digit_cands(latex: str):
+    """Fusions-Artefakt: zwei Ziffern ohne Klammern evtl. als b^{e} lesen (nur mit GLM-Korroboration)."""
+    seen = set()
+    for m in _POWER_DIGIT.finditer(latex):
+        cand = latex[:m.start()] + f"{m.group(1)}^{{{m.group(2)}}}" + latex[m.end():]
+        if cand != latex and cand not in seen:
+            seen.add(cand)
+            yield cand
+
+
 def coherent(latex: str, second: str | None = None):
-    """-> (latex, repair|None, trusted). trusted: Zweitmeinung stützt die Lesart (ggf. nach
-    Artefakt-Normalisierung) oder korroboriert einen CONFUSE-Tausch. Ein Tausch OHNE Stütze
-    (nur closed_truth) bleibt wie bisher unsicher (ADR-007: nie still raten)."""
+    """-> (latex, repair|None, trusted). trusted ist OCR-Vertrauen, nicht mathematische
+    Korrektheit (Issue #1): ohne Zweitmeinung immer False; bei Übereinstimmung ohne Reparatur
+    True; jede Reparatur (auch GLM-korroboriert) False. closed_truth fließt nicht in trusted."""
     if second is None:
-        return latex, None, closed_truth(latex) is not False
+        return latex, None, False
     if agree(latex, second):
         return latex, None, True
     for idx, (pat, rep) in enumerate(CONFUSE):
@@ -65,7 +271,10 @@ def coherent(latex: str, second: str | None = None):
             if closed_truth(cand) is True and closed_truth(latex) is False:
                 return cand, f"{latex} -> {cand}", False
             if agree(cand, second):
-                return cand, f"{latex} -> {cand}", True
+                return cand, f"{latex} -> {cand}", False
+    for cand in _power_digit_cands(latex):
+        if agree(cand, second):
+            return cand, f"{latex} -> {cand}", False
     return latex, None, False
 
 

@@ -1,0 +1,40 @@
+{"id": "train_L45_002", "split": "train", "template_id": "L45_002", "bucket": "integral", "gt_latex": "\\int_1^2 x\\,dx=\\frac{3}{2}", "math_correct": true, "png": "images/train_L45_002.png"}
+{"id": "train_L45_004", "split": "train", "template_id": "L45_004", "bucket": "integral", "gt_latex": "\\int_0^2 3\\,dx=7", "math_correct": false, "png": "images/train_L45_004.png"}
+{"id": "train_L45_005", "split": "train", "template_id": "L45_005", "bucket": "integral", "gt_latex": "\\int_0^1 2x\\,dx=1", "math_correct": true, "png": "images/train_L45_005.png"}
+{"id": "train_L45_007", "split": "train", "template_id": "L45_007", "bucket": "integral", "gt_latex": "\\int_0^1 1\\,dx=1", "math_correct": true, "png": "images/train_L45_007.png"}
+{"id": "train_L45_008", "split": "train", "template_id": "L45_008", "bucket": "integral", "gt_latex": "\\int_{-1}^1 x^2\\,dx=\\frac{2}{3}", "math_correct": true, "png": "images/train_L45_008.png"}
+{"id": "train_L45_009", "split": "train", "template_id": "L45_009", "bucket": "integral", "gt_latex": "\\int_{-1}^1 x^2\\,dx=1", "math_correct": false, "png": "images/train_L45_009.png"}
+{"id": "train_L45_010", "split": "train", "template_id": "L45_010", "bucket": "integral", "gt_latex": "\\int_0^1 1\\,dx=0", "math_correct": false, "png": "images/train_L45_010.png"}
+{"id": "train_L45_012", "split": "train", "template_id": "L45_012", "bucket": "integral", "gt_latex": "\\int x \\mathrm{d}x", "math_correct": true, "png": "images/train_L45_012.png", "variants": ["\\int x\\,dx"]}
+{"id": "train_L45_013", "split": "train", "template_id": "L45_013", "bucket": "integral", "gt_latex": "\\int_0^{\\pi} \\sin x\\,dx=2", "math_correct": true, "png": "images/train_L45_013.png"}
+{"id": "train_L45_016", "split": "train", "template_id": "L45_016", "bucket": "integral", "gt_latex": "\\int x dx", "math_correct": true, "png": "images/train_L45_016.png", "variants": ["\\int x\\,dx"]}
+{"id": "train_L45_020", "split": "train", "template_id": "L45_020", "bucket": "matrix", "gt_latex": "\\begin{pmatrix}1\\\\2\\end{pmatrix}+\\begin{pmatrix}3\\\\4\\end{pmatrix}=\\begin{pmatrix}5\\\\5\\end{pmatrix}", "math_correct": false, "png": "images/train_L45_020.png"}
+{"id": "train_L45_022", "split": "train", "template_id": "L45_022", "bucket": "matrix", "gt_latex": "\\begin{pmatrix}1&2\\\\3&4\\end{pmatrix}\\cdot\\begin{pmatrix}1\\\\0\\end{pmatrix}=\\begin{pmatrix}2\\\\3\\end{pmatrix}", "math_correct": false, "png": "images/train_L45_022.png"}
+{"id": "train_L45_023", "split": "train", "template_id": "L45_023", "bucket": "matrix", "gt_latex": "\\det\\begin{pmatrix}2&0\\\\0&3\\end{pmatrix}=6", "math_correct": true, "png": "images/train_L45_023.png"}
+{"id": "train_L45_025", "split": "train", "template_id": "L45_025", "bucket": "matrix", "gt_latex": "\\det\\begin{pmatrix}2&0\\\\0&3\\end{pmatrix}=5", "math_correct": false, "png": "images/train_L45_025.png"}
+{"id": "train_L45_026", "split": "train", "template_id": "L45_026", "bucket": "matrix", "gt_latex": "\\begin{bmatrix}1&0\\\\0&1\\end{bmatrix}", "math_correct": true, "png": "images/train_L45_026.png"}
+{"id": "train_L45_028", "split": "train", "template_id": "L45_028", "bucket": "matrix", "gt_latex": "\\begin{pmatrix}1&0\\\\0&1\\end{pmatrix}", "math_correct": true, "png": "images/train_L45_028.png"}
+{"id": "train_L45_029", "split": "train", "template_id": "L45_029", "bucket": "matrix", "gt_latex": "\\begin{pmatrix}0&1\\\\1&0\\end{pmatrix}^2=\\begin{pmatrix}1&0\\\\0&1\\end{pmatrix}", "math_correct": true, "png": "images/train_L45_029.png"}
+{"id": "train_L45_030", "split": "train", "template_id": "L45_030", "bucket": "matrix", "gt_latex": "\\begin{pmatrix}2&0\\\\0&1\\end{pmatrix}=\\begin{pmatrix}1&0\\\\0&1\\end{pmatrix}", "math_correct": false, "png": "images/train_L45_030.png"}
+{"id": "train_L45_031", "split": "train", "template_id": "L45_031", "bucket": "matrix", "gt_latex": "\\det\\begin{pmatrix}1&2\\\\3&4\\end{pmatrix}=2", "math_correct": false, "png": "images/train_L45_031.png"}
+{"id": "train_L45_032", "split": "train", "template_id": "L45_032", "bucket": "matrix", "gt_latex": "\\begin{pmatrix}-1&2\\\\3&0\\end{pmatrix}", "math_correct": true, "png": "images/train_L45_032.png"}
+{"id": "train_L45_036", "split": "train", "template_id": "L45_036", "bucket": "trig", "gt_latex": "\\sin^2(x)+\\cos^2(x)=1", "math_correct": true, "png": "images/train_L45_036.png", "variants": ["\\sin^{2}(x)+\\cos^{2}(x)=1"]}
+{"id": "train_L45_038", "split": "train", "template_id": "L45_038", "bucket": "trig", "gt_latex": "\\sin(\\pi)=1", "math_correct": false, "png": "images/train_L45_038.png"}
+{"id": "train_L45_039", "split": "train", "template_id": "L45_039", "bucket": "trig", "gt_latex": "\\cos(0)=0", "math_correct": false, "png": "images/train_L45_039.png"}
+{"id": "train_L45_042", "split": "train", "template_id": "L45_042", "bucket": "trig", "gt_latex": "\\cos(2x)=2\\cos^2(x)-1", "math_correct": true, "png": "images/train_L45_042.png"}
+{"id": "train_L45_043", "split": "train", "template_id": "L45_043", "bucket": "trig", "gt_latex": "\\sin x", "math_correct": true, "png": "images/train_L45_043.png", "variants": ["\\sin(x)"]}
+{"id": "train_L45_044", "split": "train", "template_id": "L45_044", "bucket": "trig", "gt_latex": "\\cos(0)=1", "math_correct": true, "png": "images/train_L45_044.png"}
+{"id": "train_L45_045", "split": "train", "template_id": "L45_045", "bucket": "trig", "gt_latex": "\\sin^{2}(x)+\\cos^{2}(x)=1", "math_correct": true, "png": "images/train_L45_045.png", "variants": ["\\sin^2(x)+\\cos^2(x)=1"]}
+{"id": "train_L45_046", "split": "train", "template_id": "L45_046", "bucket": "trig", "gt_latex": "\\cos(\\pi)=-1", "math_correct": true, "png": "images/train_L45_046.png"}
+{"id": "train_L45_047", "split": "train", "template_id": "L45_047", "bucket": "trig", "gt_latex": "\\tan(\\frac{\\pi}{4})=1", "math_correct": true, "png": "images/train_L45_047.png"}
+{"id": "train_L45_048", "split": "train", "template_id": "L45_048", "bucket": "trig", "gt_latex": "\\sin(\\pi)=0", "math_correct": true, "png": "images/train_L45_048.png"}
+{"id": "train_L45_049", "split": "train", "template_id": "L45_049", "bucket": "special", "gt_latex": "\\mathrm{i}^2=-1", "math_correct": true, "png": "images/train_L45_049.png", "variants": ["i^2=-1"]}
+{"id": "train_L45_050", "split": "train", "template_id": "L45_050", "bucket": "special", "gt_latex": "\\pi r^2", "math_correct": true, "png": "images/train_L45_050.png"}
+{"id": "train_L45_051", "split": "train", "template_id": "L45_051", "bucket": "special", "gt_latex": "e=3", "math_correct": false, "png": "images/train_L45_051.png"}
+{"id": "train_L45_055", "split": "train", "template_id": "L45_055", "bucket": "special", "gt_latex": "e\\cdot e=e^2", "math_correct": true, "png": "images/train_L45_055.png"}
+{"id": "train_L45_056", "split": "train", "template_id": "L45_056", "bucket": "special", "gt_latex": "\\pi^2=9", "math_correct": false, "png": "images/train_L45_056.png"}
+{"id": "train_L45_058", "split": "train", "template_id": "L45_058", "bucket": "special", "gt_latex": "i^2=-1", "math_correct": true, "png": "images/train_L45_058.png", "variants": ["\\mathrm{i}^2=-1"]}
+{"id": "train_L45_059", "split": "train", "template_id": "L45_059", "bucket": "special", "gt_latex": "\\pi=4", "math_correct": false, "png": "images/train_L45_059.png"}
+{"id": "train_L45_061", "split": "train", "template_id": "L45_061", "bucket": "special", "gt_latex": "i=1", "math_correct": false, "png": "images/train_L45_061.png"}
+{"id": "train_L45_062", "split": "train", "template_id": "L45_062", "bucket": "special", "gt_latex": "e^{i\\pi}=-1", "math_correct": true, "png": "images/train_L45_062.png"}
+{"id": "train_L45_064", "split": "train", "template_id": "L45_064", "bucket": "special", "gt_latex": "2i+3i=6i", "math_correct": false, "png": "images/train_L45_064.png"}

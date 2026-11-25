@@ -1,0 +1,7 @@
+{
+  "seed": 20261124,
+  "n_train": 40,
+  "n_dev": 20,
+  "renderer": "matplotlib.mathtext",
+  "note": "Synthetic mathtext renders only — not evidence for real-handwriting OCR accuracy."
+}

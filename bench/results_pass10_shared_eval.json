@@ -1,0 +1,99 @@
+{
+  "platform": "Linux CPU TexTeller — not comparable to Mac MPS",
+  "git_sha": "030aee0",
+  "timestamp": "2026-11-24T01:50:36Z",
+  "datasets": {
+    "overnight_synth": {
+      "suite": "overnight_synth",
+      "n": 20,
+      "pipe_sympy": 1.0,
+      "pipe_same": 1.0,
+      "by_bucket": {
+        "unknown": 1.0
+      },
+      "student_error_preserved": 0.75,
+      "latency_ms_p50": 454.0,
+      "latency_ms_p95": 613.7,
+      "device": "cpu",
+      "mode": "rescore_cached_raw"
+    },
+    "level45_dev": {
+      "suite": "level45_live_dev",
+      "n": 72,
+      "pipe_sympy": 0.8333333333333334,
+      "pipe_same": 0.8333333333333334,
+      "by_bucket": {
+        "integral": 1.0,
+        "matrix": 0.3333333333333333,
+        "special": 1.0,
+        "trig": 1.0
+      },
+      "student_error_preserved": 0.2608695652173913,
+      "latency_ms_p50": 628.4,
+      "latency_ms_p95": 1875.3,
+      "device": "cpu",
+      "mode": "rescore_cached_raw"
+    },
+    "level45_holdout": {
+      "suite": "level45_live_holdout",
+      "n": 36,
+      "pipe_sympy": 0.8888888888888888,
+      "pipe_same": 0.8888888888888888,
+      "by_bucket": {
+        "integral": 1.0,
+        "matrix": 0.5555555555555556,
+        "special": 1.0,
+        "trig": 1.0
+      },
+      "student_error_preserved": 0.3333333333333333,
+      "latency_ms_p50": 573.9,
+      "latency_ms_p95": 2025.0,
+      "device": "cpu",
+      "mode": "rescore_cached_raw",
+      "holdout": true,
+      "note": "holdout — not for KEEP decisions"
+    },
+    "multiline_live": {
+      "suite": "multiline_live",
+      "n_pages": 12,
+      "line_sympy": 1.0,
+      "chain_boundary": 1.0,
+      "anti_domino_violations": 0,
+      "student_error_preserved": 1.0,
+      "latency_ms_p50": 1.5699,
+      "latency_ms_p95": 2.4288000000000003,
+      "mode": "live_tt",
+      "device": "cpu"
+    },
+    "multiline_l45": {
+      "suite": "multiline_l45",
+      "n_pages": 12,
+      "line_sympy": 1.0,
+      "chain_boundary": 1.0,
+      "anti_domino_violations": 0,
+      "student_error_preserved": 1.0,
+      "latency_ms_p50": 1.5936,
+      "latency_ms_p95": 2.583,
+      "mode": "live_tt",
+      "device": "cpu"
+    },
+    "multiline_multitask_live": {
+      "suite": "multiline_multitask_live",
+      "n_pages": 9,
+      "line_sympy": 0.96875,
+      "chain_boundary": 1.0,
+      "anti_domino_violations": 0,
+      "student_error_preserved": 1.0,
+      "latency_ms_p50": 1.5997999999999999,
+      "latency_ms_p95": 2.1016,
+      "mode": "live_tt",
+      "device": "cpu"
+    },
+    "kalib_ketten": {
+      "suite": "kalib_ketten_grouping",
+      "n_chains": 28,
+      "chain_boundary": 1.0,
+      "mode": "grouping_only_last_real"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+id	bucket	math_correct	ms	same_raw	same_repaired	pred_repaired
+dev_L45_001	integral	True	770.5	True	True	\int_{0}^{1}\!x\,dx= \frac{1}{2}
+dev_L45_003	integral	True	690.2	False	True	\int_{0}^{2}\!3\,dx=6
+dev_L45_006	integral	True	459.7	True	True	\int tdt
+dev_L45_017	matrix	False	1683.3	False	False	\begin{pmatrix}162\\ 3 64\end{pmatrix}=\begin{pmatrix}162\\ 3 65\end{pmatrix}
+dev_L45_018	matrix	True	1177.9	False	True	\det\begin{pmatrix}1&2 \\ 3&4\end{pmatrix}=-2
+dev_L45_019	matrix	True	1029.2	False	True	\begin{vmatrix}1&2\\ 3 &4\end{vmatrix}
+dev_L45_033	trig	True	458.6	True	True	\sin(x)
+dev_L45_034	trig	False	475.0	True	True	\cos( \pi)=1
+dev_L45_035	trig	True	610.3	True	True	\tan x= \frac{ \sin x}{ \cos x}
+dev_L45_052	special	True	515.6	True	True	2i+3i=5i
+dev_L45_053	special	True	528.1	True	True	e^{i\pi}+1=0
+dev_L45_054	special	False	487.4	True	True	e^{i \pi}=1

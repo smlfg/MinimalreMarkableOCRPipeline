@@ -1,0 +1,212 @@
+{
+  "synth": {
+    "suite": "multiline_multitask_live",
+    "n_pages": 9,
+    "line_sympy_rate": 0.96875,
+    "chain_boundary_accuracy": 1.0,
+    "anti_domino_violations": 0,
+    "student_error_preserved": 1.0,
+    "latency_ms_p50": 1.7534,
+    "latency_ms_p95": 2.3334,
+    "mode": "live_tt",
+    "details": [
+      {
+        "page": "MMT_01",
+        "chain_match": true,
+        "chains_pred": [
+          [
+            "MMT_01_l1",
+            "MMT_01_l2"
+          ],
+          [
+            "MMT_01_l3",
+            "MMT_01_l4"
+          ]
+        ],
+        "chains_gt": [
+          [
+            "MMT_01_l1",
+            "MMT_01_l2"
+          ],
+          [
+            "MMT_01_l3",
+            "MMT_01_l4"
+          ]
+        ]
+      },
+      {
+        "page": "MMT_02",
+        "chain_match": true,
+        "chains_pred": [
+          [
+            "MMT_02_l1",
+            "MMT_02_l2"
+          ],
+          [
+            "MMT_02_l3",
+            "MMT_02_l4"
+          ]
+        ],
+        "chains_gt": [
+          [
+            "MMT_02_l1",
+            "MMT_02_l2"
+          ],
+          [
+            "MMT_02_l3",
+            "MMT_02_l4"
+          ]
+        ]
+      },
+      {
+        "page": "MMT_03",
+        "chain_match": true,
+        "chains_pred": [
+          [
+            "MMT_03_l1",
+            "MMT_03_l2"
+          ],
+          [
+            "MMT_03_l3",
+            "MMT_03_l4"
+          ]
+        ],
+        "chains_gt": [
+          [
+            "MMT_03_l1",
+            "MMT_03_l2"
+          ],
+          [
+            "MMT_03_l3",
+            "MMT_03_l4"
+          ]
+        ]
+      },
+      {
+        "page": "MMT_04",
+        "chain_match": true,
+        "chains_pred": [
+          [
+            "MMT_04_l1",
+            "MMT_04_l2"
+          ],
+          [
+            "MMT_04_l3",
+            "MMT_04_l4"
+          ]
+        ],
+        "chains_gt": [
+          [
+            "MMT_04_l1",
+            "MMT_04_l2"
+          ],
+          [
+            "MMT_04_l3",
+            "MMT_04_l4"
+          ]
+        ]
+      },
+      {
+        "page": "MMT_05",
+        "chain_match": true,
+        "chains_pred": [
+          [
+            "MMT_05_l1",
+            "MMT_05_l2",
+            "MMT_05_l3"
+          ]
+        ],
+        "chains_gt": [
+          [
+            "MMT_05_l1",
+            "MMT_05_l2",
+            "MMT_05_l3"
+          ]
+        ]
+      },
+      {
+        "page": "MMT_06",
+        "chain_match": true,
+        "chains_pred": [
+          [
+            "MMT_06_l1",
+            "MMT_06_l2"
+          ]
+        ],
+        "chains_gt": [
+          [
+            "MMT_06_l1",
+            "MMT_06_l2"
+          ]
+        ]
+      },
+      {
+        "page": "MMT_07",
+        "chain_match": true,
+        "chains_pred": [
+          [
+            "MMT_07_l1",
+            "MMT_07_l2",
+            "MMT_07_l3"
+          ]
+        ],
+        "chains_gt": [
+          [
+            "MMT_07_l1",
+            "MMT_07_l2",
+            "MMT_07_l3"
+          ]
+        ]
+      },
+      {
+        "page": "MMT_08",
+        "chain_match": true,
+        "chains_pred": [
+          [
+            "MMT_08_l1",
+            "MMT_08_l2"
+          ],
+          [
+            "MMT_08_l3",
+            "MMT_08_l4"
+          ]
+        ],
+        "chains_gt": [
+          [
+            "MMT_08_l1",
+            "MMT_08_l2"
+          ],
+          [
+            "MMT_08_l3",
+            "MMT_08_l4"
+          ]
+        ]
+      },
+      {
+        "page": "MMT_09",
+        "chain_match": true,
+        "chains_pred": [
+          [
+            "MMT_09_l1",
+            "MMT_09_l2"
+          ],
+          [
+            "MMT_09_l3",
+            "MMT_09_l4"
+          ]
+        ],
+        "chains_gt": [
+          [
+            "MMT_09_l1",
+            "MMT_09_l2"
+          ],
+          [
+            "MMT_09_l3",
+            "MMT_09_l4"
+          ]
+        ]
+      }
+    ]
+  },
+  "ts": "2026-11-24T01:46:41"
+}

@@ -16,6 +16,7 @@ def normalize(s: str) -> str:
     s = re.sub(r"(?<![\\A-Za-z])(ln|log|sin|cos|tan|lim)(?![A-Za-z])", r"\\\1", s)
     s = re.sub(r"\\gt(?![A-Za-z])", ">", s); s = re.sub(r"\\lt(?![A-Za-z])", "<", s)
     s = re.sub(r"\\(no)?limits(?![A-Za-z])", "", s)
+    s = re.sub(r"\\mathrm\{e\}", "e", s)
     s = re.sub(r"\^\{?((?:'|\\prime)+)\}?", lambda m: "'" * (m.group(1).count("'") + m.group(1).count("prime")), s)  # f^{'} == f'
     s = re.sub(r"\s+", "", s)
     # Einzeltoken-Index/Exponent: x^2 == x^{2}, a_\alpha == a_{\alpha} (gleiche Darstellung)

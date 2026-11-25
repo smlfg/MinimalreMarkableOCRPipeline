@@ -1,0 +1,84 @@
+{
+  "date": "20261124",
+  "chunk": "A",
+  "verdict": "REVERT",
+  "rationale": "sympy_same/ocr_hit already true on all cached x/X display mismatches; no struct metric win from casefold rule.",
+  "notes": {
+    "K06": "GT step3 x=125 is intentional student error (Divisionsregel); never auto-correct.",
+    "K09_K13": "Same chain may mix X and x in OCR read vs lowercase GT (display artifact)."
+  },
+  "oracle": {
+    "source": "kalib_last_oracle",
+    "chains": 28,
+    "note": "No read[]/ocr_hit[] in cache; GT steps used as oracle reads by construction."
+  },
+  "summaries": [
+    {
+      "source": "kalib_last_real",
+      "step_pairs": 60,
+      "xX_only_raw": 3,
+      "xX_only_after_normalize": 4,
+      "xX_pairs_sympy_same_true": 4,
+      "xX_pairs_ocr_hit_true": 4,
+      "sympy_fail_case_only": 0,
+      "sympy_fail_other_cause": 3,
+      "xX_pair_details": [
+        {
+          "chain_id": "K01",
+          "step_idx": 1,
+          "gt": "3x=15",
+          "read": "3X=15",
+          "sympy_same": true,
+          "ocr_hit": true,
+          "xX_only_raw": true
+        },
+        {
+          "chain_id": "K06",
+          "step_idx": 1,
+          "gt": "5x=25",
+          "read": "5X=25",
+          "sympy_same": true,
+          "ocr_hit": true,
+          "xX_only_raw": true
+        },
+        {
+          "chain_id": "K09",
+          "step_idx": 2,
+          "gt": "(x-1)(x+7)=0",
+          "read": "(X-1)(X+7)=0",
+          "sympy_same": true,
+          "ocr_hit": true,
+          "xX_only_raw": true
+        },
+        {
+          "chain_id": "K13",
+          "step_idx": 1,
+          "gt": "x^{2}+\\frac{3}{2}x-1=0",
+          "read": "X^{2}+ \\frac{3}{2}X-1=0",
+          "sympy_same": true,
+          "ocr_hit": true,
+          "xX_only_raw": false
+        }
+      ],
+      "case_only_failures": []
+    },
+    {
+      "source": "synth_last_real",
+      "step_pairs": 102,
+      "xX_only_raw": 0,
+      "xX_only_after_normalize": 0,
+      "xX_pairs_sympy_same_true": 0,
+      "xX_pairs_ocr_hit_true": 0,
+      "sympy_fail_case_only": 0,
+      "sympy_fail_other_cause": 27,
+      "xX_pair_details": [],
+      "case_only_failures": []
+    }
+  ],
+  "totals": {
+    "xX_display_pairs": 4,
+    "xX_sympy_same_true": 4,
+    "xX_ocr_hit_true": 4,
+    "sympy_fail_case_only": 0
+  }
+}

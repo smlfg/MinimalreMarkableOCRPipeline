@@ -1,0 +1,54 @@
+{
+  "experiment": "pass6_tt_crop_preprocess",
+  "suite": "level45_live/dev",
+  "n": 72,
+  "gates": {
+    "overnight_synth_dev_struct": 0.95,
+    "multiline_chain_accuracy": 1.0,
+    "pytest": "57/57"
+  },
+  "gate_results": {
+    "overnight_synth": 1.0,
+    "multiline_live": 1.0,
+    "pytest": 1.0
+  },
+  "variants": [
+    {
+      "id": "baseline",
+      "env": {},
+      "pipe_sympy_all": 0.7778,
+      "matrix": 0.3333,
+      "integral": 1.0,
+      "trig": 0.8333,
+      "special": 0.9444,
+      "latency_ms_p50": 616.7,
+      "latency_ms_p95": 1875.3,
+      "verdict": "KEEP (default)"
+    },
+    {
+      "id": "P1_white_pad",
+      "env": {"OCR_TT_WHITE_PAD": "1"},
+      "pipe_sympy_all": 0.7778,
+      "matrix": 0.3333,
+      "integral": 1.0,
+      "trig": 0.8333,
+      "special": 0.9444,
+      "latency_ms_p50": 621.3,
+      "latency_ms_p95": 1863.5,
+      "verdict": "REVERT (no matrix gain)"
+    },
+    {
+      "id": "P2_upscale_128_pad",
+      "env": {"OCR_TT_WHITE_PAD": "1", "OCR_TT_MIN_HEIGHT": "128"},
+      "pipe_sympy_all": 0.7778,
+      "matrix": 0.3333,
+      "integral": 0.9444,
+      "trig": 0.8889,
+      "special": 0.9444,
+      "latency_ms_p50": 591.1,
+      "latency_ms_p95": 1914.3,
+      "verdict": "REVERT (integral regression)"
+    }
+  ],
+  "deferred": ["F1 trig paren mangles", "P3 antialias", "Re/Im mbox"]
+}

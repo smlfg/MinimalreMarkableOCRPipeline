@@ -1,0 +1,21 @@
+experiment	H2_matrix_tall_render
+n	18
+pipe_sympy	0.3333
+dev_L45L_030	True		178	\begin{vmatrix}1&2\\3&4\end{vmatrix}
+dev_L45L_032	False		178	\begin{pmatrix}162\\3 64\end{pmatrix}=\begin{pmatrix}162\\3 65\end{pmatrix}
+dev_L45L_033	True		178	\begin{pmatrix}1&2\\3 &4\end{pmatrix}
+dev_L45L_035	True		178	\begin{pmatrix}-1&2\\3&0\end{pmatrix}
+dev_L45L_036	True		178	\begin{pmatrix}1&0\\0&1\end{pmatrix}
+dev_L45L_037	True		178	\det\begin{pmatrix}3&1\\2&4\end{pmatrix}=11
+dev_L45L_038	False		178	\begin{pmatrix}0G1\backslash backslash{pmatrix}\char 942=\begin{ pmatrix}1G0\backslash0G1\end{pmatrix}
+dev_L45L_039	False		178	\begin{bmatrixx}2&1\\1 &2\end{bmatrix}
+dev_L45L_040	True		178	\det\begin{pmatrix}1&2 \\3&4\end{pmatrix}=-2
+dev_L45L_041	False		178	\det\begin{pmatrix}2&0\backslash 0&3\end{pmatrix}=5
+dev_L45L_042	False		178	\begin{pmatrix}16060\backslash 106260\backslash106063 \end{pmatrix}
+dev_L45L_044	False		178	\mbox{\tt\char 136}\mbox{\tt operatorname}{\det}\mbox{\tt\char 136}\mbox{\tt begin}{ \mbox{\tt pmatrix}}1&2\mbox{\tt\cha
+dev_L45L_045	False		178	\begin{peatrlx}162\\364\end{peatrlx}+\begin{peatrlx}060\\060 \end{peatrlx}+\begin{ peatrlx}162\\364\end{peatrlx}
+dev_L45L_046	False		178	\begin{pmatrix}260 \backslash1611end{pmatrix} =\begin{pmatrix}16 0\backslash161end{pmatrix}
+dev_L45L_048	False		178	\begin{pmatrix}&2&3\\4&5&6\end{pmatrix}
+dev_L45L_050	False		178	\begin{bmatrixx1x 1x1x01x 01xnd{bmatrix}
+dev_L45L_052	False		178	\det\begin{vmatrix}2&0 \backslash0&3\end{vmatrix}=5
+dev_L45L_053	False		178	\begin{pmatrix}0G1\backslash 1G0\end{pmatrix} \char 942=\begin{pmatrix}0G1 \backslash1G0\end{pmatrix}

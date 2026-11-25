@@ -10,6 +10,7 @@ if str(BASE_DIR) not in sys.path:
     sys.path.insert(0, str(BASE_DIR))
 
 from ocr import engine, post, pre  # noqa: E402
+from ocr.multiline import group_calculations  # noqa: E402
 from ocr.post import accuracy, diff_tags, levenshtein, norm  # noqa: F401, E402
 from ocr.pre import split_lines  # noqa: F401, E402
 
@@ -42,6 +43,29 @@ DEFAULT_CFG = {
 }
 
 
+def _is_math_line(line: dict) -> bool:
+    if line.get("kind") == "math":
+        return True
+    return bool(line.get("latex") or line.get("math_status") is not None or line.get("repair") is not None)
+
+
+def assemble_page(lines: list[dict], **meta: object) -> dict:
+    """Build a page dict from recognized lines (tests / formula bench)."""
+    page: dict = {"lines": lines}
+    page.update(meta)
+    if any(_is_math_line(ln) for ln in lines):
+        page["calculations"] = group_calculations(lines)
+    return page
+
+
+def finalize_page(page: dict) -> dict:
+    """Add `calculations` when math lines exist; does not mutate line dicts."""
+    lines = page.get("lines") or []
+    if lines and "calculations" not in page and any(_is_math_line(ln) for ln in lines):
+        page = {**page, "calculations": group_calculations(lines)}
+    return page
+
+
 def run_detailed(png_path: Path, cfg: dict | None = None) -> dict:
     t0 = time.perf_counter()
     merged = {**DEFAULT_CFG, **(cfg or {})}
@@ -63,7 +87,18 @@ def run_detailed(png_path: Path, cfg: dict | None = None) -> dict:
         if fin_txt:
             fin_lines.append(fin_txt)
     elapsed_ms = (time.perf_counter() - t0) * 1000.0
-    return {"raw": "\n".join(raw_lines), "final": "\n".join(fin_lines), "ms": elapsed_ms}
+    out: dict = {"raw": "\n".join(raw_lines), "final": "\n".join(fin_lines), "ms": elapsed_ms}
+    if merged.get("structure_page"):
+        line_dicts = [
+            {"id": f"l{i + 1}", "order": i + 1, "text": t, "kind": merged.get("line_kind", "text")}
+            for i, t in enumerate(fin_lines)
+            if t
+        ]
+        if line_dicts and merged.get("line_kind") == "math":
+            out["page"] = assemble_page(line_dicts)
+        elif line_dicts:
+            out["page"] = {"lines": line_dicts}
+    return out
 
 
 def run(png_path: Path, cfg: dict | None = None) -> str:

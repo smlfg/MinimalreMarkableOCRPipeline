@@ -1,0 +1,702 @@
+{
+  "seed": 20261124,
+  "engine": "stub_injected",
+  "n_rows": 64,
+  "by_bucket": {
+    "integral": {
+      "n": 16,
+      "issue1_ok_rate": 1.0,
+      "closed_truth_ok_rate": 1.0,
+      "variant_agree_rate": 1.0,
+      "corrupt_rate_probe": 0.0
+    },
+    "matrix": {
+      "n": 16,
+      "issue1_ok_rate": 1.0,
+      "closed_truth_ok_rate": 1.0,
+      "variant_agree_rate": null,
+      "corrupt_rate_probe": 0.0
+    },
+    "special": {
+      "n": 16,
+      "issue1_ok_rate": 1.0,
+      "closed_truth_ok_rate": 1.0,
+      "variant_agree_rate": 0.6666666666666666,
+      "corrupt_rate_probe": 0.0
+    },
+    "trig": {
+      "n": 16,
+      "issue1_ok_rate": 1.0,
+      "closed_truth_ok_rate": 1.0,
+      "variant_agree_rate": 1.0,
+      "corrupt_rate_probe": 0.0
+    }
+  },
+  "confuse_probe_corrupt_count": 2,
+  "failure_modes_ranked": [
+    [
+      "variant:same('e^{1}=e','\\\\mathrm{e}^{1}=\\\\mathrm{e}')=False agree=False",
+      1
+    ],
+    [
+      "builtin_variant:same=False agree=False 'e' vs '\\\\mathrm{e}'",
+      1
+    ],
+    [
+      "confuse_corrupt:cos:0_for_o:repair:\\c0s(\\pi)=1 -> \\cos(\\pi)=1",
+      1
+    ],
+    [
+      "confuse_corrupt:power_digit_fused:repair:3^{2}\\cdot3^{3}=35 -> 3^{2}\\cdot3^{3}=3^{5}",
+      1
+    ]
+  ],
+  "rows": [
+    {
+      "id": "train_L45_002",
+      "bucket": "integral",
+      "split": "train",
+      "gt_latex": "\\int_1^2 x\\,dx=\\frac{3}{2}",
+      "math_correct": true,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "train_L45_004",
+      "bucket": "integral",
+      "split": "train",
+      "gt_latex": "\\int_0^2 3\\,dx=7",
+      "math_correct": false,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "train_L45_005",
+      "bucket": "integral",
+      "split": "train",
+      "gt_latex": "\\int_0^1 2x\\,dx=1",
+      "math_correct": true,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "train_L45_007",
+      "bucket": "integral",
+      "split": "train",
+      "gt_latex": "\\int_0^1 1\\,dx=1",
+      "math_correct": true,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "train_L45_008",
+      "bucket": "integral",
+      "split": "train",
+      "gt_latex": "\\int_{-1}^1 x^2\\,dx=\\frac{2}{3}",
+      "math_correct": true,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "train_L45_009",
+      "bucket": "integral",
+      "split": "train",
+      "gt_latex": "\\int_{-1}^1 x^2\\,dx=1",
+      "math_correct": false,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "train_L45_010",
+      "bucket": "integral",
+      "split": "train",
+      "gt_latex": "\\int_0^1 1\\,dx=0",
+      "math_correct": false,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "train_L45_012",
+      "bucket": "integral",
+      "split": "train",
+      "gt_latex": "\\int x \\mathrm{d}x",
+      "math_correct": true,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "train_L45_013",
+      "bucket": "integral",
+      "split": "train",
+      "gt_latex": "\\int_0^{\\pi} \\sin x\\,dx=2",
+      "math_correct": true,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "train_L45_016",
+      "bucket": "integral",
+      "split": "train",
+      "gt_latex": "\\int x dx",
+      "math_correct": true,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "train_L45_020",
+      "bucket": "matrix",
+      "split": "train",
+      "gt_latex": "\\begin{pmatrix}1\\\\2\\end{pmatrix}+\\begin{pmatrix}3\\\\4\\end{pmatrix}=\\begin{pmatrix}5\\\\5\\end{pmatrix}",
+      "math_correct": false,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "train_L45_022",
+      "bucket": "matrix",
+      "split": "train",
+      "gt_latex": "\\begin{pmatrix}1&2\\\\3&4\\end{pmatrix}\\cdot\\begin{pmatrix}1\\\\0\\end{pmatrix}=\\begin{pmatrix}2\\\\3\\end{pmatrix}",
+      "math_correct": false,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "train_L45_023",
+      "bucket": "matrix",
+      "split": "train",
+      "gt_latex": "\\det\\begin{pmatrix}2&0\\\\0&3\\end{pmatrix}=6",
+      "math_correct": true,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "train_L45_025",
+      "bucket": "matrix",
+      "split": "train",
+      "gt_latex": "\\det\\begin{pmatrix}2&0\\\\0&3\\end{pmatrix}=5",
+      "math_correct": false,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "train_L45_026",
+      "bucket": "matrix",
+      "split": "train",
+      "gt_latex": "\\begin{bmatrix}1&0\\\\0&1\\end{bmatrix}",
+      "math_correct": true,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "train_L45_028",
+      "bucket": "matrix",
+      "split": "train",
+      "gt_latex": "\\begin{pmatrix}1&0\\\\0&1\\end{pmatrix}",
+      "math_correct": true,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "train_L45_029",
+      "bucket": "matrix",
+      "split": "train",
+      "gt_latex": "\\begin{pmatrix}0&1\\\\1&0\\end{pmatrix}^2=\\begin{pmatrix}1&0\\\\0&1\\end{pmatrix}",
+      "math_correct": true,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "train_L45_030",
+      "bucket": "matrix",
+      "split": "train",
+      "gt_latex": "\\begin{pmatrix}2&0\\\\0&1\\end{pmatrix}=\\begin{pmatrix}1&0\\\\0&1\\end{pmatrix}",
+      "math_correct": false,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "train_L45_031",
+      "bucket": "matrix",
+      "split": "train",
+      "gt_latex": "\\det\\begin{pmatrix}1&2\\\\3&4\\end{pmatrix}=2",
+      "math_correct": false,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "train_L45_032",
+      "bucket": "matrix",
+      "split": "train",
+      "gt_latex": "\\begin{pmatrix}-1&2\\\\3&0\\end{pmatrix}",
+      "math_correct": true,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "train_L45_036",
+      "bucket": "trig",
+      "split": "train",
+      "gt_latex": "\\sin^2(x)+\\cos^2(x)=1",
+      "math_correct": true,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "train_L45_038",
+      "bucket": "trig",
+      "split": "train",
+      "gt_latex": "\\sin(\\pi)=1",
+      "math_correct": false,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "train_L45_039",
+      "bucket": "trig",
+      "split": "train",
+      "gt_latex": "\\cos(0)=0",
+      "math_correct": false,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "train_L45_042",
+      "bucket": "trig",
+      "split": "train",
+      "gt_latex": "\\cos(2x)=2\\cos^2(x)-1",
+      "math_correct": true,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "train_L45_043",
+      "bucket": "trig",
+      "split": "train",
+      "gt_latex": "\\sin x",
+      "math_correct": true,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "train_L45_044",
+      "bucket": "trig",
+      "split": "train",
+      "gt_latex": "\\cos(0)=1",
+      "math_correct": true,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "train_L45_045",
+      "bucket": "trig",
+      "split": "train",
+      "gt_latex": "\\sin^{2}(x)+\\cos^{2}(x)=1",
+      "math_correct": true,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "train_L45_046",
+      "bucket": "trig",
+      "split": "train",
+      "gt_latex": "\\cos(\\pi)=-1",
+      "math_correct": true,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "train_L45_047",
+      "bucket": "trig",
+      "split": "train",
+      "gt_latex": "\\tan(\\frac{\\pi}{4})=1",
+      "math_correct": true,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "train_L45_048",
+      "bucket": "trig",
+      "split": "train",
+      "gt_latex": "\\sin(\\pi)=0",
+      "math_correct": true,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "train_L45_049",
+      "bucket": "special",
+      "split": "train",
+      "gt_latex": "\\mathrm{i}^2=-1",
+      "math_correct": true,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "train_L45_050",
+      "bucket": "special",
+      "split": "train",
+      "gt_latex": "\\pi r^2",
+      "math_correct": true,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "train_L45_051",
+      "bucket": "special",
+      "split": "train",
+      "gt_latex": "e=3",
+      "math_correct": false,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "train_L45_055",
+      "bucket": "special",
+      "split": "train",
+      "gt_latex": "e\\cdot e=e^2",
+      "math_correct": true,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "train_L45_056",
+      "bucket": "special",
+      "split": "train",
+      "gt_latex": "\\pi^2=9",
+      "math_correct": false,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "train_L45_058",
+      "bucket": "special",
+      "split": "train",
+      "gt_latex": "i^2=-1",
+      "math_correct": true,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "train_L45_059",
+      "bucket": "special",
+      "split": "train",
+      "gt_latex": "\\pi=4",
+      "math_correct": false,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "train_L45_061",
+      "bucket": "special",
+      "split": "train",
+      "gt_latex": "i=1",
+      "math_correct": false,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "train_L45_062",
+      "bucket": "special",
+      "split": "train",
+      "gt_latex": "e^{i\\pi}=-1",
+      "math_correct": true,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "train_L45_064",
+      "bucket": "special",
+      "split": "train",
+      "gt_latex": "2i+3i=6i",
+      "math_correct": false,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "dev_L45_001",
+      "bucket": "integral",
+      "split": "dev",
+      "gt_latex": "\\int_0^1 x\\,dx=\\frac{1}{2}",
+      "math_correct": true,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "dev_L45_003",
+      "bucket": "integral",
+      "split": "dev",
+      "gt_latex": "\\int_0^2 3\\,dx=6",
+      "math_correct": true,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "dev_L45_006",
+      "bucket": "integral",
+      "split": "dev",
+      "gt_latex": "\\int t\\,dt",
+      "math_correct": true,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "dev_L45_011",
+      "bucket": "integral",
+      "split": "dev",
+      "gt_latex": "\\int_1^2 x\\,dx=1",
+      "math_correct": false,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "dev_L45_014",
+      "bucket": "integral",
+      "split": "dev",
+      "gt_latex": "\\int_0^{\\pi} \\sin x\\,dx=0",
+      "math_correct": false,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "dev_L45_015",
+      "bucket": "integral",
+      "split": "dev",
+      "gt_latex": "\\int_a^b f(x)\\,dx",
+      "math_correct": true,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "dev_L45_017",
+      "bucket": "matrix",
+      "split": "dev",
+      "gt_latex": "\\begin{pmatrix}1&2\\\\3&4\\end{pmatrix}=\\begin{pmatrix}1&2\\\\3&5\\end{pmatrix}",
+      "math_correct": false,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "dev_L45_018",
+      "bucket": "matrix",
+      "split": "dev",
+      "gt_latex": "\\det\\begin{pmatrix}1&2\\\\3&4\\end{pmatrix}=-2",
+      "math_correct": true,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "dev_L45_019",
+      "bucket": "matrix",
+      "split": "dev",
+      "gt_latex": "\\begin{vmatrix}1&2\\\\3&4\\end{vmatrix}",
+      "math_correct": true,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "dev_L45_021",
+      "bucket": "matrix",
+      "split": "dev",
+      "gt_latex": "\\begin{bmatrix}1&2\\\\3&4\\end{bmatrix}",
+      "math_correct": true,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "dev_L45_024",
+      "bucket": "matrix",
+      "split": "dev",
+      "gt_latex": "\\begin{pmatrix}0&1\\\\1&0\\end{pmatrix}^2=\\begin{pmatrix}0&1\\\\1&0\\end{pmatrix}",
+      "math_correct": false,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "dev_L45_027",
+      "bucket": "matrix",
+      "split": "dev",
+      "gt_latex": "\\begin{vmatrix}2&0\\\\0&3\\end{pmatrix}=\\begin{vmatrix}6&0\\\\0&6\\end{vmatrix}",
+      "math_correct": false,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "dev_L45_033",
+      "bucket": "trig",
+      "split": "dev",
+      "gt_latex": "\\sin(x)",
+      "math_correct": true,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "dev_L45_034",
+      "bucket": "trig",
+      "split": "dev",
+      "gt_latex": "\\cos(\\pi)=1",
+      "math_correct": false,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "dev_L45_035",
+      "bucket": "trig",
+      "split": "dev",
+      "gt_latex": "\\tan x=\\frac{\\sin x}{\\cos x}",
+      "math_correct": true,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "dev_L45_037",
+      "bucket": "trig",
+      "split": "dev",
+      "gt_latex": "\\cos(x)",
+      "math_correct": true,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "dev_L45_040",
+      "bucket": "trig",
+      "split": "dev",
+      "gt_latex": "\\cos x",
+      "math_correct": true,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "dev_L45_041",
+      "bucket": "trig",
+      "split": "dev",
+      "gt_latex": "\\sin^2(x)=1-\\cos^2(x)",
+      "math_correct": true,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "dev_L45_052",
+      "bucket": "special",
+      "split": "dev",
+      "gt_latex": "2i+3i=5i",
+      "math_correct": true,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "dev_L45_053",
+      "bucket": "special",
+      "split": "dev",
+      "gt_latex": "e^{i\\pi}+1=0",
+      "math_correct": true,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "dev_L45_054",
+      "bucket": "special",
+      "split": "dev",
+      "gt_latex": "e^{i\\pi}=1",
+      "math_correct": false,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "dev_L45_057",
+      "bucket": "special",
+      "split": "dev",
+      "gt_latex": "e^{1}=e",
+      "math_correct": true,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": [
+        "same('e^{1}=e','\\\\mathrm{e}^{1}=\\\\mathrm{e}')=False agree=False"
+      ]
+    },
+    {
+      "id": "dev_L45_060",
+      "bucket": "special",
+      "split": "dev",
+      "gt_latex": "e^{0}=1",
+      "math_correct": true,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    },
+    {
+      "id": "dev_L45_063",
+      "bucket": "special",
+      "split": "dev",
+      "gt_latex": "e^{0}=0",
+      "math_correct": false,
+      "issue1_ok": true,
+      "closed_truth_ok": true,
+      "variant_failures": []
+    }
+  ],
+  "texteller_feasibility": {
+    "live_tt": false,
+    "note": "CPU VM may lack .venv_tt; this diag does not require TexTeller. Re-run dev.jsonl with live TT+GLM when available."
+  }
+}
